@@ -1,55 +1,78 @@
-# Código Gamer — automatización independiente
+# Código Gamer — sistema independiente de YouTube
 
-Proyecto para un futuro canal de videojuegos en español. **Estado: prototipo editorial v0.1.**
+**Estado actual:** el código del sistema está preparado, pero faltan configurar las credenciales del canal y validar los renders reales. Ningún flujo tiene programación automática. Todas las subidas están bloqueadas salvo activación manual explícita y son PRIVADAS.
 
-## Lo que hay en este repositorio
+## Arquitectura
 
-- `preparar_contenido.py`: prepara borradores de guion, descripción con fuentes y plan de escenas a partir de un archivo JSON de hechos.
-- `temas_verificados.json`: dos temas iniciales de GTA VI basados en información de Rockstar Games, consultada el 16-11-2026.
-- `test_preparar_contenido.py`: pruebas automáticas de validación básica.
-- `.github/workflows/preparar_borrador.yml`: ejecución **exclusivamente manual** que comprueba el programa y entrega un artefacto descargable.
+| Archivo | Función |
+|---|---|
+| preparar_contenido.py | Borradores editoriales anteriores |
+| temas_verificados.json | Fuentes y afirmaciones oficiales |
+| editorial.py | Elige temas vigentes, evita duplicados y prepara guiones |
+| descubrir_noticias.py | Candidatos de PlayStation Blog y Xbox Wire, nunca autoconfirmados |
+| generar_short.py | Gráficos originales de tarjetas |
+| motor_video.py | Voz Piper por escena, MP4 9:16 y 16:9, miniaturas |
+| control_calidad.py | Comprueba vídeo, audio, resolución y fuentes |
+| autorizar_youtube_local.py | Genera la credencial OAuth con consentimiento local |
+| subir_youtube_privado.py | Verifica el canal y sube solamente como privado |
+| registrar_subida.py | Guarda historial tras confirmación de privacidad |
+| historial_publicados.json | Evita subir repetidamente el mismo tema |
 
-**Importante:** el script valida la estructura de los datos y que las URLs pertenezcan a dominios permitidos; **no** comprueba automáticamente que los enlaces funcionen ni que cada afirmación esté respaldada. La verificación editorial final sigue siendo humana.
+## GitHub Actions
 
-## Ejecutar sin GitHub Actions
+1. **Codigo Gamer - Produccion completa (Short / Largo)**: flujo manual para elegir tema, narrar, renderizar, revisar calidad y crear archivos descargables. Si marcas subir_privado y escribes literalmente SUBIR_PRIVADO, intentará subir como PRIVADO al canal autorizado. Por defecto no sube nada.
+2. **Codigo Gamer - Descubrir noticias (sin publicar)**: recopila enlaces de fuentes oficiales. Solo entrega propuestas sin convertirlas en temas confirmados.
+3. **Codigo Gamer - Borrador manual**: flujo editorial anterior, también manual.
 
-En una terminal con Python 3.11 o posterior:
+No hay ningún cron ni publicación pública. El código de los canales Dato Nebular y Alerta Binaria no ha sido modificado.
 
-```bash
-python -m unittest discover -s . -p "test_*.py"
-python preparar_contenido.py
-```
+## Configuración del canal de YouTube (pendiente)
 
-Para otro tema: `python preparar_contenido.py --tema gta6-jason-lucia`.
+1. Crear o identificar el canal independiente Código Gamer y obtener el ID exacto en YouTube Studio → Configuración → Canal → Configuración avanzada.
+2. Crear un proyecto de Google Cloud para Código Gamer, activar **YouTube Data API v3**, configurar el consentimiento OAuth y crear un cliente OAuth **Desktop**. Descargar su archivo de cliente al ordenador; no subirlo a GitHub.
+3. En el ordenador, con Python instalado y una copia local del repositorio, instalar dependencias con el comando: python -m pip install -r requirements.txt
+4. Autorizar el canal con: python autorizar_youtube_local.py --client-secrets RUTA_DEL_CLIENTE_OAUTH.json
+5. Copiar LOCALMENTE el contenido íntegro del archivo youtube_oauth_privado.json a GitHub → Settings → Secrets and variables → Actions → secret **YOUTUBE_OAUTH_JSON**. Nunca compartir ni subir el archivo.
+6. Crear un segundo secret **YOUTUBE_CHANNEL_ID** con el ID exacto del nuevo canal. El sistema comprueba que OAuth corresponde a ese canal antes de subir.
+7. Primero generar y revisar vídeo con subir_privado=false. Después, si se ha comprobado calidad y fuentes, ejecutar el flujo manual con subir_privado=true y confirmacion=SUBIR_PRIVADO. En YouTube quedará **privado** para revisión final.
 
-Los resultados se escriben en `salida/guion.txt`, `salida/descripcion.txt` y `salida/plan.json`.
+Los proyectos de YouTube API no verificados pueden estar limitados a subidas privadas. Un OAuth en modo Testing puede necesitar renovación del consentimiento. Consultar políticas actuales de Google Cloud.
 
-## Ejecutar desde GitHub
+## Guiones y temas
 
-Abre **Actions** > **Codigo Gamer - Borrador manual** > **Run workflow**. Descarga el artefacto `codigo-gamer-borrador` al finalizar. El workflow no renderiza un MP4, no se conecta a YouTube y no publica contenido.
+Cada objeto de temas_verificados.json exige:
+- id único (minúsculas, números, guion o guion bajo)
+- titulo, gancho, contexto, estado="confirmado"
+- fecha_verificacion ISO (YYYY-MM-DD)
+- hechos: lista de al menos 2 elementos, cada uno con texto y fuente oficial HTTPS
+- opcionales: prioridad y vigente_hasta (fecha tras la cual el tema no se elige)
 
-Este repositorio es **privado**. Las ejecuciones con GitHub-hosted runners pueden consumir minutos de la cuota del plan. Por eso no se ha configurado ninguna ejecución programada.
+Para **vídeos largos** añadir:
+- guion_largo: texto aprobado de al menos 650 palabras
+- escenas_largas: al menos ocho párrafos definitivos, con 20 palabras o más cada uno, sumando al menos 650 palabras. La narración usa estas escenas.
 
-## Próximas fases
+La IA no inventa hechos ni rellena documentales largos. Si no quedan temas verificados, se interrumpe la producción y hay que añadir nuevos. Para las novedades detectadas, revisar manualmente fuentes y datos antes de confirmar un tema.
 
-1. Curación de noticias con fuentes rastreables y detección de duplicados.
-2. Motor local de guion con revisión de afirmaciones.
-3. Generación de voz y montaje de Shorts originales.
-4. Contenido largo con recursos audiovisuales propios o licenciados.
-5. Subida **privada**, con autorización exclusiva del nuevo canal y revisión previa.
+## Ejecutar localmente (cuando se decida iniciar las comprobaciones)
 
-No se han copiado tokens, secretos ni automatizaciones de Dato Nebular ni Alerta Binaria. Antes de publicar automáticamente serán necesarias pruebas y configuración específicas de este canal.
+Instalar FFmpeg/ffprobe y las fuentes DejaVu. Después:
+- python -m pip install -r requirements.txt
+- python -m unittest discover -s . -p "test_*.py"
+- python editorial.py --formato short
+- python motor_video.py
+- python control_calidad.py --formato short
 
-## Fuentes de referencia
+La primera producción descargará un modelo Piper de voz española. Los MP4, planes, descripciones y miniaturas se crean en salida/. No se han generado vídeos durante esta fase de preparación.
 
-- https://www.rockstargames.com/VI
-- https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026
-- https://www.rockstargames.com/newswire/article/5171972o3ak5oa/pre-order-grand-theft-auto-vi-on-june-25
+## Seguridad y limitaciones
 
-## Prototipo MP4 (experimental)
+- Todas las subidas del proyecto son PRIVADAS y exigen una confirmación manual explícita; no hay autopublicación pública.
+- El render utiliza gráficos originales basados en texto; no se copian clips ni capturas de otros canales. No afirmar que el contenido es monetizable sin evaluar originalidad y políticas de YouTube.
+- La comprobación de enlaces HTTPS y dominios autorizados **no** acredita que cada afirmación esté respaldada por la página: revisión humana obligatoria.
+- Antes de repetir una subida fallida, consultar YouTube Studio. Si YouTube recibió un vídeo y falló el registro posterior, una repetición podría duplicarlo.
+- Los repositorios privados comparten los minutos de GitHub Actions de la cuenta. Separar repositorios NO separa esa cuota. No hay ejecución programada.
+- Los nuevos módulos (render/audio/YouTube) están escritos pero todavía NO ejecutados ni validados; faltan pruebas de extremo a extremo y configurar OAuth.
 
-Se ha añadido `generar_short.py` y el workflow manual **Codigo Gamer - Renderizar Short privado local**. Se puede ejecutar desde Actions > Run workflow. Genera un MP4 vertical de 720×1280 con tarjetas gráficas originales (sin gameplay de terceros) y una voz sintética Piper en español. El archivo se entrega como artefacto de GitHub; **no se sube a YouTube ni se publica**.
+## Fuente principal
 
-El workflow descarga dependencias y el modelo de voz y puede consumir minutos de Actions de este repositorio privado. La duración exacta y los resultados audiovisuales **aún no se han probado mediante una ejecución de render**. Se requiere revisión humana antes de considerar el material apto para publicación; las tarjetas son un primer prototipo visual, no la versión definitiva de gaming.
-
-Los audios, escenas y referencias deben pasar la revisión editorial y de derechos de uso. El uso de voz sintética deberá cumplir las condiciones de su modelo y de la plataforma de distribución.
+Rockstar Games: https://www.rockstargames.com/VI
