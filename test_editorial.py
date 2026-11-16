@@ -32,9 +32,35 @@ class TestEditorial(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     editorial.seleccionado("gta6-jason-lucia","short")
 
-    def test_largo_sin_guion_no_inventa(self):
-        with self.assertRaises(ValueError):
-            editorial.seleccionado("gta6-jason-lucia","largo")
+    def test_largo_requiere_guion_ia(self):
+        tema = editorial.seleccionado("gta6-jason-lucia", "largo")
+        guion, descripcion, plan = editorial.preparar_plan(tema, "largo")
+        self.assertEqual(guion, "")
+        self.assertTrue(plan["requiere_guion_ia"])
+        self.assertEqual(plan["formato"], "largo")
+        self.assertIn("PF-FORMATO:largo", descripcion)
+
+    def test_orden_y_formatos_independientes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            hist = Path(tmp) / "hist.json"
+            hist.write_text(json.dumps([
+                {"tema_id": "gta6-lanzamiento-oficial",
+                 "estado": "subido", "formato": "short"}
+            ]), encoding="utf-8")
+            with patch.object(editorial, "HISTORIAL", hist):
+                proximo = editorial.seleccionado("", "short")
+                self.assertEqual(proximo["id"], "gta6-30fps-ps5pro")
+                largo = editorial.seleccionado("", "largo")
+                self.assertEqual(largo["id"], "gta6-jason-lucia")
+
+    def test_descripcion_general_y_suscripcion(self):
+        tema = editorial.cargar_elegibles()[0]
+        guion, descripcion, plan = editorial.preparar_plan(tema, "short")
+        self.assertIn("Suscríbete a Píxel Feroz", guion)
+        self.assertIn("Bienvenido a PÍXEL FEROZ", descripcion)
+        self.assertIn("FUENTES OFICIALES:", descripcion)
+        self.assertIn("PF-FORMATO:short", descripcion)
+        self.assertTrue(plan["texto_miniatura"])
 
 
 if __name__=="__main__":
