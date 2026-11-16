@@ -7,9 +7,13 @@
     "largo"
   ],
   "youtube_privacidad": "private",
-  "subir_privado_por_defecto": false,
+  "subir_privado_por_defecto": true,
   "publicacion_publica_automatica": false,
-  "modo": "revision",
+  "modo": "revision_privada",
   "frecuencia_programada": "desactivada",
-  "youtube_channel_id": "UCgT82gfTjIw2o-CtmQgSS3w"
+  "youtube_channel_id": "UCgT82gfTjIw2o-CtmQgSS3w",
+  "formato_por_accion": true,
+  "cola_temas": "temas_verificados.json",
+  "descripciones_comunes": "descripcion_general.txt",
+  "discovery_schedule": "cada_tres_dias_aprox"
 }
