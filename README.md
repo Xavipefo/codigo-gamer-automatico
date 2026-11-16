@@ -18,6 +18,14 @@
 | registrar_subida.py | Guarda historial tras confirmación de privacidad |
 | historial_publicados.json | Evita subir repetidamente el mismo tema |
 
+## Nueva propuesta de voz: castellano de España (es-ES)
+
+El workflow `.github/workflows/probar_voz_castellana.yml` permite comparar dos voces masculinas de **Gemini 3.8 Flash TTS** con instrucciones explícitas de **español peninsular de España**, timbre natural, ritmo conversacional y dicción castellana. Usa el secreto `GEMINI_API_KEY` existente y genera solamente `charon_castellano.wav` y `achird_castellano.wav` en un artifact de corta duración, sin vídeos ni subidas.
+
+**Esta es una prueba de voces, todavía no un cambio del motor de producción:** el renderizador continúa usando Kokoro hasta haber escuchado y aprobado una alternativa. En función del tipo de proyecto de Gemini, las solicitudes pueden consumir cuota gratuita o facturarse; no iniciar producción masiva sin comprobar límites.
+
+La voz no se elige solo por su nombre. La confirmación requiere comprobar auditivamente que la pronunciación de palabras como *cena*, *zapato* y *GTA* suena a España y que la lectura es natural. Si Gemini TTS no está disponible para la clave, la prueba fallará sin modificar vídeos anteriores.
+
 ## Voz más humana y clips de videojuegos
 
 El renderizador `motor_video.py` ahora utiliza **Kokoro-82M ONNX** en lugar de Piper (voz española `em_alex`, configurable desde `config.json` con `voz_nombre` y `voz_velocidad`). El modelo abierto está bajo licencia Apache-2.0 y se descarga desde un release oficial fijado, comprobando SHA-256; GitHub Actions almacena en caché los pesos para posteriores producciones.
