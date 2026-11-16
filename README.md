@@ -64,6 +64,18 @@ Instalar FFmpeg/ffprobe y las fuentes DejaVu. Después:
 
 La primera producción descargará un modelo Piper de voz española. Los MP4, planes, descripciones y miniaturas se crean en salida/. No se han generado vídeos durante esta fase de preparación.
 
+## Repositorio público y primeros vídeos
+
+La publicación del código en GitHub es distinta de la publicación de vídeos en YouTube:
+
+- GitHub Actions ofrece ejecuciones gratuitas en runners estándar de repositorios públicos, pero **el almacenamiento de artifacts y otros recursos puede seguir teniendo límites**.
+- **Los logs y artifacts de un repositorio público son accesibles públicamente**. Por eso `produccion_completa.yml` solo adjunta MP4 en repositorios privados. En un repositorio público, el workflow exige `subir_privado=true` y la confirmación `SUBIR_PRIVADO`, y deja el vídeo en YouTube Studio como **privado**. No se publica automáticamente.
+- El OAuth del canal está en GitHub Secrets y su contenido no forma parte del código. Antes de hacer público un repositorio, revisar los archivos y el historial de commits: la protección de secretos no hace privado al resto del contenido.
+- Ya hay cuatro temas en `temas_verificados.json`, incluidos dos Shorts nuevos sobre precarga y rendimiento. Las escaletas están en `contenido/primeros_videos.md`.
+- Para la primera producción, recomendamos el tema `gta6-precarga-212gb` antes del 19 de noviembre de 2026. Las fichas basadas en noticias anteriores al estreno tienen fecha de caducidad para evitar publicar información desactualizada.
+
+**Advertencia:** aún no se ha generado un MP4 con este motor. La primera ejecución es una producción piloto y puede requerir corregir errores técnicos. Si falla después de enviar contenido a YouTube, comprobar YouTube Studio antes de repetir la ejecución, para evitar duplicados.
+
 ## Revisión técnica del 16-11-2026
 
 - `motor_video.py`: el audio y la imagen de cada escena se montan juntos en un fragmento MP4, con un breve silencio final; después se concatenan fragmentos homogéneos. Evita la estimación imprecisa de duraciones por número de palabras.
