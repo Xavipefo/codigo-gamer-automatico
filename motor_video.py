@@ -343,8 +343,8 @@ def montar(plan, guion):
                         formato, SALIDA / "miniatura.jpg")
         print("Archivo:", salida, flush=True)
         print("Clip autorizado incorporado:", bool(clip_de_juego), flush=True)
-        print("Motor de voz natural: Gemini 3.8 Flash TTS", flush=True)
-        print("Narrador del vídeo:", narrador.voz, flush=True)
+        print("Motor de voz:", narrador.proveedor, flush=True)
+        print("Voz efectiva del vídeo:", narrador.voz_real, flush=True)
         print("Peticiones TTS realizadas:", narrador.peticiones, flush=True)
         print("Fragmentos WAV recuperados:", narrador.recuperados, flush=True)
         print("Escenas:", len(escenas),
