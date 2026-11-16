@@ -1,6 +1,6 @@
 # Píxel Feroz — sistema independiente de YouTube
 
-**Estado actual:** conexión OAuth de Píxel Feroz verificada en GitHub Actions (16-11-2026). Los módulos de producción y subida privada están implementados y revisados estáticamente, pero **el renderizador y la subida real todavía no se han probado de extremo a extremo**. No hay ejecuciones programadas ni publicaciones públicas automáticas.
+**Estado actual:** conexión OAuth y primera producción privada de Short completadas el 16-11-2026. La miniatura de esa subida recibió HTTP 403 y requiere habilitación del canal; el sistema ahora registra esta incidencia. La cola ordenada, los metadatos específicos y los dos workflows independientes están implementados, todavía **pendientes de una validación completa de esta versión**. No hay publicaciones públicas automáticas.
 
 ## Arquitectura
 
@@ -18,13 +18,28 @@
 | registrar_subida.py | Guarda historial tras confirmación de privacidad |
 | historial_publicados.json | Evita subir repetidamente el mismo tema |
 
-## GitHub Actions
+## Automatización por cola (noviembre de 2026)
 
-1. **Píxel Feroz - Produccion completa (Short / Largo)**: flujo manual para elegir tema, narrar, renderizar, revisar calidad y crear archivos descargables. Si marcas subir_privado y escribes literalmente SUBIR_PRIVADO, intentará subir como PRIVADO al canal autorizado. Por defecto no sube nada.
-2. **Píxel Feroz - Descubrir noticias (sin publicar)**: recopila enlaces de fuentes oficiales. Solo entrega propuestas sin convertirlas en temas confirmados.
-3. **Píxel Feroz - Borrador manual**: flujo editorial anterior, también manual.
+**Dos botones independientes de GitHub Actions:**
 
-No hay ningún cron ni publicación pública. El código de los canales Dato Nebular y Alerta Binaria no ha sido modificado.
+1. **Píxel Feroz - 1. Crear Short privado** (`.github/workflows/crear_short_privado.yml`).
+2. **Píxel Feroz - 2. Crear vídeo largo privado** (`.github/workflows/crear_largo_privado.yml`).
+
+Cada botón permite dejar vacío el campo `tema`: el sistema elegirá automáticamente el **primer elemento vigente y no subido del formato correspondiente**, siguiendo estrictamente el orden físico de `temas_verificados.json`. Si se indica un ID, selecciona ese tema siempre que sea válido y no se haya subido ya en ese formato.
+
+Los dos botones usan el motor compartido `.github/workflows/produccion_completa.yml` (solo `workflow_call`, sin botón propio), generan el MP4, crean una miniatura con titular específico del tema, comprueban el material y **envían el vídeo exclusivamente como privado a YouTube**. No hay programación de publicación pública.
+
+**Descripción del vídeo**: título y contexto personalizados, puntos factuales, fuentes oficiales y hashtags propios arriba; debajo se concatena la descripción permanente de `descripcion_general.txt`, incluida la invitación a suscribirse. El texto narrado incluye también una llamada a suscribirse a Píxel Feroz.
+
+**IA**: para Shorts se usa el generador editorial seguro si no existe `GEMINI_API_KEY`; si está configurada esa clave, Gemini puede crear una narración original siguiendo los hechos confirmados. Para vídeos largos con `esquema_largo`, la clave **`GEMINI_API_KEY` es obligatoria**; se utiliza el mismo modelo `gemini-2.5-flash-lite` que emplea Dato Nebular para algunos guiones. La clave debe añadirse a **Settings → Secrets and variables → Actions → New repository secret** de este repositorio. Nunca incluirla en el código ni en el chat. El modelo puede cometer errores o repeticiones; **los largos requieren siempre revisión editorial del resultado privado**. Los guiones largos no están validados de extremo a extremo.
+
+**Descubrimiento**: `.github/workflows/descubrir_noticias.yml` genera propuestas de fuentes oficiales aproximadamente cada tres días (días 1, 4, 7, etc. del mes). Guarda un JSON de candidatos como artefacto. **No inserta automáticamente hechos en la cola confirmada**: hay que revisar cada noticia y añadir sus hechos y enlaces oficiales, para no publicar rumores o información inventada.
+
+**Historial**: `historial_publicados.json` se actualiza tras cada subida privada verificada. Permite **un Short y un largo por cada ID**, sin duplicaciones del mismo formato. Una comprobación adicional examina la lista de subidas existente de YouTube.
+
+**Miniaturas**: la aplicación sube miniaturas personalizadas con `thumbnails.set`. Para Shorts espera a que YouTube termine el procesamiento, conforme a su documentación. Si YouTube deniega la miniatura, el MP4 **sigue privado**, se registra el ID en el historial y GitHub Actions termina marcando el fallo **después** de guardar ese registro para evitar duplicados. YouTube exige que el canal tenga habilitadas las miniaturas personalizadas. En la primera producción del 16/11/2026 (`r288ZUQ8iyw`) **la subida fue privada pero la miniatura recibió HTTP 403**; comprobar la verificación del canal antes de nuevos vídeos.
+
+No se han añadido trabajos programados de subida a YouTube: se disparan con los dos botones. Los secretos OAuth permanecen en GitHub Secrets. Si el repositorio es público, no se publican los MP4 en GitHub Actions artifacts.
 
 ## Configuración del canal de YouTube (OAuth ya configurado)
 
