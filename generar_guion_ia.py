@@ -20,7 +20,7 @@ BASE = Path(__file__).resolve().parent
 SALIDA = BASE / "salida"
 TEMAS = BASE / "temas_verificados.json"
 URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
-MODELO_DEFAULT = "gemini-2.5-flash-lite"
+MODELO_DEFAULT = "gemini-3.5-flash-lite"
 
 
 def texto_plano(valor):
