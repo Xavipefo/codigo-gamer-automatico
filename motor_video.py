@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Motor: voz Kokoro local y clips autorizados / gráficos originales en movimiento.
+"""Motor: dos voces de Gemini con clips autorizados y gráficos originales.
 
 Sin clips autorizados, mantiene tarjetas propias con un suave movimiento.
 La subida sigue siendo exclusivamente privada para revisión humana.
@@ -17,7 +17,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 from generar_short import tarjeta_escena, fuente, partir_lineas
-from voz_natural import NarradorKokoro
+from voz_produccion import NarradorGemini, estimar_consumo
 from video_material import descargar_clip, overlay_clips
 
 BASE = Path(__file__).resolve().parent
@@ -41,7 +41,9 @@ def adaptar_escenas(plan):
     formato = plan["formato"]
     if formato not in ("short", "largo"):
         raise ValueError("Formato desconocido")
-    limite = 27 if formato == "largo" else 30
+    # El TTS cobra por petición; en largos juntamos párrafos de ~75 palabras
+    # y mostramos un resumen visual, sin alterar lo que narra la voz.
+    limite = 75 if formato == "largo" else 30
     salida = []
     for esc in plan["escenas"]:
         for trozo in fragmentar(esc["texto"], limite):
@@ -50,6 +52,21 @@ def adaptar_escenas(plan):
     if not salida or len(salida) > 95:
         raise ValueError("Demasiadas escenas o contenido vacío")
     return salida
+
+
+
+def resumen_visual(escena, formato):
+    """Acorta solo el rótulo, no el guion hablado ni las fuentes.
+
+    En los largos Gemini lee el texto entero en una petición por bloque.
+    No tendría sentido mostrar 75 palabras simultáneamente en una tarjeta.
+    """
+    palabras = escena["texto"].strip().split()
+    limite = 22 if formato == "largo" else 30
+    texto = " ".join(palabras[:limite])
+    if len(palabras) > limite:
+        texto = texto.rstrip(".,;:") + "…"
+    return {"tipo": escena["tipo"], "texto": texto}
 
 
 def imagen_horizontal(escena, i, total, titulo, ruta):
@@ -128,7 +145,8 @@ def montar(plan, guion):
     if re.sub(r"\s+", " ", guion).strip() != reconstruido.strip():
         raise ValueError("El guion y el orden de las escenas no coinciden")
 
-    narrador = NarradorKokoro()
+    estimar_consumo(escenas, formato)
+    narrador = NarradorGemini(formato, plan)
     SALIDA.mkdir(parents=True, exist_ok=True)
     fps = 20
     duracion_total = 0.0
@@ -147,14 +165,15 @@ def montar(plan, guion):
                 and indice % 3 != 2
                 and escena["tipo"] != "cierre"
             )
+            escena_visible = resumen_visual(escena, formato)
             imagen = directorio / f"escena_{indice:03}.png"
             if usa_material:
                 overlay_clips(
-                    escena, plan["titulo_propuesto"], formato, imagen
+                    escena_visible, plan["titulo_propuesto"], formato, imagen
                 )
             elif formato == "short":
                 tarjeta_escena(
-                    escena, indice, len(escenas),
+                    escena_visible, indice, len(escenas),
                     plan["titulo_propuesto"], imagen
                 )
             else:
@@ -244,7 +263,9 @@ def montar(plan, guion):
                         formato, SALIDA / "miniatura.jpg")
         print("Archivo:", salida, flush=True)
         print("Clip autorizado incorporado:", bool(clip_de_juego), flush=True)
-        print("Motor de voz natural: Kokoro", flush=True)
+        print("Motor de voz natural: Gemini 3.8 Flash TTS", flush=True)
+        print("Narrador del vídeo:", narrador.voz, flush=True)
+        print("Peticiones TTS realizadas:", narrador.peticiones, flush=True)
         print("Escenas:", len(escenas),
               "| Duración planificada:", round(duracion_total, 2),
               "segundos", flush=True)
