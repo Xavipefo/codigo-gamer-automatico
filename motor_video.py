@@ -166,9 +166,9 @@ def montar(plan, guion):
         video=SALIDA/("codigo_gamer_short.mp4" if formato=="short" else "codigo_gamer_largo.mp4")
         comando(["ffmpeg","-hide_banner","-loglevel","error","-y",
                  "-f","concat","-safe","0","-i",str(lista_fotos),
-                 "-i",str(audio),"-vsync","vfr","-c:v","libx264",
+                 "-i",str(audio),"-vf","fps=20","-c:v","libx264",
                  "-preset","veryfast","-crf","24","-pix_fmt","yuv420p",
-                 "-r","20","-c:a","copy","-shortest","-movflags","+faststart",
+                 "-c:a","copy","-shortest","-movflags","+faststart",
                  str(video)])
         if video.stat().st_size < 20000:
             raise RuntimeError("Vídeo incompleto")
