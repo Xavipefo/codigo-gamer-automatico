@@ -71,15 +71,15 @@ jobs:
         shell: bash
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          sudo apt-get install -y ffmpeg fonts-dejavu-core espeak-ng
           python -m pip install --disable-pip-version-check -r requirements.txt
 
-      - name: Reutilizar modelo de voz de Piper cuando exista
-        id: cache-piper
+      - name: Recuperar cache de modelo Kokoro y voces españolas
+        id: cache-kokoro
         uses: actions/cache/restore@v4
         with:
           path: voz/
-          key: pixel-feroz-piper-esES-sharvard-medium-v1
+          key: pixel-feroz-kokoro-int8-v1-verified
 
       - name: Comprobar fuentes y Python
         run: |
@@ -104,11 +104,13 @@ jobs:
           FORMATO: ${{ inputs.formato }}
         run: python generar_guion_ia.py --formato "$FORMATO"
 
-      - name: Generar voz, imagenes, MP4 y miniatura
+      - name: Generar voz natural, gráficos dinámicos y vídeo
+        env:
+          PF_CLIPS_JSON: ${{ secrets.PF_CLIPS_JSON }}
         run: python motor_video.py
 
-      - name: Guardar modelo Piper si todavia no estaba en cache
-        if: ${{ steps.cache-piper.outputs.cache-hit != 'true' }}
+      - name: Guardar modelo Kokoro para siguientes vídeos
+        if: ${{ steps.cache-kokoro.outputs.cache-hit != 'true' }}
         uses: actions/cache/save@v4
         with:
           path: voz/
