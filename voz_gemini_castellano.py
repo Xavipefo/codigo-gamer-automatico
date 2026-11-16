@@ -21,23 +21,37 @@ MODEL = "gemini-3.8-flash-tts"
 VOCES = ("Charon", "Achird")
 
 MUESTRA = (
-    "¿Te has fijado en la cantidad de novedades que están llegando "
-    "al mundo de los videojuegos? En Píxel Feroz repasamos GTA seis, "
-    "los próximos lanzamientos y lo que realmente está confirmado. "
-    "Sin rumores absurdos, sin perder el tiempo y con las noticias "
-    "que más te interesan. ¡Suscríbete para no perderte nada!"
-)
-ESTILO = (
-    "Español peninsular de España (es-ES), acento castellano neutro "
-    "de locutor nacido y criado en España. Voz masculina adulta, natural, "
-    "cercana y expresiva. Diccion española con distincion clara de los "
-    "sonidos de 'cena', 'zapato' y 'silla'; nunca acento latinoamericano. "
-    "Estilo de creador de contenido de videojuegos, como una persona "
-    "hablando con su audiencia: ritmo conversacional ligeramente ágil, "
-    "entonación variada y pausas naturales. Nada de voz robótica, "
-    "tono publicitario exagerado o radio solemne."
+    "Ojo a esto, porque puede ser una de las noticias más interesantes "
+    "de los próximos meses. GTA seis sigue dando muchísimo que hablar, "
+    "pero hay una diferencia enorme entre lo que está confirmado "
+    "y lo que simplemente circula por internet. En Píxel Feroz "
+    "te contamos las novedades sin darle vueltas. "
+    "Y si te gustan los videojuegos, suscríbete para estar al día."
 )
 
+# Perfil original de locutor definido a partir del estilo de referencia aportado
+# por el usuario: registro medio-grave, variación melódica real y silencios
+# discretos entre ideas. No se utiliza la voz del audio como identidad clonada.
+ESTILO = (
+    "Locutor masculino original, de unos treinta años, hablando en español "
+    "peninsular de España, es-ES, con acento castellano natural y reconocible. "
+    "Timbre medio-grave, ligeramente cálido y con textura humana, "
+    "nada de barítono artificial o voz de anuncio. "
+    "Distingue naturalmente las consonantes de 'cena' y 'zapato' "
+    "de la 's' de 'silla', sin exagerar la pronunciación. "
+    "Habla como un creador español de videojuegos que comenta una noticia "
+    "con entusiasmo contenido delante de su micrófono: cercano, confiado, "
+    "con un ligero punto de complicidad y mucha naturalidad. "
+    "Ritmo ágil pero conversacional, no acelerado, con pausas breves "
+    "de dos a seis décimas de segundo entre ideas, acentos y respiraciones "
+    "creíbles, y variaciones suaves de tono cuando algo sorprende. "
+    "Sube un poco la energía en el gancho, explica los datos con calma, "
+    "y cierra de forma espontánea. No grites, no susurres, no sobreactúes. "
+    "Evita el ritmo de locutor comercial, la lectura sin emoción, "
+    "las pausas idénticas, la dicción excesivamente perfecta y "
+    "cualquier acento latinoamericano. Voz diferente y original, "
+    "sin imitar a ningún locutor concreto."
+)
 
 def peticion_audio(texto, voz):
     if voz not in VOCES:
