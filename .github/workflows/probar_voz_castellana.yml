@@ -1,0 +1,46 @@
+name: "Píxel Feroz - Probar acento de España (Gemini)"
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  escuchar-espana:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verificar clave de Gemini sin mostrarla
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "::error::Falta GEMINI_API_KEY en Secrets"
+            exit 1
+          fi
+
+      - name: Crear dos muestras con voz de España
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python voz_gemini_castellano.py --voz Charon --salida voces/charon_castellano.wav
+          python voz_gemini_castellano.py --voz Achird --salida voces/achird_castellano.wav
+
+      - name: Adjuntar únicamente audio de prueba (sin vídeos privados)
+        uses: actions/upload-artifact@v4
+        with:
+          name: pixel-feroz-dos-voces-es-ES
+          path: voces/*.wav
+          retention-days: 3
+          if-no-files-found: error
