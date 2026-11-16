@@ -107,9 +107,11 @@ jobs:
           FORMATO: ${{ inputs.formato }}
         run: python generar_guion_ia.py --formato "$FORMATO"
 
-      - name: Generar voz Achird o Charon, gráficos y MP4
+      - name: Generar narración en español, gráficos y MP4
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
           PF_CLIPS_JSON: ${{ secrets.PF_CLIPS_JSON }}
         shell: bash
         run: |
