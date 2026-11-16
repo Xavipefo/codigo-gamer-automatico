@@ -41,10 +41,15 @@ jobs:
         env:
           SUBIR: ${{ inputs.subir_privado }}
           CONFIRMACION: ${{ inputs.confirmacion }}
+          REPO_PRIVADO: ${{ github.event.repository.private }}
         shell: bash
         run: |
           if [ "$SUBIR" = "true" ] && [ "$CONFIRMACION" != "SUBIR_PRIVADO" ]; then
             echo "::error::Debe escribir SUBIR_PRIVADO para permitir subida privada."
+            exit 1
+          fi
+          if [ "$REPO_PRIVADO" = "false" ] && [ "$SUBIR" != "true" ]; then
+            echo "::error::En repositorios públicos no se almacenan MP4 privados en artifacts. Selecciona subida privada a YouTube o ejecuta en un repositorio privado."
             exit 1
           fi
 
@@ -105,6 +110,7 @@ jobs:
         run: python control_calidad.py --formato "$FORMATO"
 
       - name: Guardar video y revision editorial
+        if: ${{ github.event.repository.private }}
         uses: actions/upload-artifact@v4
         with:
           name: pixel-feroz-${{ inputs.formato }}-revision
@@ -139,7 +145,7 @@ jobs:
           git push
 
       - name: Guardar resultado de YouTube
-        if: ${{ inputs.subir_privado && always() }}
+        if: ${{ inputs.subir_privado && always() && github.event.repository.private }}
         uses: actions/upload-artifact@v4
         with:
           name: pixel-feroz-resultado-subida
