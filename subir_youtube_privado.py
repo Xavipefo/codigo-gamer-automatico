@@ -7,6 +7,7 @@ import argparse
 import json
 import os
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -168,31 +169,64 @@ def subir_privado(youtube,plan,titulo,descripcion,mp4,miniatura):
     video_id=respuesta.get("id")
     if not video_id:
         raise RuntimeError("YouTube no devolvió ID de vídeo")
-    print("Vídeo subido:",video_id,flush=True)
+    print("Vídeo recibido por YouTube:", video_id, flush=True)
+    # Registrar el ID inmediatamente antes de otras llamadas externas.
+    # Si la subida ya funcionó, un error de miniatura o verificación no debe
+    # ocultar que puede existir un vídeo privado en el canal.
+    res = {
+        "video_id": video_id,
+        "url": "https://www.youtube.com/watch?v=" + video_id,
+        "estado": "pendiente_verificacion",
+        "privacidad_verificada": None,
+        "tema_id": plan["tema_id"],
+        "formato": plan["formato"],
+        "fecha": datetime.now(timezone.utc).isoformat()
+    }
+    resultado = OUT / "youtube_resultado.json"
+    resultado.write_text(
+        json.dumps(res, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8"
+    )
     try:
         youtube.thumbnails().set(
             videoId=video_id,
-            media_body=MediaFileUpload(str(miniatura),mimetype="image/jpeg")
+            media_body=MediaFileUpload(str(miniatura), mimetype="image/jpeg")
         ).execute()
-        print("Miniatura subida",flush=True)
-    except HttpError as e:
-        # Si la miniatura falla, el MP4 ya existe. NO repetir la subida.
-        print("AVISO miniatura: vídeo subido pero miniatura no configurada:",e,flush=True)
-    detalle=youtube.videos().list(part="status",id=video_id).execute()
-    items=detalle.get("items",[])
-    if not items or items[0].get("status",{}).get("privacyStatus")!="private":
-        raise RuntimeError("No se pudo verificar privacidad PRIVATE; comprobar en YouTube Studio")
-    res={
-        "video_id":video_id,
-        "url":"https://www.youtube.com/watch?v="+video_id,
-        "estado":"subido",
-        "privacidad_verificada":"private",
-        "tema_id":plan["tema_id"],
-        "formato":plan["formato"],
-        "fecha":datetime.now(timezone.utc).isoformat()
-    }
-    (OUT/"youtube_resultado.json").write_text(json.dumps(res,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
-    print("PRIVADO confirmado por YouTube:",res["url"],flush=True)
+        print("Miniatura subida", flush=True)
+    except HttpError as exc:
+        # Miniatura fallida: queda constancia del ID para revisión manual.
+        print("AVISO: revisar miniatura del vídeo", video_id, exc, flush=True)
+
+    verificado = False
+    for intento in range(4):
+        detalle = youtube.videos().list(part="status", id=video_id).execute()
+        items = detalle.get("items", [])
+        if items:
+            privacidad = items[0].get("status", {}).get("privacyStatus")
+            if privacidad == "private":
+                verificado = True
+                break
+            if privacidad in ("public", "unlisted"):
+                raise RuntimeError(
+                    "ALERTA: la privacidad no es privada. Revisar inmediatamente: "
+                    + video_id
+                )
+        if intento < 3:
+            time.sleep(4)
+    if not verificado:
+        raise RuntimeError(
+            "YouTube recibió el vídeo " + video_id
+            + " pero no se confirmó privacidad. Consultar YouTube Studio; "
+            "no repetir la subida sin verificar su existencia."
+        )
+
+    res["estado"] = "subido"
+    res["privacidad_verificada"] = "private"
+    resultado.write_text(
+        json.dumps(res, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8"
+    )
+    print("PRIVADO confirmado por YouTube:", res["url"], flush=True)
     return res
 
 
