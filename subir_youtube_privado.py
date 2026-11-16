@@ -161,7 +161,7 @@ def subir_privado(youtube,plan,titulo,descripcion,mp4,miniatura):
                 "categoryId":"20",
                 "defaultLanguage":"es",
                 "defaultAudioLanguage":"es",
-                "tags":["videojuegos","gaming","GTA VI","Píxel Feroz"]
+                "tags":plan.get("etiquetas", ["videojuegos", "gaming", "Píxel Feroz"])
             },
             "status":{
                 "privacyStatus":"private",
