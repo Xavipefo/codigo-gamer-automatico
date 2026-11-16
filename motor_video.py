@@ -59,7 +59,7 @@ def resumen_visual(escena, formato):
     """Acorta solo el rótulo, no el guion hablado ni las fuentes.
 
     En los largos Gemini lee el texto entero en una petición por bloque.
-    No tendría sentido mostrar 75 palabras simultáneamente en una tarjeta.
+    No tendría sentido mostrar 50 palabras simultáneamente en una tarjeta.
     """
     palabras = escena["texto"].strip().split()
     limite = 22 if formato == "largo" else 30
@@ -178,7 +178,7 @@ def montar(plan, guion):
                 )
             else:
                 imagen_horizontal(
-                    escena, indice, len(escenas),
+                    escena_visible, indice, len(escenas),
                     plan["titulo_propuesto"], imagen
                 )
 
