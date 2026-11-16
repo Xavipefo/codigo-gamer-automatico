@@ -1,6 +1,6 @@
 # Píxel Feroz — sistema independiente de YouTube
 
-**Estado actual:** el código del sistema está preparado, pero faltan configurar las credenciales del canal y validar los renders reales. Ningún flujo tiene programación automática. Todas las subidas están bloqueadas salvo activación manual explícita y son PRIVADAS.
+**Estado actual:** conexión OAuth de Píxel Feroz verificada en GitHub Actions (16-11-2026). Los módulos de producción y subida privada están implementados y revisados estáticamente, pero **el renderizador y la subida real todavía no se han probado de extremo a extremo**. No hay ejecuciones programadas ni publicaciones públicas automáticas.
 
 ## Arquitectura
 
@@ -26,7 +26,7 @@
 
 No hay ningún cron ni publicación pública. El código de los canales Dato Nebular y Alerta Binaria no ha sido modificado.
 
-## Configuración del canal de YouTube (pendiente)
+## Configuración del canal de YouTube (OAuth ya configurado)
 
 1. Crear o identificar el canal independiente Píxel Feroz y obtener el ID exacto en YouTube Studio → Configuración → Canal → Configuración avanzada.
 2. Crear un proyecto de Google Cloud para Píxel Feroz, activar **YouTube Data API v3**, configurar el consentimiento OAuth y crear un cliente OAuth **Desktop**. Descargar su archivo de cliente al ordenador; no subirlo a GitHub.
@@ -34,7 +34,7 @@ No hay ningún cron ni publicación pública. El código de los canales Dato Neb
 4. Autorizar el canal con: python autorizar_youtube_local.py --client-secrets RUTA_DEL_CLIENTE_OAUTH.json
 5. Copiar LOCALMENTE el contenido íntegro del archivo youtube_oauth_privado.json a GitHub → Settings → Secrets and variables → Actions → secret **YOUTUBE_OAUTH_JSON**. Nunca compartir ni subir el archivo.
 6. El ID público de Píxel Feroz está guardado en `config.json` (`UCgT82gfTjIw2o-CtmQgSS3w`). No es necesario crear un secreto para este identificador. El sistema compara la identidad OAuth contra ese ID antes de subir.
-7. Primero generar y revisar vídeo con subir_privado=false. Después, si se ha comprobado calidad y fuentes, ejecutar el flujo manual con subir_privado=true y confirmacion=SUBIR_PRIVADO. En YouTube quedará **privado** para revisión final.
+7. La comprobación `Pixel Feroz - Verificar conexion YouTube` terminó correctamente el 16-11-2026: el token corresponde al ID declarado. Las credenciales ya están guardadas en GitHub Secrets. Primero generar y revisar vídeo con subir_privado=false. Después, si se ha comprobado calidad y fuentes, ejecutar el flujo manual con subir_privado=true y confirmacion=SUBIR_PRIVADO. En YouTube quedará **privado** para revisión final.
 
 Los proyectos de YouTube API no verificados pueden estar limitados a subidas privadas. Un OAuth en modo Testing puede necesitar renovación del consentimiento. Consultar políticas actuales de Google Cloud.
 
@@ -64,6 +64,19 @@ Instalar FFmpeg/ffprobe y las fuentes DejaVu. Después:
 
 La primera producción descargará un modelo Piper de voz española. Los MP4, planes, descripciones y miniaturas se crean en salida/. No se han generado vídeos durante esta fase de preparación.
 
+## Revisión técnica del 16-11-2026
+
+- `motor_video.py`: el audio y la imagen de cada escena se montan juntos en un fragmento MP4, con un breve silencio final; después se concatenan fragmentos homogéneos. Evita la estimación imprecisa de duraciones por número de palabras.
+- `control_calidad.py`: comprueba pistas H264/AAC, resolución, diferencias de duración audio-vídeo, miniatura JPEG, datos editoriales y huella SHA-256 del guion.
+- `subir_youtube_privado.py`: antes de `videos.insert`, revisa la lista de subidas del propio canal buscando `PF-ID`; falla de forma segura si no puede comprobar los duplicados. Tras insertar, escribe inmediatamente el ID y verifica privacidad privada con reintentos.
+- `preparar_contenido.py`: ya no se rompe si hay temas históricos caducados y quedan otros vigentes.
+- `generar_short.py` y el workflow de producción: reutilizan el archivo pequeño de configuración de Piper y el modelo de voz por caché de GitHub Actions, guardándola antes de subir.
+- `test_subida_segura.py` y los test editoriales incluyen comprobaciones de regresión con respuestas de YouTube simuladas. **Añadidos al repositorio, sin ejecutar durante esta revisión.**
+
+**Importante:** la búsqueda de duplicados recorre hasta 600 vídeos recientes. Si el canal supera ese límite o YouTube no responde, la subida se bloquea para revisión manual. Ningún sistema elimina por completo los duplicados tras un fallo de red no confirmado.
+
+La voz y las tarjetas son un primer motor audiovisual; su calidad estética y su potencial de monetización se deben evaluar antes de publicar material público. El sistema **no inventa nuevos hechos ni guiones largos automáticamente**: exige temas confirmados por un editor.
+
 ## Seguridad y limitaciones
 
 - Todas las subidas del proyecto son PRIVADAS y exigen una confirmación manual explícita; no hay autopublicación pública.
@@ -71,7 +84,7 @@ La primera producción descargará un modelo Piper de voz española. Los MP4, pl
 - La comprobación de enlaces HTTPS y dominios autorizados **no** acredita que cada afirmación esté respaldada por la página: revisión humana obligatoria.
 - Antes de repetir una subida fallida, consultar YouTube Studio. Si YouTube recibió un vídeo y falló el registro posterior, una repetición podría duplicarlo.
 - Los repositorios privados comparten los minutos de GitHub Actions de la cuenta. Separar repositorios NO separa esa cuota. No hay ejecución programada.
-- Los nuevos módulos (render/audio/YouTube) están escritos pero todavía NO ejecutados ni validados; faltan pruebas de extremo a extremo y configurar OAuth.
+- OAuth ya está validado. Los nuevos módulos (render/audio/subida de MP4) están escritos pero todavía NO ejecutados ni validados de extremo a extremo; falta revisar los MP4 y la primera subida privada.
 
 ## Fuente principal
 
