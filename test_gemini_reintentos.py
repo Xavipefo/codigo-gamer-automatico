@@ -59,6 +59,55 @@ class TestReintentosGemini(unittest.TestCase):
             self.assertEqual(abrir.call_count, 4)
             self.assertEqual(dormir.call_count, 3)
 
+    def test_timeout_tts_se_recupera(self):
+        respuesta = io.BytesIO(b'{"voz":"Charon","ok":true}')
+        with patch(
+            "gemini_reintentos.urllib.request.urlopen",
+            side_effect=[TimeoutError("timeout simulado"), respuesta],
+        ) as abrir, patch(
+            "gemini_reintentos.time.sleep"
+        ) as dormir, patch(
+            "gemini_reintentos.random.uniform", return_value=0
+        ):
+            self.assertEqual(
+                solicitar_json(
+                    "https://test.example",
+                    timeout=40,
+                    max_intentos=3,
+                    contexto="Narración Charon",
+                ),
+                {"voz": "Charon", "ok": True},
+            )
+            self.assertEqual(abrir.call_count, 2)
+            dormir.assert_called_once_with(2.0)
+
+    def test_urllib_error_temporal_se_recupera(self):
+        respuesta = io.BytesIO(b'{"ok":true}')
+        with patch(
+            "gemini_reintentos.urllib.request.urlopen",
+            side_effect=[urllib.error.URLError("fallo temporal"), respuesta],
+        ), patch("gemini_reintentos.time.sleep"), patch(
+            "gemini_reintentos.random.uniform", return_value=0
+        ):
+            self.assertEqual(
+                solicitar_json("https://test.example", max_intentos=2),
+                {"ok": True},
+            )
+
+    def test_timeout_persistente_se_detiene(self):
+        with patch(
+            "gemini_reintentos.urllib.request.urlopen",
+            side_effect=TimeoutError("timeout simulado"),
+        ) as abrir, patch(
+            "gemini_reintentos.time.sleep"
+        ) as dormir, patch(
+            "gemini_reintentos.random.uniform", return_value=0
+        ):
+            with self.assertRaisesRegex(RuntimeError, "conexión agotada"):
+                solicitar_json("https://test.example", max_intentos=3)
+            self.assertEqual(abrir.call_count, 3)
+            self.assertEqual(dormir.call_count, 2)
+
     def test_http429_hace_reintentos_limitados(self):
         respuesta = io.BytesIO(b'{"ok":true}')
         with patch(
