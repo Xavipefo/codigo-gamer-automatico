@@ -112,7 +112,7 @@ class TestRepartoNarradores(unittest.TestCase):
             "formato": "largo",
             "escenas": [
                 {"tipo": "hecho_verificado", "texto": " ".join(
-                    [f"palabra{i}_{n}" for n in range(cantidad)]
+                    [f"p{n}" for n in range(cantidad)]
                 )}
                 for i, cantidad in enumerate(cantidades)
             ],
