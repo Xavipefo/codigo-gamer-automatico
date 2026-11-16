@@ -11,6 +11,7 @@ from datetime import date
 from pathlib import Path
 
 from preparar_contenido import preparar, validar_tema, construir_descripcion, CTA_SUSCRIPCION
+from voz_produccion import elegir_voz
 
 BASE = Path(__file__).resolve().parent
 TEMAS = BASE / "temas_verificados.json"
@@ -108,6 +109,8 @@ def preparar_plan(tema, formato):
         plan["requiere_guion_ia"] = False
 
     plan["formato"] = formato
+    plan["narrador_voz"] = elegir_voz(formato)
+    plan["narrador_sintetico"] = True
     plan["tema_id"] = tema["id"]
     plan["titulo_propuesto"] = tema["titulo"][:95]
     plan["texto_miniatura"] = tema.get("texto_miniatura", tema["titulo"])[:90]
@@ -134,6 +137,7 @@ def main():
     )
     print("Siguiente tema por orden:", t["id"])
     print("Formato:", args.formato)
+    print("Narrador de este vídeo:", plan["narrador_voz"])
     print("Palabras iniciales:", len(texto.split()))
     print("IA necesaria para largo:", plan["requiere_guion_ia"])
     print("Subida: exclusivamente privada, pendiente de revisión posterior")
