@@ -129,8 +129,17 @@ def tarjeta_escena(escena, indice, total, titulo, destino):
 
 
 def descargar(si_falta, url):
-    if si_falta.exists() and si_falta.stat().st_size > 5000:
-        return
+    # Los archivos .json del modelo son pequeños; 5 kB no es el umbral correcto.
+    if si_falta.is_file():
+        if si_falta.suffix == ".json":
+            try:
+                datos = json.loads(si_falta.read_text(encoding="utf-8"))
+                if isinstance(datos, dict) and datos:
+                    return
+            except (OSError, ValueError):
+                pass
+        elif si_falta.stat().st_size > 1_000_000:
+            return
     si_falta.parent.mkdir(parents=True, exist_ok=True)
     temporal = si_falta.with_name(si_falta.name + ".part")
     print("Descargando voz:", si_falta.name, flush=True)
