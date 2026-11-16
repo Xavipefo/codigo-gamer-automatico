@@ -90,7 +90,7 @@ def tarjeta_escena(escena, indice, total, titulo, destino):
                 dibujo.rectangle((x+7, yy, x+12, yy+8), fill=(35, 93, 105))
     dibujo.polygon([(0, 1150), (ANCHO, 1080), (ANCHO, ALTO), (0, ALTO)], fill=(10, 20, 36))
     dibujo.rounded_rectangle((40, 45, ANCHO-40, 112), radius=22, fill=(15, 39, 61))
-    dibujo.text((62, 58), "CÓDIGO GAMER", font=fuente(28, True), fill=ACENTO)
+    dibujo.text((62, 58), "PÍXEL FEROZ", font=fuente(28, True), fill=ACENTO)
     dibujo.line((48, 136, ANCHO-48, 136), fill=ROSA, width=5)
 
     etiqueta = {
@@ -189,7 +189,7 @@ def producir_video(plan, wav, segundos):
         clips.append(clip)
     lista = TRABAJO / "lista.txt"
     lista.write_text("".join(f"file '{clip.name}'\n" for clip in clips), encoding="utf-8")
-    video = SALIDA / "codigo_gamer_short.mp4"
+    video = SALIDA / "pixel_feroz_short.mp4"
     ejecutar([
         "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
         "-f", "concat", "-safe", "0", "-i", str(lista),
