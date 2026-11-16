@@ -6,10 +6,17 @@ from pathlib import Path
 from unittest.mock import patch
 
 from motor_video import adaptar_escenas, resumen_visual
-from voz_produccion import DEFAULT, NarradorGemini, elegir_voz, estimar_consumo
+from voz_produccion import DEFAULT, NarradorGemini, elegir_voz, estimar_consumo, preparar_lectura
 
 
 class TestRepartoNarradores(unittest.TestCase):
+    def test_pronunciacion_gaming_espanol(self):
+        ejemplo = preparar_lectura("GTA VI corre en PS5 a 30 FPS y usa 212 GB")
+        self.assertIn("GTA seis", ejemplo)
+        self.assertIn("PlayStation cinco", ejemplo)
+        self.assertIn("30 fotogramas por segundo", ejemplo)
+        self.assertIn("212 gigabytes", ejemplo)
+
     def test_achird_en_shorts(self):
         self.assertEqual(elegir_voz("short"), "Achird")
         self.assertEqual(DEFAULT["short"], "Achird")
