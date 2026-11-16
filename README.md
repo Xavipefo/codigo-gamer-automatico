@@ -45,3 +45,11 @@ No se han copiado tokens, secretos ni automatizaciones de Dato Nebular ni Alerta
 - https://www.rockstargames.com/VI
 - https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026
 - https://www.rockstargames.com/newswire/article/5171972o3ak5oa/pre-order-grand-theft-auto-vi-on-june-25
+
+## Prototipo MP4 (experimental)
+
+Se ha añadido `generar_short.py` y el workflow manual **Codigo Gamer - Renderizar Short privado local**. Se puede ejecutar desde Actions > Run workflow. Genera un MP4 vertical de 720×1280 con tarjetas gráficas originales (sin gameplay de terceros) y una voz sintética Piper en español. El archivo se entrega como artefacto de GitHub; **no se sube a YouTube ni se publica**.
+
+El workflow descarga dependencias y el modelo de voz y puede consumir minutos de Actions de este repositorio privado. La duración exacta y los resultados audiovisuales **aún no se han probado mediante una ejecución de render**. Se requiere revisión humana antes de considerar el material apto para publicación; las tarjetas son un primer prototipo visual, no la versión definitiva de gaming.
+
+Los audios, escenas y referencias deben pasar la revisión editorial y de derechos de uso. El uso de voz sintética deberá cumplir las condiciones de su modelo y de la plataforma de distribución.
