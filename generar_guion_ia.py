@@ -122,8 +122,8 @@ def construir_prompt(tema, formato):
         "no nuevas afirmaciones):\n"
         + "\n".join("- " + t for t in esquema)
         + "\nProducción larga de alrededor de 10 a 13 minutos de voz."
-        " Redacta 8 a 11 escenas narrativas, de 125 a 165 palabras "
-        "por escena; total 1150 a 1750 palabras. "
+        " Redacta 9 a 11 escenas narrativas, de 140 a 170 palabras "
+        "por escena; total 1250 a 1850 palabras. "
         "Estructura: gran pregunta inicial, contexto, desarrollo por "
         "temas, delimitación de lo desconocido y conclusión con "
         "la llamada a suscribirse. Si la información oficial es "
@@ -138,7 +138,7 @@ def normalizar_escenas(datos, tema, formato):
         isinstance(x, str) and x.strip() for x in datos
     ):
         raise ValueError("Escenas no válidas")
-    minesc, maxesc = (5, 7) if formato == "short" else (8, 11)
+    minesc, maxesc = (5, 7) if formato == "short" else (9, 11)
     if not minesc <= len(datos) <= maxesc:
         raise ValueError("Número de escenas narradas fuera de rango")
     escenas = [texto_plano(s) for s in datos]
