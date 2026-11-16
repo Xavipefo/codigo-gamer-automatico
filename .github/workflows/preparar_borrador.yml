@@ -1,4 +1,4 @@
-name: Codigo Gamer - Borrador manual
+name: Píxel Feroz - Borrador manual
 
 on:
   workflow_dispatch:
@@ -12,7 +12,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: codigo-gamer-editorial
+  group: pixel-feroz-editorial
   cancel-in-progress: false
 
 jobs:
@@ -46,7 +46,7 @@ jobs:
       - name: Guardar borrador
         uses: actions/upload-artifact@v4
         with:
-          name: codigo-gamer-borrador
+          name: pixel-feroz-borrador
           path: salida/
           retention-days: 7
           if-no-files-found: error
