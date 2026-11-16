@@ -83,7 +83,10 @@ def preparar_plan(t, formato):
         if any(not isinstance(s, str) or len(s.split()) < 20 for s in escenas):
             raise ValueError("Cada escena larga debe tener al menos 20 palabras")
         # Se narra el texto de las escenas, en el mismo orden que lo visual.
-        texto = " ".join(s.strip() for s in escenas)
+        texto_escenas = " ".join(s.strip() for s in escenas)
+        if texto_escenas != texto:
+            raise ValueError("guion_largo debe coincidir exactamente con las escenas narradas")
+        texto = texto_escenas
         if len(texto.split()) < 650:
             raise ValueError("El guion narrado de largo requiere 650 palabras")
         plan["escenas"] = [{"tipo":"hecho_verificado", "texto":s} for s in escenas]
