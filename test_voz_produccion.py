@@ -7,6 +7,7 @@ from unittest.mock import patch
 
 from motor_video import adaptar_escenas, resumen_visual
 from voz_produccion import DEFAULT, NarradorGemini, elegir_voz, estimar_consumo, preparar_lectura
+from voz_gemini_castellano import AudioIncompletoError
 
 
 class TestRepartoNarradores(unittest.TestCase):
@@ -49,6 +50,36 @@ class TestRepartoNarradores(unittest.TestCase):
                     self.assertEqual(a + b, 12)
                     self.assertEqual(call.call_count, 2)
                     self.assertTrue(all(x.args[1] == "Achird" for x in call.call_args_list))
+
+    def test_charon_regenera_wav_incompleto(self):
+        with patch.dict(os.environ, {"GEMINI_API_KEY": "clave-falsa"}):
+            narrador = NarradorGemini(
+                "largo", {"formato": "largo", "narrador_voz": "Charon"}
+            )
+            texto = " ".join(["Este"] * 50)
+            with patch(
+                "voz_produccion.sintetizar",
+                side_effect=[AudioIncompletoError("WAV breve"), 15.0]
+            ) as llamada:
+                segundos = narrador.narrar(texto, Path("prueba.wav"))
+                self.assertEqual(segundos, 15.0)
+                self.assertEqual(narrador.peticiones, 2)
+                self.assertEqual(llamada.call_count, 2)
+                self.assertEqual(llamada.call_args.args[1], "Charon")
+
+    def test_no_permite_publicar_con_charon_incompleto(self):
+        with patch.dict(os.environ, {"GEMINI_API_KEY": "clave-falsa"}):
+            narrador = NarradorGemini(
+                "largo", {"formato": "largo", "narrador_voz": "Charon"}
+            )
+            with patch(
+                "voz_produccion.sintetizar",
+                side_effect=AudioIncompletoError("Audio truncado")
+            ) as llamada:
+                with self.assertRaisesRegex(RuntimeError, "No se subirá"):
+                    narrador.narrar(" ".join(["palabra"] * 50), Path("prueba.wav"))
+                self.assertEqual(llamada.call_count, 3)
+                self.assertEqual(narrador.peticiones, 3)
 
     def test_numero_de_peticiones_limitado(self):
         escenas = [{"tipo": "contexto", "texto": "Esta es una escena de prueba completa."}]*46
