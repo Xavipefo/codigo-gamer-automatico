@@ -25,3 +25,6 @@ __pycache__/
 .venv/
 venv/
 .DS_Store
+# Material audiovisual autorizado temporal; nunca en repositorio público
+media/
+*.part
