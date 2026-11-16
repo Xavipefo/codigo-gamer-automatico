@@ -16,6 +16,8 @@ import urllib.request
 import wave
 from pathlib import Path
 
+from gemini_reintentos import solicitar_json
+
 ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/interactions"
 MODEL = "gemini-3.8-flash-tts"
 VOCES = ("Charon", "Achird")
@@ -162,13 +164,16 @@ def sintetizar(texto, voz, destino, clave=None):
         },
     )
     try:
-        with urllib.request.urlopen(req, timeout=125) as response:
-            data = json.load(response)
+        data = solicitar_json(
+            req, timeout=125, max_intentos=4,
+            contexto="Narración " + voz
+        )
     except urllib.error.HTTPError as error:
         # No revelar cuerpo de error: podría mostrar datos de la solicitud.
         raise RuntimeError(
             "Gemini TTS respondió HTTP "
-            + str(error.code) + ". Comprueba acceso al modelo y cuota."
+            + str(error.code) + " tras los intentos permitidos. "
+            "No se subirá el vídeo si la narración está incompleta."
         ) from None
     except (urllib.error.URLError, TimeoutError):
         raise RuntimeError("No se recibió audio de Gemini TTS") from None
