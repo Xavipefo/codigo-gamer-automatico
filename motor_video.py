@@ -8,16 +8,19 @@ import argparse
 import json
 import math
 import re
+import sys
 import shutil
 import subprocess
 import tempfile
 import wave
 from pathlib import Path
+from contextlib import nullcontext
 
 from PIL import Image, ImageDraw, ImageFont
 
 from generar_short import tarjeta_escena, fuente, partir_lineas
 from voz_produccion import NarradorGemini, estimar_consumo
+from voz_gemini_castellano import TTSRateLimitError, TTSDailyQuotaError
 from video_material import descargar_clip, overlay_clips
 
 BASE = Path(__file__).resolve().parent
@@ -71,9 +74,9 @@ def adaptar_escenas(plan):
     formato = plan["formato"]
     if formato not in ("short", "largo"):
         raise ValueError("Formato desconocido")
-    # El TTS cobra por petición; en largos se usan bloques de ~50 palabras
-    # y mostramos un resumen visual, sin alterar lo que narra la voz.
-    limite = 50 if formato == "largo" else 30
+    # Menos peticiones con bloques equilibrados de hasta 100 palabras.
+    # Antes un reportaje requería ~40 peticiones y alcanzaba HTTP 429.
+    limite = 100 if formato == "largo" else 30
     salida = []
     for esc in plan["escenas"]:
         for trozo in fragmentar(esc["texto"], limite):
@@ -89,7 +92,7 @@ def resumen_visual(escena, formato):
     """Acorta solo el rótulo, no el guion hablado ni las fuentes.
 
     En los largos Gemini lee el texto entero en una petición por bloque.
-    No tendría sentido mostrar 50 palabras simultáneamente en una tarjeta.
+    No tendría sentido mostrar 100 palabras simultáneamente en una tarjeta.
     """
     palabras = escena["texto"].strip().split()
     limite = 22 if formato == "largo" else 30
@@ -154,6 +157,31 @@ def crear_miniatura(titulo, formato, ruta):
 
 
 
+def validar_clip_checkpoint(clip, duracion, formato):
+    """Evita reutilizar archivos truncados cuando una producción se reanuda."""
+    try:
+        salida = subprocess.run(
+            ["ffprobe", "-v", "error", "-show_streams", "-show_format",
+             "-of", "json", str(clip)],
+            check=True, capture_output=True, text=True, timeout=25,
+        )
+        info = json.loads(salida.stdout)
+        streams = info.get("streams", [])
+        video = next((x for x in streams if x.get("codec_type") == "video"), {})
+        audio = next((x for x in streams if x.get("codec_type") == "audio"), {})
+        ancho, alto = RES_SHORT if formato == "short" else RES_WIDE
+        duracion_real = float(info.get("format", {}).get("duration", 0))
+        return (
+            clip.stat().st_size > 5000
+            and video.get("codec_name") == "h264"
+            and audio.get("codec_name") == "aac"
+            and (video.get("width"), video.get("height")) == (ancho, alto)
+            and abs(duracion_real - duracion) <= 0.5
+        )
+    except (OSError, ValueError, KeyError, subprocess.SubprocessError):
+        return False
+
+
 def montar(plan, guion):
     """Crea escenas MP4 sincronizadas individualmente y las concatena.
 
@@ -180,8 +208,21 @@ def montar(plan, guion):
     SALIDA.mkdir(parents=True, exist_ok=True)
     fps = 20
     duracion_total = 0.0
-    with tempfile.TemporaryDirectory(prefix="pixel_feroz_render_") as temporal:
+    # Checkpoint SOLO en el disco del runner de esta ejecución de GitHub.
+    # No se publica como artifact ni se sincroniza con repositorios públicos.
+    if formato == "largo":
+        huella = plan.get("huella_guion", "")
+        if not re.fullmatch(r"[0-9a-f]{64}", huella):
+            raise ValueError("Huella del guion largo inválida")
+        carpeta = (Path(tempfile.gettempdir()) / (
+            "pixel_feroz_render_" + huella[:20] + "_" + narrador.voz.lower()
+        ))
+        contexto = nullcontext(str(carpeta))
+    else:
+        contexto = tempfile.TemporaryDirectory(prefix="pixel_feroz_render_")
+    with contexto as temporal:
         directorio = Path(temporal)
+        directorio.mkdir(parents=True, exist_ok=True)
         clip_de_juego = descargar_clip(plan["tema_id"], directorio / "gameplay.mp4")
         clips = []
         for indice, escena in enumerate(escenas):
@@ -213,6 +254,15 @@ def montar(plan, guion):
                 )
 
             clip = directorio / f"clip_{indice:03}.mp4"
+            if clip.is_file() and validar_clip_checkpoint(
+                clip, duracion_escena, formato
+            ):
+                print(
+                    "Reutilizando escena MP4 validada:", clip.name, flush=True
+                )
+                clips.append(clip)
+                duracion_total += duracion_escena
+                continue
             audio_filtro = (
                 "aresample=48000,apad,"
                 f"atrim=duration={duracion_escena:.6f},"
@@ -296,10 +346,13 @@ def montar(plan, guion):
         print("Motor de voz natural: Gemini 3.8 Flash TTS", flush=True)
         print("Narrador del vídeo:", narrador.voz, flush=True)
         print("Peticiones TTS realizadas:", narrador.peticiones, flush=True)
+        print("Fragmentos WAV recuperados:", narrador.recuperados, flush=True)
         print("Escenas:", len(escenas),
               "| Duración planificada:", round(duracion_total, 2),
               "segundos", flush=True)
         print("La publicación requiere autorización y revisión humana.", flush=True)
+        if formato == "largo" and directorio.is_dir():
+            shutil.rmtree(directorio)
 
 
 def main():
@@ -309,8 +362,16 @@ def main():
     args=p.parse_args()
     plan=json.loads(args.plan.read_text(encoding="utf-8"))
     guion=args.guion.read_text(encoding="utf-8").strip()
-    montar(plan,guion)
+    try:
+        montar(plan, guion)
+    except TTSDailyQuotaError as exc:
+        print("::error::" + str(exc) + " | NO SE HA SUBIDO", flush=True)
+        return 78
+    except TTSRateLimitError as exc:
+        print("::warning::" + str(exc) + " | NO SE HA SUBIDO", flush=True)
+        return 75
+    return 0
 
 
 if __name__=="__main__":
-    main()
+    sys.exit(main())
