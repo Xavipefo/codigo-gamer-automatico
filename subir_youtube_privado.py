@@ -48,9 +48,13 @@ def cliente():
 
 
 def verificar_identidad(youtube):
-    esperado=os.getenv("YOUTUBE_CHANNEL_ID","").strip()
+    configuracion=json.loads((BASE/"config.json").read_text(encoding="utf-8"))
+    esperado=configuracion.get("youtube_channel_id","").strip()
+    configurado=os.getenv("YOUTUBE_CHANNEL_ID","").strip()
     if not esperado:
-        raise RuntimeError("Falta YOUTUBE_CHANNEL_ID")
+        raise RuntimeError("Falta youtube_channel_id en config.json")
+    if configurado and configurado!=esperado:
+        raise RuntimeError("El ID configurado en el entorno no coincide con config.json")
     respuesta=youtube.channels().list(part="id,snippet",mine=True).execute()
     canales=respuesta.get("items",[])
     if len(canales)!=1:
