@@ -33,7 +33,7 @@ No hay ningún cron ni publicación pública. El código de los canales Dato Neb
 3. En el ordenador, con Python instalado y una copia local del repositorio, instalar dependencias con el comando: python -m pip install -r requirements.txt
 4. Autorizar el canal con: python autorizar_youtube_local.py --client-secrets RUTA_DEL_CLIENTE_OAUTH.json
 5. Copiar LOCALMENTE el contenido íntegro del archivo youtube_oauth_privado.json a GitHub → Settings → Secrets and variables → Actions → secret **YOUTUBE_OAUTH_JSON**. Nunca compartir ni subir el archivo.
-6. Crear un segundo secret **YOUTUBE_CHANNEL_ID** con el ID exacto del nuevo canal. El sistema comprueba que OAuth corresponde a ese canal antes de subir.
+6. El ID público de Píxel Feroz está guardado en `config.json` (`UCgT82gfTjIw2o-CtmQgSS3w`). No es necesario crear un secreto para este identificador. El sistema compara la identidad OAuth contra ese ID antes de subir.
 7. Primero generar y revisar vídeo con subir_privado=false. Después, si se ha comprobado calidad y fuentes, ejecutar el flujo manual con subir_privado=true y confirmacion=SUBIR_PRIVADO. En YouTube quedará **privado** para revisión final.
 
 Los proyectos de YouTube API no verificados pueden estar limitados a subidas privadas. Un OAuth en modo Testing puede necesitar renovación del consentimiento. Consultar políticas actuales de Google Cloud.
