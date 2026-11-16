@@ -16,7 +16,7 @@ import urllib.request
 import wave
 from pathlib import Path
 
-from gemini_reintentos import solicitar_json
+from gemini_reintentos import solicitar_json, GeminiQuotaError, GeminiDailyQuotaError
 
 ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/interactions"
 MODEL = "gemini-3.8-flash-tts"
@@ -149,6 +149,14 @@ def extraer_audio(respuesta):
     )
 
 
+class TTSRateLimitError(RuntimeError):
+    """No hay cuota temporal para continuar; la producción es recuperable."""
+
+
+class TTSDailyQuotaError(TTSRateLimitError):
+    """Google ha indicado un límite diario de uso de TTS."""
+
+
 class AudioIncompletoError(RuntimeError):
     """La API respondió con WAV, pero no contiene narración utilizable."""
 
@@ -172,6 +180,10 @@ def sintetizar(texto, voz, destino, clave=None):
             req, timeout=125, max_intentos=4,
             contexto="Narración " + voz
         )
+    except GeminiDailyQuotaError as error:
+        raise TTSDailyQuotaError(str(error)) from None
+    except GeminiQuotaError as error:
+        raise TTSRateLimitError(str(error)) from None
     except urllib.error.HTTPError as error:
         # No revelar cuerpo de error: podría mostrar datos de la solicitud.
         raise RuntimeError(
