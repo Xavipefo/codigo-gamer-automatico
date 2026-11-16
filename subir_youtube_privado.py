@@ -16,6 +16,7 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaFileUpload
+from metadatos_youtube import es_duplicado, normalizar_etiquetas
 
 BASE = Path(__file__).resolve().parent
 OUT = BASE/"salida"
@@ -112,8 +113,6 @@ def rechazar_subida_duplicada(youtube, tema_id, formato='short'):
         raise RuntimeError("No se pudo identificar la lista de subidas")
 
     pagina = None
-    marker = "Identificador editorial: PF-ID:" + tema_id
-    marcador_formato = "Formato editorial: PF-FORMATO:" + formato
     for numero in range(12):
         params = dict(part="contentDetails", playlistId=uploads, maxResults=50)
         if pagina:
@@ -127,16 +126,7 @@ def rechazar_subida_duplicada(youtube, tema_id, formato='short'):
                 part="snippet,status", id=",".join(ids)
             ).execute()
             for video in videos.get("items", []):
-                description = video.get("snippet", {}).get("description", "")
-                lineas = description.splitlines()
-                coincide = marker in lineas and (
-                    marcador_formato in lineas
-                    or (formato == "short"
-                        and not any(
-                            linea.startswith("Formato editorial: PF-FORMATO:")
-                            for linea in lineas
-                        ))
-                )
+                coincide = es_duplicado(video.get("snippet", {}), tema_id, formato)
                 if coincide:
                     video_id = video.get("id", "desconocido")
                     raise RuntimeError(
@@ -161,7 +151,10 @@ def subir_privado(youtube,plan,titulo,descripcion,mp4,miniatura):
                 "categoryId":"20",
                 "defaultLanguage":"es",
                 "defaultAudioLanguage":"es",
-                "tags":plan.get("etiquetas", ["videojuegos", "gaming", "Píxel Feroz"])
+                "tags":normalizar_etiquetas(
+                    plan.get("etiquetas", ["videojuegos", "gaming", "Píxel Feroz"]),
+                    plan["tema_id"], plan["formato"]
+                )
             },
             "status":{
                 "privacyStatus":"private",
