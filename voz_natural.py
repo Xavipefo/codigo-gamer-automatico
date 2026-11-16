@@ -127,18 +127,22 @@ def main():
     from argparse import ArgumentParser
     parser = ArgumentParser()
     parser.add_argument("--probar", action="store_true")
+    parser.add_argument("--voz", default="em_alex", choices=sorted(VOCES))
+    parser.add_argument("--salida", type=Path, default=None)
     args = parser.parse_args()
     if not args.probar:
         parser.error("Solo se permite --probar; el montaje llama a NarradorKokoro")
-    narrador = NarradorKokoro()
+    narrador = NarradorKokoro(voz=args.voz)
     with tempfile.TemporaryDirectory(prefix="pf_voz_") as carpeta:
-        ruta = Path(carpeta) / "prueba.wav"
+        ruta = args.salida or Path(carpeta) / "prueba.wav"
         segundos = narrador.narrar(
-            "Píxel Feroz. ¿Te apasionan los videojuegos? "
-            "Suscríbete para enterarte de todas las novedades.",
+            "¡Atención, amantes de los videojuegos! "
+            "Píxel Feroz te cuenta las novedades de GTA seis y mucho más. "
+            "Suscríbete para estar al día.",
             ruta,
         )
         print("VOZ KOKORO OK, segundos:", round(segundos, 2))
+        print("Voz:", args.voz)
         print("Prueba sin vídeo ni subida a YouTube.")
 
 
