@@ -57,7 +57,7 @@ def verificar_identidad(youtube):
         raise RuntimeError("OAuth no devolvió exactamente un canal")
     canal=canales[0]
     if canal["id"]!=esperado:
-        raise RuntimeError("CANAL INCORRECTO: token de YouTube no corresponde a Código Gamer")
+        raise RuntimeError("CANAL INCORRECTO: token de YouTube no corresponde a Píxel Feroz")
     print("Canal autorizado:",canal["snippet"].get("title"),canal["id"])
 
 
@@ -77,7 +77,7 @@ def comprobar_archivos(formato):
     desc=(OUT/"descripcion.txt").read_text(encoding="utf-8").strip()
     if not desc or "https://" not in desc:
         raise ValueError("Descripción sin fuentes")
-    archivo=OUT/("codigo_gamer_short.mp4" if formato=="short" else "codigo_gamer_largo.mp4")
+    archivo=OUT/("pixel_feroz_short.mp4" if formato=="short" else "pixel_feroz_largo.mp4")
     if not archivo.is_file() or archivo.stat().st_size<20000:
         raise ValueError("Falta MP4 o está vacío")
     miniatura=OUT/"miniatura.jpg"
@@ -98,7 +98,7 @@ def subir_privado(youtube,plan,titulo,descripcion,mp4,miniatura):
                 "categoryId":"20",
                 "defaultLanguage":"es",
                 "defaultAudioLanguage":"es",
-                "tags":["videojuegos","gaming","GTA VI","Código Gamer"]
+                "tags":["videojuegos","gaming","GTA VI","Píxel Feroz"]
             },
             "status":{
                 "privacyStatus":"private",
@@ -148,8 +148,8 @@ def main():
     p=argparse.ArgumentParser()
     p.add_argument("--formato",choices=("short","largo"),required=True)
     args=p.parse_args()
-    if os.getenv("CG_SUBIR_PRIVADO")!="SI":
-        raise RuntimeError("Subida bloqueada: CG_SUBIR_PRIVADO debe ser SI")
+    if os.getenv("PF_SUBIR_PRIVADO")!="SI":
+        raise RuntimeError("Subida bloqueada: PF_SUBIR_PRIVADO debe ser SI")
     plan,titulo,descripcion,mp4,miniatura=comprobar_archivos(args.formato)
     # Un fallo posterior a la subida no debe provocar reintentos automáticos.
     if (OUT/"youtube_resultado.json").exists():
