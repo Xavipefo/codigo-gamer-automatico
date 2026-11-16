@@ -91,7 +91,7 @@ class NarradorGemini:
         self.formato = formato
         self.voz = elegir_voz(formato, plan)
         self.peticiones = 0
-        self.max_peticiones = 12 if formato == "short" else 45
+        self.max_peticiones = 24 if formato == "short" else 90
         self.segundos = 0.0
         print(
             "NARRACIÓN: Gemini 3.8 Flash TTS | idioma es-ES |",
@@ -101,9 +101,26 @@ class NarradorGemini:
     def narrar(self, texto, ruta):
         if self.peticiones >= self.max_peticiones:
             raise RuntimeError("Máximo de peticiones TTS por vídeo agotado")
-        # Una llamada de voz por escena para mantener el audio sincronizado.
-        segundos = sintetizar(preparar_lectura(texto), self.voz, ruta)
-        self.peticiones += 1
+        # Cada escena se narra con una sola voz, comprobando que la API no
+        # haya devuelto un audio truncado. En la prueba larga anterior,
+        # un fragmento terminó en 8.8 s tras narrar muchas más palabras.
+        esperado_minimo = max(2.0, len(texto.split()) / 5.0)
+        for intento in range(2):
+            segundos = sintetizar(preparar_lectura(texto), self.voz, ruta)
+            self.peticiones += 1
+            if segundos >= esperado_minimo:
+                break
+            if intento == 0 and self.peticiones < self.max_peticiones:
+                print(
+                    "::warning::Audio aparentemente incompleto: "
+                    "regenerando el fragmento con la misma voz.",
+                    flush=True,
+                )
+            else:
+                raise RuntimeError(
+                    "La voz devolvió una narración demasiado corta para "
+                    "el guion. No se subirá el vídeo incompleto."
+                )
         self.segundos += segundos
         if self.segundos > (180 if self.formato == "short" else 1200):
             raise RuntimeError("Duración total de narración fuera del límite")
