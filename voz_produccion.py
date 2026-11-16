@@ -11,6 +11,7 @@ voz robótica que el usuario haya rechazado.
 """
 import json
 import os
+import re
 from pathlib import Path
 
 from voz_gemini_castellano import VOCES, sintetizar
@@ -60,6 +61,27 @@ def estimar_consumo(escenas, formato):
     return len(escenas), total
 
 
+def preparar_lectura(texto):
+    """Facilita la pronunciación castellana sin modificar el guion editorial.
+
+    Solo aplica equivalencias comunes y semánticamente idénticas para evitar
+    lecturas 'vi' o nombres de letras en inglés. El texto visible se mantiene.
+    """
+    cambios = (
+        (r"\bGTA[\s-]*VI\b", "GTA seis"),
+        (r"\bGTA[\s-]*V\b", "GTA cinco"),
+        (r"\bPS\s*5\b", "PlayStation cinco"),
+        (r"\bPS\s*4\b", "PlayStation cuatro"),
+        (r"\b(\d{1,3})\s*FPS\b",
+         lambda x: x.group(1) + " fotogramas por segundo"),
+        (r"\b(\d{1,3})\s*GB\b",
+         lambda x: x.group(1) + " gigabytes"),
+    )
+    for patron, reemplazo in cambios:
+        texto = re.sub(patron, reemplazo, texto, flags=re.IGNORECASE)
+    return texto
+
+
 class NarradorGemini:
     def __init__(self, formato, plan):
         if not os.environ.get("GEMINI_API_KEY", "").strip():
@@ -80,7 +102,7 @@ class NarradorGemini:
         if self.peticiones >= self.max_peticiones:
             raise RuntimeError("Máximo de peticiones TTS por vídeo agotado")
         # Una llamada de voz por escena para mantener el audio sincronizado.
-        segundos = sintetizar(texto, self.voz, ruta)
+        segundos = sintetizar(preparar_lectura(texto), self.voz, ruta)
         self.peticiones += 1
         self.segundos += segundos
         if self.segundos > (180 if self.formato == "short" else 1200):
