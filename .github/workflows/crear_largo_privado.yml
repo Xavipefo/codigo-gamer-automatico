@@ -1,0 +1,23 @@
+name: "Píxel Feroz - 2. Crear vídeo largo privado"
+
+on:
+  workflow_dispatch:
+    inputs:
+      tema:
+        description: "ID opcional (en blanco = siguiente largo de temas_verificados.json)"
+        type: string
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  crear-largo:
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: largo
+      tema: ${{ inputs.tema }}
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+    secrets: inherit
