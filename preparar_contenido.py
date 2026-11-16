@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prepara guiones revisables de Código Gamer a partir de hechos con fuentes.
+"""Prepara guiones revisables de Píxel Feroz a partir de hechos con fuentes.
 
 No consulta servicios de IA, no descarga material de terceros y no publica.
 """
@@ -89,7 +89,7 @@ def preparar(tema):
     ]
     guion = " ".join(frase.rstrip(".!?") + "." for frase in frases)
     referencias = list(dict.fromkeys(h["fuente"] for h in tema["hechos"]))
-    hashtags = "#Videojuegos #CodigoGamer"
+    hashtags = "#Videojuegos #PixelFeroz"
     if "gta" in tema["id"].lower() or "gta" in tema["titulo"].lower():
         hashtags = "#GTAVI " + hashtags
     descripcion = (
@@ -99,7 +99,7 @@ def preparar(tema):
         + "\n\n" + hashtags + "\n"
     )
     plan = {
-        "canal": "Codigo Gamer",
+        "canal": "Píxel Feroz",
         "tema_id": tema["id"],
         "titulo_propuesto": tema["titulo"],
         "estado": "BORRADOR_PENDIENTE_REVISION",
@@ -128,7 +128,7 @@ def preparar(tema):
 
 
 def main():
-    p = argparse.ArgumentParser(description="Genera borradores editoriales para Código Gamer")
+    p = argparse.ArgumentParser(description="Genera borradores editoriales para Píxel Feroz")
     p.add_argument("--tema", help="ID del tema; por defecto, el primero")
     p.add_argument("--fuentes", type=Path, default=FUENTES)
     p.add_argument("--salida", type=Path, default=DESTINO)
