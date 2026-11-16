@@ -30,6 +30,8 @@ class TestPreparacion(unittest.TestCase):
         guion, descripcion, plan = preparar(self.temas[0])
         self.assertGreater(len(guion.split()), 30)
         self.assertIn("https://", descripcion)
+        self.assertNotIn("Identificador editorial:", descripcion)
+        self.assertNotIn("Formato editorial:", descripcion)
         self.assertEqual(plan["estado"], "BORRADOR_PENDIENTE_REVISION")
         self.assertFalse(plan["publicacion_automatica"])
 
