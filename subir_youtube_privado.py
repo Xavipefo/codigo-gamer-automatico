@@ -197,15 +197,6 @@ def subir_privado(youtube,plan,titulo,descripcion,mp4,miniatura):
         json.dumps(res, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8"
     )
-    try:
-        youtube.thumbnails().set(
-            videoId=video_id,
-            media_body=MediaFileUpload(str(miniatura), mimetype="image/jpeg")
-        ).execute()
-        print("Miniatura subida", flush=True)
-    except HttpError as exc:
-        # Miniatura fallida: queda constancia del ID para revisión manual.
-        print("AVISO: revisar miniatura del vídeo", video_id, exc, flush=True)
 
     verificado = False
     for intento in range(4):
@@ -232,6 +223,53 @@ def subir_privado(youtube,plan,titulo,descripcion,mp4,miniatura):
 
     res["estado"] = "subido"
     res["privacidad_verificada"] = "private"
+    miniatura_confirmada = False
+    # Para Shorts la API exige esperar a que YouTube termine de procesarlos.
+    # La ausencia de permiso no autoriza publicar sin miniatura: se registra
+    # la incidencia en el historial y el workflow dará error después.
+    procesado = plan["formato"] != "short"
+    if not procesado:
+        for intento in range(15):
+            estado = youtube.videos().list(
+                part="processingDetails", id=video_id
+            ).execute()
+            elementos = estado.get("items", [])
+            progreso = (
+                elementos[0].get("processingDetails", {}).get("processingStatus")
+                if elementos else None
+            )
+            if progreso == "succeeded":
+                procesado = True
+                break
+            if progreso in ("failed", "terminated"):
+                break
+            if intento < 14:
+                time.sleep(8)
+    if procesado:
+        try:
+            youtube.thumbnails().set(
+                videoId=video_id,
+                media_body=MediaFileUpload(
+                    str(miniatura), mimetype="image/jpeg"
+                )
+            ).execute()
+            miniatura_confirmada = True
+            print("Miniatura personalizada aceptada por YouTube", flush=True)
+        except HttpError as exc:
+            print(
+                "::warning::Miniatura no aplicada por YouTube. Vídeo "
+                + video_id + " sigue PRIVADO. Error HTTP "
+                + str(exc.resp.status)
+                + ". Comprueba verificación del canal y los permisos.",
+                flush=True
+            )
+    else:
+        print(
+            "::warning::YouTube aún no terminó de procesar el Short "
+            + video_id + ". La miniatura queda pendiente.",
+            flush=True
+        )
+    res["miniatura_confirmada"] = miniatura_confirmada
     resultado.write_text(
         json.dumps(res, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8"
