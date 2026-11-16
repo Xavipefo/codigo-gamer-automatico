@@ -15,5 +15,10 @@
   "formato_por_accion": true,
   "cola_temas": "temas_verificados.json",
   "descripciones_comunes": "descripcion_general.txt",
-  "discovery_schedule": "cada_tres_dias_aprox"
+  "discovery_schedule": "cada_tres_dias_aprox",
+  "motor_voz": "kokoro_onnx",
+  "voz_nombre": "em_alex",
+  "voz_velocidad": 1.02,
+  "estilo_visual": "movimiento_suave_y_clips_autorizados",
+  "clips_externos": "PF_CLIPS_JSON (GitHub Secret opcional)"
 }
