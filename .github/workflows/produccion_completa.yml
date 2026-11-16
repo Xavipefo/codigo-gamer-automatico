@@ -66,7 +66,8 @@ jobs:
           python -m pip install --disable-pip-version-check -r requirements.txt
 
       - name: Reutilizar modelo de voz de Piper cuando exista
-        uses: actions/cache@v4
+        id: cache-piper
+        uses: actions/cache/restore@v4
         with:
           path: voz/
           key: pixel-feroz-piper-esES-sharvard-medium-v1
@@ -90,6 +91,13 @@ jobs:
 
       - name: Generar voz, imagenes, MP4 y miniatura
         run: python motor_video.py
+
+      - name: Guardar modelo Piper si todavia no estaba en cache
+        if: ${{ steps.cache-piper.outputs.cache-hit != 'true' }}
+        uses: actions/cache/save@v4
+        with:
+          path: voz/
+          key: pixel-feroz-piper-esES-sharvard-medium-v1
 
       - name: Control tecnico de calidad
         env:
