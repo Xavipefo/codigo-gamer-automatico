@@ -1,4 +1,4 @@
-"""Selección editorial, deduplicación y guiones para Código Gamer.
+"""Selección editorial, deduplicación y guiones para Píxel Feroz.
 
 No genera hechos: solo utiliza afirmaciones verificadas previamente por un editor.
 """
@@ -100,7 +100,7 @@ def preparar_plan(t, formato):
     plan["huella_guion"] = hashlib.sha256(texto.encode("utf-8")).hexdigest()
     plan["revision_pendiente"] = True
     plan["publicacion_automatica"] = False
-    descripcion += "\nIdentificador editorial: CG-ID:" + t["id"] + "\n"
+    descripcion += "\nIdentificador editorial: PF-ID:" + t["id"] + "\n"
     return texto, descripcion, plan
 
 
