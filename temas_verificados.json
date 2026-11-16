@@ -1,0 +1,46 @@
+[
+  {
+    "id": "gta6-lanzamiento-oficial",
+    "titulo": "GTA VI: lo confirmado sobre el lanzamiento",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-16",
+    "gancho": "Quedan pocos días para GTA VI y estos son los datos que sí están confirmados",
+    "contexto": "La expectativa es enorme, pero vale la pena separar anuncios oficiales de rumores",
+    "hechos": [
+      {
+        "texto": "Rockstar Games ha fijado el lanzamiento de Grand Theft Auto VI para el jueves 19 de noviembre de 2026",
+        "fuente": "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026"
+      },
+      {
+        "texto": "Las plataformas de lanzamiento anunciadas son PlayStation 5 y Xbox Series X y S",
+        "fuente": "https://www.take2games.com/ir/news/rockstar-games-announces-pre-orders-grand-theft-auto-vi"
+      },
+      {
+        "texto": "La historia transcurre en el estado ficticio de Leonida y marca el regreso a Vice City",
+        "fuente": "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026"
+      }
+    ]
+  },
+  {
+    "id": "gta6-jason-lucia",
+    "titulo": "GTA VI: Jason, Lucia y la nueva Vice City",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-16",
+    "gancho": "¿Quiénes protagonizan realmente GTA VI según la información oficial",
+    "contexto": "Rockstar presenta una historia compartida con dos protagonistas en Leonida",
+    "hechos": [
+      {
+        "texto": "Los protagonistas de la historia presentada por Rockstar son Jason y Lucia",
+        "fuente": "https://www.rockstargames.com/VI"
+      },
+      {
+        "texto": "La sinopsis oficial sitúa a los dos personajes en una conspiración criminal por el estado de Leonida",
+        "fuente": "https://www.rockstargames.com/VI"
+      },
+      {
+        "texto": "Vice City es una de las localizaciones confirmadas de este nuevo juego",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ]
+  }
+]
