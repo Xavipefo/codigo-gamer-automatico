@@ -1,0 +1,46 @@
+name: "Píxel Feroz - Verificar Gemini (sin vídeos)"
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  comprobar-gemini:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Comprobar respuesta del modelo Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python - <<'PY'
+          import os
+          from generar_guion_ia import solicitar
+
+          clave = os.environ.get("GEMINI_API_KEY", "").strip()
+          if not clave:
+              raise SystemExit(
+                  "No está configurado GEMINI_API_KEY en GitHub Secrets."
+              )
+          respuesta = solicitar(
+              'Responde únicamente con un JSON válido con esta estructura: '
+              '{"escenas":["CONEXION_OK"]}. No agregues otras claves.',
+              clave
+          )
+          if not isinstance(respuesta, list) or not respuesta or not isinstance(respuesta[0], str):
+              raise SystemExit("El modelo respondió, pero no devolvió escenas válidas.")
+          print("CONEXIÓN GEMINI CORRECTA para Píxel Feroz.")
+          print("No se han generado ni subido vídeos.")
+          PY
