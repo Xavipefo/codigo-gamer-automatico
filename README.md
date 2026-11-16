@@ -110,13 +110,40 @@ la originalidad editorial y las normas de YouTube siguen siendo relevantes.
 - `generar_guion_ia.py` redacta desde esas fichas con
   `gemini-3.5-flash-lite`; el contenido puede tener errores y **debe revisarse**.
 - `descripcion_general.txt` se añade al pie de la descripción específica,
-  que incluye contexto, hechos, fuentes, hashtags y el ID editorial.
+  que incluye contexto, hechos, fuentes y hashtags, **sin códigos de control internos**.
+- La protección contra duplicados utiliza `snippet.tags` (`pf_id_...` y
+  `pf_formato_...`) más `historial_publicados.json`. El comprobador también
+  reconoce los marcadores de las descripciones antiguas, sin añadirlos a
+  ningún vídeo nuevo.
 - `descubrir_noticias.yml` se ejecuta aproximadamente cada tres días y
   propone **candidatos**, sin convertirlos por sí solo en noticias confirmadas.
   No hay reposición 100 % autónoma de la cola validada.
 - La fecha de estreno de GTA VI publicada por Rockstar, a fecha de esta
   revisión, es el **19 de noviembre de 2026**:
   https://www.rockstargames.com/VI
+
+## Limpieza de descripciones de vídeos anteriores
+
+La modificación de código afecta a **futuras subidas**, no cambia por sí
+sola vídeos que ya están en YouTube. Los tres Shorts privados del
+16/11/2026 conservan al final de sus descripciones las dos líneas antiguas
+de control:
+
+- `Identificador editorial: PF-ID:...`
+- `Formato editorial: PF-FORMATO:short`
+
+Si quieres retirarlas, entra en **YouTube Studio → Contenido → editar descripción**
+de cada vídeo y elimina únicamente esas dos líneas; conserva las fuentes,
+el título y el resto de la descripción. El historial de GitHub mantiene
+el control principal de duplicados. El escaneo remoto de esos vídeos
+antiguos deja de identificarlos después de quitar los marcadores salvo
+que se añadan sus equivalentes a Etiquetas; no borrar
+`historial_publicados.json`.
+
+No automatizamos la edición de los vídeos anteriores porque el OAuth
+actual solo tiene permiso de subida y lectura. `videos.update` requiere
+una autorización nueva con `youtube` o `youtube.force-ssl`. No se han
+solicitado permisos adicionales ni se ha modificado ningún vídeo existente.
 
 ## Seguridad del canal y del repositorio
 
