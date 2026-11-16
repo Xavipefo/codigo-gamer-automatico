@@ -32,7 +32,7 @@ def comprobar(formato):
     guion=(OUT/"guion.txt").read_text(encoding="utf-8").strip()
     if len(guion.split()) < (50 if formato=="short" else 650):
         raise ValueError("Guion demasiado corto")
-    video=OUT/("codigo_gamer_short.mp4" if formato=="short" else "codigo_gamer_largo.mp4")
+    video=OUT/("pixel_feroz_short.mp4" if formato=="short" else "pixel_feroz_largo.mp4")
     if video.stat().st_size < 20000:
         raise ValueError("Vídeo pequeño o vacío")
     p=subprocess.run(["ffprobe","-v","error","-show_streams","-show_format",
