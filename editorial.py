@@ -1,16 +1,16 @@
-"""Selección editorial, deduplicación y guiones para Píxel Feroz.
+"""Cola de producción de Píxel Feroz.
 
-No genera hechos: solo utiliza afirmaciones verificadas previamente por un editor.
+Lee temas_verificados.json en el orden físico de sus entradas. Un historial
+independiente por formato evita repetir Shorts o vídeos largos.
 """
 import argparse
 import hashlib
 import json
-import os
 import re
 from datetime import date
 from pathlib import Path
 
-from preparar_contenido import preparar, validar_tema
+from preparar_contenido import preparar, validar_tema, construir_descripcion, CTA_SUSCRIPCION
 
 BASE = Path(__file__).resolve().parent
 TEMAS = BASE / "temas_verificados.json"
@@ -31,76 +31,90 @@ def cargar_elegibles():
     datos = json.loads(TEMAS.read_text(encoding="utf-8"))
     if not isinstance(datos, list):
         raise ValueError("temas_verificados.json debe ser una lista")
-    opciones = []
-    for t in datos:
-        if not isinstance(t, dict):
-            continue
-        vence = t.get("vigente_hasta")
+    ids = [t.get("id") for t in datos if isinstance(t, dict)]
+    if len(set(ids)) != len(ids):
+        raise ValueError("IDs duplicados en la cola de temas")
+    temas = []
+    for tema in datos:
+        if not isinstance(tema, dict):
+            raise ValueError("Entrada de cola que no es un objeto")
+        vence = tema.get("vigente_hasta")
         if vence and date.fromisoformat(vence) < date.today():
             continue
-        if t.get("estado") != "confirmado":
+        if tema.get("estado") != "confirmado":
             continue
-        # Fallar si hay datos incorrectos, no publicar silenciosamente.
-        validar_tema(t)
-        opciones.append(t)
-    ids = [t["id"] for t in opciones]
-    if len(set(ids)) != len(ids):
-        raise ValueError("IDs duplicados en los temas vigentes")
-    return opciones
+        validar_tema(tema)
+        temas.append(tema)
+    return temas
 
 
 def seleccionado(identificador, formato):
-    temas = cargar_elegibles()
-    usados = {x.get("tema_id") for x in cargar_historial()
-              if x.get("estado") in ("subido", "publicado")}
-    if identificador:
-        candidatos = [x for x in temas if x["id"] == identificador]
-        if not candidatos:
-            raise ValueError("El tema indicado no es válido, existe o está caducado")
-        if identificador in usados and os.environ.get("PERMITIR_REPETIR_TEMA") != "SI":
-            raise ValueError("Tema ya subido: se impide duplicar publicaciones")
+    if formato not in ("short", "largo"):
+        raise ValueError("Formato incorrecto")
+    usados = {
+        (item.get("tema_id"), item.get("formato", "short"))
+        for item in cargar_historial()
+        if item.get("estado") in ("subido", "publicado")
+    }
+    posibles = []
+    for tema in cargar_elegibles():
+        if identificador and tema["id"] != identificador:
+            continue
+        if formato not in tema.get("formatos", ["short"]):
+            continue
+        if (tema["id"], formato) in usados:
+            if identificador:
+                raise ValueError(
+                    "Ya existe una subida de este tema en el formato elegido"
+                )
+            continue
+        posibles.append(tema)
+
+    if not posibles:
+        raise ValueError(
+            "No quedan temas vigentes y no usados para "
+            + formato + ". Actualiza temas_verificados.json."
+        )
+    # Sin sorted(): el primer elemento de la lista es la próxima producción.
+    return posibles[0]
+
+
+def preparar_plan(tema, formato):
+    texto, _, plan = preparar(tema)
+    if formato == "largo":
+        manual = tema.get("escenas_largas")
+        if isinstance(manual, list) and len(manual) >= 8:
+            if any(not isinstance(s, str) or len(s.split()) < 20 for s in manual):
+                raise ValueError("Cada escena larga necesita al menos 20 palabras")
+            escenas = [re.sub(r"\s+", " ", s).strip() for s in manual]
+            if CTA_SUSCRIPCION not in escenas[-1]:
+                escenas[-1] += " " + CTA_SUSCRIPCION
+            texto = " ".join(escenas)
+            if len(texto.split()) < 650:
+                raise ValueError("Guion largo insuficiente")
+            plan["escenas"] = [
+                {"tipo": "hecho_verificado", "texto": x} for x in escenas
+            ]
+            plan["requiere_guion_ia"] = False
+        else:
+            # El generador con IA toma el esquema, las fuentes y los hechos.
+            texto = ""
+            plan["escenas"] = []
+            plan["requiere_guion_ia"] = True
+        plan["esquema_largo"] = tema.get("esquema_largo", [])
+        plan["duracion_objetivo_segundos"] = [540, 900]
     else:
-        candidatos = [x for x in temas if x["id"] not in usados]
-    if formato == "largo":
-        candidatos = [x for x in candidatos
-                      if isinstance(x.get("guion_largo"), str)
-                      and len(x["guion_largo"].split()) >= 650]
-    if not candidatos:
-        raise ValueError("No quedan temas verificables aptos para este formato. "
-                         "Añade temas nuevos antes de producir más vídeos.")
-    return sorted(candidatos,
-                  key=lambda t: (-int(t.get("prioridad", 0)), t["id"]))[0]
-
-
-def preparar_plan(t, formato):
-    texto, descripcion, plan = preparar(t)
-    if formato == "largo":
-        # El guion largo se escribe y revisa manualmente: la IA no lo rellena.
-        texto = re.sub(r"\s+", " ", t["guion_largo"]).strip()
-        escenas = t.get("escenas_largas")
-        if not isinstance(escenas, list) or len(escenas) < 8:
-            raise ValueError("Un largo exige al menos 8 escenas_largas verificadas")
-        if any(not isinstance(s, str) or len(s.split()) < 20 for s in escenas):
-            raise ValueError("Cada escena larga debe tener al menos 20 palabras")
-        # Se narra el texto de las escenas, en el mismo orden que lo visual.
-        texto_escenas = " ".join(s.strip() for s in escenas)
-        if texto_escenas != texto:
-            raise ValueError("guion_largo debe coincidir exactamente con las escenas narradas")
-        texto = texto_escenas
-        if len(texto.split()) < 650:
-            raise ValueError("El guion narrado de largo requiere 650 palabras")
-        plan["escenas"] = [{"tipo":"hecho_verificado", "texto":s} for s in escenas]
-        plan["duracion_objetivo_segundos"] = [240, 900]
-    if formato == "short":
-        # Mantener correspondencia exacta entre cada escena y su narración.
         texto = " ".join(s["texto"].strip() for s in plan["escenas"])
+        plan["requiere_guion_ia"] = False
+
     plan["formato"] = formato
-    plan["tema_id"] = t["id"]
-    plan["titulo_propuesto"] = t["titulo"][:95]
+    plan["tema_id"] = tema["id"]
+    plan["titulo_propuesto"] = tema["titulo"][:95]
+    plan["texto_miniatura"] = tema.get("texto_miniatura", tema["titulo"])[:90]
     plan["huella_guion"] = hashlib.sha256(texto.encode("utf-8")).hexdigest()
     plan["revision_pendiente"] = True
     plan["publicacion_automatica"] = False
-    descripcion += "\nIdentificador editorial: PF-ID:" + t["id"] + "\n"
+    descripcion = construir_descripcion(tema, formato)
     return texto, descripcion, plan
 
 
@@ -112,14 +126,17 @@ def main():
     t = seleccionado(args.tema.strip(), args.formato)
     texto, descripcion, plan = preparar_plan(t, args.formato)
     SALIDA.mkdir(exist_ok=True)
-    (SALIDA/"guion.txt").write_text(texto+"\n", encoding="utf-8")
-    (SALIDA/"descripcion.txt").write_text(descripcion, encoding="utf-8")
-    (SALIDA/"plan.json").write_text(
-        json.dumps(plan, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
-    print("Tema seleccionado:",t["id"])
-    print("Formato:",args.formato)
-    print("Palabras:",len(texto.split()))
-    print("Preparado para producción con revisión posterior.")
+    (SALIDA / "guion.txt").write_text(texto + "\n", encoding="utf-8")
+    (SALIDA / "descripcion.txt").write_text(descripcion, encoding="utf-8")
+    (SALIDA / "plan.json").write_text(
+        json.dumps(plan, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8"
+    )
+    print("Siguiente tema por orden:", t["id"])
+    print("Formato:", args.formato)
+    print("Palabras iniciales:", len(texto.split()))
+    print("IA necesaria para largo:", plan["requiere_guion_ia"])
+    print("Subida: exclusivamente privada, pendiente de revisión posterior")
 
 
 if __name__ == "__main__":
