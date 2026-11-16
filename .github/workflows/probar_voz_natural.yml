@@ -1,0 +1,56 @@
+name: "Píxel Feroz - Escuchar voz natural"
+
+on:
+  workflow_dispatch:
+    inputs:
+      voz:
+        description: "Voz a escuchar: masculina Alex/Santa o femenina Dora"
+        required: true
+        type: choice
+        options:
+          - em_alex
+          - em_santa
+          - ef_dora
+        default: em_alex
+
+permissions:
+  contents: read
+
+jobs:
+  muestra-voz:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar voz Kokoro sin programas de vídeo
+        run: |
+          python -m pip install --disable-pip-version-check \
+            "kokoro-onnx==0.6.1" "soundfile>=0.13,<1"
+
+      - name: Caché del modelo de voz
+        uses: actions/cache@v4
+        with:
+          path: voz/kokoro/
+          key: pixel-feroz-kokoro-int8-v1-verified
+
+      - name: Crear audio de demostración original
+        env:
+          VOZ: ${{ inputs.voz }}
+        run: python voz_natural.py --probar --voz "$VOZ" --salida demo_voz.wav
+
+      - name: Audio escuchable (solo texto público de demostración)
+        uses: actions/upload-artifact@v4
+        with:
+          name: muestra-voz-pixel-feroz-${{ inputs.voz }}
+          path: demo_voz.wav
+          retention-days: 3
+          if-no-files-found: error
