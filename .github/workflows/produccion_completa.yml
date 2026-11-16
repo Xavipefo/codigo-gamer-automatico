@@ -71,20 +71,23 @@ jobs:
         shell: bash
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y ffmpeg fonts-dejavu-core espeak-ng
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
           python -m pip install --disable-pip-version-check -r requirements.txt
-
-      - name: Recuperar cache de modelo Kokoro y voces españolas
-        id: cache-kokoro
-        uses: actions/cache/restore@v4
-        with:
-          path: voz/
-          key: pixel-feroz-kokoro-int8-v1-verified
 
       - name: Comprobar fuentes y Python
         run: |
           python -m py_compile *.py
           python -m unittest discover -s . -p 'test_*.py'
+
+      - name: Confirmar Gemini TTS para narración española
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "::error::Necesitas GEMINI_API_KEY para la voz natural Achird/Charon."
+            exit 1
+          fi
+          echo "La clave de Gemini está disponible sin exponerla."
 
       - name: Elegir y preparar tema verificado
         env:
@@ -104,17 +107,11 @@ jobs:
           FORMATO: ${{ inputs.formato }}
         run: python generar_guion_ia.py --formato "$FORMATO"
 
-      - name: Generar voz natural, gráficos dinámicos y vídeo
+      - name: Generar voz Achird o Charon, gráficos y MP4
         env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PF_CLIPS_JSON: ${{ secrets.PF_CLIPS_JSON }}
         run: python motor_video.py
-
-      - name: Guardar modelo Kokoro para siguientes vídeos
-        if: ${{ steps.cache-kokoro.outputs.cache-hit != 'true' }}
-        uses: actions/cache/save@v4
-        with:
-          path: voz/
-          key: pixel-feroz-piper-esES-sharvard-medium-v1
 
       - name: Control tecnico de calidad
         env:
