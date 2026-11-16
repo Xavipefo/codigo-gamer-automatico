@@ -154,6 +154,21 @@ jobs:
           git commit -m "chore: registrar subida privada de Píxel Feroz"
           git push
 
+      - name: Confirmar miniatura personalizada antes de dar exito
+        if: ${{ inputs.subir_privado }}
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          dato = json.loads(Path("salida/youtube_resultado.json").read_text(encoding="utf-8"))
+          if dato.get("miniatura_confirmada") is not True:
+              raise SystemExit(
+                  "Vídeo privado registrado, pero miniatura pendiente. "
+                  "NO volver a subir el MP4: revisar vídeo " + dato["video_id"]
+              )
+          print("Vídeo privado con miniatura personalizada confirmado.")
+          PY
+
       - name: Guardar resultado de YouTube
         if: ${{ inputs.subir_privado && always() && github.event.repository.private }}
         uses: actions/upload-artifact@v4
