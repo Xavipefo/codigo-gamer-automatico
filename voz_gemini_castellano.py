@@ -53,6 +53,29 @@ ESTILO = (
     "sin imitar a ningún locutor concreto."
 )
 
+
+# Achird mantiene la identidad del canal para noticias; Charon introduce
+# un tono de análisis. La voz sintética no se presenta como persona real.
+ESTILO_CHARON = (
+    "Narrador español de España, es-ES, masculino adulto, de voz original "
+    "y ligeramente grave, con acento castellano claro pero natural. "
+    "Estilo periodístico de análisis de videojuegos: calmado, cercano, "
+    "con autoridad sin solemnidad. Respiraciones y pausas humanas, "
+    "variaciones melódicas discretas, comprensión de la información. "
+    "Ritmo reflexivo ligeramente más pausado que un Short. "
+    "Diferente personalidad vocal a un presentador de noticias rápidas. "
+    "Evita acentos latinoamericanos, ritmo robótico y actuación exagerada."
+)
+
+
+def estilo_para_voz(voz):
+    if voz == "Achird":
+        return ESTILO
+    if voz == "Charon":
+        return ESTILO_CHARON
+    raise ValueError("Voz no admitida")
+
+
 def peticion_audio(texto, voz):
     if voz not in VOCES:
         raise ValueError("Voz no admitida")
@@ -66,7 +89,7 @@ def peticion_audio(texto, voz):
                 "type": "text",
                 "text": texto,
                 "annotations": [
-                    {"type": "speech_metadata", "style": ESTILO},
+                    {"type": "speech_metadata", "style": estilo_para_voz(voz)},
                 ],
             }],
         }],
