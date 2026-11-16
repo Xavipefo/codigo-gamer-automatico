@@ -38,7 +38,8 @@ class TestEditorial(unittest.TestCase):
         self.assertEqual(guion, "")
         self.assertTrue(plan["requiere_guion_ia"])
         self.assertEqual(plan["formato"], "largo")
-        self.assertIn("PF-FORMATO:largo", descripcion)
+        self.assertNotIn("Formato editorial:", descripcion)
+        self.assertNotIn("Identificador editorial:", descripcion)
 
     def test_orden_y_formatos_independientes(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -59,7 +60,9 @@ class TestEditorial(unittest.TestCase):
         self.assertIn("Suscríbete a Píxel Feroz", guion)
         self.assertIn("Bienvenido a PÍXEL FEROZ", descripcion)
         self.assertIn("FUENTES OFICIALES:", descripcion)
-        self.assertIn("PF-FORMATO:short", descripcion)
+        self.assertNotIn("Formato editorial:", descripcion)
+        self.assertNotIn("Identificador editorial:", descripcion)
+        self.assertNotIn("PF-ID:", descripcion)
         self.assertTrue(plan["texto_miniatura"])
 
 
