@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Motor de vídeo: voz por escena, escenas originales y montaje en FFmpeg.
+"""Motor: voz Kokoro local y clips autorizados / gráficos originales en movimiento.
 
-Usa tarjetas gráficas propias; no extrae gameplay ni material audiovisual ajeno.
+Sin clips autorizados, mantiene tarjetas propias con un suave movimiento.
+La subida sigue siendo exclusivamente privada para revisión humana.
 """
 import argparse
 import json
@@ -15,7 +16,9 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
-from generar_short import tarjeta_escena, fuente, partir_lineas, descargar, URL_MODELO
+from generar_short import tarjeta_escena, fuente, partir_lineas
+from voz_natural import NarradorKokoro
+from video_material import descargar_clip, overlay_clips
 
 BASE = Path(__file__).resolve().parent
 SALIDA = BASE / "salida"
@@ -103,24 +106,6 @@ def crear_miniatura(titulo, formato, ruta):
     img.save(ruta,quality=92,optimize=True)
 
 
-def modelo_piper():
-    if not shutil.which("piper"):
-        raise RuntimeError("Falta piper-tts. Instala requirements.txt")
-    modelo=VOZ/"es_ES-sharvard-medium.onnx"
-    descargar(modelo,URL_MODELO)
-    descargar(VOZ/"es_ES-sharvard-medium.onnx.json",URL_MODELO+".json")
-    return modelo
-
-
-def narrar(modelo,texto,ruta):
-    comando(["piper","--model",str(modelo),"--output_file",str(ruta)],
-            input=texto,text=True)
-    with wave.open(str(ruta),"rb") as f:
-        segundos=f.getnframes()/f.getframerate()
-    if segundos < .2:
-        raise RuntimeError("El modelo no produjo audio válido")
-    return segundos
-
 
 def montar(plan, guion):
     """Crea escenas MP4 sincronizadas individualmente y las concatena.
@@ -143,40 +128,83 @@ def montar(plan, guion):
     if re.sub(r"\s+", " ", guion).strip() != reconstruido.strip():
         raise ValueError("El guion y el orden de las escenas no coinciden")
 
-    modelo = modelo_piper()
+    narrador = NarradorKokoro()
     SALIDA.mkdir(parents=True, exist_ok=True)
     fps = 20
     duracion_total = 0.0
     with tempfile.TemporaryDirectory(prefix="pixel_feroz_render_") as temporal:
         directorio = Path(temporal)
+        clip_de_juego = descargar_clip(plan["tema_id"], directorio / "gameplay.mp4")
         clips = []
         for indice, escena in enumerate(escenas):
             audio = directorio / f"audio_{indice:03}.wav"
-            duracion_audio = narrar(modelo, escena["texto"], audio)
+            duracion_audio = narrador.narrar(escena["texto"], audio)
             # Exactamente un número entero de fotogramas por escena.
             fotogramas = max(1, int(math.ceil((duracion_audio + 0.22) * fps)))
             duracion_escena = fotogramas / fps
+            usa_material = (
+                clip_de_juego is not None
+                and indice % 3 != 2
+                and escena["tipo"] != "cierre"
+            )
             imagen = directorio / f"escena_{indice:03}.png"
-            if formato == "short":
-                tarjeta_escena(escena, indice, len(escenas),
-                              plan["titulo_propuesto"], imagen)
+            if usa_material:
+                overlay_clips(
+                    escena, plan["titulo_propuesto"], formato, imagen
+                )
+            elif formato == "short":
+                tarjeta_escena(
+                    escena, indice, len(escenas),
+                    plan["titulo_propuesto"], imagen
+                )
             else:
-                imagen_horizontal(escena, indice, len(escenas),
-                                  plan["titulo_propuesto"], imagen)
+                imagen_horizontal(
+                    escena, indice, len(escenas),
+                    plan["titulo_propuesto"], imagen
+                )
 
             clip = directorio / f"clip_{indice:03}.mp4"
-            # apad completa el audio con silencio hasta la duración exacta.
-            # La salida tiene tanto vídeo como audio de la misma duración.
             audio_filtro = (
                 "aresample=48000,apad,"
                 f"atrim=duration={duracion_escena:.6f},"
                 "asetpts=N/SR/TB"
             )
-            comando([
-                "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
-                "-loop", "1", "-framerate", str(fps), "-i", str(imagen),
-                "-i", str(audio),
-                "-map", "0:v:0", "-map", "1:a:0",
+            w, h = RES_SHORT if formato == "short" else RES_WIDE
+            if usa_material:
+                # El clip se carga SIN su audio: narración propia en español.
+                # Solo se reutilizan materiales descargados con derechos
+                # confirmados explícitamente para el tema actual.
+                comando_video = [
+                    "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
+                    "-stream_loop", "-1", "-i", str(clip_de_juego),
+                    "-loop", "1", "-framerate", str(fps), "-i", str(imagen),
+                    "-i", str(audio),
+                    "-filter_complex",
+                    (
+                        f"[0:v]fps={fps},"
+                        f"scale={w}:{h}:force_original_aspect_ratio=increase,"
+                        f"crop={w}:{h},setsar=1,format=yuv420p[base];"
+                        "[base][1:v]overlay=0:0:shortest=0[v]"
+                    ),
+                    "-map", "[v]", "-map", "2:a:0"
+                ]
+            else:
+                # Animación original con movimiento suave: no una imagen
+                # completamente inmóvil durante cada escena.
+                comando_video = [
+                    "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
+                    "-loop", "1", "-framerate", str(fps),
+                    "-i", str(imagen),
+                    "-i", str(audio),
+                    "-filter_complex",
+                    (
+                        f"[0:v]zoompan=z='min(zoom+0.00035,1.055)':"
+                        f"x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':"
+                        f"d=1:s={w}x{h}:fps={fps}[v]"
+                    ),
+                    "-map", "[v]", "-map", "1:a:0"
+                ]
+            comando(comando_video + [
                 "-af", audio_filtro,
                 "-frames:v", str(fotogramas),
                 "-c:v", "libx264", "-preset", "veryfast",
@@ -215,6 +243,8 @@ def montar(plan, guion):
         crear_miniatura(plan.get("texto_miniatura", plan["titulo_propuesto"]),
                         formato, SALIDA / "miniatura.jpg")
         print("Archivo:", salida, flush=True)
+        print("Clip autorizado incorporado:", bool(clip_de_juego), flush=True)
+        print("Motor de voz natural: Kokoro", flush=True)
         print("Escenas:", len(escenas),
               "| Duración planificada:", round(duracion_total, 2),
               "segundos", flush=True)
