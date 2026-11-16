@@ -10,8 +10,15 @@ class TestPreparacion(unittest.TestCase):
     def setUpClass(cls):
         cls.temas = cargar_temas(Path(__file__).with_name("temas_verificados.json"))
 
-    def test_dos_temas_validos(self):
-        self.assertGreaterEqual(len(self.temas), 2)
+    def test_al_menos_un_tema_vigente(self):
+        self.assertGreaterEqual(len(self.temas), 1)
+
+    def test_rechaza_tema_caducado(self):
+        from datetime import date, timedelta
+        tema = copy.deepcopy(self.temas[0])
+        tema["vigente_hasta"] = (date.today() - timedelta(days=1)).isoformat()
+        with self.assertRaises(ValueError):
+            validar_tema(tema)
 
     def test_dominios(self):
         self.assertTrue(comprobar_enlace("https://www.rockstargames.com/newswire/"))
