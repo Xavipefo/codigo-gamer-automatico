@@ -12,6 +12,8 @@ voz robótica que el usuario haya rechazado.
 import json
 import os
 import re
+import time
+import wave
 from pathlib import Path
 
 from voz_gemini_castellano import VOCES, sintetizar, AudioIncompletoError
@@ -93,25 +95,75 @@ class NarradorGemini:
         self.peticiones = 0
         self.max_peticiones = 24 if formato == "short" else 90
         self.segundos = 0.0
+        # Con Gemini TTS varios fragmentos consecutivos disparaban HTTP 429
+        # tras 5 solicitudes en ~60 segundos. Cada bloque largo se inicia
+        # como mínimo 35 segundos después del anterior.
+        self.intervalo = 35.0 if formato == "largo" else 0.0
+        self.ultimo_inicio = None
+        self.recuperados = 0
         print(
             "NARRACIÓN: Gemini 3.8 Flash TTS | idioma es-ES |",
             "voz:", self.voz, "| contenido:", formato, flush=True
         )
 
+    def _limitar_ritmo(self):
+        ahora = time.monotonic()
+        if self.ultimo_inicio is not None and self.intervalo > 0:
+            segundos = self.intervalo - (ahora - self.ultimo_inicio)
+            if segundos > 0:
+                print(
+                    "Narración " + self.voz + ": respetando intervalo "
+                    "de peticiones (" + str(round(segundos, 1)) + "s)",
+                    flush=True,
+                )
+                time.sleep(segundos)
+        self.ultimo_inicio = time.monotonic()
+
+    @staticmethod
+    def _recuperar_wav(ruta, esperado_minimo):
+        if not ruta.is_file() or ruta.stat().st_size < 10_000:
+            return None
+        try:
+            with wave.open(str(ruta), "rb") as wav:
+                if wav.getnchannels() != 1 or wav.getsampwidth() != 2:
+                    return None
+                frames = wav.getnframes()
+                frecuencia = wav.getframerate()
+                segundos = frames / frecuencia if frecuencia > 0 else 0
+            if esperado_minimo <= segundos <= 90:
+                return segundos
+        except (OSError, wave.Error, EOFError, ValueError):
+            pass
+        return None
+
     def narrar(self, texto, ruta):
+        ruta = Path(ruta)
         if self.peticiones >= self.max_peticiones:
             raise RuntimeError("Máximo de peticiones TTS por vídeo agotado")
-        # Cada escena se narra con una sola voz, comprobando que la API no
-        # haya devuelto un audio truncado. En la prueba larga anterior,
-        # un fragmento terminó en 8.8 s tras narrar muchas más palabras.
         esperado_minimo = max(2.0, len(texto.split()) / 5.0)
-        # Reintentamos tanto WAV demasiado breve como audio sin voz
-        # suficiente. Si el servicio vuelve a fallar se detiene ANTES
-        # de la subida; nunca completamos un largo con silencios.
+
+        # Checkpoint privado del runner actual, ligado a la huella del guion
+        # y narrador por el directorio del motor. Nunca subir al artifacts
+        # público ni al repositorio para no filtrar vídeos no publicados.
+        recuperado = self._recuperar_wav(ruta, esperado_minimo)
+        if recuperado is not None:
+            self.recuperados += 1
+            self.segundos += recuperado
+            print(
+                "Reutilizando WAV validado del runner:",
+                ruta.name, "|", round(recuperado, 1), "segundos", flush=True,
+            )
+            if self.segundos > (180 if self.formato == "short" else 1200):
+                raise RuntimeError("Duración total de narración fuera del límite")
+            return recuperado
+        if ruta.is_file():
+            ruta.unlink()
+
         ultimo_error = None
         for intento in range(3):
             if self.peticiones >= self.max_peticiones:
                 raise RuntimeError("Máximo de peticiones TTS por vídeo agotado")
+            self._limitar_ritmo()
             self.peticiones += 1
             try:
                 segundos = sintetizar(preparar_lectura(texto), self.voz, ruta)
@@ -123,6 +175,7 @@ class NarradorGemini:
                 break
             except AudioIncompletoError as exc:
                 ultimo_error = exc
+                ruta.unlink(missing_ok=True)
                 if intento < 2 and self.peticiones < self.max_peticiones:
                     print(
                         "::warning::Gemini devolvió un fragmento incompleto. "
