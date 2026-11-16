@@ -10,5 +10,15 @@
     "miniatura_confirmada": true,
     "miniatura_incidencia": "HTTP 403: el canal no pudo subir miniaturas personalizadas; revisar verificación",
     "miniatura_fecha_utc": "2026-11-16T16:39:57.749943+00:00"
+  },
+  {
+    "video_id": "2WWAHUEBQTc",
+    "url": "https://www.youtube.com/watch?v=2WWAHUEBQTc",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-lanzamiento-oficial",
+    "formato": "short",
+    "fecha": "2026-11-16T16:54:10.623098+00:00",
+    "miniatura_confirmada": true
   }
 ]
