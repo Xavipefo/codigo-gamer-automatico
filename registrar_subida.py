@@ -19,9 +19,13 @@ def main():
     if any(x.get("video_id")==dato["video_id"] for x in historial):
         print("El video ya figura en el historial")
         return
-    if any(x.get("tema_id")==dato["tema_id"] and x.get("estado") in ("subido","publicado")
-           for x in historial):
-        raise ValueError("El tema ya tiene una subida anterior")
+    if any(
+        x.get("tema_id") == dato["tema_id"]
+        and x.get("formato", "short") == dato["formato"]
+        and x.get("estado") in ("subido", "publicado")
+        for x in historial
+    ):
+        raise ValueError("El tema ya tiene una subida en este formato")
     historial.append(dato)
     HISTORIAL.write_text(json.dumps(historial,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print("Historial actualizado:",dato["video_id"])
