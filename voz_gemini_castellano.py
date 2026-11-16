@@ -149,6 +149,10 @@ def extraer_audio(respuesta):
     )
 
 
+class AudioIncompletoError(RuntimeError):
+    """La API respondió con WAV, pero no contiene narración utilizable."""
+
+
 def sintetizar(texto, voz, destino, clave=None):
     clave = clave or os.environ.get("GEMINI_API_KEY", "")
     if not clave:
@@ -181,7 +185,9 @@ def sintetizar(texto, voz, destino, clave=None):
     audio = extraer_audio(data)
 
     if not (10000 <= len(audio) <= 20_000_000):
-        raise RuntimeError("Respuesta de audio vacía o demasiado grande")
+        raise AudioIncompletoError(
+            "La API devolvió audio vacío o de tamaño inesperado"
+        )
     if audio[:4] != b"RIFF" or audio[8:12] != b"WAVE":
         raise RuntimeError("El audio de Gemini no es WAV válido")
 
@@ -190,12 +196,29 @@ def sintetizar(texto, voz, destino, clave=None):
     temporal = destino.with_suffix(".tmp")
     try:
         temporal.write_bytes(audio)
-        with wave.open(str(temporal), "rb") as wf:
-            if wf.getnchannels() != 1 or wf.getsampwidth() != 2:
-                raise RuntimeError("Gemini TTS no devolvió WAV PCM mono 16 bit")
-            segundos = wf.getnframes() / wf.getframerate()
+        try:
+            with wave.open(str(temporal), "rb") as wf:
+                if wf.getnchannels() != 1 or wf.getsampwidth() != 2:
+                    raise AudioIncompletoError(
+                        "Gemini TTS no devolvió WAV PCM mono de 16 bits"
+                    )
+                frecuencia = wf.getframerate()
+                if frecuencia <= 0:
+                    raise AudioIncompletoError("Frecuencia WAV inválida")
+                segundos = wf.getnframes() / frecuencia
+        except (wave.Error, EOFError):
+            raise AudioIncompletoError("WAV incompleto o ilegible") from None
+
         if not 2 <= segundos <= 90:
-            raise RuntimeError("Duración inadecuada de la narración de prueba")
+            # Un WAV válido de menos de 2 s puede ser un error de
+            # generación. Nunca subirlo como si fuese una narración real.
+            print(
+                "::warning::Fragmento TTS devuelto con duración inadecuada:",
+                round(segundos, 2), "segundos", flush=True
+            )
+            raise AudioIncompletoError(
+                "Fragmento de voz fuera del rango de 2 a 90 segundos"
+            )
         temporal.replace(destino)
     finally:
         temporal.unlink(missing_ok=True)
