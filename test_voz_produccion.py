@@ -59,9 +59,9 @@ class TestRepartoNarradores(unittest.TestCase):
         texto = " ".join(["palabra"] * 160)
         plan = {"formato": "largo", "escenas": [{"tipo": "hecho_verificado", "texto": texto}]}
         escenas = adaptar_escenas(plan)
-        self.assertEqual(len(escenas), 3)
+        self.assertEqual(len(escenas), 4)
         self.assertEqual(len(" ".join(x["texto"] for x in escenas).split()), 160)
-        self.assertLessEqual(max(len(x["texto"].split()) for x in escenas), 75)
+        self.assertLessEqual(max(len(x["texto"].split()) for x in escenas), 50)
         self.assertTrue(all(len(x["texto"]) <= 1400 for x in escenas))
 
     def test_tarjeta_resume_pero_audio_conserva_original(self):
