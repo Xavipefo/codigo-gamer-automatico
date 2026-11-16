@@ -5,7 +5,7 @@ import unittest
 import urllib.error
 from unittest.mock import patch
 
-from gemini_reintentos import solicitar_json
+from gemini_reintentos import solicitar_json, GeminiDailyQuotaError, GeminiQuotaError
 
 
 def http_error(code):
@@ -33,6 +33,67 @@ class TestReintentosGemini(unittest.TestCase):
             self.assertEqual(resultado, {"escenas": ["todo bien"]})
             self.assertEqual(abrir.call_count, 3)
             self.assertEqual([x.args[0] for x in dormir.call_args_list], [2, 4])
+
+    def test_429_espera_ventana_de_cuota(self):
+        respuesta = io.BytesIO(b'{"ok":true}')
+        with patch(
+            "gemini_reintentos.urllib.request.urlopen",
+            side_effect=[http_error(429), respuesta],
+        ), patch("gemini_reintentos.time.sleep") as pausa, patch(
+            "gemini_reintentos.random.uniform", return_value=0
+        ):
+            self.assertEqual(
+                solicitar_json("https://test.example", max_intentos=2),
+                {"ok": True},
+            )
+            pausa.assert_called_once_with(65.0)
+
+    def test_429_respeta_retry_after(self):
+        error = urllib.error.HTTPError(
+            "https://test.example", 429, "quota", {"Retry-After": "75"}, None
+        )
+        with patch(
+            "gemini_reintentos.urllib.request.urlopen",
+            side_effect=[error, io.BytesIO(b'{"ok":true}')],
+        ), patch("gemini_reintentos.time.sleep") as pausa, patch(
+            "gemini_reintentos.random.uniform", return_value=0
+        ):
+            self.assertEqual(
+                solicitar_json("https://test.example", max_intentos=2),
+                {"ok": True},
+            )
+            pausa.assert_called_once_with(75.0)
+
+    def test_cuota_diaria_no_reintenta(self):
+        cuerpo = json.dumps({
+            "error": {
+                "status": "RESOURCE_EXHAUSTED",
+                "details": [{"quota_limit": "RequestsPerDayPerProject"}],
+            }
+        }).encode()
+        error = urllib.error.HTTPError(
+            "https://test.example", 429, "quota", {}, io.BytesIO(cuerpo)
+        )
+        with patch(
+            "gemini_reintentos.urllib.request.urlopen", side_effect=error
+        ) as abrir, patch("gemini_reintentos.time.sleep") as pausa:
+            with self.assertRaises(GeminiDailyQuotaError):
+                solicitar_json("https://test.example", max_intentos=4)
+            abrir.assert_called_once()
+            pausa.assert_not_called()
+
+    def test_429_persistente_hace_corte_con_diagnostico(self):
+        with patch(
+            "gemini_reintentos.urllib.request.urlopen",
+            side_effect=http_error(429),
+        ) as abrir, patch("gemini_reintentos.time.sleep") as pausa, patch(
+            "gemini_reintentos.random.uniform", return_value=0
+        ):
+            with self.assertRaises(GeminiQuotaError):
+                solicitar_json("https://test.example", max_intentos=3)
+            self.assertEqual(abrir.call_count, 3)
+            self.assertEqual([x.args[0] for x in pausa.call_args_list],
+                             [65.0, 95.0])
 
     def test_http403_no_reintenta(self):
         with patch(
