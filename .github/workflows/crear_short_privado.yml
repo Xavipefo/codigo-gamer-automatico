@@ -1,0 +1,23 @@
+name: "Píxel Feroz - 1. Crear Short privado"
+
+on:
+  workflow_dispatch:
+    inputs:
+      tema:
+        description: "ID opcional (en blanco = siguiente Short de temas_verificados.json)"
+        type: string
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  crear-short:
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      tema: ${{ inputs.tema }}
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+    secrets: inherit
