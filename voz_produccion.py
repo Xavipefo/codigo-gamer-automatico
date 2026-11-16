@@ -17,6 +17,7 @@ import wave
 from pathlib import Path
 
 from voz_gemini_castellano import VOCES, sintetizar, AudioIncompletoError
+from voz_azure_castellano import sintetizar as sintetizar_azure, VOCES as VOCES_AZURE
 
 RAIZ = Path(__file__).resolve().parent
 CONFIG = RAIZ / "config.json"
@@ -86,24 +87,50 @@ def preparar_lectura(texto):
 
 class NarradorGemini:
     def __init__(self, formato, plan):
-        if not os.environ.get("GEMINI_API_KEY", "").strip():
+        config = json.loads(CONFIG.read_text(encoding="utf-8"))
+        configurado = config.get("motor_voz", "gemini-3.8-flash-tts")
+        solicitado = os.environ.get("PF_TTS_PROVIDER", "").strip().lower()
+        if solicitado:
+            if solicitado not in ("gemini", "azure"):
+                raise ValueError("PF_TTS_PROVIDER debe ser gemini o azure")
+            self.proveedor = solicitado
+        elif configurado == "azure-neural":
+            self.proveedor = "azure"
+        else:
+            self.proveedor = "gemini"
+
+        if self.proveedor == "gemini":
+            if not os.environ.get("GEMINI_API_KEY", "").strip():
+                raise RuntimeError(
+                    "Para la narración Gemini, configura GEMINI_API_KEY"
+                )
+        elif not (
+            os.environ.get("AZURE_SPEECH_KEY", "").strip()
+            and os.environ.get("AZURE_SPEECH_REGION", "").strip()
+        ):
             raise RuntimeError(
-                "Para la narración de producción, configura GEMINI_API_KEY"
+                "Para Azure, configura AZURE_SPEECH_KEY y "
+                "AZURE_SPEECH_REGION en GitHub Secrets"
             )
         self.formato = formato
         self.voz = elegir_voz(formato, plan)
+        self.voz_real = (
+            VOCES_AZURE["Alvaro" if formato == "short" else "Arnau"]
+            if self.proveedor == "azure" else self.voz
+        )
         self.peticiones = 0
         self.max_peticiones = 24 if formato == "short" else 90
         self.segundos = 0.0
         # Con Gemini TTS varios fragmentos consecutivos disparaban HTTP 429
         # tras 5 solicitudes en ~60 segundos. Cada bloque largo se inicia
         # como mínimo 35 segundos después del anterior.
-        self.intervalo = 35.0 if formato == "largo" else 0.0
+        self.intervalo = (35.0 if formato == "largo" else 0.0) if self.proveedor == "gemini" else 4.0
         self.ultimo_inicio = None
         self.recuperados = 0
         print(
-            "NARRACIÓN: Gemini 3.8 Flash TTS | idioma es-ES |",
-            "voz:", self.voz, "| contenido:", formato, flush=True
+            "NARRACIÓN:", self.proveedor,
+            "| voz real:", self.voz_real,
+            "| idioma es-ES | contenido:", formato, flush=True
         )
 
     def _limitar_ritmo(self):
@@ -166,7 +193,13 @@ class NarradorGemini:
             self._limitar_ritmo()
             self.peticiones += 1
             try:
-                segundos = sintetizar(preparar_lectura(texto), self.voz, ruta)
+                if self.proveedor == "azure":
+                    seleccion = "Alvaro" if self.formato == "short" else "Arnau"
+                    segundos = sintetizar_azure(
+                        preparar_lectura(texto), seleccion, ruta
+                    )
+                else:
+                    segundos = sintetizar(preparar_lectura(texto), self.voz, ruta)
                 if segundos < esperado_minimo:
                     raise AudioIncompletoError(
                         "La duración del audio es insuficiente para el texto"
@@ -178,7 +211,7 @@ class NarradorGemini:
                 ruta.unlink(missing_ok=True)
                 if intento < 2 and self.peticiones < self.max_peticiones:
                     print(
-                        "::warning::Gemini devolvió un fragmento incompleto. "
+                        "::warning::El proveedor devolvió un fragmento incompleto. "
                         "Regenerando con " + self.voz
                         + " (" + str(intento + 2) + "/3).",
                         flush=True,
