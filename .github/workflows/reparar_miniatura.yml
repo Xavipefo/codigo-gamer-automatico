@@ -1,0 +1,52 @@
+name: "Píxel Feroz - Reparar miniatura privada"
+
+on:
+  workflow_dispatch:
+    inputs:
+      video_id:
+        description: "Opcional: ID del vídeo; vacío = primera miniatura pendiente"
+        type: string
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pixel-feroz-produccion
+  cancel-in-progress: false
+
+jobs:
+  reparar-miniatura:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Librerías e imágenes
+        run: |
+          python -m pip install --disable-pip-version-check \
+            "Pillow==11.3.0" \
+            "google-api-python-client>=2.140,<3" \
+            "google-auth>=2.35,<3" \
+            "google-auth-oauthlib>=1.2,<2"
+      - name: Establecer miniatura sin duplicar el vídeo
+        env:
+          YOUTUBE_OAUTH_JSON: ${{ secrets.YOUTUBE_OAUTH_JSON }}
+          VIDEO_ID: ${{ inputs.video_id }}
+        run: |
+          python reparar_miniatura.py --video-id "$VIDEO_ID"
+      - name: Marcar miniatura completada en historial
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add historial_publicados.json
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: miniatura personalizada reparada en Píxel Feroz"
+          git push
