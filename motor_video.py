@@ -5,6 +5,7 @@ Usa tarjetas gráficas propias; no extrae gameplay ni material audiovisual ajeno
 """
 import argparse
 import json
+import math
 import re
 import shutil
 import subprocess
@@ -122,60 +123,102 @@ def narrar(modelo,texto,ruta):
 
 
 def montar(plan, guion):
+    """Crea escenas MP4 sincronizadas individualmente y las concatena.
+
+    Cada escena tiene su propio audio, con un breve silencio final. A diferencia
+    del montaje anterior, no aproxima duraciones a partir de número de palabras.
+    """
     if plan.get("estado") != "BORRADOR_PENDIENTE_REVISION":
-        raise ValueError("Borrador inválido")
+        raise ValueError("Borrador editorial inválido")
     if plan.get("publicacion_automatica") is not False:
-        raise ValueError("Este generador no permite publicar automáticamente")
-    formato=plan["formato"]
-    escenas=adaptar_escenas(plan)
-    reconstruido=" ".join(e["texto"] for e in escenas)
-    if re.sub(r"\s+"," ",guion).strip() != reconstruido.strip():
-        raise ValueError("El texto de la voz debe coincidir exactamente con las escenas")
-    modelo=modelo_piper()
-    SALIDA.mkdir(exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix="cg_render_") as tmp:
-        td=Path(tmp)
-        tiempos=[]
-        imagenes=[]
-        audios=[]
-        for i,escena in enumerate(escenas):
-            wav=td/f"{i:03}.wav"
-            dur=narrar(modelo,escena["texto"],wav)
-            dur+=0.10
-            foto=td/f"{i:03}.png"
-            if formato=="short":
-                tarjeta_escena(escena,i,len(escenas),plan["titulo_propuesto"],foto)
+        raise ValueError("No se permite publicación automática")
+    formato = plan.get("formato")
+    if formato not in ("short", "largo"):
+        raise ValueError("Formato desconocido")
+    if not shutil.which("ffmpeg") or not shutil.which("ffprobe"):
+        raise RuntimeError("FFmpeg y FFprobe son obligatorios")
+
+    escenas = adaptar_escenas(plan)
+    reconstruido = " ".join(escena["texto"] for escena in escenas)
+    if re.sub(r"\s+", " ", guion).strip() != reconstruido.strip():
+        raise ValueError("El guion y el orden de las escenas no coinciden")
+
+    modelo = modelo_piper()
+    SALIDA.mkdir(parents=True, exist_ok=True)
+    fps = 20
+    duracion_total = 0.0
+    with tempfile.TemporaryDirectory(prefix="pixel_feroz_render_") as temporal:
+        directorio = Path(temporal)
+        clips = []
+        for indice, escena in enumerate(escenas):
+            audio = directorio / f"audio_{indice:03}.wav"
+            duracion_audio = narrar(modelo, escena["texto"], audio)
+            # Exactamente un número entero de fotogramas por escena.
+            fotogramas = max(1, int(math.ceil((duracion_audio + 0.22) * fps)))
+            duracion_escena = fotogramas / fps
+            imagen = directorio / f"escena_{indice:03}.png"
+            if formato == "short":
+                tarjeta_escena(escena, indice, len(escenas),
+                              plan["titulo_propuesto"], imagen)
             else:
-                imagen_horizontal(escena,i,len(escenas),plan["titulo_propuesto"],foto)
-            tiempos.append(dur)
-            imagenes.append(foto)
-            audios.append(wav)
-        lista_fotos=td/"imagenes.txt"
-        # concat demuxer concatena fotogramas con duraciones.
-        lista_fotos.write_text("".join(
-            f"file '{p.name}'\nduration {d:.6f}\n"
-            for p,d in zip(imagenes,tiempos)
-        )+f"file '{imagenes[-1].name}'\n",encoding="utf-8")
-        lista_audio=td/"audios.txt"
-        lista_audio.write_text("".join(f"file '{p.name}'\n" for p in audios),
-                               encoding="utf-8")
-        audio=td/"narracion.m4a"
-        comando(["ffmpeg","-hide_banner","-loglevel","error","-y",
-                 "-f","concat","-safe","0","-i",str(lista_audio),
-                 "-c:a","aac","-b:a","128k",str(audio)])
-        video=SALIDA/("pixel_feroz_short.mp4" if formato=="short" else "pixel_feroz_largo.mp4")
-        comando(["ffmpeg","-hide_banner","-loglevel","error","-y",
-                 "-f","concat","-safe","0","-i",str(lista_fotos),
-                 "-i",str(audio),"-vf","fps=20","-c:v","libx264",
-                 "-preset","veryfast","-crf","24","-pix_fmt","yuv420p",
-                 "-c:a","copy","-shortest","-movflags","+faststart",
-                 str(video)])
-        if video.stat().st_size < 20000:
-            raise RuntimeError("Vídeo incompleto")
-        crear_miniatura(plan["titulo_propuesto"],formato,SALIDA/"miniatura.jpg")
-        print("MP4 generado:",str(video),"bytes",video.stat().st_size)
-        print("Escenas:",len(escenas),"duración narrada:",round(sum(tiempos),1))
-        print("Sin publicación. Revisar audio, factualidad, imagen y miniatura.")
+                imagen_horizontal(escena, indice, len(escenas),
+                                  plan["titulo_propuesto"], imagen)
+
+            clip = directorio / f"clip_{indice:03}.mp4"
+            # apad completa el audio con silencio hasta la duración exacta.
+            # La salida tiene tanto vídeo como audio de la misma duración.
+            audio_filtro = (
+                "aresample=48000,apad,"
+                f"atrim=duration={duracion_escena:.6f},"
+                "asetpts=N/SR/TB"
+            )
+            comando([
+                "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
+                "-loop", "1", "-framerate", str(fps), "-i", str(imagen),
+                "-i", str(audio),
+                "-map", "0:v:0", "-map", "1:a:0",
+                "-af", audio_filtro,
+                "-frames:v", str(fotogramas),
+                "-c:v", "libx264", "-preset", "veryfast",
+                "-crf", "25", "-pix_fmt", "yuv420p",
+                "-r", str(fps),
+                "-c:a", "aac", "-ar", "48000", "-ac", "1",
+                "-b:a", "128k",
+                "-t", f"{duracion_escena:.6f}",
+                str(clip)
+            ])
+            if clip.stat().st_size < 1000:
+                raise RuntimeError(f"El fragmento {indice} no se generó")
+            clips.append(clip)
+            duracion_total += duracion_escena
+
+        lista = directorio / "clips.txt"
+        lista.write_text(
+            "".join(f"file '{archivo.name}'\n" for archivo in clips),
+            encoding="utf-8"
+        )
+        salida = SALIDA / (
+            "pixel_feroz_short.mp4" if formato == "short"
+            else "pixel_feroz_largo.mp4"
+        )
+        # Los fragmentos comparten FPS, codec, tamaño y formato de audio.
+        # No es necesario recodificar el montaje final.
+        comando([
+            "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
+            "-f", "concat", "-safe", "0", "-i", str(lista),
+            "-map", "0:v:0", "-map", "0:a:0", "-c", "copy",
+            "-movflags", "+faststart", str(salida)
+        ])
+        if salida.stat().st_size < 20_000:
+            raise RuntimeError("MP4 vacío o incompleto")
+
+        crear_miniatura(plan["titulo_propuesto"], formato,
+                        SALIDA / "miniatura.jpg")
+        print("Archivo:", salida, flush=True)
+        print("Escenas:", len(escenas),
+              "| Duración planificada:", round(duracion_total, 2),
+              "segundos", flush=True)
+        print("La publicación requiere autorización y revisión humana.", flush=True)
 
 
 def main():
