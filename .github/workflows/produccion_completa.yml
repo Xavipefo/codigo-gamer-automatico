@@ -1,4 +1,4 @@
-name: Codigo Gamer - Produccion completa (Short / Largo)
+name: Píxel Feroz - Produccion completa (Short / Largo)
 
 on:
   workflow_dispatch:
@@ -29,7 +29,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: codigo-gamer-produccion
+  group: pixel-feroz-produccion
   cancel-in-progress: false
 
 jobs:
@@ -93,7 +93,7 @@ jobs:
       - name: Guardar video y revision editorial
         uses: actions/upload-artifact@v4
         with:
-          name: codigo-gamer-${{ inputs.formato }}-revision
+          name: pixel-feroz-${{ inputs.formato }}-revision
           path: |
             salida/*.mp4
             salida/miniatura.jpg
@@ -110,7 +110,7 @@ jobs:
           YOUTUBE_OAUTH_JSON: ${{ secrets.YOUTUBE_OAUTH_JSON }}
           YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}
           FORMATO: ${{ inputs.formato }}
-          CG_SUBIR_PRIVADO: "SI"
+          PF_SUBIR_PRIVADO: "SI"
         shell: bash
         run: python subir_youtube_privado.py --formato "$FORMATO"
 
@@ -122,14 +122,14 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add historial_publicados.json
-          git commit -m "chore: registrar subida privada de Codigo Gamer"
+          git commit -m "chore: registrar subida privada de Píxel Feroz"
           git push
 
       - name: Guardar resultado de YouTube
         if: ${{ inputs.subir_privado && always() }}
         uses: actions/upload-artifact@v4
         with:
-          name: codigo-gamer-resultado-subida
+          name: pixel-feroz-resultado-subida
           path: salida/youtube_resultado.json
           if-no-files-found: ignore
           retention-days: 7
