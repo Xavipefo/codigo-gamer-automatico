@@ -94,7 +94,7 @@ def comprobar_archivos(formato):
 
 
 
-def rechazar_subida_duplicada(youtube, tema_id):
+def rechazar_subida_duplicada(youtube, tema_id, formato='short'):
     """Busca vídeos previos del mismo tema en la lista de subidas de este canal.
 
     La búsqueda es deliberadamente conservadora: ante errores o demasiadas
@@ -113,6 +113,7 @@ def rechazar_subida_duplicada(youtube, tema_id):
 
     pagina = None
     marker = "Identificador editorial: PF-ID:" + tema_id
+    marcador_formato = "Formato editorial: PF-FORMATO:" + formato
     for numero in range(12):
         params = dict(part="contentDetails", playlistId=uploads, maxResults=50)
         if pagina:
@@ -127,7 +128,16 @@ def rechazar_subida_duplicada(youtube, tema_id):
             ).execute()
             for video in videos.get("items", []):
                 description = video.get("snippet", {}).get("description", "")
-                if marker in description.splitlines():
+                lineas = description.splitlines()
+                coincide = marker in lineas and (
+                    marcador_formato in lineas
+                    or (formato == "short"
+                        and not any(
+                            linea.startswith("Formato editorial: PF-FORMATO:")
+                            for linea in lineas
+                        ))
+                )
+                if coincide:
                     video_id = video.get("id", "desconocido")
                     raise RuntimeError(
                         "BLOQUEADO: ya existe un vídeo de este tema en el canal: "
@@ -242,7 +252,7 @@ def main():
         raise RuntimeError("Ya hay resultado anterior; impide subida duplicada")
     yt=cliente()
     verificar_identidad(yt)
-    rechazar_subida_duplicada(yt,plan["tema_id"])
+    rechazar_subida_duplicada(yt,plan["tema_id"],plan["formato"])
     subir_privado(yt,plan,titulo,descripcion,mp4,miniatura)
 
 
