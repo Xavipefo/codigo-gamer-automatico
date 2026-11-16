@@ -1,69 +1,128 @@
 #!/usr/bin/env python3
-"""Control antes de autorizar subida a YouTube: vídeo, fuentes y metadatos."""
+"""Verifica técnicamente el vídeo sin enviarlo ni modificar YouTube.
+
+No sustituye la revisión editorial, musical ni de derechos de autor.
+"""
 import argparse
+import hashlib
 import json
+import math
 import shutil
 import subprocess
 from datetime import date
 from pathlib import Path
-from urllib.parse import urlparse
 
-BASE=Path(__file__).resolve().parent
-OUT=BASE/"salida"
-THEMES=BASE/"temas_verificados.json"
+from PIL import Image
+from preparar_contenido import validar_tema
+
+BASE = Path(__file__).resolve().parent
+OUT = BASE / "salida"
+THEMES = BASE / "temas_verificados.json"
 
 
 def comprobar(formato):
+    if formato not in ("short", "largo"):
+        raise ValueError("Formato desconocido")
     if not shutil.which("ffprobe"):
         raise RuntimeError("Se necesita ffprobe")
-    plan=json.loads((OUT/"plan.json").read_text(encoding="utf-8"))
-    assert plan["formato"]==formato, "Formato no coincide"
-    assert plan["publicacion_automatica"] is False, "Publicación automática no bloqueada"
-    assert plan["estado"]=="BORRADOR_PENDIENTE_REVISION", "Plan editorial inválido"
-    temas=json.loads(THEMES.read_text(encoding="utf-8"))
-    tema=next((t for t in temas if t["id"]==plan["tema_id"]),None)
+    plan = json.loads((OUT / "plan.json").read_text(encoding="utf-8"))
+    if plan.get("formato") != formato:
+        raise ValueError("El formato del vídeo no coincide con el plan")
+    if plan.get("canal") != "Píxel Feroz":
+        raise ValueError("El plan no corresponde a Píxel Feroz")
+    if plan.get("publicacion_automatica") is not False:
+        raise ValueError("La publicación automática debe estar desactivada")
+    if plan.get("estado") != "BORRADOR_PENDIENTE_REVISION":
+        raise ValueError("Estado editorial inválido")
+    if plan.get("revision_pendiente") is not True:
+        raise ValueError("Debe conservar la revisión editorial pendiente")
+
+    temas = json.loads(THEMES.read_text(encoding="utf-8"))
+    tema = next((t for t in temas if t.get("id") == plan.get("tema_id")), None)
     if tema is None:
-        raise ValueError("Tema no existe en listado verificado")
-    if tema.get("vigente_hasta") and date.fromisoformat(tema["vigente_hasta"])<date.today():
-        raise ValueError("Tema caducado")
+        raise ValueError("El tema no existe en la lista editorial")
+    validar_tema(tema)  # Comprueba fecha, estado y dominios de cada fuente.
+    guion = (OUT / "guion.txt").read_text(encoding="utf-8").strip()
+    if hashlib.sha256(guion.encode("utf-8")).hexdigest() != plan.get("huella_guion"):
+        raise ValueError("El texto narrado ha cambiado después de aprobar el plan")
+    if len(guion.split()) < (45 if formato == "short" else 650):
+        raise ValueError("Guion demasiado corto para el formato")
+    if not 5 <= len(plan.get("titulo_propuesto", "")) <= 100:
+        raise ValueError("Título fuera del límite permitido")
+    descripcion = (OUT / "descripcion.txt").read_text(encoding="utf-8")
     for hecho in tema["hechos"]:
-        if not hecho.get("fuente","").startswith("https://"):
-            raise ValueError("Hay una afirmación sin fuente HTTPS")
-    guion=(OUT/"guion.txt").read_text(encoding="utf-8").strip()
-    if len(guion.split()) < (50 if formato=="short" else 650):
-        raise ValueError("Guion demasiado corto")
-    video=OUT/("pixel_feroz_short.mp4" if formato=="short" else "pixel_feroz_largo.mp4")
-    if video.stat().st_size < 20000:
-        raise ValueError("Vídeo pequeño o vacío")
-    p=subprocess.run(["ffprobe","-v","error","-show_streams","-show_format",
-                      "-of","json",str(video)],check=True,capture_output=True,text=True)
-    info=json.loads(p.stdout)
-    streams=info.get("streams",[])
-    v=next((s for s in streams if s.get("codec_type")=="video"),None)
-    a=next((s for s in streams if s.get("codec_type")=="audio"),None)
-    if not v or not a:
-        raise ValueError("Faltan audio o vídeo")
-    expected=(720,1280) if formato=="short" else (1280,720)
-    if (v.get("width"),v.get("height"))!=expected:
+        if hecho["fuente"] not in descripcion:
+            raise ValueError("La descripción no incluye una fuente del tema")
+    if "Identificador editorial: PF-ID:" + plan["tema_id"] not in descripcion:
+        raise ValueError("Falta identificador editorial para deduplicación")
+
+    video = OUT / (
+        "pixel_feroz_short.mp4" if formato == "short"
+        else "pixel_feroz_largo.mp4"
+    )
+    if not video.is_file() or video.stat().st_size < 20_000:
+        raise ValueError("Vídeo pequeño, ausente o vacío")
+
+    proceso = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_streams", "-show_format",
+         "-of", "json", str(video)],
+        check=True, capture_output=True, text=True, timeout=30
+    )
+    info = json.loads(proceso.stdout)
+    streams = info.get("streams", [])
+    vis = next((x for x in streams if x.get("codec_type") == "video"), None)
+    aud = next((x for x in streams if x.get("codec_type") == "audio"), None)
+    if not vis or not aud:
+        raise ValueError("Falta una pista de vídeo o audio")
+    expected = (720, 1280) if formato == "short" else (1280, 720)
+    if (vis.get("width"), vis.get("height")) != expected:
         raise ValueError("Resolución incorrecta")
-    dur=float(info["format"]["duration"])
-    bounds=(10,180) if formato=="short" else (180,1200)
-    if not bounds[0]<=dur<=bounds[1]:
-        raise ValueError(f"Duración {dur:.1f}s fuera de {bounds}")
-    mini=OUT/"miniatura.jpg"
-    if not mini.exists() or mini.stat().st_size>2*1024*1024:
+    if vis.get("codec_name") != "h264" or aud.get("codec_name") != "aac":
+        raise ValueError("Se requiere vídeo H264 y audio AAC")
+    duracion = float(info.get("format", {}).get("duration", 0))
+    if not math.isfinite(duracion):
+        raise ValueError("La duración del MP4 no es finita")
+    limites = (10, 180) if formato == "short" else (180, 1200)
+    if not limites[0] <= duracion <= limites[1]:
+        raise ValueError(f"Duración fuera de rango: {duracion:.1f} segundos")
+    video_seg = float(vis.get("duration") or duracion)
+    audio_seg = float(aud.get("duration") or duracion)
+    if abs(video_seg - audio_seg) > 1.0:
+        raise ValueError(
+            f"Desincronización: vídeo {video_seg:.2f}s, audio {audio_seg:.2f}s"
+        )
+
+    miniatura = OUT / "miniatura.jpg"
+    if not miniatura.is_file() or miniatura.stat().st_size > 2 * 1024 * 1024:
         raise ValueError("Miniatura ausente o demasiado grande")
-    result={"tema":plan["tema_id"],"formato":formato,"segundos":round(dur,2),
-            "resolucion":list(expected),"audio":True,"fuentes":len(tema["hechos"]),
-            "revision_humana_pendiente":True,"listo_para_subida_privada":True}
-    (OUT/"calidad.json").write_text(
-        json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    print(json.dumps(result,ensure_ascii=False,indent=2))
-    return result
+    with Image.open(miniatura) as im:
+        if im.format != "JPEG" or im.size != expected:
+            raise ValueError("Formato o dimensiones de miniatura no válidos")
+        im.verify()
+
+    resultado = {
+        "canal": "Píxel Feroz",
+        "tema": plan["tema_id"],
+        "formato": formato,
+        "segundos": round(duracion, 2),
+        "resolucion": list(expected),
+        "audio": "aac",
+        "video": "h264",
+        "fuentes_referenciadas": len(tema["hechos"]),
+        "sincronizacion_tecnica": True,
+        "revision_editorial_pendiente": True,
+        "listo_para_subida_privada": True,
+    }
+    (OUT / "calidad.json").write_text(
+        json.dumps(resultado, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8"
+    )
+    print(json.dumps(resultado, ensure_ascii=False, indent=2))
+    return resultado
 
 
-if __name__=="__main__":
-    p=argparse.ArgumentParser()
-    p.add_argument("--formato",choices=("short","largo"),required=True)
-    args=p.parse_args()
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--formato", choices=("short", "largo"), required=True)
+    args = parser.parse_args()
     comprobar(args.formato)
