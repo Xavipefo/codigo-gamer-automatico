@@ -72,6 +72,11 @@ def validar_tema(tema):
     if "largo" in formatos:
         esquema = tema.get("esquema_largo", [])
         manual = tema.get("escenas_largas", [])
+        if isinstance(esquema, list) and any(
+            not isinstance(x, str) or not x.strip() or len(x) > 200
+            for x in esquema
+        ):
+            raise ValueError("Esquema del largo inválido")
         if not (isinstance(esquema, list) and len(esquema) >= 6) and not (
             isinstance(manual, list) and len(manual) >= 8
         ):
@@ -142,7 +147,10 @@ def construir_descripcion(tema, formato):
 
 
 def preparar(tema):
-    hechos = [texto_limpio(h["texto"], "texto") for h in tema["hechos"]]
+    # Los Shorts solo narran las primeras tres afirmaciones: los restantes
+    # sirven para la investigación de formatos largos y la descripción.
+    hechos = [texto_limpio(h["texto"], "texto")
+              for h in tema["hechos"][:3]]
     gancho = texto_limpio(tema["gancho"], "gancho")
     contexto = texto_limpio(tema["contexto"], "contexto")
     cierre = (
@@ -168,7 +176,7 @@ def preparar(tema):
             {"tipo": "gancho", "texto": gancho},
             {"tipo": "contexto", "texto": contexto},
             *[{"tipo": "hecho_verificado", "texto": h["texto"], "fuente": h["fuente"]}
-              for h in tema["hechos"]],
+              for h in tema["hechos"][:3]],
             {"tipo": "cierre", "texto": cierre},
         ],
         "fuentes": referencias,
