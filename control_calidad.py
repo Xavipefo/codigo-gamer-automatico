@@ -59,8 +59,11 @@ def comprobar(formato):
     for hecho in tema["hechos"]:
         if hecho["fuente"] not in descripcion:
             raise ValueError("La descripción no incluye una fuente del tema")
-    if "Identificador editorial: PF-ID:" + plan["tema_id"] not in descripcion:
-        raise ValueError("Falta identificador editorial para deduplicación")
+    if any(x in descripcion for x in (
+        "Identificador editorial:", "Formato editorial:",
+        "PF-ID:", "PF-FORMATO:"
+    )):
+        raise ValueError("La descripción contiene metadatos editoriales internos")
 
     video = OUT / (
         "pixel_feroz_short.mp4" if formato == "short"
