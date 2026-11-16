@@ -41,9 +41,9 @@ def adaptar_escenas(plan):
     formato = plan["formato"]
     if formato not in ("short", "largo"):
         raise ValueError("Formato desconocido")
-    # El TTS cobra por petición; en largos juntamos párrafos de ~75 palabras
+    # El TTS cobra por petición; en largos se usan bloques de ~50 palabras
     # y mostramos un resumen visual, sin alterar lo que narra la voz.
-    limite = 75 if formato == "largo" else 30
+    limite = 50 if formato == "largo" else 30
     salida = []
     for esc in plan["escenas"]:
         for trozo in fragmentar(esc["texto"], limite):
