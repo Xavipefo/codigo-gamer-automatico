@@ -21,7 +21,34 @@
       }
     ],
     "vigente_hasta": "2026-11-18",
-    "prioridad": 100
+    "prioridad": 100,
+    "texto_miniatura": "GTA VI: ¿CUÁNDO SALE?",
+    "descripcion_personalizada": "Repasamos la fecha, las plataformas y el escenario de GTA VI confirmados por Rockstar antes del estreno."
+  },
+  {
+    "id": "gta6-30fps-ps5pro",
+    "titulo": "GTA VI a 30 FPS: lo que Rockstar ha confirmado",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-16",
+    "prioridad": 110,
+    "gancho": "¿Esperabas GTA VI a sesenta fotogramas por segundo? Rockstar ha confirmado otra cifra para el estreno",
+    "contexto": "En su anuncio sobre la precarga explicó el objetivo de rendimiento y algunas diferencias de imagen entre consolas",
+    "hechos": [
+      {
+        "texto": "Rockstar afirma que GTA VI apunta a 30 fotogramas por segundo en PlayStation 5 y Xbox Series X y S",
+        "fuente": "https://www.rockstargames.com/mx/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "En PlayStation 5 Pro habrá mayor claridad de imagen mediante PlayStation Spectral Super Resolution, conocido como PSSR",
+        "fuente": "https://www.rockstargames.com/mx/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "Rockstar también anuncia sombras con trazado de rayos exclusivas de PlayStation 5 Pro",
+        "fuente": "https://www.rockstargames.com/mx/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      }
+    ],
+    "texto_miniatura": "GTA VI: 30 FPS",
+    "descripcion_personalizada": "Rockstar ha comunicado el objetivo de rendimiento y las mejoras previstas para PlayStation 5 Pro. Te contamos los datos oficiales."
   },
   {
     "id": "gta6-jason-lucia",
@@ -42,9 +69,54 @@
       {
         "texto": "Vice City es una de las localizaciones confirmadas de este nuevo juego",
         "fuente": "https://www.rockstargames.com/VI"
+      },
+      {
+        "texto": "Según Rockstar, Jason Duval creció rodeado de estafadores y delincuentes y pasó una temporada en el Ejército",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "La descripción oficial de Jason cuenta que terminó en los Cayos trabajando para distribuidores de drogas locales",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Lucia Caminos pasó un tiempo en la prisión de Leonida después de luchar por su familia",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Rockstar presenta a Lucia como una persona decidida a conseguir una vida mejor para ella y su familia",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Según la sinopsis, un golpe aparentemente sencillo sale mal y deja a Jason y Lucia en medio de una conspiración criminal que se extiende por Leonida",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "El sitio oficial presenta a Cal Hampton como amigo de Jason y vinculado con Brian",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Rockstar describe Vice City como una parte del estado ficticio de Leonida",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
       }
     ],
-    "prioridad": 25
+    "prioridad": 25,
+    "texto_miniatura": "JASON Y LUCIA: TODO",
+    "descripcion_personalizada": "Descubrimos quiénes son Jason Duval y Lucia Caminos, qué ha explicado Rockstar sobre su historia y cómo se relacionan con Vice City y Leonida.",
+    "formatos": [
+      "short",
+      "largo"
+    ],
+    "esquema_largo": [
+      "Apertura: lo que Rockstar ha confirmado y lo que todavía no sabemos",
+      "Quién es Jason Duval según su descripción oficial",
+      "La vida y los objetivos de Lucia Caminos",
+      "Por qué los dos protagonistas terminan dependiendo uno del otro",
+      "Vice City y Leonida como escenarios narrativos confirmados",
+      "La conspiración criminal descrita en la sinopsis oficial",
+      "Personajes secundarios presentados y límites de lo que conocemos",
+      "Claves para no confundir expectativas con anuncios oficiales",
+      "Recapitulación de hechos contrastados y cierre del vídeo"
+    ]
   },
   {
     "id": "gta6-precarga-212gb",
@@ -68,29 +140,8 @@
         "texto": "Rockstar mantiene el lanzamiento del juego para el 19 de noviembre de 2026 en PlayStation 5 y Xbox Series X y S",
         "fuente": "https://www.rockstargames.com/VI"
       }
-    ]
-  },
-  {
-    "id": "gta6-30fps-ps5pro",
-    "titulo": "GTA VI a 30 FPS: lo que Rockstar ha confirmado",
-    "estado": "confirmado",
-    "fecha_verificacion": "2026-11-16",
-    "prioridad": 110,
-    "gancho": "¿Esperabas GTA VI a sesenta fotogramas por segundo? Rockstar ha confirmado otra cifra para el estreno",
-    "contexto": "En su anuncio sobre la precarga explicó el objetivo de rendimiento y algunas diferencias de imagen entre consolas",
-    "hechos": [
-      {
-        "texto": "Rockstar afirma que GTA VI apunta a 30 fotogramas por segundo en PlayStation 5 y Xbox Series X y S",
-        "fuente": "https://www.rockstargames.com/mx/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
-      },
-      {
-        "texto": "En PlayStation 5 Pro habrá mayor claridad de imagen mediante PlayStation Spectral Super Resolution, conocido como PSSR",
-        "fuente": "https://www.rockstargames.com/mx/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
-      },
-      {
-        "texto": "Rockstar también anuncia sombras con trazado de rayos exclusivas de PlayStation 5 Pro",
-        "fuente": "https://www.rockstargames.com/mx/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
-      }
-    ]
+    ],
+    "texto_miniatura": "¿212 GB PARA GTA VI?",
+    "descripcion_personalizada": "La precarga de GTA VI ya está disponible. Descubre cuánto espacio podría necesitar tu consola y las fechas confirmadas por Rockstar."
   }
 ]
