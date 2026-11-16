@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import json
 import math
+import os
 import shutil
 import subprocess
 from datetime import date
@@ -14,7 +15,7 @@ from pathlib import Path
 
 from PIL import Image
 from preparar_contenido import validar_tema
-from voz_produccion import elegir_voz
+from voz_produccion import elegir_voz, CONFIG
 
 BASE = Path(__file__).resolve().parent
 OUT = BASE / "salida"
@@ -109,6 +110,17 @@ def comprobar(formato):
             raise ValueError("Formato o dimensiones de miniatura no válidos")
         im.verify()
 
+    config = json.loads(CONFIG.read_text(encoding="utf-8"))
+    motor = config.get("motor_voz", "gemini-3.8-flash-tts")
+    forzado = os.environ.get("PF_TTS_PROVIDER", "").strip().lower()
+    if forzado == "azure":
+        motor = "azure-neural"
+    elif forzado == "gemini":
+        motor = "gemini-3.8-flash-tts"
+    voz_real = (
+        "es-ES-AlvaroNeural" if formato == "short" else "es-ES-ArnauNeural"
+    ) if motor == "azure-neural" else plan["narrador_voz"]
+
     resultado = {
         "canal": "Píxel Feroz",
         "tema": plan["tema_id"],
@@ -119,8 +131,9 @@ def comprobar(formato):
         "video": "h264",
         "fuentes_referenciadas": len(tema["hechos"]),
         "sincronizacion_tecnica": True,
-        "motor_voz": "gemini-3.8-flash-tts",
+        "motor_voz": motor,
         "narrador_voz": plan["narrador_voz"],
+        "voz_real": voz_real,
         "narrador_sintetico": True,
         "revision_editorial_pendiente": True,
         "listo_para_subida_privada": True,
