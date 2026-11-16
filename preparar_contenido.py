@@ -166,6 +166,10 @@ def preparar(tema):
         "tema_id": tema["id"],
         "titulo_propuesto": tema["titulo"],
         "texto_miniatura": tema.get("texto_miniatura", tema["titulo"])[:90],
+        "etiquetas": [
+            "videojuegos", "gaming", "Píxel Feroz",
+            *(["GTA VI"] if "gta" in tema["id"].lower() else []),
+        ],
         "estado": "BORRADOR_PENDIENTE_REVISION",
         "publicacion_automatica": False,
         "fecha_preparacion": date.today().isoformat(),
