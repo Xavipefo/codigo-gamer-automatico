@@ -14,7 +14,7 @@ import os
 import re
 from pathlib import Path
 
-from voz_gemini_castellano import VOCES, sintetizar
+from voz_gemini_castellano import VOCES, sintetizar, AudioIncompletoError
 
 RAIZ = Path(__file__).resolve().parent
 CONFIG = RAIZ / "config.json"
@@ -105,22 +105,38 @@ class NarradorGemini:
         # haya devuelto un audio truncado. En la prueba larga anterior,
         # un fragmento terminó en 8.8 s tras narrar muchas más palabras.
         esperado_minimo = max(2.0, len(texto.split()) / 5.0)
-        for intento in range(2):
-            segundos = sintetizar(preparar_lectura(texto), self.voz, ruta)
+        # Reintentamos tanto WAV demasiado breve como audio sin voz
+        # suficiente. Si el servicio vuelve a fallar se detiene ANTES
+        # de la subida; nunca completamos un largo con silencios.
+        ultimo_error = None
+        for intento in range(3):
+            if self.peticiones >= self.max_peticiones:
+                raise RuntimeError("Máximo de peticiones TTS por vídeo agotado")
             self.peticiones += 1
-            if segundos >= esperado_minimo:
+            try:
+                segundos = sintetizar(preparar_lectura(texto), self.voz, ruta)
+                if segundos < esperado_minimo:
+                    raise AudioIncompletoError(
+                        "La duración del audio es insuficiente para el texto"
+                    )
+                ultimo_error = None
                 break
-            if intento == 0 and self.peticiones < self.max_peticiones:
-                print(
-                    "::warning::Audio aparentemente incompleto: "
-                    "regenerando el fragmento con la misma voz.",
-                    flush=True,
-                )
-            else:
-                raise RuntimeError(
-                    "La voz devolvió una narración demasiado corta para "
-                    "el guion. No se subirá el vídeo incompleto."
-                )
+            except AudioIncompletoError as exc:
+                ultimo_error = exc
+                if intento < 2 and self.peticiones < self.max_peticiones:
+                    print(
+                        "::warning::Gemini devolvió un fragmento incompleto. "
+                        "Regenerando con " + self.voz
+                        + " (" + str(intento + 2) + "/3).",
+                        flush=True,
+                    )
+                else:
+                    raise RuntimeError(
+                        "Tres intentos de audio incompleto para un fragmento. "
+                        "No se subirá el vídeo."
+                    ) from None
+        if ultimo_error is not None:
+            raise RuntimeError("No se pudo completar el fragmento TTS")
         self.segundos += segundos
         if self.segundos > (180 if self.formato == "short" else 1200):
             raise RuntimeError("Duración total de narración fuera del límite")
