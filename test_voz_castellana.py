@@ -71,7 +71,7 @@ class TestGeminiCastellano(unittest.TestCase):
             fichero.setnchannels(1)
             fichero.setsampwidth(2)
             fichero.setframerate(24000)
-            fichero.writeframes(b"\\x00" * 48000)
+            fichero.writeframes(bytes(48000))
         wav_b64 = base64.b64encode(wav.getvalue()).decode("ascii")
         fake = {
             "steps": [{
