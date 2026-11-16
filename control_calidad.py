@@ -14,6 +14,7 @@ from pathlib import Path
 
 from PIL import Image
 from preparar_contenido import validar_tema
+from voz_produccion import elegir_voz
 
 BASE = Path(__file__).resolve().parent
 OUT = BASE / "salida"
@@ -36,6 +37,11 @@ def comprobar(formato):
         raise ValueError("Estado editorial inválido")
     if plan.get("revision_pendiente") is not True:
         raise ValueError("Debe conservar la revisión editorial pendiente")
+    if plan.get("narrador_sintetico") is not True:
+        raise ValueError("El vídeo debe identificar una narración sintética")
+    if plan.get("narrador_voz") != elegir_voz(formato):
+        raise ValueError("La voz no coincide con el reparto editorial")
+
 
     temas = json.loads(THEMES.read_text(encoding="utf-8"))
     tema = next((t for t in temas if t.get("id") == plan.get("tema_id")), None)
@@ -110,6 +116,9 @@ def comprobar(formato):
         "video": "h264",
         "fuentes_referenciadas": len(tema["hechos"]),
         "sincronizacion_tecnica": True,
+        "motor_voz": "gemini-3.8-flash-tts",
+        "narrador_voz": plan["narrador_voz"],
+        "narrador_sintetico": True,
         "revision_editorial_pendiente": True,
         "listo_para_subida_privada": True,
     }
