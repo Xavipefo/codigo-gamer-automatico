@@ -1,6 +1,6 @@
 # Píxel Feroz — sistema independiente de YouTube
 
-**Estado actual:** conexión OAuth y primera producción privada de Short completadas el 16-11-2026. La miniatura de esa subida recibió HTTP 403 y requiere habilitación del canal; el sistema ahora registra esta incidencia. La cola ordenada, los metadatos específicos y los dos workflows independientes están implementados, todavía **pendientes de una validación completa de esta versión**. No hay publicaciones públicas automáticas.
+**Estado actual:** OAuth y Gemini verificados; dos Shorts privados creados y miniaturas confirmadas el 16-11-2026. Incorporada nueva narración Kokoro y soporte opcional de vídeos de juego autorizados, **todavía pendientes de una prueba audiovisual completa**. No hay publicaciones públicas automáticas.
 
 ## Arquitectura
 
@@ -11,12 +11,33 @@
 | editorial.py | Elige temas vigentes, evita duplicados y prepara guiones |
 | descubrir_noticias.py | Candidatos de PlayStation Blog y Xbox Wire, nunca autoconfirmados |
 | generar_short.py | Gráficos originales de tarjetas |
-| motor_video.py | Voz Piper por escena, MP4 9:16 y 16:9, miniaturas |
+| motor_video.py | Voz Kokoro en español, escenas animadas, clips autorizados, MP4 9:16/16:9 y miniaturas |
 | control_calidad.py | Comprueba vídeo, audio, resolución y fuentes |
 | autorizar_youtube_local.py | Genera la credencial OAuth con consentimiento local |
 | subir_youtube_privado.py | Verifica el canal y sube solamente como privado |
 | registrar_subida.py | Guarda historial tras confirmación de privacidad |
 | historial_publicados.json | Evita subir repetidamente el mismo tema |
+
+## Voz más humana y clips de videojuegos
+
+El renderizador `motor_video.py` ahora utiliza **Kokoro-82M ONNX** en lugar de Piper (voz española `em_alex`, configurable desde `config.json` con `voz_nombre` y `voz_velocidad`). El modelo abierto está bajo licencia Apache-2.0 y se descarga desde un release oficial fijado, comprobando SHA-256; GitHub Actions almacena en caché los pesos para posteriores producciones.
+
+**Antes de publicar nuevos vídeos**, ejecutar desde Actions `Píxel Feroz - Escuchar voz natural` (`.github/workflows/probar_voz_natural.yml`). Permite obtener una muestra WAV de voz masculina `em_alex` o `em_santa`, o femenina `ef_dora`. El audio se guarda en un artifact **público** solo con texto de demostración, sin material privado. No se publica nada en YouTube. Escuchar la muestra para elegir voz y comprobar pronunciación de GTA.
+
+**Imagen en movimiento**: sin archivos de juego, el motor da movimiento suave a los gráficos propios. Cuando exista un clip legítimamente utilizable, se puede aportar un enlace privado HTTPS directo a MP4/MOV/WebM mediante el secreto `PF_CLIPS_JSON`, con este formato (ejemplo ficticio):
+
+```json
+{
+  "gta6-jason-lucia": {
+    "url": "https://mi-servidor-de-videos.example/videos/gta.mp4",
+    "derechos_confirmados": true
+  }
+}
+```
+
+El enlace y sus credenciales **nunca van en el repositorio público**. Se descarga solo durante la ejecución, en un máximo de 120 MB y con comprobación de que existe pista de vídeo. El motor alterna fragmentos del vídeo autorizado **sin reutilizar su audio** con las tarjetas animadas, superponiendo rótulos y la narración Kokoro. El mismo clip puede repetirse como fondo en varios planos; es preferible preparar cortes diferentes para lograr una edición más dinámica. Actualmente **no hay clips de GTA conectados** y por eso se verán animaciones originales hasta configurar este secreto.
+
+**Derechos de uso**: no descargar trailers, filtraciones, vídeos de YouTube ni partidas ajenas automáticamente. Rockstar/Take-Two permite determinados usos no comerciales de gameplay de fans, pero para monetización o reutilización de material ajeno se deben comprobar los derechos y las reglas de Rockstar. No asumir permiso por el hecho de que un tráiler esté disponible públicamente.
 
 ## Automatización por cola (noviembre de 2026)
 
@@ -77,7 +98,7 @@ Instalar FFmpeg/ffprobe y las fuentes DejaVu. Después:
 - python motor_video.py
 - python control_calidad.py --formato short
 
-La primera producción descargará un modelo Piper de voz española. Los MP4, planes, descripciones y miniaturas se crean en salida/. No se han generado vídeos durante esta fase de preparación.
+La producción descarga el modelo local Kokoro int8 de voz española y verifica su huella SHA-256. Los MP4, planes, descripciones y miniaturas se crean en salida/. Las subidas privadas deben revisarse en YouTube Studio.
 
 ## Repositorio público y primeros vídeos
 
@@ -89,7 +110,7 @@ La publicación del código en GitHub es distinta de la publicación de vídeos 
 - Ya hay cuatro temas en `temas_verificados.json`, incluidos dos Shorts nuevos sobre precarga y rendimiento. Las escaletas están en `contenido/primeros_videos.md`.
 - Para la primera producción, recomendamos el tema `gta6-precarga-212gb` antes del 19 de noviembre de 2026. Las fichas basadas en noticias anteriores al estreno tienen fecha de caducidad para evitar publicar información desactualizada.
 
-**Advertencia:** aún no se ha generado un MP4 con este motor. La primera ejecución es una producción piloto y puede requerir corregir errores técnicos. Si falla después de enviar contenido a YouTube, comprobar YouTube Studio antes de repetir la ejecución, para evitar duplicados.
+**Advertencia:** el nuevo motor Kokoro y las escenas con movimiento aún no se han validado con un MP4 completo. La próxima ejecución será una producción piloto y puede requerir corregir errores técnicos. Si falla después de enviar contenido a YouTube, comprobar YouTube Studio antes de repetir la ejecución, para evitar duplicados.
 
 ## Revisión técnica del 16-11-2026
 
