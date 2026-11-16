@@ -1,11 +1,17 @@
 """Comprobaciones sin peticiones de red para la voz castellana."""
 import base64
+import io
 import json
+import os
+import tempfile
 import unittest
+import wave
+from pathlib import Path
 from unittest.mock import patch
 
 from voz_gemini_castellano import (
     ESTILO, ESTILO_CHARON, MODEL, VOCES, MUESTRA, peticion_audio, extraer_audio,
+    sintetizar, AudioIncompletoError,
 )
 
 
@@ -58,6 +64,29 @@ class TestGeminiCastellano(unittest.TestCase):
         }
         with self.assertRaises(RuntimeError):
             extraer_audio(ejemplo)
+
+    def test_rechaza_wav_valido_pero_sin_duracion_usable(self):
+        wav = io.BytesIO()
+        with wave.open(wav, "wb") as fichero:
+            fichero.setnchannels(1)
+            fichero.setsampwidth(2)
+            fichero.setframerate(24000)
+            fichero.writeframes(b"\\x00" * 48000)
+        wav_b64 = base64.b64encode(wav.getvalue()).decode("ascii")
+        fake = {
+            "steps": [{
+                "type": "model_output",
+                "content": [{"type": "audio", "data": wav_b64}]
+            }]
+        }
+        with tempfile.TemporaryDirectory() as t:
+            ruta = Path(t) / "narracion.wav"
+            with patch("voz_gemini_castellano.solicitar_json", return_value=fake):
+                with self.assertRaises(AudioIncompletoError):
+                    sintetizar("Un texto de muestra con varias palabras.", "Charon", ruta,
+                               clave="clave-falsa")
+            self.assertFalse(ruta.exists())
+            self.assertFalse(ruta.with_suffix(".tmp").exists())
 
     def test_rechazar_voz_no_permitida(self):
         with self.assertRaises(ValueError):
