@@ -166,6 +166,51 @@ La decisión de publicar desde YouTube Studio corresponde al propietario
 después de revisar voz, imagen, copyright, títulos, descripción y contenido.
 Los vídeos antiguos privados pueden conservar su voz anterior.
 
+## Recuperación de Gemini TTS y vídeos largos (16/11/2026)
+
+**Incidencia real:** el workflow `43946742189` generó correctamente el
+guion de 1.829 palabras y cinco audios con Charon; después recibió
+`HTTP 429` repetidamente. La cuota de Google AI puede tener límites de
+solicitudes por minuto, tokens por minuto o solicitudes por día, compartidos
+por todo el proyecto. Un 429 **no demuestra por sí solo** qué límite
+concreto se ha alcanzado. Los límites vigentes se consultan en
+https://aistudio.google.com/rate-limit.
+
+**Cambios ya integrados:**
+
+- `motor_video.py` utiliza bloques equilibrados de hasta **100 palabras**,
+  evitando solicitar audio innecesariamente en trozos de 50 palabras.
+- `voz_produccion.py` deja un intervalo mínimo de **35 segundos entre
+  peticiones TTS de un vídeo largo**, reduciendo ráfagas de solicitudes.
+- `gemini_reintentos.py` respeta `Retry-After` y aplica pausas largas
+  en HTTP 429. Identifica y corta la ejecución cuando el proveedor
+  señala expresamente un límite **diario**, que no se soluciona esperando
+  unos pocos minutos.
+- El motor conserva localmente en el **runner temporal del trabajo actual**
+  los WAV y clips MP4 ya válidos. Si Google vuelve a bloquear por minuto,
+  el workflow reintenta **únicamente el paso de render** y recupera
+  esos archivos, sin recrear el guion y sin duplicar la subida.
+  El checkpoint se borra al completar el vídeo.
+- Al tratarse de un **repositorio público**, no guardamos el guion ni
+  los WAV inéditos como `GitHub Actions artifacts` públicos. En una
+  ejecución nueva de GitHub empieza un runner nuevo: no hay continuidad
+  entre runs. Esto es una medida de privacidad deliberada.
+- El paso de subida a YouTube **nunca se reintenta automáticamente**.
+  Todos los vídeos se envían exclusivamente como **privados** y
+  quedan pendientes de revisión.
+
+**Pruebas:** el workflow `validar_codigo.yml` instala FFmpeg y ejecuta
+una prueba integral `test_render_integracion.py` que genera un MP4 real,
+simula un fallo de cuota a mitad, comprueba la reutilización de WAV y MP4,
+y termina el montaje. No realiza llamadas a Google ni sube vídeos.
+Validación: https://github.com/Xavipefo/codigo-gamer-automatico/actions/runs/43949318365.
+
+**Importante:** este resultado confirma el motor y su recuperación, no
+la cuota real de la clave ni la calidad audible de un vídeo de 10-13
+minutos. Si vuelve a aparecer `HTTP 429` por **RPD**, será necesario
+esperar al reinicio de cuota según Google o aumentar la cuota del proyecto,
+no repetir inmediatamente el workflow.
+
 ## Primer lanzamiento (revisión humana obligatoria)
 
 1. Ejecutar **Crear Short privado** con el campo `tema` vacío.
