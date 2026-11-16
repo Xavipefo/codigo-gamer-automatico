@@ -1,0 +1,47 @@
+name: Pixel Feroz - Verificar conexion YouTube (sin subir videos)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pixel-feroz-verificar-oauth
+  cancel-in-progress: false
+
+jobs:
+  verificar-oauth:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar librerias de YouTube
+        run: |
+          python -m pip install --disable-pip-version-check \
+            google-api-python-client \
+            google-auth \
+            google-auth-oauthlib \
+            google-auth-httplib2
+
+      - name: Verificar credencial e identidad del canal
+        env:
+          YOUTUBE_OAUTH_JSON: ${{ secrets.YOUTUBE_OAUTH_JSON }}
+        run: |
+          python - <<'PY'
+          from subir_youtube_privado import cliente, verificar_identidad
+          youtube = cliente()
+          verificar_identidad(youtube)
+          print("CONEXION OK: OAuth corresponde a Pixel Feroz.")
+          print("Esta comprobacion no genera ni sube videos.")
+          PY
