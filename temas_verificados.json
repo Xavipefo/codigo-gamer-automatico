@@ -19,7 +19,9 @@
         "texto": "La historia transcurre en el estado ficticio de Leonida y marca el regreso a Vice City",
         "fuente": "https://www.rockstargames.com/VI"
       }
-    ]
+    ],
+    "vigente_hasta": "2026-11-18",
+    "prioridad": 100
   },
   {
     "id": "gta6-jason-lucia",
@@ -41,6 +43,7 @@
         "texto": "Vice City es una de las localizaciones confirmadas de este nuevo juego",
         "fuente": "https://www.rockstargames.com/VI"
       }
-    ]
+    ],
+    "prioridad": 25
   }
 ]
