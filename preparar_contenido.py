@@ -13,7 +13,11 @@ from urllib.parse import urlparse
 BASE = Path(__file__).resolve().parent
 FUENTES = BASE / "temas_verificados.json"
 DESTINO = BASE / "salida"
-DOMINIOS = ("rockstargames.com", "take2games.com")
+DOMINIOS = (
+    "rockstargames.com", "take2games.com", "blog.playstation.com",
+    "news.xbox.com", "nintendo.com", "ea.com", "ubisoft.com",
+    "store.steampowered.com", "bethesda.net",
+)
 
 
 def comprobar_enlace(url):
@@ -85,11 +89,14 @@ def preparar(tema):
     ]
     guion = " ".join(frase.rstrip(".!?") + "." for frase in frases)
     referencias = list(dict.fromkeys(h["fuente"] for h in tema["hechos"]))
+    hashtags = "#Videojuegos #CodigoGamer"
+    if "gta" in tema["id"].lower() or "gta" in tema["titulo"].lower():
+        hashtags = "#GTAVI " + hashtags
     descripcion = (
         tema["titulo"] + "\n\n"
         "Un resumen de información confirmada. Revisa siempre las fuentes originales.\n\n"
         + "Fuentes:\n" + "\n".join(referencias)
-        + "\n\n#GTAVI #Videojuegos #CodigoGamer\n"
+        + "\n\n" + hashtags + "\n"
     )
     plan = {
         "canal": "Codigo Gamer",
