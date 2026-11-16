@@ -1,0 +1,30 @@
+name: Codigo Gamer - Descubrir noticias (sin publicar)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  propuestas:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Detectar novedades en fuentes oficiales
+        run: python descubrir_noticias.py
+      - name: Guardar candidatos para revision editorial
+        uses: actions/upload-artifact@v4
+        with:
+          name: codigo-gamer-noticias-pendientes
+          path: propuestas_noticias.json
+          retention-days: 7
+          if-no-files-found: error
