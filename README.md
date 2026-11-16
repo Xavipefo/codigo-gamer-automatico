@@ -1,147 +1,167 @@
-# Píxel Feroz — sistema independiente de YouTube
+# Píxel Feroz — automatización de vídeos de videojuegos
 
-**Estado actual:** OAuth y Gemini verificados; dos Shorts privados creados y miniaturas confirmadas el 16-11-2026. Incorporada nueva narración Kokoro y soporte opcional de vídeos de juego autorizados, **todavía pendientes de una prueba audiovisual completa**. No hay publicaciones públicas automáticas.
+**Actualizado:** 16 de noviembre de 2026. Sistema independiente del canal Dato Nebular.
+Se generan **Shorts** y **vídeos largos** mediante acciones manuales de GitHub. Todas las subidas
+a YouTube son **PRIVADAS** para revisión. Ninguna acción publica automáticamente al público.
 
-## Arquitectura
+## Situación del canal
 
-| Archivo | Función |
-|---|---|
-| preparar_contenido.py | Borradores editoriales anteriores |
-| temas_verificados.json | Fuentes y afirmaciones oficiales |
-| editorial.py | Elige temas vigentes, evita duplicados y prepara guiones |
-| descubrir_noticias.py | Candidatos de PlayStation Blog y Xbox Wire, nunca autoconfirmados |
-| generar_short.py | Gráficos originales de tarjetas |
-| motor_video.py | Voz Kokoro en español, escenas animadas, clips autorizados, MP4 9:16/16:9 y miniaturas |
-| control_calidad.py | Comprueba vídeo, audio, resolución y fuentes |
-| autorizar_youtube_local.py | Genera la credencial OAuth con consentimiento local |
-| subir_youtube_privado.py | Verifica el canal y sube solamente como privado |
-| registrar_subida.py | Guarda historial tras confirmación de privacidad |
-| historial_publicados.json | Evita subir repetidamente el mismo tema |
+- Canal autorizado mediante OAuth: `UCgT82gfTjIw2o-CtmQgSS3w`.
+- Gemini para guiones validado. Dos Shorts anteriores subidos en privado con sus miniaturas.
+- **Voz de producción actualizada a Gemini 3.8 Flash TTS, español de España**:
+  `Achird` en Shorts y noticias; `Charon` en análisis y largos.
+- **Pendiente de prueba de extremo a extremo**: los vídeos completos con las voces Gemini
+  y los gráficos en movimiento. No dar por lista esa parte hasta revisar un vídeo privado.
+- Clips de videojuegos: el motor admite material propio/autorizado; **no existe ningún
+  clip de GTA configurado todavía**. En su ausencia utiliza gráficos originales animados.
 
-## Nueva propuesta de voz: castellano de España (es-ES)
+## Botones que se usan en GitHub Actions
 
-El workflow `.github/workflows/probar_voz_castellana.yml` permite comparar dos voces masculinas de **Gemini 3.8 Flash TTS** con instrucciones explícitas de **español peninsular de España**, timbre natural, ritmo conversacional y dicción castellana. Usa el secreto `GEMINI_API_KEY` existente y genera solamente `charon_castellano.wav` y `achird_castellano.wav` en un artifact de corta duración, sin vídeos ni subidas.
+| Acción | Para qué sirve | Resultado |
+|---|---|---|
+| [1. Crear Short privado](.github/workflows/crear_short_privado.yml) | Siguiente noticia pendiente | YouTube **privado** |
+| [2. Crear vídeo largo privado](.github/workflows/crear_largo_privado.yml) | Siguiente tema largo pendiente | YouTube **privado** |
+| [Probar acento de España (Gemini)](.github/workflows/probar_voz_castellana.yml) | Dos audios de ejemplo Achird/Charon | Artifact WAV, nunca YouTube |
+| [Verificar Gemini](.github/workflows/verificar_gemini.yml) | Verificar clave/modelo para guiones | Ningún vídeo |
+| [Reparar miniatura privada](.github/workflows/reparar_miniatura.yml) | Aplicar miniatura a un vídeo privado existente | No vuelve a subir el vídeo |
+| [Validar código](.github/workflows/validar_codigo.yml) | Pruebas Python | No sube vídeos |
+| [Descubrir noticias](.github/workflows/descubrir_noticias.yml) | Candidatos de fuentes oficiales | Artifact editorial |
 
-**Esta es una prueba de voces, todavía no un cambio del motor de producción:** el renderizador continúa usando Kokoro hasta haber escuchado y aprobado una alternativa. En función del tipo de proyecto de Gemini, las solicitudes pueden consumir cuota gratuita o facturarse; no iniciar producción masiva sin comprobar límites.
+Los botones de Shorts y largos tienen un campo opcional **tema**: en blanco significa
+*el primer tema vigente y todavía no subido del formato solicitado*. La cola está en
+`temas_verificados.json` y **respeta estrictamente su orden físico**. Los vídeos
+subidos quedan registrados en `historial_publicados.json` con claves
+`(tema_id, formato)`, evitando duplicados de cada modalidad. La comprobación remota
+en YouTube es una segunda barrera.
 
-La voz no se elige solo por su nombre. La confirmación requiere comprobar auditivamente que la pronunciación de palabras como *cena*, *zapato* y *GTA* suena a España y que la lectura es natural. Si Gemini TTS no está disponible para la clave, la prueba fallará sin modificar vídeos anteriores.
+**Nunca pulses repetidamente Run workflow si hubo un error después de subir**:
+comprueba primero YouTube Studio y el historial, o podrías crear duplicados.
 
-## Voz más humana y clips de videojuegos
+## Narradores y voz
 
-El renderizador `motor_video.py` ahora utiliza **Kokoro-82M ONNX** en lugar de Piper (voz española `em_alex`, configurable desde `config.json` con `voz_nombre` y `voz_velocidad`). El modelo abierto está bajo licencia Apache-2.0 y se descarga desde un release oficial fijado, comprobando SHA-256; GitHub Actions almacena en caché los pesos para posteriores producciones.
+`config.json` contiene:
 
-**Antes de publicar nuevos vídeos**, ejecutar desde Actions `Píxel Feroz - Escuchar voz natural` (`.github/workflows/probar_voz_natural.yml`). Permite obtener una muestra WAV de voz masculina `em_alex` o `em_santa`, o femenina `ef_dora`. El audio se guarda en un artifact **público** solo con texto de demostración, sin material privado. No se publica nada en YouTube. Escuchar la muestra para elegir voz y comprobar pronunciación de GTA.
+```json
+"motor_voz": "gemini-3.8-flash-tts",
+"voces_por_formato": {
+  "short": "Achird",
+  "largo": "Charon"
+}
+```
 
-**Imagen en movimiento**: sin archivos de juego, el motor da movimiento suave a los gráficos propios. Cuando exista un clip legítimamente utilizable, se puede aportar un enlace privado HTTPS directo a MP4/MOV/WebM mediante el secreto `PF_CLIPS_JSON`, con este formato (ejemplo ficticio):
+`editorial.py` asigna el narrador al plan del vídeo.
+`voz_produccion.py` valida esa asignación, limita las peticiones y usa
+`voz_gemini_castellano.py` para producir WAV PCM de 24 kHz.
+`motor_video.py` monta cada fragmento de voz con el vídeo correspondiente,
+sin introducir una voz distinta a mitad de un vídeo.
+
+- Achird: tono más cercano, alegre y conversacional para novedades.
+- Charon: estilo más reposado para explicaciones y análisis.
+- Ambos utilizan instrucciones de **español peninsular de España**, no clonación
+  de voz ni imitación exacta de una persona concreta.
+- Si falla la API TTS, el vídeo **se detiene antes de subir**; no vuelve
+  silenciosamente a un locutor robótico.
+- Para los vídeos largos se narran fragmentos mayores y se muestran rótulos
+  abreviados, sin modificar el contenido del guion original.
+
+**Coste:** TTS puede consumir cuota de Gemini. El nivel gratuito y sus límites
+dependen del proyecto; si se usa cuota de pago, se factura según tarifas
+publicadas por Google. Consultar antes de producir en volumen:
+https://ai.google.dev/gemini-api/docs/pricing y
+https://ai.google.dev/gemini-api/docs/speech-generation
+
+Los prototipos anteriores de Piper/Kokoro siguen como scripts históricos de
+prueba, **no como motor de producción**.
+
+## Imágenes, movimiento y clips de videojuegos
+
+El motor crea tarjetas visuales originales y aplica movimiento de cámara suave.
+Si cuentas con un vídeo propio o con autorización de uso explícita, puedes
+facilitar un **enlace directo HTTPS a un MP4/MOV/WebM** mediante el secret opcional
+`PF_CLIPS_JSON` en Settings → Secrets and variables → Actions:
 
 ```json
 {
   "gta6-jason-lucia": {
-    "url": "https://mi-servidor-de-videos.example/videos/gta.mp4",
+    "url": "https://mi-servidor.example/videos/gta-autorizado.mp4",
     "derechos_confirmados": true
   }
 }
 ```
 
-El enlace y sus credenciales **nunca van en el repositorio público**. Se descarga solo durante la ejecución, en un máximo de 120 MB y con comprobación de que existe pista de vídeo. El motor alterna fragmentos del vídeo autorizado **sin reutilizar su audio** con las tarjetas animadas, superponiendo rótulos y la narración Kokoro. El mismo clip puede repetirse como fondo en varios planos; es preferible preparar cortes diferentes para lograr una edición más dinámica. Actualmente **no hay clips de GTA conectados** y por eso se verán animaciones originales hasta configurar este secreto.
+El valor anterior es **solo un ejemplo**: ese enlace no existe y no se debe
+copiar literalmente. El archivo ha de poder descargarse directamente sin
+abrir una página web. Nunca incluir el enlace privado o material con derechos
+limitados en el repositorio público. No se aceptan URLs de plataformas como
+YouTube, Instagram, Rockstar o TikTok. El motor limita el tamaño a 120 MB,
+comprueba que haya pista de vídeo y descarta el sonido original para mantener
+la narración.
 
-**Derechos de uso**: no descargar trailers, filtraciones, vídeos de YouTube ni partidas ajenas automáticamente. Rockstar/Take-Two permite determinados usos no comerciales de gameplay de fans, pero para monetización o reutilización de material ajeno se deben comprobar los derechos y las reglas de Rockstar. No asumir permiso por el hecho de que un tráiler esté disponible públicamente.
+Tener acceso público a un tráiler/captura/gameplay **no equivale a permiso
+para reutilizarlo comercialmente**. Verificar las condiciones de Rockstar,
+Take-Two y del creador del archivo. No se insertan vídeos ajenos
+automáticamente. El hecho de tener clips de juego no garantiza monetización:
+la originalidad editorial y las normas de YouTube siguen siendo relevantes.
 
-## Automatización por cola (noviembre de 2026)
+## Guiones, fuentes y descripciones
 
-**Dos botones independientes de GitHub Actions:**
+- `temas_verificados.json` almacena cada tema y sus hechos con URLs oficiales
+  y fecha de revisión. Solo se consideran los temas vigentes y confirmados.
+- `generar_guion_ia.py` redacta desde esas fichas con
+  `gemini-3.5-flash-lite`; el contenido puede tener errores y **debe revisarse**.
+- `descripcion_general.txt` se añade al pie de la descripción específica,
+  que incluye contexto, hechos, fuentes, hashtags y el ID editorial.
+- `descubrir_noticias.yml` se ejecuta aproximadamente cada tres días y
+  propone **candidatos**, sin convertirlos por sí solo en noticias confirmadas.
+  No hay reposición 100 % autónoma de la cola validada.
+- La fecha de estreno de GTA VI publicada por Rockstar, a fecha de esta
+  revisión, es el **19 de noviembre de 2026**:
+  https://www.rockstargames.com/VI
 
-1. **Píxel Feroz - 1. Crear Short privado** (`.github/workflows/crear_short_privado.yml`).
-2. **Píxel Feroz - 2. Crear vídeo largo privado** (`.github/workflows/crear_largo_privado.yml`).
+## Seguridad del canal y del repositorio
 
-Cada botón permite dejar vacío el campo `tema`: el sistema elegirá automáticamente el **primer elemento vigente y no subido del formato correspondiente**, siguiendo estrictamente el orden físico de `temas_verificados.json`. Si se indica un ID, selecciona ese tema siempre que sea válido y no se haya subido ya en ese formato.
+Se necesitan estos secrets privados, ya configurados en este proyecto:
 
-Los dos botones usan el motor compartido `.github/workflows/produccion_completa.yml` (solo `workflow_call`, sin botón propio), generan el MP4, crean una miniatura con titular específico del tema, comprueban el material y **envían el vídeo exclusivamente como privado a YouTube**. No hay programación de publicación pública.
+- `GEMINI_API_KEY`: guiones y síntesis de voz.
+- `YOUTUBE_OAUTH_JSON`: subir exclusivamente en privado al canal correcto.
 
-**Descripción del vídeo**: título y contexto personalizados, puntos factuales, fuentes oficiales y hashtags propios arriba; debajo se concatena la descripción permanente de `descripcion_general.txt`, incluida la invitación a suscribirse. El texto narrado incluye también una llamada a suscribirse a Píxel Feroz.
+El secreto `PF_CLIPS_JSON` es opcional y actualmente no contiene clips
+configurados. Nunca mostrar los secretos en conversaciones, archivos públicos
+ni logs.
 
-**IA**: para Shorts se usa el generador editorial seguro si no existe `GEMINI_API_KEY`; si está configurada esa clave, Gemini puede crear una narración original siguiendo los hechos confirmados. Para vídeos largos con `esquema_largo`, la clave **`GEMINI_API_KEY` es obligatoria**; se utiliza el mismo modelo `gemini-3.5-flash-lite` que emplea Dato Nebular para algunos guiones. La clave debe añadirse a **Settings → Secrets and variables → Actions → New repository secret** de este repositorio. Nunca incluirla en el código ni en el chat. El modelo puede cometer errores o repeticiones; **los largos requieren siempre revisión editorial del resultado privado**. Los guiones largos no están validados de extremo a extremo.
+`control_calidad.py` comprueba duración, codec H.264/AAC, dimensiones,
+sincronización, miniatura, huella del guion, narrador previsto y referencias.
+Un resultado técnico correcto **no sustituye** escuchar y ver el MP4.
 
-**Descubrimiento**: `.github/workflows/descubrir_noticias.yml` genera propuestas de fuentes oficiales aproximadamente cada tres días (días 1, 4, 7, etc. del mes). Guarda un JSON de candidatos como artefacto. **No inserta automáticamente hechos en la cola confirmada**: hay que revisar cada noticia y añadir sus hechos y enlaces oficiales, para no publicar rumores o información inventada.
+Este repositorio es público. Por ello, el workflow no almacena MP4 privados
+como artifacts públicos: los envía solamente a YouTube en modo privado.
+La decisión de publicar desde YouTube Studio corresponde al propietario
+después de revisar voz, imagen, copyright, títulos, descripción y contenido.
+Los vídeos antiguos privados pueden conservar su voz anterior.
 
-**Historial**: `historial_publicados.json` se actualiza tras cada subida privada verificada. Permite **un Short y un largo por cada ID**, sin duplicaciones del mismo formato. Una comprobación adicional examina la lista de subidas existente de YouTube.
+## Primer lanzamiento (revisión humana obligatoria)
 
-**Miniaturas**: la aplicación sube miniaturas personalizadas con `thumbnails.set`. Para Shorts espera a que YouTube termine el procesamiento, conforme a su documentación. Si YouTube deniega la miniatura, el MP4 **sigue privado**, se registra el ID en el historial y GitHub Actions termina marcando el fallo **después** de guardar ese registro para evitar duplicados. YouTube exige que el canal tenga habilitadas las miniaturas personalizadas. En la primera producción del 16/11/2026 (`r288ZUQ8iyw`) **la subida fue privada pero la miniatura recibió HTTP 403**; comprobar la verificación del canal antes de nuevos vídeos.
+1. Ejecutar **Crear Short privado** con el campo `tema` vacío.
+2. Abrir el resultado en YouTube Studio y escuchar la voz **Achird**.
+3. Revisar imágenes, pronunciación de GTA/PS5, precisión factual,
+   miniatura, títulos y enlaces de la descripción.
+4. Si la nueva versión es correcta, publicar manualmente ese vídeo.
+5. Después, ejecutar **Crear vídeo largo privado** para probar **Charon**,
+   revisar antes de decidir publicarlo.
 
-No se han añadido trabajos programados de subida a YouTube: se disparan con los dos botones. Los secretos OAuth permanecen en GitHub Secrets. Si el repositorio es público, no se publican los MP4 en GitHub Actions artifacts.
+**Si el workflow falla**, no lo repitas hasta conocer en qué paso terminó.
+Si la subida privada ya se realizó, usa el vídeo existente y evita duplicados.
 
-## Configuración del canal de YouTube (OAuth ya configurado)
+## Archivos principales
 
-1. Crear o identificar el canal independiente Píxel Feroz y obtener el ID exacto en YouTube Studio → Configuración → Canal → Configuración avanzada.
-2. Crear un proyecto de Google Cloud para Píxel Feroz, activar **YouTube Data API v3**, configurar el consentimiento OAuth y crear un cliente OAuth **Desktop**. Descargar su archivo de cliente al ordenador; no subirlo a GitHub.
-3. En el ordenador, con Python instalado y una copia local del repositorio, instalar dependencias con el comando: python -m pip install -r requirements.txt
-4. Autorizar el canal con: python autorizar_youtube_local.py --client-secrets RUTA_DEL_CLIENTE_OAUTH.json
-5. Copiar LOCALMENTE el contenido íntegro del archivo youtube_oauth_privado.json a GitHub → Settings → Secrets and variables → Actions → secret **YOUTUBE_OAUTH_JSON**. Nunca compartir ni subir el archivo.
-6. El ID público de Píxel Feroz está guardado en `config.json` (`UCgT82gfTjIw2o-CtmQgSS3w`). No es necesario crear un secreto para este identificador. El sistema compara la identidad OAuth contra ese ID antes de subir.
-7. La comprobación `Pixel Feroz - Verificar conexion YouTube` terminó correctamente el 16-11-2026: el token corresponde al ID declarado. Las credenciales ya están guardadas en GitHub Secrets. Primero generar y revisar vídeo con subir_privado=false. Después, si se ha comprobado calidad y fuentes, ejecutar el flujo manual con subir_privado=true y confirmacion=SUBIR_PRIVADO. En YouTube quedará **privado** para revisión final.
-
-Los proyectos de YouTube API no verificados pueden estar limitados a subidas privadas. Un OAuth en modo Testing puede necesitar renovación del consentimiento. Consultar políticas actuales de Google Cloud.
-
-## Guiones y temas
-
-Cada objeto de temas_verificados.json exige:
-- id único (minúsculas, números, guion o guion bajo)
-- titulo, gancho, contexto, estado="confirmado"
-- fecha_verificacion ISO (YYYY-MM-DD)
-- hechos: lista de al menos 2 elementos, cada uno con texto y fuente oficial HTTPS
-- opcionales: prioridad y vigente_hasta (fecha tras la cual el tema no se elige)
-
-Para **vídeos largos** añadir:
-- guion_largo: texto aprobado de al menos 650 palabras
-- escenas_largas: al menos ocho párrafos definitivos, con 20 palabras o más cada uno, sumando al menos 650 palabras. La narración usa estas escenas.
-
-La IA no inventa hechos ni rellena documentales largos. Si no quedan temas verificados, se interrumpe la producción y hay que añadir nuevos. Para las novedades detectadas, revisar manualmente fuentes y datos antes de confirmar un tema.
-
-## Ejecutar localmente (cuando se decida iniciar las comprobaciones)
-
-Instalar FFmpeg/ffprobe y las fuentes DejaVu. Después:
-- python -m pip install -r requirements.txt
-- python -m unittest discover -s . -p "test_*.py"
-- python editorial.py --formato short
-- python motor_video.py
-- python control_calidad.py --formato short
-
-La producción descarga el modelo local Kokoro int8 de voz española y verifica su huella SHA-256. Los MP4, planes, descripciones y miniaturas se crean en salida/. Las subidas privadas deben revisarse en YouTube Studio.
-
-## Repositorio público y primeros vídeos
-
-La publicación del código en GitHub es distinta de la publicación de vídeos en YouTube:
-
-- GitHub Actions ofrece ejecuciones gratuitas en runners estándar de repositorios públicos, pero **el almacenamiento de artifacts y otros recursos puede seguir teniendo límites**.
-- **Los logs y artifacts de un repositorio público son accesibles públicamente**. Por eso `produccion_completa.yml` solo adjunta MP4 en repositorios privados. En un repositorio público, el workflow exige `subir_privado=true` y la confirmación `SUBIR_PRIVADO`, y deja el vídeo en YouTube Studio como **privado**. No se publica automáticamente.
-- El OAuth del canal está en GitHub Secrets y su contenido no forma parte del código. Antes de hacer público un repositorio, revisar los archivos y el historial de commits: la protección de secretos no hace privado al resto del contenido.
-- Ya hay cuatro temas en `temas_verificados.json`, incluidos dos Shorts nuevos sobre precarga y rendimiento. Las escaletas están en `contenido/primeros_videos.md`.
-- Para la primera producción, recomendamos el tema `gta6-precarga-212gb` antes del 19 de noviembre de 2026. Las fichas basadas en noticias anteriores al estreno tienen fecha de caducidad para evitar publicar información desactualizada.
-
-**Advertencia:** el nuevo motor Kokoro y las escenas con movimiento aún no se han validado con un MP4 completo. La próxima ejecución será una producción piloto y puede requerir corregir errores técnicos. Si falla después de enviar contenido a YouTube, comprobar YouTube Studio antes de repetir la ejecución, para evitar duplicados.
-
-## Revisión técnica del 16-11-2026
-
-- `motor_video.py`: el audio y la imagen de cada escena se montan juntos en un fragmento MP4, con un breve silencio final; después se concatenan fragmentos homogéneos. Evita la estimación imprecisa de duraciones por número de palabras.
-- `control_calidad.py`: comprueba pistas H264/AAC, resolución, diferencias de duración audio-vídeo, miniatura JPEG, datos editoriales y huella SHA-256 del guion.
-- `subir_youtube_privado.py`: antes de `videos.insert`, revisa la lista de subidas del propio canal buscando `PF-ID`; falla de forma segura si no puede comprobar los duplicados. Tras insertar, escribe inmediatamente el ID y verifica privacidad privada con reintentos.
-- `preparar_contenido.py`: ya no se rompe si hay temas históricos caducados y quedan otros vigentes.
-- `generar_short.py` y el workflow de producción: reutilizan el archivo pequeño de configuración de Piper y el modelo de voz por caché de GitHub Actions, guardándola antes de subir.
-- `test_subida_segura.py` y los test editoriales incluyen comprobaciones de regresión con respuestas de YouTube simuladas. **Añadidos al repositorio, sin ejecutar durante esta revisión.**
-
-**Importante:** la búsqueda de duplicados recorre hasta 600 vídeos recientes. Si el canal supera ese límite o YouTube no responde, la subida se bloquea para revisión manual. Ningún sistema elimina por completo los duplicados tras un fallo de red no confirmado.
-
-La voz y las tarjetas son un primer motor audiovisual; su calidad estética y su potencial de monetización se deben evaluar antes de publicar material público. El sistema **no inventa nuevos hechos ni guiones largos automáticamente**: exige temas confirmados por un editor.
-
-## Seguridad y limitaciones
-
-- Todas las subidas del proyecto son PRIVADAS y exigen una confirmación manual explícita; no hay autopublicación pública.
-- El render utiliza gráficos originales basados en texto; no se copian clips ni capturas de otros canales. No afirmar que el contenido es monetizable sin evaluar originalidad y políticas de YouTube.
-- La comprobación de enlaces HTTPS y dominios autorizados **no** acredita que cada afirmación esté respaldada por la página: revisión humana obligatoria.
-- Antes de repetir una subida fallida, consultar YouTube Studio. Si YouTube recibió un vídeo y falló el registro posterior, una repetición podría duplicarlo.
-- Los repositorios privados comparten los minutos de GitHub Actions de la cuenta. Separar repositorios NO separa esa cuota. No hay ejecución programada.
-- OAuth ya está validado. Los nuevos módulos (render/audio/subida de MP4) están escritos pero todavía NO ejecutados ni validados de extremo a extremo; falta revisar los MP4 y la primera subida privada.
-
-## Fuente principal
-
-Rockstar Games: https://www.rockstargames.com/VI
+| Archivo | Responsabilidad |
+|---|---|
+| `editorial.py` | Cola y asignación de narrador |
+| `generar_guion_ia.py` | Guion factual con Gemini |
+| `voz_produccion.py` | Reparto Achird/Charon, límites y TTS |
+| `voz_gemini_castellano.py` | Solicitud REST de voz española y decodificación WAV |
+| `motor_video.py` | Imágenes animadas, clips autorizados y MP4 |
+| `video_material.py` | Carga opcional de clips confirmados |
+| `control_calidad.py` | Comprobación técnica antes de subir |
+| `subir_youtube_privado.py` | Subida PRIVADA y miniatura |
+| `registrar_subida.py` | Registro de ID e historial |
