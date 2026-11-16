@@ -5,7 +5,7 @@ import unittest
 from unittest.mock import patch
 
 from voz_gemini_castellano import (
-    ESTILO, MODEL, VOCES, MUESTRA, peticion_audio, extraer_audio,
+    ESTILO, ESTILO_CHARON, MODEL, VOCES, MUESTRA, peticion_audio, extraer_audio,
 )
 
 
@@ -25,10 +25,17 @@ class TestGeminiCastellano(unittest.TestCase):
         self.assertEqual(p["model"], MODEL)
         contenido = p["input"][0]["content"][0]
         self.assertEqual(contenido["text"], MUESTRA)
-        self.assertEqual(contenido["annotations"][0]["style"], ESTILO)
+        self.assertEqual(contenido["annotations"][0]["style"], ESTILO_CHARON)
         self.assertEqual(p["response_format"]["mime_type"], "audio/wav")
         self.assertEqual(p["generation_config"]["speech_config"][0]["voice"], "Charon")
 
+
+    def test_achird_tiene_estilo_original_espana(self):
+        p = peticion_audio(MUESTRA, "Achird")
+        self.assertEqual(
+            p["input"][0]["content"][0]["annotations"][0]["style"],
+            ESTILO
+        )
 
     def test_extrae_wav_desde_interactions_rest(self):
         wav_minimo = b"RIFF" + b"\x00" * 4 + b"WAVE" + b"\x00" * 16
