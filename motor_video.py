@@ -32,9 +32,39 @@ def comando(args, **kwargs):
 
 
 def fragmentar(texto, max_palabras):
+    """Divide en bloques EQUILIBRADOS: nunca deja una cola de una palabra.
+
+    Ejemplo: 101 palabras y límite 50 -> 34, 34 y 33 palabras,
+    no 50, 50 y 1. Mantiene exactamente el orden y el contenido.
+    """
     palabras = texto.split()
-    return [" ".join(palabras[i:i + max_palabras])
-            for i in range(0, len(palabras), max_palabras)]
+    if not palabras:
+        return []
+    # Respetar también el máximo de caracteres de la API de Gemini TTS.
+    piezas = max(
+        1,
+        math.ceil(len(palabras) / max_palabras),
+        math.ceil(len(" ".join(palabras)) / 1300),
+    )
+    while piezas <= len(palabras):
+        base, resto = divmod(len(palabras), piezas)
+        grupos = []
+        inicio = 0
+        for indice in range(piezas):
+            longitud = base + (1 if indice < resto else 0)
+            grupos.append(" ".join(palabras[inicio:inicio + longitud]))
+            inicio += longitud
+        if all(10 <= len(x) <= 1400 for x in grupos):
+            return grupos
+        # Solo aumenta si hay bloques demasiado largos; aumentar el
+        # número de partes no resolvería un bloque demasiado corto.
+        if any(len(x) < 10 for x in grupos):
+            break
+        piezas += 1
+    raise ValueError(
+        "No se puede dividir el texto en fragmentos TTS de entre "
+        "10 y 1400 caracteres sin perder palabras"
+    )
 
 
 def adaptar_escenas(plan):
