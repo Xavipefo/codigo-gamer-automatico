@@ -1,29 +1,23 @@
 name: Píxel Feroz - Produccion completa (Short / Largo)
 
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       formato:
-        description: "Tipo de video"
-        type: choice
+        description: "Formato solicitado por el botón de Shorts o Largos"
+        type: string
         required: true
-        default: short
-        options:
-          - short
-          - largo
       tema:
-        description: "ID de tema verificado (vacio = siguiente sin publicar)"
+        description: "ID opcional; vacío equivale al siguiente de la lista"
         type: string
         required: false
+        default: ""
       subir_privado:
-        description: "Subir a YouTube como PRIVADO tras control de calidad"
         type: boolean
         required: true
-        default: false
       confirmacion:
-        description: "Si subir_privado=true, escribir exactamente SUBIR_PRIVADO"
         type: string
-        required: false
+        required: true
 
 permissions:
   contents: write
@@ -50,6 +44,16 @@ jobs:
           fi
           if [ "$REPO_PRIVADO" = "false" ] && [ "$SUBIR" != "true" ]; then
             echo "::error::En repositorios públicos no se almacenan MP4 privados en artifacts. Selecciona subida privada a YouTube o ejecuta en un repositorio privado."
+            exit 1
+          fi
+
+      - name: Comprobar clave para guion largo con IA
+        if: ${{ inputs.formato == 'largo' }}
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "::error::Falta GEMINI_API_KEY en los Secrets del repositorio. Los vídeos largos necesitan IA para escribir el guion."
             exit 1
           fi
 
@@ -93,6 +97,12 @@ jobs:
           else
             python editorial.py --formato "$FORMATO"
           fi
+
+      - name: Preparar guion narrado con IA si hay clave
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          FORMATO: ${{ inputs.formato }}
+        run: python generar_guion_ia.py --formato "$FORMATO"
 
       - name: Generar voz, imagenes, MP4 y miniatura
         run: python motor_video.py
