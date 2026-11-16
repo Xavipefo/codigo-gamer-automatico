@@ -1,0 +1,135 @@
+name: Codigo Gamer - Produccion completa (Short / Largo)
+
+on:
+  workflow_dispatch:
+    inputs:
+      formato:
+        description: "Tipo de video"
+        type: choice
+        required: true
+        default: short
+        options:
+          - short
+          - largo
+      tema:
+        description: "ID de tema verificado (vacio = siguiente sin publicar)"
+        type: string
+        required: false
+      subir_privado:
+        description: "Subir a YouTube como PRIVADO tras control de calidad"
+        type: boolean
+        required: true
+        default: false
+      confirmacion:
+        description: "Si subir_privado=true, escribir exactamente SUBIR_PRIVADO"
+        type: string
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: codigo-gamer-produccion
+  cancel-in-progress: false
+
+jobs:
+  producir:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 115
+    steps:
+      - name: Comprobar autorizacion de subida
+        env:
+          SUBIR: ${{ inputs.subir_privado }}
+          CONFIRMACION: ${{ inputs.confirmacion }}
+        shell: bash
+        run: |
+          if [ "$SUBIR" = "true" ] && [ "$CONFIRMACION" != "SUBIR_PRIVADO" ]; then
+            echo "::error::Debe escribir SUBIR_PRIVADO para permitir subida privada."
+            exit 1
+          fi
+
+      - name: Descargar codigo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar sistema multimedia
+        shell: bash
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python -m pip install --disable-pip-version-check -r requirements.txt
+
+      - name: Comprobar fuentes y Python
+        run: |
+          python -m py_compile *.py
+          python -m unittest discover -s . -p 'test_*.py'
+
+      - name: Elegir y preparar tema verificado
+        env:
+          TEMA: ${{ inputs.tema }}
+          FORMATO: ${{ inputs.formato }}
+        shell: bash
+        run: |
+          if [ -n "$TEMA" ]; then
+            python editorial.py --formato "$FORMATO" --tema "$TEMA"
+          else
+            python editorial.py --formato "$FORMATO"
+          fi
+
+      - name: Generar voz, imagenes, MP4 y miniatura
+        run: python motor_video.py
+
+      - name: Control tecnico de calidad
+        env:
+          FORMATO: ${{ inputs.formato }}
+        run: python control_calidad.py --formato "$FORMATO"
+
+      - name: Guardar video y revision editorial
+        uses: actions/upload-artifact@v4
+        with:
+          name: codigo-gamer-${{ inputs.formato }}-revision
+          path: |
+            salida/*.mp4
+            salida/miniatura.jpg
+            salida/guion.txt
+            salida/descripcion.txt
+            salida/plan.json
+            salida/calidad.json
+          retention-days: 7
+          if-no-files-found: error
+
+      - name: Subir exclusivamente PRIVADO a YouTube
+        if: ${{ inputs.subir_privado }}
+        env:
+          YOUTUBE_OAUTH_JSON: ${{ secrets.YOUTUBE_OAUTH_JSON }}
+          YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}
+          FORMATO: ${{ inputs.formato }}
+          CG_SUBIR_PRIVADO: "SI"
+        shell: bash
+        run: python subir_youtube_privado.py --formato "$FORMATO"
+
+      - name: Registrar subida verificada
+        if: ${{ inputs.subir_privado }}
+        shell: bash
+        run: |
+          python registrar_subida.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add historial_publicados.json
+          git commit -m "chore: registrar subida privada de Codigo Gamer"
+          git push
+
+      - name: Guardar resultado de YouTube
+        if: ${{ inputs.subir_privado && always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: codigo-gamer-resultado-subida
+          path: salida/youtube_resultado.json
+          if-no-files-found: ignore
+          retention-days: 7
