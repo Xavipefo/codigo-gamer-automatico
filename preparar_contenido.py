@@ -58,6 +58,24 @@ def validar_tema(tema):
     caduca = tema.get("vigente_hasta")
     if caduca and date.fromisoformat(caduca) < date.today():
         raise ValueError("Tema caducado: " + identificador)
+    miniatura = tema.get("texto_miniatura")
+    if miniatura is not None and (not isinstance(miniatura, str)
+                                 or not 1 <= len(miniatura.strip()) <= 90):
+        raise ValueError("Texto de miniatura no válido")
+    if tema.get("descripcion_personalizada") is not None:
+        texto_limpio(tema["descripcion_personalizada"], "descripcion_personalizada")
+    formatos = tema.get("formatos", ["short"])
+    if not isinstance(formatos, list) or not formatos or any(
+        valor not in ("short", "largo") for valor in formatos
+    ):
+        raise ValueError("Formatos de tema no válidos")
+    if "largo" in formatos:
+        esquema = tema.get("esquema_largo", [])
+        manual = tema.get("escenas_largas", [])
+        if not (isinstance(esquema, list) and len(esquema) >= 6) and not (
+            isinstance(manual, list) and len(manual) >= 8
+        ):
+            raise ValueError("Tema largo sin esquema_largo o escenas_largas")
     hechos = tema.get("hechos")
     if not isinstance(hechos, list) or len(hechos) < 2:
         raise ValueError("Se necesitan al menos dos hechos: " + identificador)
@@ -89,48 +107,76 @@ def cargar_temas(ruta):
     return temas
 
 
+CTA_SUSCRIPCION = (
+    "Suscríbete a Píxel Feroz para estar al día de todas las "
+    "novedades sobre videojuegos."
+)
+DESCRIPCION_COMUN = BASE / "descripcion_general.txt"
+
+
+def construir_descripcion(tema, formato):
+    """Descripción específica con hechos y fuentes, seguida de la sección fija."""
+    introduccion = (tema.get("descripcion_personalizada")
+                    or tema["contexto"]).strip()
+    hechos = [h["texto"].strip() for h in tema["hechos"]]
+    referencias = list(dict.fromkeys(h["fuente"] for h in tema["hechos"]))
+    general = DESCRIPCION_COMUN.read_text(encoding="utf-8").strip()
+    etiqueta = "#GTAVI " if "gta" in tema["id"].lower() else ""
+    bloque = (
+        f"{tema['titulo']}\n\n"
+        f"{introduccion}\n\n"
+        "EN ESTE VÍDEO:\n"
+        + "\n".join("• " + h for h in hechos)
+        + "\n\nFUENTES OFICIALES:\n"
+        + "\n".join(referencias)
+        + f"\n\n{etiqueta}{'#Shorts ' if formato == 'short' else ''}#PixelFeroz\n"
+        + "\n------------------------------\n\n"
+        + general
+        + "\n\nIdentificador editorial: PF-ID:" + tema["id"]
+        + "\nFormato editorial: PF-FORMATO:" + formato
+        + "\n"
+    )
+    if len(bloque) > 4900:
+        raise ValueError("Descripción demasiado larga para YouTube")
+    return bloque
+
+
 def preparar(tema):
     hechos = [texto_limpio(h["texto"], "texto") for h in tema["hechos"]]
     gancho = texto_limpio(tema["gancho"], "gancho")
     contexto = texto_limpio(tema["contexto"], "contexto")
-    frases = [gancho, contexto] + hechos + [
-        "Seguiremos las novedades confirmadas, sin confundir rumores con anuncios oficiales."
-    ]
+    cierre = (
+        "Seguiremos las novedades confirmadas, sin confundir "
+        "rumores con anuncios oficiales. " + CTA_SUSCRIPCION
+    )
+    frases = [gancho, contexto] + hechos + [cierre]
     guion = " ".join(frase.rstrip(".!?") + "." for frase in frases)
     referencias = list(dict.fromkeys(h["fuente"] for h in tema["hechos"]))
-    hashtags = "#Videojuegos #PixelFeroz"
-    if "gta" in tema["id"].lower() or "gta" in tema["titulo"].lower():
-        hashtags = "#GTAVI " + hashtags
-    descripcion = (
-        tema["titulo"] + "\n\n"
-        "Un resumen de información confirmada. Revisa siempre las fuentes originales.\n\n"
-        + "Fuentes:\n" + "\n".join(referencias)
-        + "\n\n" + hashtags + "\n"
-    )
+    descripcion = construir_descripcion(tema, "short")
     plan = {
         "canal": "Píxel Feroz",
         "tema_id": tema["id"],
         "titulo_propuesto": tema["titulo"],
+        "texto_miniatura": tema.get("texto_miniatura", tema["titulo"])[:90],
         "estado": "BORRADOR_PENDIENTE_REVISION",
         "publicacion_automatica": False,
         "fecha_preparacion": date.today().isoformat(),
         "fecha_verificacion": tema["fecha_verificacion"],
-        "duracion_objetivo_segundos": [35, 55],
-        "visual": "Gráficos y animaciones originales; no utilizar gameplay ajeno sin permiso",
+        "duracion_objetivo_segundos": [35, 65],
+        "visual": "Gráficos originales; no usar gameplay ajeno sin permiso",
         "escenas": [
             {"tipo": "gancho", "texto": gancho},
             {"tipo": "contexto", "texto": contexto},
             *[{"tipo": "hecho_verificado", "texto": h["texto"], "fuente": h["fuente"]}
               for h in tema["hechos"]],
-            {"tipo": "cierre", "texto": frases[-1]},
+            {"tipo": "cierre", "texto": cierre},
         ],
         "fuentes": referencias,
         "revisiones_pendientes": [
-            "Comprobar que los enlaces respaldan cada afirmación",
-            "Verificar que no haya noticias más recientes",
-            "Confirmar la pronunciación y el ritmo de la voz",
-            "Revisar derechos de música, imágenes y clips",
-            "Revisar título, miniatura, montaje y duración",
+            "Comprobar que las fuentes respaldan cada afirmación",
+            "Verificar que no haya noticias posteriores",
+            "Revisar narración, derechos visuales y montaje",
+            "Comprobar miniatura, título y descripción personalizada",
         ],
     }
     return guion, descripcion, plan
