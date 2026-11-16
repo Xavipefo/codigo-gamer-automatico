@@ -15,6 +15,7 @@ import urllib.request
 from pathlib import Path
 
 from preparar_contenido import CTA_SUSCRIPCION
+from gemini_reintentos import solicitar_json
 
 BASE = Path(__file__).resolve().parent
 SALIDA = BASE / "salida"
@@ -60,9 +61,17 @@ def solicitar(prompt, api_key):
         method="POST",
     )
     try:
-        with urllib.request.urlopen(req, timeout=110) as respuesta:
-            resultado = json.load(respuesta)
+        resultado = solicitar_json(
+            req, timeout=110, max_intentos=4,
+            contexto="Guion IA de Píxel Feroz"
+        )
     except urllib.error.HTTPError as exc:
+        if exc.code in (429, 500, 502, 503, 504):
+            raise RuntimeError(
+                "Gemini sigue temporalmente no disponible (HTTP "
+                + str(exc.code) + ") después de los reintentos. "
+                "NO se ha generado ni subido el vídeo."
+            ) from None
         raise RuntimeError(
             "Gemini devolvió HTTP " + str(exc.code)
             + ". Revisa el secreto, el modelo y la cuota del proyecto."
