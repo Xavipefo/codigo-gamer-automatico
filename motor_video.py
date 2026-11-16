@@ -212,8 +212,8 @@ def montar(plan, guion):
         if salida.stat().st_size < 20_000:
             raise RuntimeError("MP4 vacío o incompleto")
 
-        crear_miniatura(plan["titulo_propuesto"], formato,
-                        SALIDA / "miniatura.jpg")
+        crear_miniatura(plan.get("texto_miniatura", plan["titulo_propuesto"]),
+                        formato, SALIDA / "miniatura.jpg")
         print("Archivo:", salida, flush=True)
         print("Escenas:", len(escenas),
               "| Duración planificada:", round(duracion_total, 2),
