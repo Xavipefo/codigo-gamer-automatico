@@ -73,10 +73,19 @@ def cargar_temas(ruta):
     datos = json.loads(ruta.read_text(encoding="utf-8"))
     if not isinstance(datos, list) or not datos:
         raise ValueError("El archivo debe contener una lista no vacía")
-    temas = [validar_tema(t) for t in datos]
-    ids = [t["id"] for t in temas]
+    ids = [t.get("id") for t in datos if isinstance(t, dict)]
     if len(ids) != len(set(ids)):
         raise ValueError("IDs de temas duplicados")
+    temas = []
+    for tema in datos:
+        if not isinstance(tema, dict):
+            raise ValueError("Cada tema debe ser un objeto JSON")
+        vence = tema.get("vigente_hasta")
+        if vence and date.fromisoformat(vence) < date.today():
+            continue
+        temas.append(validar_tema(tema))
+    if not temas:
+        raise ValueError("No quedan temas vigentes: añadir fuentes nuevas")
     return temas
 
 
