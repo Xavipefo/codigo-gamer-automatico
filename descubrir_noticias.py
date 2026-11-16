@@ -22,7 +22,7 @@ FUENTES={
 DOMINIOS=("blog.playstation.com","news.xbox.com")
 TAGS={"gta","grand theft auto","rockstar","videojuego","videogame",
       "games","gaming","playstation","xbox"}
-HEADERS={"User-Agent":"CodigoGamerEditorial/1.0 (research; no automatic publishing)"}
+HEADERS={"User-Agent":"PixelFerozEditorial/1.0 (research; no automatic publishing)"}
 
 
 def extraer_xml(url):
