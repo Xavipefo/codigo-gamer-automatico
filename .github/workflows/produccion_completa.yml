@@ -65,6 +65,12 @@ jobs:
           sudo apt-get install -y ffmpeg fonts-dejavu-core
           python -m pip install --disable-pip-version-check -r requirements.txt
 
+      - name: Reutilizar modelo de voz de Piper cuando exista
+        uses: actions/cache@v4
+        with:
+          path: voz/
+          key: pixel-feroz-piper-esES-sharvard-medium-v1
+
       - name: Comprobar fuentes y Python
         run: |
           python -m py_compile *.py
