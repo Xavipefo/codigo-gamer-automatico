@@ -166,6 +166,49 @@ La decisión de publicar desde YouTube Studio corresponde al propietario
 después de revisar voz, imagen, copyright, títulos, descripción y contenido.
 Los vídeos antiguos privados pueden conservar su voz anterior.
 
+## Alternativa gratuita a Gemini TTS: Azure Speech (16/11/2026)
+
+El generador de **guiones** permanece en Gemini. La nueva alternativa
+cambia **únicamente el motor de voz**. El nivel gratuito `F0` de
+Azure AI Speech incluye 500.000 caracteres de TTS neuronal al mes
+y hasta 20 transacciones/60 segundos, según Microsoft:
+https://azure.microsoft.com/en-us/pricing/details/speech/
+https://learn.microsoft.com/en-us/azure/ai-services/speech-service/speech-services-quotas-and-limits
+
+Se han implementado dos muestras originales de voces masculinas de España:
+
+- **Álvaro** — `es-ES-AlvaroNeural`, candidato a narrar Shorts.
+- **Arnau** — `es-ES-ArnauNeural`, candidato a reportajes largos.
+
+**Es crucial escucharlas antes de sustituir a Achird y Charon.** Son voces
+diferentes y aún no hay muestras reales de Azure generadas en el canal.
+Hasta aprobación manual, la configuración de producción sigue en Gemini.
+
+### Configuración de Azure sin publicar nada
+
+1. Entrar en https://portal.azure.com/ y crear una suscripción si no existe.
+2. Crear un recurso de **Speech (Voz)** con modalidad de precios **Free F0**,
+   si está disponible; verificar que no se elige S0 ni otro recurso de pago.
+3. En el recurso, abrir **Keys and Endpoint** para identificar la
+   `KEY 1` y la **Region**. No publicar esa clave ni copiarla a README.
+4. Ir a `Settings > Secrets and variables > Actions` de GitHub,
+   crear los secrets `AZURE_SPEECH_KEY` y `AZURE_SPEECH_REGION`.
+   Ejemplo de región corta: `westeurope` (usar la real, no inventarla).
+5. Ejecutar workflow **Píxel Feroz - Probar voces de España (Azure)**:
+   https://github.com/Xavipefo/codigo-gamer-automatico/actions/workflows/probar_voces_azure.yml
+   Produce solo dos WAV de texto de muestra original, descargables desde
+   el artifact `pixel-feroz-azure-voces-es-ES`; no genera ni sube MP4.
+6. Escuchar y elegir la mejor voz. **Solo entonces** cambiar
+   `config.json -> motor_voz` a `azure-neural` para usar Azure en
+   producción: Álvaro para Shorts y Arnau para largos. Los guiones seguirán
+   generándose con Gemini hasta que se decida lo contrario.
+
+Los secretos de Azure solo se usan dentro del proceso y no se incluyen
+en archivos públicos ni logs. Para volver a Gemini basta con establecer
+`motor_voz = gemini-3.8-flash-tts` en `config.json`.
+En una cuenta nueva, Azure puede solicitar un medio de pago para
+habilitar la suscripción: comprobar sus condiciones antes de registrarse.
+
 ## Recuperación de Gemini TTS y vídeos largos (16/11/2026)
 
 **Incidencia real:** el workflow `43946742189` generó correctamente el
