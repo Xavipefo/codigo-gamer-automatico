@@ -88,6 +88,9 @@ def preparar_plan(t, formato):
             raise ValueError("El guion narrado de largo requiere 650 palabras")
         plan["escenas"] = [{"tipo":"hecho_verificado", "texto":s} for s in escenas]
         plan["duracion_objetivo_segundos"] = [240, 900]
+    if formato == "short":
+        # Mantener correspondencia exacta entre cada escena y su narración.
+        texto = " ".join(s["texto"].strip() for s in plan["escenas"])
     plan["formato"] = formato
     plan["tema_id"] = t["id"]
     plan["titulo_propuesto"] = t["titulo"][:95]
