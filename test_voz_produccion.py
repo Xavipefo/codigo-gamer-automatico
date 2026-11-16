@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from motor_video import adaptar_escenas, resumen_visual
+from motor_video import adaptar_escenas, fragmentar, resumen_visual
 from voz_produccion import DEFAULT, NarradorGemini, elegir_voz, estimar_consumo, preparar_lectura
 from voz_gemini_castellano import AudioIncompletoError
 
@@ -94,6 +94,42 @@ class TestRepartoNarradores(unittest.TestCase):
         self.assertEqual(len(" ".join(x["texto"] for x in escenas).split()), 160)
         self.assertLessEqual(max(len(x["texto"].split()) for x in escenas), 50)
         self.assertTrue(all(len(x["texto"]) <= 1400 for x in escenas))
+
+
+    def test_no_deja_colas_de_una_palabra_en_101_palabras(self):
+        texto = " ".join(["GTA"] * 101)
+        trozos = fragmentar(texto, 50)
+        self.assertEqual([len(x.split()) for x in trozos], [34, 34, 33])
+        self.assertEqual(" ".join(trozos), texto)
+        self.assertTrue(all(10 <= len(x) <= 1400 for x in trozos))
+
+    def test_reparto_del_guion_largo_de_1336_palabras(self):
+        # El último fallo real provino de un residuo muy corto al partir
+        # un guion de 1336 palabras en bloques exactos de 50.
+        cantidades = [152, 146, 152, 154, 146, 149, 145, 148, 144]
+        self.assertEqual(sum(cantidades), 1336)
+        plan = {
+            "formato": "largo",
+            "escenas": [
+                {"tipo": "hecho_verificado", "texto": " ".join(
+                    [f"palabra{i}_{n}" for n in range(cantidad)]
+                )}
+                for i, cantidad in enumerate(cantidades)
+            ],
+        }
+        escenas = adaptar_escenas(plan)
+        estimar_consumo(escenas, "largo")
+        self.assertTrue(all(10 <= len(x["texto"]) <= 1400 for x in escenas))
+        esperado = " ".join(x["texto"] for x in plan["escenas"])
+        self.assertEqual(" ".join(x["texto"] for x in escenas), esperado)
+        self.assertLessEqual(len(escenas), 45)
+
+    def test_division_preserva_fraseria_y_ultima_palabra(self):
+        texto = " ".join(f"palabra{i}" for i in range(101))
+        trozos = fragmentar(texto, 50)
+        self.assertEqual(" ".join(trozos), texto)
+        self.assertTrue(trozos[-1].endswith("palabra100"))
+        self.assertGreater(len(trozos[-1]), 10)
 
     def test_tarjeta_resume_pero_audio_conserva_original(self):
         texto = " ".join([f"palabra{i}" for i in range(60)])
