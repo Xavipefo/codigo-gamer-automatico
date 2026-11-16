@@ -1,0 +1,48 @@
+name: "Píxel Feroz - Probar voces de España (Azure)"
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  muestras-azure:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verificar credenciales sin mostrarlas
+        env:
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
+        run: |
+          if [ -z "$AZURE_SPEECH_KEY" ] || [ -z "$AZURE_SPEECH_REGION" ]; then
+            echo "::error::Configura AZURE_SPEECH_KEY y AZURE_SPEECH_REGION en GitHub Actions Secrets."
+            exit 1
+          fi
+
+      - name: Crear dos muestras de España sin subir a YouTube
+        env:
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
+        run: |
+          python voz_azure_castellano.py --voz Alvaro --salida voces/azure_alvaro_es_ES.wav
+          python voz_azure_castellano.py --voz Arnau --salida voces/azure_arnau_es_ES.wav
+
+      - name: Guardar únicamente muestras públicas de texto original
+        uses: actions/upload-artifact@v4
+        with:
+          name: pixel-feroz-azure-voces-es-ES
+          path: voces/*.wav
+          retention-days: 3
+          if-no-files-found: error
