@@ -92,6 +92,54 @@ def comprobar_archivos(formato):
     return plan,titulo,desc,archivo,miniatura
 
 
+
+def rechazar_subida_duplicada(youtube, tema_id):
+    """Busca vídeos previos del mismo tema en la lista de subidas de este canal.
+
+    La búsqueda es deliberadamente conservadora: ante errores o demasiadas
+    páginas, no permite una nueva carga que podría resultar duplicada.
+    """
+    respuesta = youtube.channels().list(
+        part="contentDetails", mine=True
+    ).execute()
+    items = respuesta.get("items", [])
+    if len(items) != 1:
+        raise RuntimeError("No se pudo localizar el canal autorizado")
+    uploads = (items[0].get("contentDetails", {})
+               .get("relatedPlaylists", {}).get("uploads"))
+    if not uploads:
+        raise RuntimeError("No se pudo identificar la lista de subidas")
+
+    pagina = None
+    marker = "Identificador editorial: PF-ID:" + tema_id
+    for numero in range(12):
+        params = dict(part="contentDetails", playlistId=uploads, maxResults=50)
+        if pagina:
+            params["pageToken"] = pagina
+        lote = youtube.playlistItems().list(**params).execute()
+        ids = [x.get("contentDetails", {}).get("videoId")
+               for x in lote.get("items", [])]
+        ids = [x for x in ids if x]
+        if ids:
+            videos = youtube.videos().list(
+                part="snippet,status", id=",".join(ids)
+            ).execute()
+            for video in videos.get("items", []):
+                description = video.get("snippet", {}).get("description", "")
+                if marker in description.splitlines():
+                    video_id = video.get("id", "desconocido")
+                    raise RuntimeError(
+                        "BLOQUEADO: ya existe un vídeo de este tema en el canal: "
+                        + video_id + ". Revisar YouTube Studio antes de continuar."
+                    )
+        pagina = lote.get("nextPageToken")
+        if not pagina:
+            return
+    raise RuntimeError(
+        "Más de 600 vídeos encontrados. Revisar duplicados manualmente; "
+        "la búsqueda automática no puede asegurar unicidad."
+    )
+
 def subir_privado(youtube,plan,titulo,descripcion,mp4,miniatura):
     peticion=youtube.videos().insert(
         part="snippet,status",
@@ -160,6 +208,7 @@ def main():
         raise RuntimeError("Ya hay resultado anterior; impide subida duplicada")
     yt=cliente()
     verificar_identidad(yt)
+    rechazar_subida_duplicada(yt,plan["tema_id"])
     subir_privado(yt,plan,titulo,descripcion,mp4,miniatura)
 
 
