@@ -111,7 +111,37 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PF_CLIPS_JSON: ${{ secrets.PF_CLIPS_JSON }}
-        run: python motor_video.py
+        shell: bash
+        run: |
+          # Solo reanudar ante HTTP 429 temporal. Los códigos de error
+          # ordinarios (incluyendo fallos de vídeo y privacidad) no se
+          # reintentan ni se ocultan. Nunca se reintenta el upload.
+          set +e
+          for intento in 1 2 3; do
+            echo "Generación audiovisual, intento $intento/3"
+            python motor_video.py
+            estado=$?
+            if [ "$estado" -eq 0 ]; then
+              echo "Generación terminada y lista para control de calidad."
+              exit 0
+            fi
+            if [ "$estado" -eq 78 ]; then
+              echo "::error::Gemini indicó una cuota diaria agotada. Consulta AI Studio."
+              exit 1
+            fi
+            if [ "$estado" -ne 75 ]; then
+              echo "::error::Fallo de producción distinto de HTTP 429. No se reinicia."
+              exit "$estado"
+            fi
+            if [ "$intento" -eq 3 ]; then
+              echo "::error::La cuota TTS sigue bloqueada después de tres ventanas de recuperación."
+              exit 1
+            fi
+            espera=$((180 * intento))
+            echo "::warning::Cuota temporal Gemini agotada; se reanudará en $espera segundos con los archivos ya creados en este runner."
+            sleep "$espera"
+          done
+          exit 1
 
       - name: Control tecnico de calidad
         env:
