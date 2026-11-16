@@ -41,10 +41,26 @@ def cifras(texto):
                           texto))
 
 
+def modelos_fallback():
+    """Modelos de generación de texto publicados, nunca modelos de TTS.
+
+    Una variable GEMINI_MODEL explícita tiene prioridad, y se mantienen
+    dos opciones conservadoras para evitar un 503 persistente de la primera.
+    No se alteran ni el prompt ni las restricciones factuales.
+    """
+    preferido = os.environ.get("GEMINI_MODEL", MODELO_DEFAULT).strip()
+    candidatos = [preferido, "gemini-3.1-flash-lite", "gemini-3.5-flash"]
+    resultado = []
+    for modelo in candidatos:
+        if not re.fullmatch(r"[A-Za-z0-9._-]{3,80}", modelo):
+            raise ValueError("Nombre de modelo GEMINI_MODEL inválido")
+        if modelo not in resultado:
+            resultado.append(modelo)
+    return resultado
+
+
 def solicitar(prompt, api_key):
-    modelo = os.environ.get("GEMINI_MODEL", MODELO_DEFAULT).strip()
-    if not re.fullmatch(r"[A-Za-z0-9._-]{3,80}", modelo):
-        raise ValueError("Nombre de modelo GEMINI_MODEL inválido")
+    modelos = modelos_fallback()
     data = {
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": {
@@ -53,33 +69,54 @@ def solicitar(prompt, api_key):
             "responseMimeType": "application/json",
         },
     }
-    req = urllib.request.Request(
-        URL.format(model=modelo),
-        data=json.dumps(data, ensure_ascii=False).encode("utf-8"),
-        headers={"Content-Type": "application/json",
-                 "x-goog-api-key": api_key},
-        method="POST",
-    )
-    try:
-        resultado = solicitar_json(
-            req, timeout=110, max_intentos=4,
-            contexto="Guion IA de Píxel Feroz"
+    resultado = None
+    ultimo_error = None
+    for indice, modelo in enumerate(modelos):
+        req = urllib.request.Request(
+            URL.format(model=modelo),
+            data=json.dumps(data, ensure_ascii=False).encode("utf-8"),
+            headers={"Content-Type": "application/json",
+                     "x-goog-api-key": api_key},
+            method="POST",
         )
-    except urllib.error.HTTPError as exc:
-        if exc.code in (429, 500, 502, 503, 504):
-            raise RuntimeError(
-                "Gemini sigue temporalmente no disponible (HTTP "
-                + str(exc.code) + ") después de los reintentos. "
-                "NO se ha generado ni subido el vídeo."
-            ) from None
+        try:
+            resultado = solicitar_json(
+                req, timeout=105,
+                max_intentos=(3 if indice == 0 else 2),
+                contexto="Guion IA de Píxel Feroz"
+            )
+            print("Modelo de guion operativo:", modelo, flush=True)
+            break
+        except urllib.error.HTTPError as exc:
+            ultimo_error = exc.code
+            # El 503 señala falta de capacidad, mientras que 404 indica
+            # que el modelo no está disponible para esta clave. Solo
+            # en esos casos se prueba otro modelo permitido.
+            if exc.code not in (404, 500, 502, 503, 504):
+                raise RuntimeError(
+                    "Gemini devolvió HTTP " + str(exc.code)
+                    + ". Revisa el acceso y la cuota de la clave."
+                ) from None
+            if indice + 1 < len(modelos):
+                print("::warning::Modelo " + modelo + " no disponible (HTTP "
+                      + str(exc.code) + "); probando una alternativa.",
+                      flush=True)
+        except RuntimeError as exc:
+            # Solo los fallos transitorios de conexión permiten cambiar
+            # a la siguiente alternativa sin ocultar errores de contenido.
+            if "conexión agotada" not in str(exc):
+                raise
+            ultimo_error = "conexion"
+            if indice + 1 < len(modelos):
+                print("::warning::La conexión con " + modelo
+                      + " se agotó; intentando modelo alternativo.",
+                      flush=True)
+    if resultado is None:
         raise RuntimeError(
-            "Gemini devolvió HTTP " + str(exc.code)
-            + ". Revisa el secreto, el modelo y la cuota del proyecto."
-        ) from None
-    except urllib.error.URLError as exc:
-        raise RuntimeError(
-            "No se pudo conectar con Gemini: " + type(exc.reason).__name__
-        ) from None
+            "No se pudo generar el guion tras probar los modelos "
+            "configurados (último error " + str(ultimo_error)
+            + "). No se ha creado ni subido ningún vídeo."
+        )
     try:
         partes = resultado["candidates"][0]["content"]["parts"]
         texto = "".join(p.get("text", "") for p in partes).strip()
