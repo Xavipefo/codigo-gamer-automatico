@@ -137,8 +137,6 @@ def construir_descripcion(tema, formato):
         + f"\n\n{etiqueta}{'#Shorts ' if formato == 'short' else ''}#PixelFeroz\n"
         + "\n------------------------------\n\n"
         + general
-        + "\n\nIdentificador editorial: PF-ID:" + tema["id"]
-        + "\nFormato editorial: PF-FORMATO:" + formato
         + "\n"
     )
     if len(bloque) > 4900:
