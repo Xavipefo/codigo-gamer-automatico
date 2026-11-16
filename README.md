@@ -1,4 +1,4 @@
-# Código Gamer — sistema independiente de YouTube
+# Píxel Feroz — sistema independiente de YouTube
 
 **Estado actual:** el código del sistema está preparado, pero faltan configurar las credenciales del canal y validar los renders reales. Ningún flujo tiene programación automática. Todas las subidas están bloqueadas salvo activación manual explícita y son PRIVADAS.
 
@@ -20,16 +20,16 @@
 
 ## GitHub Actions
 
-1. **Codigo Gamer - Produccion completa (Short / Largo)**: flujo manual para elegir tema, narrar, renderizar, revisar calidad y crear archivos descargables. Si marcas subir_privado y escribes literalmente SUBIR_PRIVADO, intentará subir como PRIVADO al canal autorizado. Por defecto no sube nada.
-2. **Codigo Gamer - Descubrir noticias (sin publicar)**: recopila enlaces de fuentes oficiales. Solo entrega propuestas sin convertirlas en temas confirmados.
-3. **Codigo Gamer - Borrador manual**: flujo editorial anterior, también manual.
+1. **Píxel Feroz - Produccion completa (Short / Largo)**: flujo manual para elegir tema, narrar, renderizar, revisar calidad y crear archivos descargables. Si marcas subir_privado y escribes literalmente SUBIR_PRIVADO, intentará subir como PRIVADO al canal autorizado. Por defecto no sube nada.
+2. **Píxel Feroz - Descubrir noticias (sin publicar)**: recopila enlaces de fuentes oficiales. Solo entrega propuestas sin convertirlas en temas confirmados.
+3. **Píxel Feroz - Borrador manual**: flujo editorial anterior, también manual.
 
 No hay ningún cron ni publicación pública. El código de los canales Dato Nebular y Alerta Binaria no ha sido modificado.
 
 ## Configuración del canal de YouTube (pendiente)
 
-1. Crear o identificar el canal independiente Código Gamer y obtener el ID exacto en YouTube Studio → Configuración → Canal → Configuración avanzada.
-2. Crear un proyecto de Google Cloud para Código Gamer, activar **YouTube Data API v3**, configurar el consentimiento OAuth y crear un cliente OAuth **Desktop**. Descargar su archivo de cliente al ordenador; no subirlo a GitHub.
+1. Crear o identificar el canal independiente Píxel Feroz y obtener el ID exacto en YouTube Studio → Configuración → Canal → Configuración avanzada.
+2. Crear un proyecto de Google Cloud para Píxel Feroz, activar **YouTube Data API v3**, configurar el consentimiento OAuth y crear un cliente OAuth **Desktop**. Descargar su archivo de cliente al ordenador; no subirlo a GitHub.
 3. En el ordenador, con Python instalado y una copia local del repositorio, instalar dependencias con el comando: python -m pip install -r requirements.txt
 4. Autorizar el canal con: python autorizar_youtube_local.py --client-secrets RUTA_DEL_CLIENTE_OAUTH.json
 5. Copiar LOCALMENTE el contenido íntegro del archivo youtube_oauth_privado.json a GitHub → Settings → Secrets and variables → Actions → secret **YOUTUBE_OAUTH_JSON**. Nunca compartir ni subir el archivo.
