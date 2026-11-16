@@ -81,9 +81,10 @@ def solicitar(prompt, api_key):
 
 
 def construir_prompt(tema, formato):
+    hechos = tema["hechos"][:3] if formato == "short" else tema["hechos"]
     lista_hechos = "\n".join(
         "- " + h["texto"] + "\n  FUENTE: " + h["fuente"]
-        for h in tema["hechos"]
+        for h in hechos
     )
     base = (
         "Eres guionista de Píxel Feroz, canal en español sobre videojuegos.\n"
@@ -161,7 +162,7 @@ def normalizar_escenas(datos, tema, formato):
             "El guion contiene cifras no verificadas: "
             + ", ".join(sorted(no_permitidas))
         )
-    if len(todo) > 12000:
+    if len(todo) > 19000:
         raise ValueError("El guion supera el límite razonable de caracteres")
     tipos = []
     for i, escena in enumerate(escenas):
