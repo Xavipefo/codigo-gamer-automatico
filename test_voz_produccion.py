@@ -83,6 +83,49 @@ class TestRepartoNarradores(unittest.TestCase):
                 self.assertEqual(llamada.call_count, 3)
                 self.assertEqual(narrador.peticiones, 3)
 
+    def test_azure_espanol_seleccionable_sin_gemini_tts(self):
+        with patch.dict(os.environ, {
+            "PF_TTS_PROVIDER": "azure",
+            "AZURE_SPEECH_KEY": "clave-simulada",
+            "AZURE_SPEECH_REGION": "westeurope",
+            "GEMINI_API_KEY": "",
+        }):
+            for formato, esperada in [
+                ("short", "es-ES-AlvaroNeural"),
+                ("largo", "es-ES-ArnauNeural"),
+            ]:
+                narrador = NarradorGemini(
+                    formato, {
+                        "formato": formato,
+                        "narrador_voz": "Achird" if formato == "short" else "Charon",
+                    }
+                )
+                narrador.intervalo = 0.0
+                self.assertEqual(narrador.proveedor, "azure")
+                self.assertEqual(narrador.voz_real, esperada)
+                with patch(
+                    "voz_produccion.sintetizar_azure", return_value=7.0
+                ) as hablar:
+                    narrador.narrar(
+                        "Una noticia de videojuegos original y confirmada.",
+                        Path("no_se_crea_audio_de_prueba.wav")
+                    )
+                    self.assertEqual(
+                        hablar.call_args.args[1],
+                        "Alvaro" if formato == "short" else "Arnau",
+                    )
+
+    def test_azure_sin_secret_se_detiene_antes_del_video(self):
+        with patch.dict(os.environ, {
+            "PF_TTS_PROVIDER": "azure",
+            "AZURE_SPEECH_KEY": "",
+            "AZURE_SPEECH_REGION": "",
+        }):
+            with self.assertRaisesRegex(RuntimeError, "AZURE_SPEECH_KEY"):
+                NarradorGemini(
+                    "largo", {"formato": "largo", "narrador_voz": "Charon"}
+                )
+
     def test_numero_de_peticiones_limitado(self):
         escenas = [{"tipo": "contexto", "texto": "Esta es una escena de prueba completa."}]*46
         with self.assertRaises(ValueError):
