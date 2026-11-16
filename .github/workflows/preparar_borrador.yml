@@ -1,0 +1,52 @@
+name: Codigo Gamer - Borrador manual
+
+on:
+  workflow_dispatch:
+    inputs:
+      tema:
+        description: "ID del tema (vacio = primero)"
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: codigo-gamer-editorial
+  cancel-in-progress: false
+
+jobs:
+  preparar-borrador:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Comprobar preparador
+        run: python -m unittest discover -s . -p 'test_*.py'
+
+      - name: Generar borrador para revision
+        env:
+          TEMA: ${{ inputs.tema }}
+        run: |
+          if [ -n "$TEMA" ]; then
+            python preparar_contenido.py --tema "$TEMA"
+          else
+            python preparar_contenido.py
+          fi
+
+      - name: Guardar borrador
+        uses: actions/upload-artifact@v4
+        with:
+          name: codigo-gamer-borrador
+          path: salida/
+          retention-days: 7
+          if-no-files-found: error
