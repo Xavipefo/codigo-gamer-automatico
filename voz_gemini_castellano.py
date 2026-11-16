@@ -63,6 +63,53 @@ def peticion_audio(texto, voz):
     }
 
 
+def extraer_audio(respuesta):
+    """Extrae el último bloque de audio del JSON REST de Interactions.
+
+    Interactions REST devuelve pasos de salida: steps[].content[].data.
+    El SDK de Google presenta ese bloque como interaction.output_audio,
+    pero esta propiedad de conveniencia NO existe en la respuesta REST.
+    """
+    if not isinstance(respuesta, dict):
+        raise RuntimeError("Gemini TTS no devolvió un objeto JSON")
+    contenedor = respuesta.get("interaction", respuesta)
+    candidatos = []
+    pasos = contenedor.get("steps", []) if isinstance(contenedor, dict) else []
+    if isinstance(pasos, list):
+        for paso in pasos:
+            if not isinstance(paso, dict) or paso.get("type") != "model_output":
+                continue
+            contenidos = paso.get("content", [])
+            if not isinstance(contenidos, list):
+                continue
+            for contenido in contenidos:
+                if isinstance(contenido, dict) and contenido.get("type") == "audio":
+                    candidatos.append(contenido.get("data"))
+    # También tolerar la propiedad de conveniencia del SDK cuando se
+    # comprueba con una respuesta simulada, sin depender de ella en REST.
+    bloque = (
+        contenedor.get("output_audio") or contenedor.get("outputAudio")
+        if isinstance(contenedor, dict) else None
+    )
+    if isinstance(bloque, dict):
+        candidatos.append(bloque.get("data"))
+    for encoded in reversed(candidatos):
+        if not isinstance(encoded, str):
+            continue
+        try:
+            audio = base64.b64decode(encoded, validate=True)
+        except (ValueError, base64.binascii.Error):
+            continue
+        if audio[:4] == b"RIFF" and audio[8:12] == b"WAVE":
+            return audio
+    estado = str(contenedor.get("status", "sin audio")) if isinstance(contenedor, dict) else ""
+    # Solo estado, nunca imprimir la respuesta que puede contener datos.
+    raise RuntimeError(
+        "Gemini TTS no devolvió audio WAV en steps[].content[].data."
+        " Estado: " + estado[:70]
+    )
+
+
 def sintetizar(texto, voz, destino, clave=None):
     clave = clave or os.environ.get("GEMINI_API_KEY", "")
     if not clave:
@@ -89,12 +136,7 @@ def sintetizar(texto, voz, destino, clave=None):
     except (urllib.error.URLError, TimeoutError):
         raise RuntimeError("No se recibió audio de Gemini TTS") from None
 
-    try:
-        bloque = data.get("output_audio") or data["outputAudio"]
-        encoded = bloque["data"]
-        audio = base64.b64decode(encoded, validate=True)
-    except (KeyError, TypeError, ValueError, base64.binascii.Error):
-        raise RuntimeError("Gemini TTS no devolvió el audio WAV esperado") from None
+    audio = extraer_audio(data)
 
     if not (10000 <= len(audio) <= 20_000_000):
         raise RuntimeError("Respuesta de audio vacía o demasiado grande")
