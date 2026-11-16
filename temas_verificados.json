@@ -45,5 +45,52 @@
       }
     ],
     "prioridad": 25
+  },
+  {
+    "id": "gta6-precarga-212gb",
+    "titulo": "GTA VI puede requerir hasta 212 GB: prepara tu consola",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-16",
+    "vigente_hasta": "2026-11-18",
+    "prioridad": 120,
+    "gancho": "¿Tu consola tiene suficiente espacio para GTA VI? Rockstar ha publicado un dato importante antes del estreno",
+    "contexto": "La descarga anticipada ya comenzó y el tamaño necesario depende de tu dispositivo",
+    "hechos": [
+      {
+        "texto": "Rockstar indica que la precarga puede requerir hasta 212 gigabytes, según el dispositivo",
+        "fuente": "https://www.rockstargames.com/es/newswire/article/k4ak9okk485712/grand-theft-auto-vi-pre-load-begins-on-november-10"
+      },
+      {
+        "texto": "En PlayStation 5, la precarga digital empezó el 10 de noviembre a medianoche local; en Xbox Series X y S comenzó a las cero horas GMT del mismo día",
+        "fuente": "https://www.rockstargames.com/es/newswire/article/k4ak9okk485712/grand-theft-auto-vi-pre-load-begins-on-november-10"
+      },
+      {
+        "texto": "Rockstar mantiene el lanzamiento del juego para el 19 de noviembre de 2026 en PlayStation 5 y Xbox Series X y S",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ]
+  },
+  {
+    "id": "gta6-30fps-ps5pro",
+    "titulo": "GTA VI a 30 FPS: lo que Rockstar ha confirmado",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-16",
+    "prioridad": 110,
+    "gancho": "¿Esperabas GTA VI a sesenta fotogramas por segundo? Rockstar ha confirmado otra cifra para el estreno",
+    "contexto": "En su anuncio sobre la precarga explicó el objetivo de rendimiento y algunas diferencias de imagen entre consolas",
+    "hechos": [
+      {
+        "texto": "Rockstar afirma que GTA VI apunta a 30 fotogramas por segundo en PlayStation 5 y Xbox Series X y S",
+        "fuente": "https://www.rockstargames.com/mx/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "En PlayStation 5 Pro habrá mayor claridad de imagen mediante PlayStation Spectral Super Resolution, conocido como PSSR",
+        "fuente": "https://www.rockstargames.com/mx/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "Rockstar también anuncia sombras con trazado de rayos exclusivas de PlayStation 5 Pro",
+        "fuente": "https://www.rockstargames.com/mx/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      }
+    ]
   }
 ]
