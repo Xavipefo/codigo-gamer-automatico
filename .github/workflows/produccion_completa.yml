@@ -108,7 +108,6 @@ jobs:
         if: ${{ inputs.subir_privado }}
         env:
           YOUTUBE_OAUTH_JSON: ${{ secrets.YOUTUBE_OAUTH_JSON }}
-          YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}
           FORMATO: ${{ inputs.formato }}
           PF_SUBIR_PRIVADO: "SI"
         shell: bash
