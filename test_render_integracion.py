@@ -60,8 +60,8 @@ class TestIntegracionFFmpeg(unittest.TestCase):
                 wf.setnchannels(1)
                 wf.setsampwidth(2)
                 wf.setframerate(24000)
-                wf.writeframes(bytes(24000 * 2 * 5))
-            return 5.0
+                wf.writeframes(bytes(24000 * 2 * 6))
+            return 6.0
 
         checkpoint = (
             Path(tempfile.gettempdir()) /
