@@ -56,7 +56,7 @@ def imagen_horizontal(escena, i, total, titulo, ruta):
         a=y/h
         d.line((0,y,w,y), fill=(int(7+9*a),int(13+12*a),int(28+16*a)))
     d.rounded_rectangle((55,48,w-55,116), radius=18, fill=(23,46,64))
-    d.text((82,65), "CÓDIGO GAMER", font=fuente(28,True), fill=(58,236,223))
+    d.text((82,65), "PÍXEL FEROZ", font=fuente(28,True), fill=(58,236,223))
     d.text((76,158), "ANÁLISIS DE VIDEOJUEGOS",font=fuente(25),fill=(255,102,171))
     d.rounded_rectangle((65,228,w-65,585), radius=30,fill=(20,31,52))
     texto=escena["texto"]
@@ -83,7 +83,7 @@ def crear_miniatura(titulo, formato, ruta):
     img=Image.new("RGB",(w,h),(8,14,29))
     d=ImageDraw.Draw(img)
     d.rounded_rectangle((30,30,w-30,h-30),radius=35,outline=(45,232,218),width=8)
-    d.text((64,55),"CÓDIGO GAMER",font=fuente(35,True),fill=(59,232,223))
+    d.text((64,55),"PÍXEL FEROZ",font=fuente(35,True),fill=(59,232,223))
     tam=78 if formato=="largo" else 54
     maximo=w-140
     while tam>=28:
@@ -163,7 +163,7 @@ def montar(plan, guion):
         comando(["ffmpeg","-hide_banner","-loglevel","error","-y",
                  "-f","concat","-safe","0","-i",str(lista_audio),
                  "-c:a","aac","-b:a","128k",str(audio)])
-        video=SALIDA/("codigo_gamer_short.mp4" if formato=="short" else "codigo_gamer_largo.mp4")
+        video=SALIDA/("pixel_feroz_short.mp4" if formato=="short" else "pixel_feroz_largo.mp4")
         comando(["ffmpeg","-hide_banner","-loglevel","error","-y",
                  "-f","concat","-safe","0","-i",str(lista_fotos),
                  "-i",str(audio),"-vf","fps=20","-c:v","libx264",
