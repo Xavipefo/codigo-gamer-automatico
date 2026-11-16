@@ -6,6 +6,8 @@
     "privacidad_verificada": "private",
     "tema_id": "gta6-precarga-212gb",
     "formato": "short",
-    "fecha": "2026-11-16T16:16:55.978923+00:00"
+    "fecha": "2026-11-16T16:16:55.978923+00:00",
+    "miniatura_confirmada": false,
+    "miniatura_incidencia": "HTTP 403: el canal no pudo subir miniaturas personalizadas; revisar verificación"
   }
 ]
