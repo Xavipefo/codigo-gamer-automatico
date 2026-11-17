@@ -57,7 +57,14 @@ def comprobar_calendario(calendario, temas, ideas):
 def preparar(archivo_calendario=CALENDARIO, destino=DESTINO):
     calendario = json.loads(Path(archivo_calendario).read_text(encoding="utf-8"))
     temas_lista = json.loads(TEMAS.read_text(encoding="utf-8"))
-    temas = {x["id"]: validar_tema(x) for x in temas_lista if x["estado"] == "confirmado"}
+    temas = {
+        x["id"]: validar_tema(x) for x in temas_lista
+        if x["estado"] == "confirmado"
+        and (
+            not x.get("vigente_hasta")
+            or date.fromisoformat(x["vigente_hasta"]) >= date.today()
+        )
+    }
     ideas_lista = json.loads(IDEAS.read_text(encoding="utf-8"))["ideas"]
     ideas = {x["id"]: x for x in ideas_lista}
     comprobar_calendario(calendario, temas, ideas)
