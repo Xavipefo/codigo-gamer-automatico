@@ -23,6 +23,7 @@ from generar_short import tarjeta_escena, fuente, partir_lineas
 from voz_produccion import NarradorGemini, estimar_consumo
 from voz_gemini_castellano import TTSRateLimitError, TTSDailyQuotaError
 from video_material import descargar_clip, overlay_clips
+from visuales_autorizados import descargar_imagenes, escena_con_foto
 
 BASE = Path(__file__).resolve().parent
 SALIDA = BASE / "salida"
@@ -234,6 +235,9 @@ def montar(plan, guion):
         directorio = Path(temporal)
         directorio.mkdir(parents=True, exist_ok=True)
         clip_de_juego = descargar_clip(plan["tema_id"], directorio / "gameplay.mp4")
+        imagenes_autorizadas = descargar_imagenes(
+            plan["tema_id"], directorio / "imagenes_autorizadas"
+        )
         clips = []
         for indice, escena in enumerate(escenas):
             audio = directorio / f"audio_{indice:03}.wav"
@@ -252,6 +256,11 @@ def montar(plan, guion):
                 overlay_clips(
                     escena_visible, plan["titulo_propuesto"], formato, imagen
                 )
+            elif imagenes_autorizadas and indice % 2 == 0 and escena["tipo"] != "cierre":
+                foto, credito = imagenes_autorizadas[
+                    (indice // 2) % len(imagenes_autorizadas)
+                ]
+                escena_con_foto(escena_visible, formato, foto, credito, imagen)
             elif formato == "short":
                 tarjeta_escena(
                     escena_visible, indice, len(escenas),
@@ -353,6 +362,8 @@ def montar(plan, guion):
                         formato, SALIDA / "miniatura.jpg")
         print("Archivo:", salida, flush=True)
         print("Clip autorizado incorporado:", bool(clip_de_juego), flush=True)
+        print("Imágenes con derechos validados:",
+              len(imagenes_autorizadas), flush=True)
         print("Motor de voz:", narrador.proveedor, flush=True)
         print("Voz efectiva del vídeo:", narrador.voz_real, flush=True)
         print("Peticiones TTS realizadas:", narrador.peticiones, flush=True)
