@@ -91,35 +91,67 @@ los largos aún no está verificada.
 Los prototipos anteriores de Piper/Kokoro siguen como scripts históricos de
 prueba, **no como motor de producción**.
 
-## Imágenes, movimiento y clips de videojuegos
+## Imágenes y clips de videojuegos — modo visual mejorado
 
-El motor crea tarjetas visuales originales y aplica movimiento de cámara suave.
-Si cuentas con un vídeo propio o con autorización de uso explícita, puedes
-facilitar un **enlace directo HTTPS a un MP4/MOV/WebM** mediante el secret opcional
-`PF_CLIPS_JSON` en Settings → Secrets and variables → Actions:
+El motor rota **hasta 6 clips** y **10 imágenes** por tema, con zoom
+suave y rótulos discretos (hasta 11 palabras sobre imágenes/vídeo). Cuando
+hay ambos recursos, prioriza aproximadamente 60 % de escenas con clips
+y 40 % con fotos, salvo el cierre editorial. No interfiere con el
+audio de Ryan (1.00x Shorts; **1.10x largos**).
+
+Los nuevos **vídeos largos** tienen activada una comprobación de calidad:
+antes de cargar Qwen o gastar minutos en narrar, comprueban que existe al
+menos una imagen Y un clip autorizados del tema. Si faltan, muestran un
+error útil y **no suben ningún vídeo**. Si deseas deliberadamente crear
+un largo solo con gráficos, el botón de largo permite marcar la casilla
+`permitir_solo_graficos`.
+
+Configura los recursos con dos Secrets opcionales:
+`PF_CLIPS_JSON` y `PF_IMAGENES_JSON`, en
+**GitHub → Settings → Secrets and variables → Actions**.
+Los vídeos **no se obtienen automáticamente** de YouTube o Rockstar.
+Ejemplo de `PF_CLIPS_JSON` con **varios clips**:
 
 ```json
 {
-  "gta6-jason-lucia": {
-    "url": "https://mi-servidor.example/videos/gta-autorizado.mp4",
-    "derechos_confirmados": true
-  }
+  "gta6-vice-city-leonida": [
+    {
+      "url": "https://tu-cdn.example/clip1.mp4",
+      "derechos_confirmados": true,
+      "origen": "propio",
+      "credito": "Píxel Feroz",
+      "fuente_publica": "https://tu-sitio.example/creditos"
+    },
+    {
+      "url": "https://tu-cdn.example/clip2.mp4",
+      "derechos_confirmados": true,
+      "origen": "licenciado",
+      "credito": "Titular de la licencia",
+      "fuente_publica": "https://tu-sitio.example/licencia"
+    }
+  ]
 }
 ```
 
-El valor anterior es **solo un ejemplo**: ese enlace no existe y no se debe
-copiar literalmente. El archivo ha de poder descargarse directamente sin
-abrir una página web. Nunca incluir el enlace privado o material con derechos
-limitados en el repositorio público. No se aceptan URLs de plataformas como
-YouTube, Instagram, Rockstar o TikTok. El motor limita el tamaño a 120 MB,
-comprueba que haya pista de vídeo y descarta el sonido original para mantener
-la narración.
+Estos dominios son ilustrativos: sustituir por **URLs directas reales**
+de archivos con derechos de uso comprobados. El manifiesto anterior
+de un solo clip por tema sigue admitido por compatibilidad. Se usa
+solo vídeo, se silencia su audio, se comprueba con FFprobe y se
+registran los créditos en la descripción del vídeo.
 
-Tener acceso público a un tráiler/captura/gameplay **no equivale a permiso
-para reutilizarlo comercialmente**. Verificar las condiciones de Rockstar,
-Take-Two y del creador del archivo. No se insertan vídeos ajenos
-automáticamente. El hecho de tener clips de juego no garantiza monetización:
-la originalidad editorial y las normas de YouTube siguen siendo relevantes.
+Las imágenes usan una lista similar en `PF_IMAGENES_JSON` y aceptan
+`origen` `propio`, `ia_original`, `licenciado`,
+`oficial_autorizado`. Ver el ejemplo completo en
+[GUIA_LANZAMIENTO_GTA_VI.md](GUIA_LANZAMIENTO_GTA_VI.md).
+Ambos secretos deben ser privados; nunca almacenar sus archivos en
+este repositorio público.
+
+**Derechos:** una imagen publicada en Rockstar Newswire o un tráiler
+descargable no son por sí solos una licencia de explotación comercial.
+Rockstar dice que su política general de gameplay fan se dirige al
+uso individual no comercial. Consultar la política actual y pedir permiso
+si el canal se monetiza:
+https://support.rockstargames.com/articles/7bNaeoMFTV0iUDGhStTXvz/policy-on-posting-copyrighted-rockstar-games-material
 
 ## Guiones, fuentes y descripciones
 
@@ -167,12 +199,13 @@ solicitado permisos adicionales ni se ha modificado ningún vídeo existente.
 
 Se necesitan estos secrets privados, ya configurados en este proyecto:
 
-- `GEMINI_API_KEY`: guiones y síntesis de voz.
+- `GEMINI_API_KEY`: guiones, no síntesis Qwen de producción.
 - `YOUTUBE_OAUTH_JSON`: subir exclusivamente en privado al canal correcto.
 
-El secreto `PF_CLIPS_JSON` es opcional y actualmente no contiene clips
-configurados. Nunca mostrar los secretos en conversaciones, archivos públicos
-ni logs.
+Los secrets `PF_CLIPS_JSON` y `PF_IMAGENES_JSON` son opcionales, pero
+el modo visual de largos exige al menos un recurso de cada tipo. No se
+ha verificado que haya recursos cargados. Nunca mostrar los secretos en
+conversaciones, archivos públicos ni logs.
 
 `control_calidad.py` comprueba duración, codec H.264/AAC, dimensiones,
 sincronización, miniatura, huella del guion, narrador previsto y referencias.
