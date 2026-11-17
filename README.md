@@ -91,6 +91,36 @@ los largos aún no está verificada.
 Los prototipos anteriores de Piper/Kokoro siguen como scripts históricos de
 prueba, **no como motor de producción**.
 
+## Visuales originales automáticos — sin archivos aportados por el usuario
+
+Desde el 17/11/2026 se genera automáticamente un banco de **seis
+ilustraciones editoriales originales por tema** mediante Pillow
+(`visuales_originales.py`), sin descargar imágenes de Rockstar ni
+necesitar `PF_IMAGENES_JSON`. Los fondos muestran paisajes urbanos
+ficticios, carreteras y vehículos ilustrados: **no son capturas del
+juego ni gameplay real**. El montaje utiliza zoom/paneo sobre cada
+ilustración y rótulos breves. No son clips de juego.
+
+- Si se configuran fotos con licencia válida, estas tienen preferencia.
+- Si no se configuran fotos, se usan ilustraciones originales.
+- Si se configuran clips autorizados, se intercalan con las imágenes.
+- Los vídeos largos pueden generarse sin archivos externos. El botón
+  `exigir_material_real` activa, opcionalmente, la comprobación estricta
+  de un clip y una foto autorizados. Si no existen, bloquea la ejecución
+  **antes** de cargar el modelo de voz.
+- Se conserva subida **solo PRIVADA** y revisión humana antes de hacer
+  público cualquier vídeo.
+
+Se han localizado recursos oficiales para una futura biblioteca
+de material sujeto a derechos:
+https://www.rockstargames.com/VI/media/screenshots
+https://www.rockstargames.com/VI/media/videos
+
+Que los archivos sean descargables no implica permiso general de
+reutilización comercial. No se importan automáticamente ni se declara
+`derechos_confirmados` sin licencia verificable. Consultar:
+https://support.rockstargames.com/articles/7bNaeoMFTV0iUDGhStTXvz/policy-on-posting-copyrighted-rockstar-games-material
+
 ## Imágenes y clips de videojuegos — modo visual mejorado
 
 El motor rota **hasta 6 clips** y **10 imágenes** por tema, con zoom
@@ -100,11 +130,9 @@ y 40 % con fotos, salvo el cierre editorial. No interfiere con el
 audio de Ryan (1.00x Shorts; **1.10x largos**).
 
 Los nuevos **vídeos largos** tienen activada una comprobación de calidad:
-antes de cargar Qwen o gastar minutos en narrar, comprueban que existe al
+cuando se marca `exigir_material_real`, antes de cargar Qwen o gastar minutos en narrar, comprueban que existe al
 menos una imagen Y un clip autorizados del tema. Si faltan, muestran un
-error útil y **no suben ningún vídeo**. Si deseas deliberadamente crear
-un largo solo con gráficos, el botón de largo permite marcar la casilla
-`permitir_solo_graficos`.
+error útil y **no suben ningún vídeo**. Por defecto se utiliza el modo de ilustraciones originales, sin exigir archivos de terceros.
 
 Configura los recursos con dos Secrets opcionales:
 `PF_CLIPS_JSON` y `PF_IMAGENES_JSON`, en
