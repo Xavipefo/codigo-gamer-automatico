@@ -1,0 +1,24 @@
+name: "Píxel Feroz - Probar Short privado con voz Ryan (Qwen libre)"
+
+on:
+  workflow_dispatch:
+    inputs:
+      tema:
+        description: "Tema opcional (vacío = siguiente Short verificado)"
+        type: string
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  probar-ryan:
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      tema: ${{ inputs.tema }}
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+    secrets: inherit
