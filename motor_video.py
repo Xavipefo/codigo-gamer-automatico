@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Motor: dos voces de Gemini con clips autorizados y gráficos originales.
+"""Motor: narración Gemini/Azure/Qwen local y gráficos originales.
 
 Sin clips autorizados, mantiene tarjetas propias con un suave movimiento.
 La subida sigue siendo exclusivamente privada para revisión humana.
@@ -7,6 +7,7 @@ La subida sigue siendo exclusivamente privada para revisión humana.
 import argparse
 import json
 import math
+import os
 import re
 import sys
 import shutil
@@ -204,7 +205,16 @@ def montar(plan, guion):
         raise ValueError("El guion y el orden de las escenas no coinciden")
 
     estimar_consumo(escenas, formato)
-    narrador = NarradorGemini(formato, plan)
+    proveedor = os.environ.get("PF_TTS_PROVIDER", "").strip().lower()
+    if not proveedor:
+        configuracion = json.loads((BASE / "config.json").read_text(encoding="utf-8"))
+        if configuracion.get("motor_voz") == "qwen3-tts-0.6b":
+            proveedor = "qwen"
+    if proveedor == "qwen":
+        from voz_qwen_produccion import NarradorQwen
+        narrador = NarradorQwen(formato, plan)
+    else:
+        narrador = NarradorGemini(formato, plan)
     SALIDA.mkdir(parents=True, exist_ok=True)
     fps = 20
     duracion_total = 0.0
