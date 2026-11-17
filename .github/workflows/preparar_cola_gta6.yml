@@ -2,6 +2,15 @@ name: "Píxel Feroz - 0. Preparar cola y portadas GTA VI (sin subir)"
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "calendario_publicacion.json"
+      - "ideas_postlanzamiento.json"
+      - "temas_verificados.json"
+      - "planificar_lanzamiento.py"
+      - ".github/workflows/preparar_cola_gta6.yml"
 
 permissions:
   contents: read
