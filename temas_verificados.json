@@ -143,5 +143,520 @@
     ],
     "texto_miniatura": "¿212 GB PARA GTA VI?",
     "descripcion_personalizada": "La precarga de GTA VI ya está disponible. Descubre cuánto espacio podría necesitar tu consola y las fechas confirmadas por Rockstar."
+  },
+  {
+    "id": "gta6-vice-city-leonida",
+    "titulo": "GTA VI: Vice City y el estado de Leonida",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "Vice City regresa, pero GTA VI no se limita a una sola ciudad",
+    "contexto": "Repasamos las localizaciones oficiales que Rockstar ha presentado, sin inventar detalles del mapa",
+    "hechos": [
+      {
+        "texto": "Rockstar sitúa la historia de Jason y Lucia en el estado ficticio de Leonida",
+        "fuente": "https://www.rockstargames.com/VI"
+      },
+      {
+        "texto": "Vice City figura entre las localizaciones de Leonida y es uno de los escenarios centrales de GTA VI",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "La página oficial de personajes y lugares también enumera los Cayos de Leonida, Grassrivers, Port Gellhorn, Ambrosia y Mount Kalaga",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      }
+    ],
+    "prioridad": 50,
+    "texto_miniatura": "VICE CITY Y LEONIDA",
+    "descripcion_personalizada": "Repasamos las localizaciones oficiales que Rockstar ha presentado, sin inventar detalles del mapa",
+    "formatos": [
+      "short",
+      "largo"
+    ],
+    "esquema_largo": [
+      "La geografía que Rockstar confirma y lo que no podemos medir",
+      "Vice City como escenario del juego",
+      "Los Cayos de Leonida y la vida de Jason",
+      "Grassrivers: un lugar presentado en la web",
+      "Port Gellhorn: localización oficial",
+      "Ambrosia y Mount Kalaga",
+      "Cómo se conectan los escenarios con los protagonistas",
+      "Lo que muestran materiales oficiales y qué es interpretación",
+      "Preguntas abiertas sobre tamaño, recorrido y jugabilidad"
+    ],
+    "titulos_experimento": [
+      "GTA VI: Vice City y Leonida, mapa y zonas confirmadas",
+      "Así presenta Rockstar los lugares de GTA VI",
+      "GTA VI: todas las regiones oficiales de Leonida"
+    ]
+  },
+  {
+    "id": "gta6-jason-pasado",
+    "titulo": "GTA VI: el pasado oficial de Jason Duval",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "Jason parece buscar una vida sencilla, pero Rockstar cuenta un pasado complicado",
+    "contexto": "Estas son las claves verificadas del personaje Jason Duval",
+    "hechos": [
+      {
+        "texto": "La biografía oficial de Jason cuenta que creció rodeado de estafadores y delincuentes",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Jason pasó una temporada en el Ejército intentando dejar atrás una adolescencia complicada",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Rockstar sitúa su trabajo posterior con distribuidores locales de drogas en los Cayos de Leonida",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      }
+    ],
+    "prioridad": 50,
+    "texto_miniatura": "PASADO DE JASON",
+    "descripcion_personalizada": "Estas son las claves verificadas del personaje Jason Duval",
+    "formatos": [
+      "short"
+    ]
+  },
+  {
+    "id": "gta6-lucia-origen",
+    "titulo": "GTA VI: Lucia Caminos y su paso por prisión",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "Lucia tiene una historia confirmada por Rockstar que explica sus objetivos",
+    "contexto": "Una explicación de su biografía oficial, sin inventar acontecimientos",
+    "hechos": [
+      {
+        "texto": "Rockstar presenta a Lucia Caminos como una mujer que aprendió a luchar de su padre desde pequeña",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "La biografía oficial explica que acabó en la prisión de Leonida tras luchar por su familia",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Lucia quiere alcanzar una vida mejor para ella y los suyos y trata de tomar sus propias decisiones",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      }
+    ],
+    "prioridad": 50,
+    "texto_miniatura": "HISTORIA DE LUCIA",
+    "descripcion_personalizada": "Una explicación de su biografía oficial, sin inventar acontecimientos",
+    "formatos": [
+      "short"
+    ]
+  },
+  {
+    "id": "gta6-cal-hampton",
+    "titulo": "GTA VI: quién es Cal Hampton",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "Hay un personaje relacionado con Jason que Rockstar ya ha presentado",
+    "contexto": "Conocemos a Cal Hampton por su biografía en Only in Leonida",
+    "hechos": [
+      {
+        "texto": "Cal Hampton aparece identificado oficialmente como amigo de Jason",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Rockstar describe a Cal como otro asociado de Brian",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "La web oficial cuenta que Cal escucha comunicaciones de la Guardia Costera desde casa y muestra una personalidad desconfiada",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      }
+    ],
+    "prioridad": 50,
+    "texto_miniatura": "¿QUIÉN ES CAL?",
+    "descripcion_personalizada": "Conocemos a Cal Hampton por su biografía en Only in Leonida",
+    "formatos": [
+      "short"
+    ]
+  },
+  {
+    "id": "gta6-brian-heder",
+    "titulo": "GTA VI: Brian Heder y su relación con Jason",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "Jason está conectado con un veterano del contrabando en Leonida",
+    "contexto": "Lo que sabemos sobre Brian Heder y su vínculo con el protagonista",
+    "hechos": [
+      {
+        "texto": "Rockstar presenta a Brian Heder como un veterano del contrabando en los Cayos",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "La historia de Brian menciona un astillero, a Lori y actividades relacionadas con el tráfico de drogas",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Brian deja vivir a Jason sin pagar alquiler en una propiedad a cambio de que ayude con ciertos trabajos locales",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      }
+    ],
+    "prioridad": 50,
+    "texto_miniatura": "EL CONTACTO DE JASON",
+    "descripcion_personalizada": "Lo que sabemos sobre Brian Heder y su vínculo con el protagonista",
+    "formatos": [
+      "short"
+    ]
+  },
+  {
+    "id": "gta6-boobie-ike",
+    "titulo": "GTA VI: Boobie Ike y sus negocios",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "Vice City tiene personajes secundarios con negocios muy distintos",
+    "contexto": "Estas son las actividades descritas por Rockstar para Boobie Ike",
+    "hechos": [
+      {
+        "texto": "Rockstar presenta a Boobie Ike como un personaje conocido en Vice City",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Su biografía menciona inversiones y negocios en inmuebles, un club y un estudio de grabación",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "La web oficial vincula su proyecto discográfico Only Raw Records con Dre'Quan",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      }
+    ],
+    "prioridad": 50,
+    "texto_miniatura": "NEGOCIOS EN VICE CITY",
+    "descripcion_personalizada": "Estas son las actividades descritas por Rockstar para Boobie Ike",
+    "formatos": [
+      "short"
+    ]
+  },
+  {
+    "id": "gta6-drequan-real-dimez",
+    "titulo": "GTA VI: Dre'Quan y Real Dimez",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "Rockstar también ha presentado el entorno musical de Vice City",
+    "contexto": "Conocemos a Dre'Quan, su sello y el dúo Real Dimez según las fichas oficiales",
+    "hechos": [
+      {
+        "texto": "Dre'Quan Priest es presentado como una persona que intenta abrirse camino en la música",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Rockstar explica que Dre'Quan ha firmado al dúo Real Dimez para su sello",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Bae-Luxe y Roxy forman Real Dimez y, según la biografía oficial, son amigas desde el instituto",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      }
+    ],
+    "prioridad": 50,
+    "texto_miniatura": "EL MUNDO MUSICAL",
+    "descripcion_personalizada": "Conocemos a Dre'Quan, su sello y el dúo Real Dimez según las fichas oficiales",
+    "formatos": [
+      "short"
+    ]
+  },
+  {
+    "id": "gta6-raul-bautista",
+    "titulo": "GTA VI: el atracador Raul Bautista",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "Rockstar ha presentado a un atracador con experiencia que busca nuevos talentos",
+    "contexto": "Lo confirmado sobre Raul Bautista y sus operaciones",
+    "hechos": [
+      {
+        "texto": "Rockstar define a Raul Bautista como un ladrón de bancos experimentado",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Su biografía oficial destaca su confianza y su tendencia a asumir grandes riesgos",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "La web señala que su manera de actuar aumenta las apuestas para su equipo en cada golpe",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      }
+    ],
+    "prioridad": 50,
+    "texto_miniatura": "RAUL BAUTISTA",
+    "descripcion_personalizada": "Lo confirmado sobre Raul Bautista y sus operaciones",
+    "formatos": [
+      "short"
+    ]
+  },
+  {
+    "id": "gta6-galeria-oficial",
+    "titulo": "GTA VI: qué muestra la galería oficial de estreno",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "Rockstar ha publicado nuevas capturas de GTA VI antes de la llegada del juego",
+    "contexto": "Revisamos únicamente lo que la galería y su anuncio oficiales permiten afirmar",
+    "hechos": [
+      {
+        "texto": "Rockstar publicó un anuncio de su galería de lanzamiento el 5 de noviembre de 2026",
+        "fuente": "https://www.rockstargames.com/es/newswire/article/39ak81277255o9/explore-the-grand-theft-auto-vi-launch-gallery"
+      },
+      {
+        "texto": "El anuncio invita a explorar nuevas capturas de Vice City y de otras zonas de Leonida",
+        "fuente": "https://www.rockstargames.com/es/newswire/article/39ak81277255o9/explore-the-grand-theft-auto-vi-launch-gallery"
+      },
+      {
+        "texto": "La galería completa está enlazada desde la web oficial de GTA VI",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "prioridad": 50,
+    "texto_miniatura": "NUEVAS CAPTURAS",
+    "descripcion_personalizada": "Revisamos únicamente lo que la galería y su anuncio oficiales permiten afirmar",
+    "formatos": [
+      "short"
+    ]
+  },
+  {
+    "id": "gta6-mirada-extendida",
+    "titulo": "GTA VI: la mirada extendida y lo que enseña",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "El adelanto largo de GTA VI tiene un dato técnico relevante sobre su captura",
+    "contexto": "Qué puede afirmarse del vídeo extendido distribuido oficialmente",
+    "hechos": [
+      {
+        "texto": "Rockstar publicó su mirada extendida a GTA VI el 27 de agosto de 2026",
+        "fuente": "https://www.rockstargames.com/es/newswire/article/4k138k8okkk483/grand-theft-auto-vi-an-extended-look-now-playing"
+      },
+      {
+        "texto": "La compañía afirma que el material mostrado fue capturado íntegramente dentro del juego en PlayStation 5",
+        "fuente": "https://www.rockstargames.com/es/newswire/article/4k138k8okkk483/grand-theft-auto-vi-an-extended-look-now-playing"
+      },
+      {
+        "texto": "La web de GTA VI incluye el vídeo extendido junto con sus tráilers oficiales",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "prioridad": 50,
+    "texto_miniatura": "ADELANTO EXTENDIDO",
+    "descripcion_personalizada": "Qué puede afirmarse del vídeo extendido distribuido oficialmente",
+    "formatos": [
+      "short"
+    ]
+  },
+  {
+    "id": "gta6-mando-dualsense",
+    "titulo": "GTA VI: las funciones anunciadas para PS5",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "Rockstar ha detallado algunas funciones concretas de su versión para PlayStation 5",
+    "contexto": "Las mejoras anunciadas para PS5 sin extrapolarlas a otras plataformas",
+    "hechos": [
+      {
+        "texto": "Rockstar indica que GTA VI en PS5 integra respuesta háptica en el mando DualSense",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "La compañía señala que el audio espacial aprovecha Tempest 3D Audio",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "Rockstar ha anunciado mejoras en los tiempos de carga en su descripción de la experiencia para PlayStation 5",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      }
+    ],
+    "prioridad": 50,
+    "texto_miniatura": "GTA VI EN PS5",
+    "descripcion_personalizada": "Las mejoras anunciadas para PS5 sin extrapolarlas a otras plataformas",
+    "formatos": [
+      "short"
+    ]
+  },
+  {
+    "id": "gta6-estreno-medianoche",
+    "titulo": "GTA VI: la hora oficial de desbloqueo",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "El estreno tiene una hora concreta que conviene conocer antes de la noche de lanzamiento",
+    "contexto": "Revisamos el horario comunicado por el soporte de Rockstar",
+    "hechos": [
+      {
+        "texto": "Rockstar Support sitúa el lanzamiento de GTA VI a medianoche local del 19 de noviembre de 2026",
+        "fuente": "https://support.rockstargames.com/articles/29jV3Cv2cCgvwM1XgtMO5o/grand-theft-auto-vi-regional-pre-load-and-release-times-on-playstation-5-and-xbox-series-x-or-s?pubDate=20261110"
+      },
+      {
+        "texto": "El anuncio regional se refiere a las versiones de PlayStation 5 y Xbox Series X y S",
+        "fuente": "https://support.rockstargames.com/articles/29jV3Cv2cCgvwM1XgtMO5o/grand-theft-auto-vi-regional-pre-load-and-release-times-on-playstation-5-and-xbox-series-x-or-s?pubDate=20261110"
+      },
+      {
+        "texto": "La página oficial de GTA VI también muestra el 19 de noviembre de 2026 como fecha de estreno",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "prioridad": 50,
+    "texto_miniatura": "¿A QUÉ HORA SALE?",
+    "descripcion_personalizada": "Revisamos el horario comunicado por el soporte de Rockstar",
+    "formatos": [
+      "short"
+    ]
+  },
+  {
+    "id": "gta6-personajes-secundarios",
+    "titulo": "GTA VI: personajes secundarios confirmados",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "Además de Jason y Lucia, Rockstar ya ha dado nombre e historia a varios personajes",
+    "contexto": "Conoce las conexiones de los personajes que ya figuran en la página oficial",
+    "hechos": [
+      {
+        "texto": "La web de Rockstar presenta a Cal Hampton como amigo de Jason y asociado de Brian",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Boobie Ike figura como empresario de Vice City ligado al sector de la música",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Dre'Quan Priest aparece vinculado al sello Only Raw Records",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Rockstar presenta a Real Dimez como el dúo integrado por Bae-Luxe y Roxy",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Raul Bautista figura en la web oficial como ladrón de bancos experimentado",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Brian Heder aparece presentado como un veterano del contrabando en los Cayos",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Rockstar cuenta que Brian permite a Jason vivir sin alquiler a cambio de trabajos locales",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Lucia Caminos salió de prisión y quiere alcanzar una vida mejor",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Jason Duval tuvo una etapa en el Ejército y trabajó en los Cayos",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      }
+    ],
+    "prioridad": 50,
+    "texto_miniatura": "PERSONAJES CONFIRMADOS",
+    "descripcion_personalizada": "Conoce las conexiones de los personajes que ya figuran en la página oficial",
+    "formatos": [
+      "short",
+      "largo"
+    ],
+    "esquema_largo": [
+      "Presentación de los personajes oficialmente anunciados",
+      "Cal Hampton y su amistad con Jason",
+      "Brian Heder y la situación de Jason en los Cayos",
+      "Boobie Ike y su papel empresarial en Vice City",
+      "Dre'Quan Priest y Only Raw Records",
+      "El dúo Real Dimez",
+      "Raul Bautista y los atracos",
+      "Conexiones con Jason y Lucia sin especulación",
+      "Lo que Rockstar aún no ha explicado"
+    ],
+    "titulos_experimento": [
+      "GTA VI: los personajes que Rockstar ya ha presentado",
+      "Quién es quién en GTA VI: personajes confirmados",
+      "GTA VI: Cal, Brian, Boobie, Raul y Real Dimez"
+    ]
+  },
+  {
+    "id": "gta6-tecnologia-plataformas",
+    "titulo": "GTA VI: 30 FPS y tecnología en consolas",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "El objetivo de rendimiento del estreno es un detalle que Rockstar ha explicado",
+    "contexto": "Recopilación de anuncios de rendimiento y funciones sin suposiciones técnicas",
+    "hechos": [
+      {
+        "texto": "Rockstar apunta a 30 fotogramas por segundo para GTA VI en PS5 y Xbox Series X y S",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "Rockstar ha comunicado mejoras de claridad de imagen con PSSR para PlayStation 5 Pro",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "En PlayStation 5 Pro también se anuncian sombras con trazado de rayos",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "La versión de PS5 incluye respuesta háptica aprovechando DualSense",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "Rockstar menciona audio espacial con Tempest 3D Audio en PlayStation 5",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "La compañía ha informado de mejoras de tiempos de carga en PlayStation 5",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "El vídeo de mirada extendida fue capturado íntegramente en PS5",
+        "fuente": "https://www.rockstargames.com/es/newswire/article/4k138k8okkk483/grand-theft-auto-vi-an-extended-look-now-playing"
+      },
+      {
+        "texto": "Las dos familias de consolas anunciadas para el estreno son PlayStation 5 y Xbox Series X y S",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "prioridad": 50,
+    "texto_miniatura": "30 FPS Y TECNOLOGÍA",
+    "descripcion_personalizada": "Recopilación de anuncios de rendimiento y funciones sin suposiciones técnicas",
+    "formatos": [
+      "short",
+      "largo"
+    ],
+    "esquema_largo": [
+      "Objetivo de rendimiento de lanzamiento según Rockstar",
+      "Qué significa 30 FPS y qué NO implica",
+      "Plataformas oficiales, sin añadir una versión PC no anunciada",
+      "Funciones de PlayStation 5 confirmadas",
+      "DualSense y respuesta háptica",
+      "Tempest 3D Audio y tiempos de carga",
+      "Mejoras exclusivas anunciadas de PlayStation 5 Pro",
+      "PSSR y sombras trazadas por rayos",
+      "Comparaciones que no se pueden afirmar sin pruebas técnicas propias"
+    ],
+    "titulos_experimento": [
+      "GTA VI a 30 FPS: tecnología y consolas confirmadas",
+      "GTA VI en PS5, PS5 Pro y Xbox: lo que sabemos",
+      "Rockstar explica las funciones y el rendimiento de GTA VI"
+    ]
+  },
+  {
+    "id": "gta6-historia-duo",
+    "titulo": "GTA VI: la conspiración de Jason y Lucia",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "Rockstar ya ha resumido el punto de partida de la historia de GTA VI",
+    "contexto": "Sin spoilers ni finales inventados, repasamos su sinopsis oficial",
+    "hechos": [
+      {
+        "texto": "Rockstar explica que Jason y Lucia protagonizan la historia de GTA VI",
+        "fuente": "https://www.rockstargames.com/VI"
+      },
+      {
+        "texto": "La sinopsis oficial señala que un golpe que parecía sencillo termina saliendo mal",
+        "fuente": "https://www.rockstargames.com/VI"
+      },
+      {
+        "texto": "Los protagonistas se ven envueltos en una conspiración criminal que se extiende por Leonida y necesitan apoyarse mutuamente",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "prioridad": 50,
+    "texto_miniatura": "LA HISTORIA OFICIAL",
+    "descripcion_personalizada": "Sin spoilers ni finales inventados, repasamos su sinopsis oficial",
+    "formatos": [
+      "short"
+    ]
   }
 ]
