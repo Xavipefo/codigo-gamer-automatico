@@ -23,6 +23,11 @@ on:
         type: string
         required: false
         default: qwen
+      exigir_multimedia:
+        description: "Bloquear producción de largos sin fotos y clips autorizados"
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write
@@ -83,6 +88,14 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y ffmpeg fonts-dejavu-core
           python -m pip install --disable-pip-version-check -r requirements.txt
+
+      - name: Bloquear largo sin banco visual cuando se exige calidad multimedia
+        if: ${{ inputs.formato == 'largo' && inputs.exigir_multimedia }}
+        env:
+          TEMA: ${{ inputs.tema }}
+          PF_CLIPS_JSON: ${{ secrets.PF_CLIPS_JSON }}
+          PF_IMAGENES_JSON: ${{ secrets.PF_IMAGENES_JSON }}
+        run: python validar_banco_visual.py --tema "$TEMA"
 
       - name: Restaurar pesos públicos de Qwen3-TTS Ryan
         if: ${{ inputs.motor_tts == 'qwen' }}
