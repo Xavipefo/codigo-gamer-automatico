@@ -22,7 +22,7 @@ from PIL import Image, ImageDraw, ImageFont
 from generar_short import tarjeta_escena, fuente, partir_lineas
 from voz_produccion import NarradorGemini, estimar_consumo
 from voz_gemini_castellano import TTSRateLimitError, TTSDailyQuotaError
-from video_material import descargar_clip, overlay_clips
+from video_material import descargar_clip, descargar_clips, overlay_clips
 from visuales_autorizados import descargar_imagenes, escena_con_foto
 
 BASE = Path(__file__).resolve().parent
@@ -103,6 +103,33 @@ def resumen_visual(escena, formato):
         texto = texto.rstrip(".,;:") + "…"
     return {"tipo": escena["tipo"], "texto": texto}
 
+
+
+def seleccionar_medio(indice, tipo, cuantos_clips, cuantas_fotos):
+    """Selecciona clips/imágenes antes de textos, alternándolos.
+
+    Un cierre editorial puede conservar su tarjeta final. Ante medios
+    autorizados, la mayoría de las escenas prioriza su presencia real.
+    No afirma que un vídeo o imagen sea gameplay auténtico.
+    """
+    if tipo == "cierre":
+        return "tarjeta"
+    if cuantos_clips and cuantas_fotos:
+        return "clip" if indice % 5 in (0, 2, 4) else "foto"
+    if cuantos_clips:
+        return "tarjeta" if indice % 5 == 4 else "clip"
+    if cuantas_fotos:
+        return "tarjeta" if indice % 6 == 5 else "foto"
+    return "tarjeta"
+
+
+def rotulo_breve(escena):
+    """Rótulo mínimo solo para material real; narración intacta."""
+    palabras = escena["texto"].split()
+    frase = " ".join(palabras[:11]).strip()
+    if len(palabras) > 11:
+        frase = frase.rstrip(",.;:") + "…"
+    return {"tipo": escena["tipo"], "texto": frase}
 
 def imagen_horizontal(escena, i, total, titulo, ruta):
     w,h=RES_WIDE
@@ -234,29 +261,41 @@ def montar(plan, guion):
     with contexto as temporal:
         directorio = Path(temporal)
         directorio.mkdir(parents=True, exist_ok=True)
-        clip_de_juego = descargar_clip(plan["tema_id"], directorio / "gameplay.mp4")
+        clips_autorizados = descargar_clips(
+            plan["tema_id"], directorio / "clips_autorizados"
+        )
         imagenes_autorizadas = descargar_imagenes(
             plan["tema_id"], directorio / "imagenes_autorizadas"
         )
         clips = []
+        visuales_usados = {"clip": 0, "foto": 0, "tarjeta": 0}
         for indice, escena in enumerate(escenas):
             audio = directorio / f"audio_{indice:03}.wav"
             duracion_audio = narrador.narrar(escena["texto"], audio)
             # Exactamente un número entero de fotogramas por escena.
             fotogramas = max(1, int(math.ceil((duracion_audio + 0.22) * fps)))
             duracion_escena = fotogramas / fps
-            usa_material = (
-                clip_de_juego is not None
-                and indice % 3 != 2
-                and escena["tipo"] != "cierre"
+            medio = seleccionar_medio(
+                indice, escena["tipo"],
+                len(clips_autorizados), len(imagenes_autorizadas)
             )
-            escena_visible = resumen_visual(escena, formato)
+            visuales_usados[medio] += 1
+            usa_material = medio == "clip"
+            escena_visible = (
+                rotulo_breve(escena) if medio != "tarjeta"
+                else resumen_visual(escena, formato)
+            )
             imagen = directorio / f"escena_{indice:03}.png"
-            if usa_material:
+            if medio == "clip":
+                # Alternar distintos clips del tema; nunca utilizar su audio.
+                recurso_clip = clips_autorizados[
+                    (indice // 2) % len(clips_autorizados)
+                ]
                 overlay_clips(
-                    escena_visible, plan["titulo_propuesto"], formato, imagen
+                    escena_visible, plan["titulo_propuesto"], formato,
+                    imagen, credito=recurso_clip["credito"]
                 )
-            elif imagenes_autorizadas and indice % 2 == 0 and escena["tipo"] != "cierre":
+            elif medio == "foto":
                 foto, credito = imagenes_autorizadas[
                     (indice // 2) % len(imagenes_autorizadas)
                 ]
@@ -294,7 +333,7 @@ def montar(plan, guion):
                 # confirmados explícitamente para el tema actual.
                 comando_video = [
                     "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
-                    "-stream_loop", "-1", "-i", str(clip_de_juego),
+                    "-stream_loop", "-1", "-i", str(recurso_clip["ruta"]),
                     "-loop", "1", "-framerate", str(fps), "-i", str(imagen),
                     "-i", str(audio),
                     "-filter_complex",
@@ -361,9 +400,9 @@ def montar(plan, guion):
         crear_miniatura(plan.get("texto_miniatura", plan["titulo_propuesto"]),
                         formato, SALIDA / "miniatura.jpg")
         print("Archivo:", salida, flush=True)
-        print("Clip autorizado incorporado:", bool(clip_de_juego), flush=True)
-        print("Imágenes con derechos validados:",
-              len(imagenes_autorizadas), flush=True)
+        print("Clips autorizados disponibles:", len(clips_autorizados), flush=True)
+        print("Imágenes autorizadas disponibles:", len(imagenes_autorizadas), flush=True)
+        print("Escenas por tipo visual:", visuales_usados, flush=True)
         print("Motor de voz:", narrador.proveedor, flush=True)
         print("Voz efectiva del vídeo:", narrador.voz_real, flush=True)
         print("Peticiones TTS realizadas:", narrador.peticiones, flush=True)
