@@ -124,6 +124,7 @@ jobs:
 
       - name: Elegir y preparar tema verificado
         env:
+          PF_IMAGENES_JSON: ${{ secrets.PF_IMAGENES_JSON }}
           PF_TTS_PROVIDER: ${{ inputs.motor_tts == 'qwen' && 'qwen' || 'gemini' }}
           TEMA: ${{ inputs.tema }}
           FORMATO: ${{ inputs.formato }}
@@ -148,6 +149,7 @@ jobs:
           AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
           AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
           PF_CLIPS_JSON: ${{ secrets.PF_CLIPS_JSON }}
+          PF_IMAGENES_JSON: ${{ secrets.PF_IMAGENES_JSON }}
         shell: bash
         run: |
           # Solo reanudar ante HTTP 429 temporal. Los códigos de error
