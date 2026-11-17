@@ -60,5 +60,15 @@
     "formato": "short",
     "fecha": "2026-11-17T19:13:21.104459+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "-MuyjJMm_F0",
+    "url": "https://www.youtube.com/watch?v=-MuyjJMm_F0",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-jason-pasado",
+    "formato": "short",
+    "fecha": "2026-11-17T19:16:48.407017+00:00",
+    "miniatura_confirmada": true
   }
 ]
