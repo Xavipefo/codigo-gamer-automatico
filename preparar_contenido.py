@@ -128,11 +128,18 @@ def construir_descripcion(tema, formato):
     general = DESCRIPCION_COMUN.read_text(encoding="utf-8").strip()
     # La atribución no sustituye licencias: solo fuentes autorizadas.
     from visuales_autorizados import creditos_para_descripcion
+    from video_material import creditos_clips
     creditos_imagenes = creditos_para_descripcion(tema["id"])
+    creditos_video = creditos_clips(tema["id"])
     bloque_creditos = (
         "\n\nIMÁGENES CON DERECHOS CONFIRMADOS:\n"
         + "\n".join(creditos_imagenes)
     ) if creditos_imagenes else ""
+    if creditos_video:
+        bloque_creditos += (
+            "\n\nCLIPS UTILIZADOS CON DERECHOS CONFIRMADOS:\n"
+            + "\n".join(creditos_video)
+        )
     etiqueta = "#GTAVI " if "gta" in tema["id"].lower() else ""
     bloque = (
         f"{tema['titulo']}\n\n"
