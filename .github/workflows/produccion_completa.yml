@@ -186,6 +186,22 @@ jobs:
           FORMATO: ${{ inputs.formato }}
         run: python control_calidad.py --formato "$FORMATO"
 
+      - name: Preparar tres títulos y miniaturas A/B para vídeo largo
+        if: ${{ inputs.formato == 'largo' }}
+        run: python experimentos_portadas.py
+
+      # El repositorio es PÚBLICO: estas portadas se generan solo con hechos
+      # oficiales que ya están en temas_verificados.json. NUNCA exportar aquí
+      # guion, vídeos, imágenes de juego no publicadas o credenciales.
+      - name: Descargar paquete de propuestas A/B de vídeo largo
+        if: ${{ inputs.formato == 'largo' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: pixel-feroz-ab-largo-${{ github.run_id }}
+          path: salida/experimento/
+          retention-days: 7
+          if-no-files-found: error
+
       - name: Guardar video y revision editorial
         if: ${{ github.event.repository.private }}
         uses: actions/upload-artifact@v4
