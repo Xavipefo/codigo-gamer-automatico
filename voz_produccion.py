@@ -34,9 +34,19 @@ def elegir_voz(formato, plan=None, config=None):
     mapeo = config.get("voces_por_formato", DEFAULT)
     if not isinstance(mapeo, dict):
         raise ValueError("voces_por_formato debe ser un objeto")
-    voz_config = mapeo.get(formato, DEFAULT[formato])
+    qwen_solicitado = (
+        os.environ.get("PF_TTS_PROVIDER", "").strip().lower() == "qwen"
+        or (
+            not os.environ.get("PF_TTS_PROVIDER", "").strip()
+            and config.get("motor_voz") == "qwen3-tts-0.6b"
+        )
+    )
+    voz_config = "Ryan" if qwen_solicitado else mapeo.get(formato, DEFAULT[formato])
     voz = (plan or {}).get("narrador_voz", voz_config)
-    if voz not in VOCES:
+    if qwen_solicitado:
+        if voz != "Ryan":
+            raise ValueError("La voz local de Píxel Feroz debe ser Ryan")
+    elif voz not in VOCES:
         raise ValueError("El narrador debe ser Achird o Charon")
     if (plan or {}).get("formato") not in (None, formato):
         raise ValueError("El narrador y el formato no coinciden")
