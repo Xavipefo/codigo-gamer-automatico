@@ -22,7 +22,7 @@ on:
         description: "Motor de voz; qwen activa Ryan local sin API TTS"
         type: string
         required: false
-        default: gemini
+        default: qwen
 
 permissions:
   contents: write
@@ -34,7 +34,7 @@ concurrency:
 jobs:
   producir:
     runs-on: ubuntu-24.04
-    timeout-minutes: 115
+    timeout-minutes: 240
     env:
       HF_HOME: ${{ github.workspace }}/.hf-qwen
       HF_HUB_DISABLE_TELEMETRY: "1"
