@@ -18,6 +18,23 @@ a YouTube son **PRIVADAS** para revisión. Ninguna acción publica automáticame
 - Clips de videojuegos: el motor admite material propio/autorizado; **no existe ningún
   clip de GTA configurado todavía**. En su ausencia utiliza gráficos originales animados.
 
+## Lanzamiento GTA VI — preparación 18–22 de noviembre de 2026
+
+**[Guía de lanzamiento, programación, derechos y producción](GUIA_LANZAMIENTO_GTA_VI.md)**
+
+- [0. Preparar cola y tres portadas](.github/workflows/preparar_cola_gta6.yml):
+  borradores y calendario público descargable, **sin generar MP4 ni subir**.
+- [3. Producir lote de 1–5 Shorts PRIVADOS con Ryan](.github/workflows/lote_shorts_privados.yml):
+  acción manual, una instalación de modelos por lote, controla duplicados
+  y registra cada ID privado antes del siguiente vídeo.
+- [Calendario con 21 franjas](calendario_publicacion.json):
+  13 Shorts y 5 largos entre jueves 19 y domingo 22, más 3 franjas miércoles.
+- [Ideas postlanzamiento por verificar](ideas_postlanzamiento.json):
+  nunca producir como hechos sin evidencia reciente.
+
+Los workflows de producción NO publican al público ni activan
+la prueba A/B de YouTube, que se hace después desde Studio.
+
 ## Botones que se usan en GitHub Actions
 
 | Acción | Para qué sirve | Resultado |
