@@ -24,6 +24,7 @@ from voz_produccion import NarradorGemini, estimar_consumo
 from voz_gemini_castellano import TTSRateLimitError, TTSDailyQuotaError
 from video_material import descargar_clip, descargar_clips, overlay_clips
 from visuales_autorizados import descargar_imagenes, escena_con_foto
+from visuales_originales import crear_banco_original
 
 BASE = Path(__file__).resolve().parent
 SALIDA = BASE / "salida"
@@ -267,6 +268,13 @@ def montar(plan, guion):
         imagenes_autorizadas = descargar_imagenes(
             plan["tema_id"], directorio / "imagenes_autorizadas"
         )
+        # Si no se aportan imágenes externas autorizadas, crear ilustraciones
+        # originales. No se presentan como capturas ni clips de GTA.
+        if not imagenes_autorizadas:
+            imagenes_autorizadas = crear_banco_original(
+                plan["tema_id"], directorio / "ilustraciones_originales"
+            )
+            print("Modo visual: ilustraciones editoriales originales; no gameplay.", flush=True)
         clips = []
         visuales_usados = {"clip": 0, "foto": 0, "tarjeta": 0}
         for indice, escena in enumerate(escenas):
