@@ -103,6 +103,11 @@ jobs:
             librosa soundfile sox onnxruntime einops huggingface_hub
 
       - name: Comprobar fuentes y Python
+        # Los tests antiguos de Gemini/Azure verifican sus propias voces.
+        # El paso de PRODUCCIÓN volverá a usar PF_TTS_PROVIDER=qwen.
+        # Los tests Qwen activan el proveedor local dentro de su contexto.
+        env:
+          PF_TTS_PROVIDER: ""
         run: |
           python -m py_compile *.py
           python -m unittest discover -s . -p 'test_*.py'
