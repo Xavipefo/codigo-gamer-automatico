@@ -33,7 +33,12 @@ class TestEditorial(unittest.TestCase):
                     editorial.seleccionado("gta6-jason-lucia","short")
 
     def test_largo_requiere_guion_ia(self):
-        tema = editorial.seleccionado("gta6-jason-lucia", "largo")
+        # La prueba no debe depender del historial real de vídeos ya subidos.
+        with tempfile.TemporaryDirectory() as tmp:
+            hist = Path(tmp) / "hist.json"
+            hist.write_text("[]", encoding="utf-8")
+            with patch.object(editorial, "HISTORIAL", hist):
+                tema = editorial.seleccionado("gta6-jason-lucia", "largo")
         guion, descripcion, plan = editorial.preparar_plan(tema, "largo")
         self.assertEqual(guion, "")
         self.assertTrue(plan["requiere_guion_ia"])
