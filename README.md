@@ -166,6 +166,52 @@ La decisión de publicar desde YouTube Studio corresponde al propietario
 después de revisar voz, imagen, copyright, títulos, descripción y contenido.
 Los vídeos antiguos privados pueden conservar su voz anterior.
 
+## Opción prioritaria sin Azure: Qwen3-TTS libre en GitHub (17/11/2026)
+
+Prueba de **síntesis de voz local y gratuita**, sin servicios de voz Gemini,
+Azure ni tarjeta de crédito. La generación de **guiones** sigue usando su
+configuración independiente (Gemini); Qwen sustituiría únicamente TTS.
+
+- **Qwen3-TTS 0.6B CustomVoice**: menos memoria y descarga; voces masculinas
+  predefinidas Ryan/Aiden. Español soportado, pero sus perfiles de origen son
+  ingleses: **no podemos garantizar acento castellano peninsular**.
+- **Qwen3-TTS 1.7B VoiceDesign**: permite describir una **voz original de
+  España** con tono natural y estilo gamer, sin reproducir Achird o Charon.
+  El checkpoint ocupa aproximadamente **4,5 GB** y puede ser muy lento en
+  CPU. Solo activar si la prueba ligera no alcanza suficiente calidad.
+
+**Workflow manual:**
+[Píxel Feroz - Probar IA de voz LIBRE (Qwen3)](
+.github/workflows/probar_voz_qwen_libre.yml)
+1. `Actions > Píxel Feroz - Probar IA de voz LIBRE (Qwen3) > Run workflow`.
+2. Primera prueba: `modelo=ligero`; después `modelo=diseno` si necesitamos
+   más control de acento y la capacidad de GitHub lo permite.
+3. El proceso descarga el checkpoint oficial Apache-2.0 en el runner CPU y
+   genera dos archivos de ejemplo WAV, solo a partir de **texto de muestra
+   público y original**. No lee vídeos privados ni secretos.
+4. Si funciona, escuchar ambos archivos en el artifact
+   `pixel-feroz-qwen-libre-<modelo>` (retención: 3 días).
+5. **No hay cambio automático de narrador ni subida a YouTube** hasta
+   escoger una voz y comprobar la calidad en español de España.
+
+El repositorio es público, por lo que las muestras descargables también
+pueden ser públicas: jamás incluir audio privado, materiales con derechos,
+claves o guiones inéditos en este workflow. La caché solo guarda los pesos
+públicos del modelo. Requiere un runner Ubuntu estándar con 4 CPU y 16 GB
+RAM; la velocidad y consumo de disco están por validar y pueden forzar
+una prueba fallida sin gastos de API.
+
+Fuentes oficiales:
+- https://github.com/QwenLM/Qwen3-TTS
+- https://huggingface.co/Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice
+- https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign
+- https://docs.github.com/en/actions/reference/runners/github-hosted-runners
+
+**No hace falta crear ni contratar una suscripción de Azure para esta prueba**.
+Los scripts anteriores de Azure permanecen inactivos como alternativa.
+La configuración de vídeos completos conserva el motor Gemini hasta
+aprobar otra voz; los vídeos seguirán subidos exclusivamente como privados.
+
 ## Alternativa gratuita a Gemini TTS: Azure Speech (16/11/2026)
 
 El generador de **guiones** permanece en Gemini. La nueva alternativa
