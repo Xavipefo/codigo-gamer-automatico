@@ -124,6 +124,7 @@ jobs:
 
       - name: Elegir y preparar tema verificado
         env:
+          PF_CLIPS_JSON: ${{ secrets.PF_CLIPS_JSON }}
           PF_IMAGENES_JSON: ${{ secrets.PF_IMAGENES_JSON }}
           PF_TTS_PROVIDER: ${{ inputs.motor_tts == 'qwen' && 'qwen' || 'gemini' }}
           TEMA: ${{ inputs.tema }}
