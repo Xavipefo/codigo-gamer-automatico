@@ -41,7 +41,7 @@ largo privado**. Indicar un ID de tema verificado o dejarlo vacío.
 Todo se verifica antes de subir, y YouTube confirma estado privado.
 El historial bloquea duplicados por tema y formato.
 
-Voz Ryan (Qwen3-TTS): **1.00x Shorts / 1.08x largos**. El ritmo largo
+Voz Ryan (Qwen3-TTS): **1.00x Shorts / 1.10x largos**. El ritmo largo
 se modifica con FFmpeg atempo sin alterar el tono. Este ajuste NO acelera
 la inferencia de Qwen, que tardó cerca de 89 minutos por un largo de
 12:06 en la prueba real. Los 5 largos especiales pueden requerir muchas
@@ -57,13 +57,16 @@ https://support.google.com/youtube/answer/16391400?hl=es
 
 ## Material oficial, arte IA, vídeos y permisos
 
-- **PF_CLIPS_JSON**: permite clips de vídeo de un origen autorizado,
-  incluidos vídeos de IA originales si tienes derechos y se alojan en
-  un enlace directo. Sin configurar, se usan animaciones originales.
-- **PF_IMAGENES_JSON**: nuevo GitHub Secret opcional para hasta cinco
-  fotos del tema (propias, IA original, licenciadas u oficiales con
-  autorización expresa). El motor alterna fotos con tarjetas
-  originales y añade los créditos aportados a la descripción.
+- **PF_CLIPS_JSON**: admite ahora **hasta 6 clips cortos por tema**,
+  descargados únicamente de enlaces HTTPS directos con permiso confirmado.
+  El motor rota diferentes vídeos como fondo, descarta el audio original
+  y superpone rótulos de hasta once palabras. Sin configurar, seguirá
+  utilizando imágenes autorizadas o animaciones originales.
+- **PF_IMAGENES_JSON**: admite ahora **hasta 10 imágenes por tema**
+  (propias, IA original, licenciadas u oficiales con autorización).
+  En el montaje se alternan con los clips; se usan fotos grandes,
+  un zoom muy suave y rótulos discretos. El sistema añade los
+  créditos de fotos y clips autorizados a la descripción.
 - Cada elemento de PF_IMAGENES_JSON requiere URL de imagen directa
   HTTPS, derechos_confirmados=true, origen, credito y fuente_publica
   HTTPS. Orígenes: propio, ia_original, licenciado, oficial_autorizado.
@@ -74,6 +77,45 @@ https://support.google.com/youtube/answer/16391400?hl=es
     "derechos_confirmados":true,"origen":"ia_original",
     "credito":"Arte original Píxel Feroz",
     "fuente_publica":"https://TU-SITIO.example/creditos"}]}
+
+### Formato real de PF_CLIPS_JSON (GitHub Secret)
+
+El motor acepta una **lista** por tema (sustituye todos los dominios
+de ejemplo por un almacenamiento del que tengas control de los derechos):
+
+```json
+{
+  "gta6-vice-city-leonida": [
+    {
+      "url": "https://cdn.tu-dominio.example/clip-ciudad.mp4",
+      "derechos_confirmados": true,
+      "origen": "propio",
+      "credito": "Píxel Feroz",
+      "fuente_publica": "https://tu-dominio.example/creditos"
+    },
+    {
+      "url": "https://cdn.tu-dominio.example/clip-ambiente.mp4",
+      "derechos_confirmados": true,
+      "origen": "licenciado",
+      "credito": "Titular original de la licencia",
+      "fuente_publica": "https://tu-dominio.example/licencia"
+    }
+  ]
+}
+```
+
+Una sola entrada anterior en formato objeto también sigue siendo
+aceptada por compatibilidad, pero las **entradas nuevas** deben tener
+crédito, origen y enlace público de atribución. Máximo seis clips
+de 2 a 180 segundos; se recomiendan piezas de 3–6 segundos.
+No uses `urllib.request.urlretrieve` con URLs arbitrarias; el
+descargador incluido valida HTTPS, destinos y limita tamaños,
+rechaza redirecciones y verifica el vídeo con FFprobe.
+
+**La alternancia automática no inventa ni busca clips de GTA VI.**
+Hasta que se añadan URL legítimas a Secrets de GitHub, aparecerán
+animaciones originales, no imágenes ni vídeo oficial. Citar la
+fuente no concede autorización, especialmente para uso comercial.
 
 - Fuentes de Rockstar para revisar permisos y catalogar recursos:
   https://www.rockstargames.com/VI/media
