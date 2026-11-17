@@ -33,8 +33,8 @@ def catalogo(tema_id):
     if not isinstance(datos, dict):
         raise ValueError("PF_IMAGENES_JSON debe ser un objeto")
     elementos = datos.get(tema_id, [])
-    if not isinstance(elementos, list) or len(elementos) > 5:
-        raise ValueError("Máximo 5 imágenes por tema")
+    if not isinstance(elementos, list) or len(elementos) > 10:
+        raise ValueError("Máximo 10 imágenes por tema")
     for i,item in enumerate(elementos):
         if not isinstance(item, dict):
             raise ValueError("Cada imagen necesita ficha de licencia")
@@ -127,30 +127,44 @@ def creditos_para_descripcion(tema_id):
 
 
 def escena_con_foto(escena, formato, foto, credito, destino):
+    """Foto casi a pantalla completa con rótulo muy breve (no muro de texto).
+
+    El zoom/paneo se aplica después por FFmpeg, sobre la escena entera.
+    Nunca reutiliza material descargado de redes sin autorización.
+    """
     from generar_short import fuente, partir_lineas
-    w,h = (720,1280) if formato=="short" else (1280,720)
-    with Image.open(foto) as im:
-        fondo = ImageOps.fit(im.convert("RGB"), (w,h), method=Image.Resampling.LANCZOS)
-    capa = Image.new("RGBA",(w,h),(0,0,0,0))
+
+    w, h = (720, 1280) if formato == "short" else (1280, 720)
+    with Image.open(foto) as original:
+        fondo = ImageOps.fit(
+            original.convert("RGB"), (w, h), method=Image.Resampling.LANCZOS
+        )
+    capa = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(capa)
-    panel_y = int(h*.59) if formato=="short" else int(h*.61)
     d.rounded_rectangle(
-        (24,panel_y,w-24,h-52),radius=22,fill=(3,10,22,226),
-        outline=(56,220,215,230),width=3
+        (24, 20, w - 24, 84), radius=14, fill=(4, 12, 25, 183)
     )
-    d.rounded_rectangle((24,22,w-24,98),radius=15,fill=(5,12,25,224))
-    d.text((48,40),"PÍXEL FEROZ  |  GTA VI",font=fuente(27,True),fill=(70,240,219))
-    visible = escena["texto"]
-    for tam in range(36 if formato=="largo" else 32,20,-2):
-        f=fuente(tam,True)
-        lineas=partir_lineas(d,visible,f,w-115)
-        if len(lineas)*int(tam*1.25)<h-90-panel_y:
+    d.text((48, 37), "PÍXEL FEROZ", font=fuente(26, True),
+           fill=(68, 240, 219))
+
+    # Foto visible en aproximadamente 80 % del fotograma.
+    y0 = int(h * (0.79 if formato == "largo" else 0.82))
+    d.rounded_rectangle(
+        (25, y0, w - 25, h - 43),
+        radius=18, fill=(2, 11, 24, 198),
+        outline=(56, 220, 215, 145), width=2,
+    )
+    texto = " ".join(escena["texto"].split()[:12])
+    for tam in range(37 if formato == "largo" else 33, 21, -2):
+        f = fuente(tam, True)
+        lineas = partir_lineas(d, texto, f, w - 110)
+        if len(lineas) <= 2:
             break
-    y=panel_y+22
-    for linea in lineas:
-        d.text((55,y),linea,font=f,fill=(248,251,254))
-        y+=int(tam*1.25)
-    d.text((25,h-35),f"Imagen: {credito[:60]}",font=fuente(15),fill=(240,240,240))
-    final=Image.alpha_composite(fondo.convert("RGBA"),capa).convert("RGB")
-    destino.parent.mkdir(parents=True,exist_ok=True)
+    for i, linea in enumerate(lineas[:2]):
+        d.text((50, y0 + 15 + i * int(tam * 1.2)),
+               linea, font=f, fill=(248, 251, 254))
+    d.text((28, h - 28), "Imagen: " + credito[:58],
+           font=fuente(14), fill=(237, 237, 237))
+    final = Image.alpha_composite(fondo.convert("RGBA"), capa).convert("RGB")
+    destino.parent.mkdir(parents=True, exist_ok=True)
     final.save(destino)
