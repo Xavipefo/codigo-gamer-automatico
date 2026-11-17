@@ -1,0 +1,84 @@
+name: "Píxel Feroz - 3. Producir lote de Shorts PRIVADOS (Ryan)"
+
+on:
+  workflow_dispatch:
+    inputs:
+      cantidad:
+        description: "Número de Shorts nuevos verificados, entre 1 y 5"
+        type: choice
+        required: true
+        default: "2"
+        options:
+          - "1"
+          - "2"
+          - "3"
+          - "4"
+          - "5"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pixel-feroz-produccion
+  cancel-in-progress: false
+
+jobs:
+  lote-privado:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    env:
+      HF_HOME: ${{ github.workspace }}/.hf-qwen
+      HF_HUB_DISABLE_TELEMETRY: "1"
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - name: Comprobar rama
+        shell: bash
+        run: |
+          if [ "${{ github.ref_name }}" != "main" ]; then
+            echo "::error::Ejecutar solo desde main."
+            exit 1
+          fi
+      - name: Descargar código con permisos para registrar subidas
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Instalar sistema multimedia
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core sox libsox-fmt-all libsndfile1
+          python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Reusar pesos públicos de Qwen
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.HF_HOME }}/hub
+          key: pixel-feroz-qwen3tts-${{ runner.os }}-ligero-12hz-v1
+      - name: Instalar Qwen Ryan una sola vez por lote
+        run: |
+          python -m pip install --no-cache-dir --index-url https://download.pytorch.org/whl/cpu torch torchaudio
+          python -m pip install --no-cache-dir "qwen-tts==0.1.1" --no-deps
+          python -m pip install --no-cache-dir \
+            "transformers==4.57.3" "accelerate==1.12.0" \
+            librosa soundfile sox onnxruntime einops huggingface_hub
+      - name: Comprobar código y pruebas antes de subir
+        run: |
+          python -m py_compile *.py
+          python -m unittest discover -s . -p 'test_*.py'
+      - name: Identidad de bot para registrar cada Short privado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Producir lote, controlar duplicados, subir PRIVADOS y registrar cada uno
+        env:
+          PF_TTS_PROVIDER: qwen
+          PF_SUBIR_PRIVADO: "SI"
+          YOUTUBE_OAUTH_JSON: ${{ secrets.YOUTUBE_OAUTH_JSON }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PF_CLIPS_JSON: ${{ secrets.PF_CLIPS_JSON }}
+          PF_IMAGENES_JSON: ${{ secrets.PF_IMAGENES_JSON }}
+          CANTIDAD: ${{ inputs.cantidad }}
+        run: python -u lote_shorts_privados.py --cantidad "$CANTIDAD"
