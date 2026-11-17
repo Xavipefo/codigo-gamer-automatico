@@ -18,6 +18,11 @@ class TestQwenProduccion(unittest.TestCase):
         self.assertEqual(VOZ_LOCAL, "Ryan")
         self.assertIn("0.6B-CustomVoice", MODELO_LOCAL)
 
+    def test_ryan_es_voz_principal_sin_forzar_variable(self):
+        with patch.dict(os.environ, {"PF_TTS_PROVIDER": ""}):
+            self.assertEqual(elegir_voz("short"), "Ryan")
+            self.assertEqual(elegir_voz("largo"), "Ryan")
+
     def test_qwen_no_necesita_credenciales_de_tts(self):
         motor = MagicMock()
         with patch.dict(os.environ, {
