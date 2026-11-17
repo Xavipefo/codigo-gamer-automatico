@@ -5,12 +5,14 @@ CPU, modelo público Apache-2.0, sin API de voz ni cuotas externas.
 Carga los pesos UNA SOLA VEZ por vídeo (todas las escenas).
 No se generan artifacts con guiones ni WAV de contenido privado.
 """
+import json
 import os
 import wave
 from pathlib import Path
 
 from voz_produccion import preparar_lectura, elegir_voz, NarradorGemini
 from voz_qwen_libre import MODELOS
+from audio_ritmo import ajustar_ritmo_wav
 
 MODELO_LOCAL = MODELOS["ligero"]
 VOZ_LOCAL = "Ryan"
@@ -30,6 +32,15 @@ class NarradorQwen:
         self.recuperados = 0
         self.segundos = 0.0
         self.max_peticiones = 12 if formato == "short" else 45
+        config = json.loads(
+            (Path(__file__).resolve().parent / "config.json").read_text(encoding="utf-8")
+        )
+        self.factor_ritmo = (
+            float(config.get("velocidad_ryan_largos", 1.0))
+            if formato == "largo" else 1.0
+        )
+        if not 1.0 <= self.factor_ritmo <= 1.20:
+            raise ValueError("Velocidad de Ryan fuera de los límites seguros")
         if motor is None:
             import torch
             from qwen_tts import Qwen3TTSModel
@@ -103,6 +114,12 @@ class NarradorQwen:
         finally:
             temporal.unlink(missing_ok=True)
 
+        if self.factor_ritmo > 1.0:
+            segundos = ajustar_ritmo_wav(ruta, self.factor_ritmo)
+            print(
+                "Ryan: velocidad final", self.factor_ritmo,
+                "x, tono conservado (atempo).", flush=True
+            )
         self.segundos += segundos
         if self.segundos > (180 if self.formato == "short" else 1200):
             raise RuntimeError("Duración total de narración fuera de límite")
