@@ -70,5 +70,15 @@
     "formato": "short",
     "fecha": "2026-11-17T19:16:48.407017+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "Vx-oMY61ME8",
+    "url": "https://www.youtube.com/watch?v=Vx-oMY61ME8",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-vice-city-leonida",
+    "formato": "largo",
+    "fecha": "2026-11-17T20:34:29.634653+00:00",
+    "miniatura_confirmada": true
   }
 ]
