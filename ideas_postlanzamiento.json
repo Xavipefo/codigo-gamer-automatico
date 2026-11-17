@@ -1,0 +1,196 @@
+{
+  "fecha_preparacion": "2026-11-17",
+  "modo": "solo_plantillas",
+  "precaucion": "Ninguna idea aporta hechos postlanzamiento: no debe entrar en temas_verificados.json hasta documentar hechos y URLs verificables.",
+  "ideas": [
+    {
+      "id": "previa_lucia",
+      "titulo": "Biografía de Lucia antes del estreno",
+      "estado": "confirmable_con_fuentes_existentes",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    },
+    {
+      "id": "previa_jason",
+      "titulo": "Biografía de Jason antes del estreno",
+      "estado": "confirmable_con_fuentes_existentes",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    },
+    {
+      "id": "previa_regiones",
+      "titulo": "Zonas oficiales de Leonida",
+      "estado": "confirmable_con_fuentes_existentes",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    },
+    {
+      "id": "estreno_primeras_horas",
+      "titulo": "Primeras horas del estreno: novedades verificadas",
+      "estado": "PENDIENTE_DE_VERIFICACION",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    },
+    {
+      "id": "primer_descubrimiento",
+      "titulo": "Primer descubrimiento verificable dentro del juego",
+      "estado": "PENDIENTE_DE_VERIFICACION",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    },
+    {
+      "id": "primer_analisis_gameplay",
+      "titulo": "Primer análisis tras jugar con material propio",
+      "estado": "PENDIENTE_DE_VERIFICACION",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    },
+    {
+      "id": "detalle_sorprendente",
+      "titulo": "Un detalle inesperado comprobado en el juego",
+      "estado": "PENDIENTE_DE_VERIFICACION",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    },
+    {
+      "id": "comparativa_gta_v",
+      "titulo": "Una comparación documentada con GTA V",
+      "estado": "PENDIENTE_DE_VERIFICACION",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    },
+    {
+      "id": "analisis_primer_dia",
+      "titulo": "Análisis del primer día sin spoilers",
+      "estado": "PENDIENTE_DE_VERIFICACION",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    },
+    {
+      "id": "rendimiento_real_ps5",
+      "titulo": "Pruebas propias y verificables del rendimiento en PS5",
+      "estado": "PENDIENTE_DE_VERIFICACION",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    },
+    {
+      "id": "mecanica_interesante",
+      "titulo": "Una mecánica confirmada mediante gameplay propio",
+      "estado": "PENDIENTE_DE_VERIFICACION",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    },
+    {
+      "id": "descubrimiento_segundo_dia",
+      "titulo": "Nuevo hallazgo contrastado del segundo día",
+      "estado": "PENDIENTE_DE_VERIFICACION",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    },
+    {
+      "id": "analisis_historia_sin_spoilers",
+      "titulo": "Análisis introductorio de la historia sin destripes",
+      "estado": "PENDIENTE_DE_VERIFICACION",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    },
+    {
+      "id": "zonas_del_mapa",
+      "titulo": "Zonas exploradas en el mapa con pruebas visuales",
+      "estado": "PENDIENTE_DE_VERIFICACION",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    },
+    {
+      "id": "sonido_ambientacion",
+      "titulo": "Análisis con evidencia propia del sonido y la ambientación",
+      "estado": "PENDIENTE_DE_VERIFICACION",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    },
+    {
+      "id": "comparativa_gta_v_dos",
+      "titulo": "Nueva comparación visual respaldada con pruebas",
+      "estado": "PENDIENTE_DE_VERIFICACION",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    },
+    {
+      "id": "mapa_y_exploracion_real",
+      "titulo": "Mapa y exploración reales después de jugar",
+      "estado": "PENDIENTE_DE_VERIFICACION",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    },
+    {
+      "id": "secretos_verificados",
+      "titulo": "Secretos o curiosidades descubiertos y verificados",
+      "estado": "PENDIENTE_DE_VERIFICACION",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    },
+    {
+      "id": "sistemas_de_juego",
+      "titulo": "Mecánicas y sistemas observados en partidas propias",
+      "estado": "PENDIENTE_DE_VERIFICACION",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    },
+    {
+      "id": "resumen_fin_semana",
+      "titulo": "Balance de hallazgos contrastados del fin de semana",
+      "estado": "PENDIENTE_DE_VERIFICACION",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    },
+    {
+      "id": "balance_cuatro_dias",
+      "titulo": "Conclusiones tras cuatro días de pruebas y fuentes",
+      "estado": "PENDIENTE_DE_VERIFICACION",
+      "fuente_necesaria": "Enlace oficial posterior al lanzamiento o captura/gameplay propios con permiso explícito para usar y prueba del hecho concreto",
+      "evidencia": null,
+      "prohibido_publicar_sin_verificar": true,
+      "guion_no_generado": true
+    }
+  ]
+}
