@@ -80,5 +80,15 @@
     "formato": "largo",
     "fecha": "2026-11-17T20:34:29.634653+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "4Z4gJJ84ww4",
+    "url": "https://www.youtube.com/watch?v=4Z4gJJ84ww4",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-lucia-origen",
+    "formato": "short",
+    "fecha": "2026-11-17T23:20:34.587013+00:00",
+    "miniatura_confirmada": true
   }
 ]
