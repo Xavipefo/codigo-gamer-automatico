@@ -1,17 +1,20 @@
 # Píxel Feroz — automatización de vídeos de videojuegos
 
-**Actualizado:** 16 de noviembre de 2026. Sistema independiente del canal Dato Nebular.
+**Actualizado:** 17 de noviembre de 2026. Sistema independiente del canal Dato Nebular.
 Se generan **Shorts** y **vídeos largos** mediante acciones manuales de GitHub. Todas las subidas
 a YouTube son **PRIVADAS** para revisión. Ninguna acción publica automáticamente al público.
 
 ## Situación del canal
 
 - Canal autorizado mediante OAuth: `UCgT82gfTjIw2o-CtmQgSS3w`.
-- Gemini para guiones validado. Dos Shorts anteriores subidos en privado con sus miniaturas.
-- **Voz de producción actualizada a Gemini 3.8 Flash TTS, español de España**:
-  `Achird` en Shorts y noticias; `Charon` en análisis y largos.
-- **Pendiente de prueba de extremo a extremo**: los vídeos completos con las voces Gemini
-  y los gráficos en movimiento. No dar por lista esa parte hasta revisar un vídeo privado.
+- Gemini para guiones validado. Shorts anteriores subidos en privado y miniaturas confirmadas.
+- **Voz principal aprobada: Ryan (Qwen3-TTS 0.6B libre)** para Shorts y largos.
+  Un Short de 37,75 segundos fue generado, validado y subido en PRIVADO
+  ([ver ejecución](https://github.com/Xavipefo/codigo-gamer-automatico/actions/runs/44070297476)).
+  La voz se revisó manualmente y quedó aprobada. Aiden está descartada.
+- **Pendiente de prueba de extremo a extremo: vídeo largo con Ryan**.
+  Este formato puede requerir hasta varias horas de CPU, sin garantía
+  de completar en el límite de ejecución de GitHub.
 - Clips de videojuegos: el motor admite material propio/autorizado; **no existe ningún
   clip de GTA configurado todavía**. En su ausencia utiliza gráficos originales animados.
 
@@ -42,33 +45,31 @@ comprueba primero YouTube Studio y el historial, o podrías crear duplicados.
 `config.json` contiene:
 
 ```json
-"motor_voz": "gemini-3.8-flash-tts",
+"motor_voz": "qwen3-tts-0.6b",
+"voz_qwen_principal": "Ryan",
 "voces_por_formato": {
   "short": "Achird",
   "largo": "Charon"
 }
 ```
 
-`editorial.py` asigna el narrador al plan del vídeo.
-`voz_produccion.py` valida esa asignación, limita las peticiones y usa
-`voz_gemini_castellano.py` para producir WAV PCM de 24 kHz.
-`motor_video.py` monta cada fragmento de voz con el vídeo correspondiente,
-sin introducir una voz distinta a mitad de un vídeo.
+`editorial.py` asigna **Ryan** al plan del vídeo al elegir Qwen
+(predeterminado). `voz_qwen_produccion.py` descarga pesos libres oficiales,
+los carga una vez por vídeo y genera los WAV en CPU, sin APIs TTS.
+`motor_video.py` monta cada fragmento de audio y vídeo sincronizado.
 
-- Achird: tono más cercano, alegre y conversacional para novedades.
-- Charon: estilo más reposado para explicaciones y análisis.
-- Ambos utilizan instrucciones de **español peninsular de España**, no clonación
-  de voz ni imitación exacta de una persona concreta.
-- Si falla la API TTS, el vídeo **se detiene antes de subir**; no vuelve
-  silenciosamente a un locutor robótico.
-- Para los vídeos largos se narran fragmentos mayores y se muestran rótulos
-  abreviados, sin modificar el contenido del guion original.
+- Ryan: voz de presentador aprobada por el usuario en Short de producción.
+- Aiden: descartado.
+- Achird y Charon: voces históricas de Gemini, disponibles solo si se
+  selecciona explícitamente el motor antiguo en el workflow.
+- Los guiones con IA **siguen usando Gemini solo para TEXTO**;
+  las limitaciones de su API para guiones siguen vigentes.
+- Si falla la voz, el vídeo **se detiene antes de subir**.
+- Los vídeos largos muestran rótulos abreviados, sin modificar el guion.
 
-**Coste:** TTS puede consumir cuota de Gemini. El nivel gratuito y sus límites
-dependen del proyecto; si se usa cuota de pago, se factura según tarifas
-publicadas por Google. Consultar antes de producir en volumen:
-https://ai.google.dev/gemini-api/docs/pricing y
-https://ai.google.dev/gemini-api/docs/speech-generation
+**Coste de TTS:** 0 € de API y sin Azure. Los ejecutores CPU de repositorios
+públicos están sujetos a las reglas y límites de GitHub. La calidad de
+los largos aún no está verificada.
 
 Los prototipos anteriores de Piper/Kokoro siguen como scripts históricos de
 prueba, **no como motor de producción**.
@@ -190,11 +191,11 @@ siguiente Short verificado que aún no se haya subido, generará su guion
 y narración con Ryan, montará vídeo y miniatura, validará los formatos y
 solo entonces intentará subirlo en privado a YouTube. **No publica al público.**
 
-El motor de Qwen todavía **no es predeterminado** en `config.json`
-hasta escuchar esta prueba completa. El botón de producción habitual
-sigue usando Gemini TTS. Cuando comprobemos la calidad del Short y
-el tiempo de ejecución, podremos establecer `motor_voz=qwen3-tts-0.6b`
-y diseñar una producción larga con suficiente margen de CPU.
+**Ryan ya está seleccionado como voz predeterminada**, tanto en
+`config.json` como en los botones habituales de Short y vídeo largo.
+Los trabajos siguen subiendo únicamente a YouTube en privado; no existe
+programación de publicación automática. **El vídeo largo está pendiente
+de prueba real** y su duración de generación no está garantizada.
 
 GitHub Actions ofrece CPU gratuita en repositorios públicos, sujeta
 a sus condiciones y uso razonable. La prueba de dos muestras tardó
@@ -245,8 +246,9 @@ Fuentes oficiales:
 
 **No hace falta crear ni contratar una suscripción de Azure para esta prueba**.
 Los scripts anteriores de Azure permanecen inactivos como alternativa.
-La configuración de vídeos completos conserva el motor Gemini hasta
-aprobar otra voz; los vídeos seguirán subidos exclusivamente como privados.
+La configuración de vídeos completos ya usa Ryan/Qwen3 como voz.
+Gemini permanece solo para guiones y como alternativa TTS desactivada;
+los vídeos seguirán subidos exclusivamente como privados.
 
 ## Alternativa gratuita a Gemini TTS: Azure Speech (16/11/2026)
 
