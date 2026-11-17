@@ -40,5 +40,15 @@
     "formato": "short",
     "fecha": "2026-11-17T11:08:30.313183+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "IgAZ4dFOc60",
+    "url": "https://www.youtube.com/watch?v=IgAZ4dFOc60",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-jason-lucia",
+    "formato": "largo",
+    "fecha": "2026-11-17T12:54:00.951713+00:00",
+    "miniatura_confirmada": true
   }
 ]
