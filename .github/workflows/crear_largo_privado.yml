@@ -8,8 +8,8 @@ on:
         type: string
         required: false
         default: ""
-      permitir_solo_graficos:
-        description: "NO recomendado: permitir largo sin imágenes ni clips"
+      exigir_material_real:
+        description: "Opcional: bloquear si faltan imágenes y clips licenciados"
         type: boolean
         required: false
         default: false
@@ -26,5 +26,5 @@ jobs:
       subir_privado: true
       confirmacion: SUBIR_PRIVADO
       motor_tts: qwen
-      exigir_multimedia: ${{ !inputs.permitir_solo_graficos }}
+      exigir_multimedia: ${{ inputs.exigir_material_real }}
     secrets: inherit
