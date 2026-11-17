@@ -16,7 +16,7 @@
   "cola_temas": "temas_verificados.json",
   "descripciones_comunes": "descripcion_general.txt",
   "discovery_schedule": "cada_tres_dias_aprox",
-  "motor_voz": "gemini-3.8-flash-tts",
+  "motor_voz": "qwen3-tts-0.6b",
   "estilo_visual": "movimiento_suave_y_clips_autorizados",
   "clips_externos": "PF_CLIPS_JSON (GitHub Secret opcional)",
   "voces_por_formato": {
@@ -24,5 +24,6 @@
     "largo": "Charon"
   },
   "narrador_por_video": true,
-  "permite_cambio_aleatorio_voz": false
+  "permite_cambio_aleatorio_voz": false,
+  "voz_qwen_principal": "Ryan"
 }
