@@ -1,0 +1,75 @@
+name: "Píxel Feroz - Probar IA de voz LIBRE (Qwen3)"
+
+on:
+  workflow_dispatch:
+    inputs:
+      modelo:
+        description: "Prueba primero ligero; diseño permite definir acento español de España, pero es más lento en CPU."
+        type: choice
+        required: true
+        default: ligero
+        options:
+          - ligero
+          - diseno
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pf-muestra-qwen-libre
+  cancel-in-progress: false
+
+jobs:
+  muestras-libres:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      HF_HOME: ${{ github.workspace }}/.hf-qwen
+      HF_HUB_DISABLE_TELEMETRY: "1"
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Liberar espacio y preparar utilidades de audio
+        run: |
+          df -h .
+          sudo apt-get update -qq
+          sudo apt-get install -y sox libsox-fmt-all libsndfile1 ffmpeg
+          python -m pip install --upgrade pip
+
+      - name: Restaurar pesos públicos del modelo si ya se probaron
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.HF_HOME }}/hub
+          key: pixel-feroz-qwen3tts-${{ runner.os }}-${{ inputs.modelo }}-12hz-v1
+
+      - name: Instalar PyTorch SOLO CPU y biblioteca libre
+        run: |
+          python -m pip install --no-cache-dir --index-url https://download.pytorch.org/whl/cpu torch torchaudio
+          python -m pip install --no-cache-dir \
+            "qwen-tts==0.1.1" --no-deps
+          python -m pip install --no-cache-dir \
+            "transformers==4.57.3" "accelerate==1.12.0" \
+            librosa soundfile sox onnxruntime einops huggingface_hub
+          df -h .
+
+      - name: Generar dos voces originales sin servicios externos de TTS
+        run: |
+          python -u voz_qwen_libre.py --modelo "${{ inputs.modelo }}" --salida voces_libres
+
+      - name: Adjuntar solamente muestras de texto de demostración
+        uses: actions/upload-artifact@v4
+        with:
+          name: pixel-feroz-qwen-libre-${{ inputs.modelo }}
+          path: voces_libres/*.wav
+          retention-days: 3
+          if-no-files-found: error
