@@ -17,7 +17,7 @@
   "descripciones_comunes": "descripcion_general.txt",
   "discovery_schedule": "cada_tres_dias_aprox",
   "motor_voz": "qwen3-tts-0.6b",
-  "estilo_visual": "movimiento_suave_y_clips_autorizados",
+  "estilo_visual": "prioridad_clips_cortos_e_imagenes_autorizados_con_rotulos_breves",
   "clips_externos": "PF_CLIPS_JSON (GitHub Secret opcional)",
   "voces_por_formato": {
     "short": "Achird",
@@ -26,5 +26,7 @@
   "narrador_por_video": true,
   "permite_cambio_aleatorio_voz": false,
   "voz_qwen_principal": "Ryan",
-  "velocidad_ryan_largos": 1.08
+  "velocidad_ryan_largos": 1.1,
+  "clips_por_tema_maximo": 6,
+  "imagenes_por_tema_maximo": 10
 }
