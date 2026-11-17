@@ -166,6 +166,42 @@ La decisión de publicar desde YouTube Studio corresponde al propietario
 después de revisar voz, imagen, copyright, títulos, descripción y contenido.
 Los vídeos antiguos privados pueden conservar su voz anterior.
 
+## Nueva elección de voz: Ryan (Qwen3-TTS 0.6B)
+
+El usuario ha escuchado las muestras generadas con el modelo libre
+(`run 44066820130`) y ha escogido **Ryan**, perfil `presentador`.
+La voz Aiden, perfil `analista`, queda **descartada** por falta de
+naturalidad. **No intentamos fingir dos narradores distintos**.
+
+Se ha preparado una prueba del motor de producción usando Ryan tanto
+para Shorts como para vídeos largos. El módulo `voz_qwen_produccion.py`
+carga Qwen3-TTS **una sola vez por vídeo** y genera cada bloque en CPU
+sin Azure ni Gemini TTS. Los guiones siguen usando Gemini (solo texto)
+cuando el formato lo requiera. Se conserva el montaje con FFmpeg, los
+controles técnicos y la subida **exclusivamente PRIVADA**.
+
+### Primera prueba real recomendada (Short privado)
+
+[Píxel Feroz - Probar Short privado con voz Ryan (Qwen libre)](
+.github/workflows/crear_short_qwen_privado.yml)
+
+Al ejecutarlo sobre `main` con `tema` vacío, el sistema elegirá el
+siguiente Short verificado que aún no se haya subido, generará su guion
+y narración con Ryan, montará vídeo y miniatura, validará los formatos y
+solo entonces intentará subirlo en privado a YouTube. **No publica al público.**
+
+El motor de Qwen todavía **no es predeterminado** en `config.json`
+hasta escuchar esta prueba completa. El botón de producción habitual
+sigue usando Gemini TTS. Cuando comprobemos la calidad del Short y
+el tiempo de ejecución, podremos establecer `motor_voz=qwen3-tts-0.6b`
+y diseñar una producción larga con suficiente margen de CPU.
+
+GitHub Actions ofrece CPU gratuita en repositorios públicos, sujeta
+a sus condiciones y uso razonable. La prueba de dos muestras tardó
+varios minutos. Los largos de 10–13 minutos podrían requerir mucho más
+tiempo: no se promete todavía que completen dentro del timeout del
+runner ni que igualen la entonación de la muestra.
+
 ## Opción prioritaria sin Azure: Qwen3-TTS libre en GitHub (17/11/2026)
 
 Prueba de **síntesis de voz local y gratuita**, sin servicios de voz Gemini,
