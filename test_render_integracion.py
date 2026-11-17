@@ -71,7 +71,7 @@ class TestIntegracionFFmpeg(unittest.TestCase):
             with tempfile.TemporaryDirectory() as tmp:
                 out = Path(tmp) / "salida"
                 with patch.object(motor_video, "SALIDA", out), patch.dict(
-                    os.environ, {"GEMINI_API_KEY": "clave-de-prueba"}
+                    os.environ, {"GEMINI_API_KEY": "clave-de-prueba", "PF_TTS_PROVIDER": "gemini"}
                 ), patch(
                     "voz_produccion.sintetizar", side_effect=audio_falso
                 ), patch(
