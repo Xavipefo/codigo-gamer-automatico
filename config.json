@@ -25,5 +25,6 @@
   },
   "narrador_por_video": true,
   "permite_cambio_aleatorio_voz": false,
-  "voz_qwen_principal": "Ryan"
+  "voz_qwen_principal": "Ryan",
+  "velocidad_ryan_largos": 1.08
 }
