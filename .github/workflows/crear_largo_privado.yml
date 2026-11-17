@@ -8,6 +8,11 @@ on:
         type: string
         required: false
         default: ""
+      permitir_solo_graficos:
+        description: "NO recomendado: permitir largo sin imágenes ni clips"
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write
@@ -21,4 +26,5 @@ jobs:
       subir_privado: true
       confirmacion: SUBIR_PRIVADO
       motor_tts: qwen
+      exigir_multimedia: ${{ !inputs.permitir_solo_graficos }}
     secrets: inherit
