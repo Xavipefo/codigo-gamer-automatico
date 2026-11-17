@@ -126,6 +126,13 @@ def construir_descripcion(tema, formato):
     hechos = [h["texto"].strip() for h in tema["hechos"]]
     referencias = list(dict.fromkeys(h["fuente"] for h in tema["hechos"]))
     general = DESCRIPCION_COMUN.read_text(encoding="utf-8").strip()
+    # La atribución no sustituye licencias: solo fuentes autorizadas.
+    from visuales_autorizados import creditos_para_descripcion
+    creditos_imagenes = creditos_para_descripcion(tema["id"])
+    bloque_creditos = (
+        "\n\nIMÁGENES CON DERECHOS CONFIRMADOS:\n"
+        + "\n".join(creditos_imagenes)
+    ) if creditos_imagenes else ""
     etiqueta = "#GTAVI " if "gta" in tema["id"].lower() else ""
     bloque = (
         f"{tema['titulo']}\n\n"
@@ -134,6 +141,7 @@ def construir_descripcion(tema, formato):
         + "\n".join("• " + h for h in hechos)
         + "\n\nFUENTES OFICIALES:\n"
         + "\n".join(referencias)
+        + bloque_creditos
         + f"\n\n{etiqueta}{'#Shorts ' if formato == 'short' else ''}#PixelFeroz\n"
         + "\n------------------------------\n\n"
         + general
