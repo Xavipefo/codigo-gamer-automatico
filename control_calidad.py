@@ -117,9 +117,17 @@ def comprobar(formato):
         motor = "azure-neural"
     elif forzado == "gemini":
         motor = "gemini-3.8-flash-tts"
-    voz_real = (
-        "es-ES-AlvaroNeural" if formato == "short" else "es-ES-ArnauNeural"
-    ) if motor == "azure-neural" else plan["narrador_voz"]
+    elif forzado == "qwen":
+        motor = "qwen3-tts-0.6b"
+    if motor == "azure-neural":
+        voz_real = (
+            "es-ES-AlvaroNeural" if formato == "short"
+            else "es-ES-ArnauNeural"
+        )
+    elif motor == "qwen3-tts-0.6b":
+        voz_real = "Qwen3-TTS 0.6B / Ryan"
+    else:
+        voz_real = plan["narrador_voz"]
 
     resultado = {
         "canal": "Píxel Feroz",
