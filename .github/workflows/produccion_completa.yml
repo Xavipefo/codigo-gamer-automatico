@@ -18,6 +18,11 @@ on:
       confirmacion:
         type: string
         required: true
+      motor_tts:
+        description: "Motor de voz; qwen activa Ryan local sin API TTS"
+        type: string
+        required: false
+        default: gemini
 
 permissions:
   contents: write
@@ -30,6 +35,12 @@ jobs:
   producir:
     runs-on: ubuntu-24.04
     timeout-minutes: 115
+    env:
+      PF_TTS_PROVIDER: ${{ inputs.motor_tts == 'qwen' && 'qwen' || '' }}
+      HF_HOME: ${{ github.workspace }}/.hf-qwen
+      HF_HUB_DISABLE_TELEMETRY: "1"
+      OMP_NUM_THREADS: "4"
+      MKL_NUM_THREADS: "4"
     steps:
       - name: Comprobar autorizacion de subida
         env:
@@ -74,12 +85,30 @@ jobs:
           sudo apt-get install -y ffmpeg fonts-dejavu-core
           python -m pip install --disable-pip-version-check -r requirements.txt
 
+      - name: Restaurar pesos públicos de Qwen3-TTS Ryan
+        if: ${{ inputs.motor_tts == 'qwen' }}
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.HF_HOME }}/hub
+          key: pixel-feroz-qwen3tts-${{ runner.os }}-ligero-12hz-v1
+
+      - name: Instalar narrador local Qwen3-TTS (CPU, sin API)
+        if: ${{ inputs.motor_tts == 'qwen' }}
+        run: |
+          sudo apt-get install -y sox libsox-fmt-all libsndfile1
+          python -m pip install --no-cache-dir --index-url https://download.pytorch.org/whl/cpu torch torchaudio
+          python -m pip install --no-cache-dir "qwen-tts==0.1.1" --no-deps
+          python -m pip install --no-cache-dir \
+            "transformers==4.57.3" "accelerate==1.12.0" \
+            librosa soundfile sox onnxruntime einops huggingface_hub
+
       - name: Comprobar fuentes y Python
         run: |
           python -m py_compile *.py
           python -m unittest discover -s . -p 'test_*.py'
 
       - name: Confirmar Gemini TTS para narración española
+        if: ${{ inputs.motor_tts != 'qwen' }}
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
