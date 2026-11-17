@@ -11,6 +11,13 @@ from voz_gemini_castellano import AudioIncompletoError
 
 
 class TestRepartoNarradores(unittest.TestCase):
+    def setUp(self):
+        # Pruebas de regresión de motores antiguos; el narrador activo
+        # de Píxel Feroz ahora es Ryan/Qwen, sin afectar estos tests.
+        self._legacy_voice = patch.dict(os.environ, {"PF_TTS_PROVIDER": "gemini"})
+        self._legacy_voice.start()
+        self.addCleanup(self._legacy_voice.stop)
+
     def test_pronunciacion_gaming_espanol(self):
         ejemplo = preparar_lectura("GTA VI corre en PS5 a 30 FPS y usa 212 GB")
         self.assertIn("GTA seis", ejemplo)
