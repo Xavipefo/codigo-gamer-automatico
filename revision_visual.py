@@ -58,17 +58,24 @@ def exportar_revision(salida, escenas, catalogo=None):
     },ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print("Revisión visual exportada:",len(salida_json),"escenas",flush=True)
 
-def anadir_fuente_descripcion(archivo):
+def anadir_fuente_descripcion(archivo, incluir_clips=False):
     path=Path(archivo)
     texto=path.read_text(encoding="utf-8")
     marca="Material visual: capturas oficiales de Grand Theft Auto VI"
-    if marca in texto:
+    marca_clips="Clips oficiales: Rockstar Games / Take-Two Interactive."
+    if marca in texto and (not incluir_clips or marca_clips in texto):
         return
-    bloque=("\n\n"+marca+
-            "\nCréditos de las imágenes: Rockstar Games / Take-Two Interactive."+
-            "\nFuente oficial: https://www.rockstargames.com/VI/media/screenshots"+
-            "\nSe incluyen imágenes para ilustrar un comentario editorial; "+
-            "la atribución no supone una licencia comercial.\n")
+    bloque=("")
+    if marca not in texto:
+        bloque=("\n\n"+marca+
+                "\nCréditos de las imágenes: Rockstar Games / Take-Two Interactive."+
+                "\nFuente oficial: https://www.rockstargames.com/VI/media/screenshots"+
+                "\nSe incluyen imágenes para ilustrar un comentario editorial; "+
+                "la atribución no supone una licencia comercial.\n")
+    if incluir_clips and marca_clips not in texto:
+        bloque+=("\n"+marca_clips+
+                 "\nFuente de los clips: https://www.rockstargames.com/VI/media/videos"+
+                 "\nEl audio oficial de los clips no se utiliza en este montaje.\n")
     # La descripción de YouTube limita a 5000 caracteres (upload usa 4800).
     if len(texto)+len(bloque) > 4800:
         raise RuntimeError("Descripción demasiado larga para añadir los créditos oficiales")
