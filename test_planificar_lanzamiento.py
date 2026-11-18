@@ -22,6 +22,20 @@ class TestPlanLanzamiento(unittest.TestCase):
         self.assertEqual(sum(x["formato"] == "short" for x in especiales), 16)
         self.assertEqual(sum(x["formato"] == "largo" for x in especiales), 6)
 
+    def test_19_noviembre_dos_extras_y_ocho_videos_diurnos(self):
+        cal = json.loads(CALENDARIO.read_text(encoding="utf-8"))
+        dia = sorted((s for s in cal["slots"] if s["fecha"] == "2026-11-19"),
+                     key=lambda x: x["hora"])
+        self.assertEqual(len(dia), 10)
+        self.assertEqual([s["hora"] for s in dia[:2]], ["00:05", "00:20"])
+        self.assertEqual([s["formato"] for s in dia[:2]], ["short", "largo"])
+        diurnos = dia[2:]
+        self.assertEqual(sum(s["formato"] == "short" for s in diurnos), 6)
+        self.assertEqual(sum(s["formato"] == "largo" for s in diurnos), 2)
+        self.assertTrue(all(s["subir_siempre_privado"] for s in dia))
+        self.assertFalse(any(s["publicar_automaticamente"] for s in dia))
+        self.assertEqual(len({s["tema_confirmado_reserva"] for s in dia}), 10)
+
     def test_rechazar_activar_publicacion(self):
         cal = json.loads(CALENDARIO.read_text(encoding="utf-8"))
         temas = {x["id"]: x for x in json.loads(TEMAS.read_text(encoding="utf-8"))}
