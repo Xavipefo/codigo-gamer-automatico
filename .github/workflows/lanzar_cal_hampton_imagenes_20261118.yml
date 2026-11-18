@@ -1,0 +1,22 @@
+name: "Píxel Feroz - Rehacer Cal Hampton con imágenes oficiales (una vez)"
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/lanzar_cal_hampton_imagenes_20261118.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  short-cal-hampton-imagenes:
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      tema: gta6-cal-hampton-imagenes-20261118
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
