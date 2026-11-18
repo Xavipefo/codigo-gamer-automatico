@@ -104,7 +104,7 @@ def preparar(archivo_calendario=CALENDARIO, destino=DESTINO):
                 crear_ab(plan, tema, carpeta / "opciones_ab")
             creados.add(clave)
         orden.append({**slot, "estado_preparacion": estado,
-                      "reserva":tema_id, "verificar_idea": slot["idea_postlanzamiento"]})
+                      "reserva":tema_id, "verificar_idea": slot.get("idea_postlanzamiento")})
     (destino / "agenda.json").write_text(
         json.dumps(orden, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
