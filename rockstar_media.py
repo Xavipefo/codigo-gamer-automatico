@@ -30,6 +30,7 @@ BASE = Path(__file__).resolve().parent / ".cache" / "rockstar"
 MAX_ARCHIVO = 450 * 1024 * 1024
 MAX_EXTRAIDO = 1800 * 1024 * 1024
 CLAVES = {
+    "duo": ("jason", "lucia"),
     "jason": ("jason", "duval"),
     "lucia": ("lucia", "caminos"),
     "vice": ("vice", "city", "ciudad", "mapa"),
@@ -54,6 +55,8 @@ def etiqueta(nombre):
 
 def categoria(nombre):
     n = normalizar(nombre).replace("_", " ").replace("-", " ")
+    if "jason" in n and "lucia" in n:
+        return "duo"
     for key, aliases in CLAVES.items():
         if any(a in n.split() for a in aliases):
             return key
@@ -180,37 +183,49 @@ def cargar_banco(base=BASE):
     return datos
 
 def elegir_imagenes(plan, escenas, base=BASE):
+    """Relevancia por escena + variedad real; evita 4 fotos seguidas del mismo personaje."""
     datos = cargar_banco(base)
     fotos = datos["imagenes"]
     usados = set()
     resultado = []
+    categorias_previas = []
     contexto = normalizar(plan.get("titulo_propuesto", "") + " " + plan.get("tema_id", ""))
+    tokens_contexto = set(re.findall(r"[a-z0-9]+", contexto))
+    preferidos = [p for p in plan.get("visuales_preferidos", []) if p in CLAVES]
     for i, escena in enumerate(escenas):
         texto = normalizar(escena["texto"])
-        piezas = set(re.findall(r"[a-z0-9]+", contexto + " " + texto))
+        tokens_escena = set(re.findall(r"[a-z0-9]+", texto))
+        preferida = preferidos[i % len(preferidos)] if preferidos else None
         puntuadas = []
         for item in fotos:
             cat = item["categoria"]
             aliases = CLAVES.get(cat, (cat,))
-            puntuacion = sum(4 for a in aliases if a in piezas)
+            puntuacion = sum(11 for a in aliases if a in tokens_escena)
+            puntuacion += sum(2 for a in aliases if a in tokens_contexto)
             nombre = set(re.findall(r"[a-z0-9]+", normalizar(item["nombre"])))
-            puntuacion += min(5, len(nombre & piezas))
-            if cat == "vice" and not puntuacion:
-                puntuacion += 1
+            puntuacion += min(4, len(nombre & tokens_escena))
+            if preferidos and cat in preferidos:
+                puntuacion += 2
+            if cat == preferida:
+                puntuacion += 9
+            if len(categorias_previas) >= 2 and categorias_previas[-2:] == [cat, cat]:
+                puntuacion -= 26
             if item["archivo"] in usados:
-                puntuacion -= 50
-            # Variación estable de capturas sin seleccionar siempre la misma.
-            desempate = int(hashlib.sha256((item["archivo"] + str(i)).encode()).hexdigest()[:6], 16)
+                puntuacion -= 80
+            desempate = int(hashlib.sha256(
+                (item["archivo"] + str(i)).encode("utf-8")
+            ).hexdigest()[:8], 16)
             puntuadas.append((puntuacion, desempate, item))
         ganador = max(puntuadas, key=lambda x: (x[0], x[1]))[2]
         usados.add(ganador["archivo"])
+        categorias_previas.append(ganador["categoria"])
         resultado.append((Path(base) / ganador["archivo"], CREDITO, ganador["nombre"]))
     return resultado
 
 def muestra_equilibrada(imagenes, cantidad=36):
     """Muestra ubicaciones y protagonistas, no solo los primeros del ZIP."""
     prioridad = (
-        "vice", "jason", "lucia", "leonida", "grassrivers", "port",
+        "vice", "duo", "jason", "lucia", "leonida", "grassrivers", "port",
         "ambrosia", "kalaga", "cal", "brian", "raul", "boobie",
         "drequan", "real", "general"
     )
