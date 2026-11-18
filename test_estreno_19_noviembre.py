@@ -24,7 +24,7 @@ class TestEstreno19Noviembre(unittest.TestCase):
             ("gta6-estreno-jason-lucia", "short", "12:30"),
             ("gta6-estreno-zonas-leonida", "short", "16:30"),
             ("gta6-estreno-ediciones", "short", "20:00"),
-            ("gta6-estreno-resumen-oficial-largo", "largo", "22:00"),
+            ("gta6-tecnologia-plataformas", "largo", "22:00"),
         ]
         for ident, formato, hora in previstos:
             with self.subTest(tema=ident):
