@@ -39,6 +39,8 @@ CLAVES = {
     "ambrosia": ("ambrosia",),
     "kalaga": ("kalaga", "montana"),
     "real": ("real", "dimez"),
+    "boobie": ("boobie", "ike"),
+    "drequan": ("drequan", "priest"),
     "cal": ("cal", "hampton"),
     "brian": ("brian", "heder"),
     "raul": ("raul", "bautista"),
@@ -205,11 +207,29 @@ def elegir_imagenes(plan, escenas, base=BASE):
         resultado.append((Path(base) / ganador["archivo"], CREDITO, ganador["nombre"]))
     return resultado
 
+def muestra_equilibrada(imagenes, cantidad=36):
+    """Muestra ubicaciones y protagonistas, no solo los primeros del ZIP."""
+    prioridad = (
+        "vice", "jason", "lucia", "leonida", "grassrivers", "port",
+        "ambrosia", "kalaga", "cal", "brian", "raul", "boobie",
+        "drequan", "real", "general"
+    )
+    grupos = {k: [] for k in prioridad}
+    for item in imagenes:
+        grupos.setdefault(item["categoria"], []).append(item)
+    elegidas = []
+    while len(elegidas) < cantidad and any(grupos.values()):
+        for categoria_actual in grupos:
+            if grupos[categoria_actual] and len(elegidas) < cantidad:
+                elegidas.append(grupos[categoria_actual].pop(0))
+    return elegidas
+
+
 def crear_contacto(datos, base, salida, max_imagenes=36):
     """Contact sheet con índice y nombres; útil para análisis en el chat."""
     base, salida = Path(base), Path(salida)
     salida.mkdir(parents=True, exist_ok=True)
-    items = datos["imagenes"][:max_imagenes]
+    items = muestra_equilibrada(datos["imagenes"], max_imagenes)
     cols, w, h = 4, 300, 208
     rows = (len(items) + cols - 1) // cols
     atlas = Image.new("RGB", (cols*w, max(1,rows)*h), (12, 21, 34))
