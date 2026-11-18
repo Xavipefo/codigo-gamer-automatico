@@ -1,5 +1,271 @@
 [
   {
+    "id": "gta6-estreno-espana-0005",
+    "titulo": "GTA VI ya se estrena en España: fecha, plataformas y mundo",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-18",
+    "vigente_hasta": "2026-11-20",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 1,
+    "publicacion_manual_desde": "2026-11-19T00:05:00+01:00",
+    "publicacion_objetivo": "2026-11-19T00:05:00+01:00",
+    "gancho": "El reloj ha llegado a la medianoche del diecinueve de noviembre: este es el estreno oficial de GTA seis",
+    "contexto": "Rockstar fijó el desbloqueo a medianoche local en España para PlayStation cinco y Xbox Series X y S",
+    "hechos": [
+      {
+        "texto": "La página de soporte de Rockstar confirma el lanzamiento de Grand Theft Auto VI a medianoche local del 19 de noviembre de 2026",
+        "fuente": "https://support.rockstargames.com/articles/29jV3Cv2cCgvwM1XgtMO5o/grand-theft-auto-vi-regional-pre-load-and-release-times-on-playstation-5-and-xbox-series-x-or-s"
+      },
+      {
+        "texto": "El estreno anunciado incluye PlayStation 5 y Xbox Series X y S",
+        "fuente": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
+      },
+      {
+        "texto": "Jason y Lucia protagonizan una historia situada en Vice City y el estado de Leonida",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "texto_miniatura": "¡YA ES 19 DE NOVIEMBRE!",
+    "descripcion_personalizada": "Especial de estreno de GTA VI en España: hora oficial, consolas y protagonistas. Preparado para publicación manual después de las 00:05.",
+    "visuales_preferidos": [
+      "vice",
+      "jason",
+      "lucia",
+      "leonida",
+      "general"
+    ]
+  },
+  {
+    "id": "gta6-estreno-tres-claves",
+    "titulo": "GTA VI: tres claves oficiales del día del estreno",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-18",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 2,
+    "publicacion_objetivo": "2026-11-19T09:00:00+01:00",
+    "gancho": "GTA seis ya tiene fecha de estreno oficial y hay tres datos que merece la pena recordar hoy",
+    "contexto": "Vamos a separar lo confirmado por Rockstar de las teorías que circulan por internet",
+    "hechos": [
+      {
+        "texto": "Rockstar fijó el desbloqueo a medianoche del 19 de noviembre en la hora local de cada región",
+        "fuente": "https://support.rockstargames.com/articles/29jV3Cv2cCgvwM1XgtMO5o/grand-theft-auto-vi-regional-pre-load-and-release-times-on-playstation-5-and-xbox-series-x-or-s"
+      },
+      {
+        "texto": "El juego se lanza para PlayStation 5 y Xbox Series X y S",
+        "fuente": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
+      },
+      {
+        "texto": "La historia sigue a Jason y Lucia dentro del estado ficticio de Leonida",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "texto_miniatura": "3 CLAVES DE GTA 6",
+    "descripcion_personalizada": "Tres datos oficiales para el estreno de GTA VI, sin filtraciones ni especulaciones.",
+    "visuales_preferidos": [
+      "vice",
+      "jason",
+      "lucia",
+      "leonida"
+    ]
+  },
+  {
+    "id": "gta6-estreno-jason-lucia",
+    "titulo": "Jason y Lucia: lo que Rockstar confirma en GTA VI",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-18",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 3,
+    "publicacion_objetivo": "2026-11-19T12:30:00+01:00",
+    "gancho": "Jason y Lucia no son dos personajes cualquiera: Rockstar ya ha explicado el comienzo de su historia",
+    "contexto": "La presentación oficial del juego los sitúa en medio de una conspiración por todo Leonida",
+    "hechos": [
+      {
+        "texto": "Jason Duval pasó una etapa en el Ejército y después trabajó con distribuidores de drogas en los Cayos de Leonida",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Lucia Caminos estuvo en la prisión de Leonida tras luchar por su familia, según su biografía oficial",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Un golpe aparentemente sencillo sale mal y obliga a ambos a depender el uno del otro",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "texto_miniatura": "JASON Y LUCIA",
+    "descripcion_personalizada": "Lo que las biografías oficiales de Rockstar cuentan sobre los protagonistas de GTA VI.",
+    "visuales_preferidos": [
+      "jason",
+      "lucia",
+      "vice"
+    ]
+  },
+  {
+    "id": "gta6-estreno-zonas-leonida",
+    "titulo": "Los lugares oficiales de GTA VI: Vice City y más allá",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-18",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 4,
+    "publicacion_objetivo": "2026-11-19T16:30:00+01:00",
+    "gancho": "Vice City no es el único lugar confirmado por Rockstar en GTA seis",
+    "contexto": "La web de Only in Leonida enseña varias regiones y la galería oficial permite observarlas",
+    "hechos": [
+      {
+        "texto": "Vice City es un escenario central dentro del estado ficticio de Leonida",
+        "fuente": "https://www.rockstargames.com/VI"
+      },
+      {
+        "texto": "Rockstar muestra los Cayos de Leonida, Grassrivers y Port Gellhorn entre sus localizaciones oficiales",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Ambrosia y Mount Kalaga también aparecen en la presentación oficial de lugares del juego",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      }
+    ],
+    "texto_miniatura": "LOS LUGARES DE GTA 6",
+    "descripcion_personalizada": "Recorremos los lugares que Rockstar ha presentado sin inventar dimensiones o detalles de jugabilidad.",
+    "visuales_preferidos": [
+      "vice",
+      "leonida",
+      "grassrivers",
+      "port",
+      "ambrosia",
+      "kalaga"
+    ]
+  },
+  {
+    "id": "gta6-estreno-ediciones",
+    "titulo": "GTA VI: Standard, Ultimate y extras confirmados",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-18",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 5,
+    "publicacion_objetivo": "2026-11-19T20:00:00+01:00",
+    "gancho": "¿Sabes qué diferencia la edición Standard de la Ultimate en GTA seis? Rockstar lo aclara",
+    "contexto": "Los extras anunciados están detallados en el soporte oficial y en la galería multimedia",
+    "hechos": [
+      {
+        "texto": "Rockstar ofrece Grand Theft Auto VI en Standard Edition y Ultimate Edition",
+        "fuente": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
+      },
+      {
+        "texto": "Ultimate Edition añade contenido como el vehículo noventa y cinco Grotti Cheetah y los revólveres Hawk y Little Morgan",
+        "fuente": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
+      },
+      {
+        "texto": "El soporte oficial también describe el Vintage Vice City Pack con vehículo, peinados, ropa y un diseño de arma para determinados compradores",
+        "fuente": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
+      }
+    ],
+    "texto_miniatura": "EDICIONES GTA VI",
+    "descripcion_personalizada": "Repasamos las ediciones y contenidos adicionales anunciados oficialmente, sin prometer ventajas no verificadas.",
+    "visuales_preferidos": [
+      "jason",
+      "lucia",
+      "vice",
+      "general"
+    ]
+  },
+  {
+    "id": "gta6-estreno-resumen-oficial-largo",
+    "titulo": "GTA VI: todo lo confirmado oficialmente en el lanzamiento",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-18",
+    "formatos": [
+      "largo"
+    ],
+    "prioridad": 6,
+    "publicacion_objetivo": "2026-11-19T22:00:00+01:00",
+    "gancho": "Grand Theft Auto seis marca su estreno y en este reportaje reunimos los detalles verdaderamente confirmados por Rockstar",
+    "contexto": "Un análisis narrado de la fecha, plataformas, personajes, mundo y contenidos; no es una reseña de gameplay",
+    "hechos": [
+      {
+        "texto": "El lanzamiento de Grand Theft Auto VI se realiza a medianoche local del 19 de noviembre de 2026",
+        "fuente": "https://support.rockstargames.com/articles/29jV3Cv2cCgvwM1XgtMO5o/grand-theft-auto-vi-regional-pre-load-and-release-times-on-playstation-5-and-xbox-series-x-or-s"
+      },
+      {
+        "texto": "Las plataformas oficiales de lanzamiento son PlayStation 5 y Xbox Series X y S",
+        "fuente": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
+      },
+      {
+        "texto": "La premisa oficial une a Jason y Lucia tras un golpe que sale mal y los arrastra a una conspiración en Leonida",
+        "fuente": "https://www.rockstargames.com/VI"
+      },
+      {
+        "texto": "Jason Duval pasó por el Ejército y acabó trabajando para distribuidores locales de drogas en los Cayos",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Lucia Caminos estuvo en prisión y busca una vida mejor para su familia según su biografía",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Vice City, los Cayos de Leonida, Grassrivers y Port Gellhorn figuran entre las regiones presentadas por Rockstar",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Rockstar publicó una galería de nuevas capturas oficiales del mundo de GTA VI el 5 de noviembre de 2026",
+        "fuente": "https://www.rockstargames.com/newswire/article/39ak81277255o9/explore-the-grand-theft-auto-vi-launch-gallery"
+      },
+      {
+        "texto": "La web de Rockstar ofrece una biblioteca de imágenes, vídeos y clips oficiales del juego",
+        "fuente": "https://www.rockstargames.com/VI/media"
+      },
+      {
+        "texto": "Rockstar documenta las ediciones Standard y Ultimate y sus extras en su soporte oficial",
+        "fuente": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
+      },
+      {
+        "texto": "Rockstar comunica un objetivo de rendimiento de 30 fotogramas por segundo en las consolas de lanzamiento",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      }
+    ],
+    "texto_miniatura": "TODO SOBRE GTA VI",
+    "descripcion_personalizada": "Especial largo de estreno con fechas, protagonistas, mapa, galería oficial y ediciones. Análisis basado en información verificable, no primeras impresiones jugadas.",
+    "esquema_largo": [
+      "Gancho: lanzamiento mundial y por qué importa distinguir anuncios de experiencias todavía no verificadas",
+      "Hora oficial de disponibilidad, consolas anunciadas y precarga",
+      "Jason Duval: historia oficial, personalidad y vínculos",
+      "Lucia Caminos: su pasado y sus objetivos según Rockstar",
+      "El incidente que une a los protagonistas y lo que la sinopsis permite afirmar",
+      "Vice City y el estado ficticio de Leonida",
+      "Los Cayos, Grassrivers, Port Gellhorn, Ambrosia y Mount Kalaga",
+      "La galería de lanzamiento: qué imágenes existen y qué muestran realmente",
+      "Ediciones, extras digitales y límites de lo confirmado",
+      "Rendimiento y funciones que Rockstar ha descrito oficialmente",
+      "Preguntas abiertas tras el estreno sin inventar jugabilidad ni opiniones",
+      "Conclusiones, recapitulación de fuentes y suscripción"
+    ],
+    "titulos_experimento": [
+      "GTA VI: todo lo que Rockstar ha confirmado para su estreno",
+      "GTA 6 ya está aquí: personajes, mapa, consolas y ediciones",
+      "Especial GTA VI: 10 claves oficiales del lanzamiento"
+    ],
+    "visuales_preferidos": [
+      "jason",
+      "lucia",
+      "vice",
+      "leonida",
+      "grassrivers",
+      "port",
+      "ambrosia",
+      "kalaga",
+      "general"
+    ]
+  },
+  {
     "id": "gta6-lanzamiento-oficial",
     "titulo": "GTA VI: lo confirmado sobre el lanzamiento",
     "estado": "confirmado",
