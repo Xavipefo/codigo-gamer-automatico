@@ -304,6 +304,13 @@ def montar(plan, guion):
                 indice, escena["tipo"],
                 len(clips_autorizados), len(imagenes_autorizadas)
             )
+            if usa_rockstar:
+                # El cierre puede dividirse en varias frases por el TTS:
+                # reservar UNA ÚNICA tarjeta para la última escena del Short.
+                if indice == len(escenas) - 1:
+                    medio = "tarjeta"
+                elif medio == "tarjeta":
+                    medio = "foto"
             visuales_usados[medio] += 1
             usa_material = medio == "clip"
             escena_visible = (
