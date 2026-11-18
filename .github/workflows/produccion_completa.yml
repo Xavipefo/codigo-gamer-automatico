@@ -292,12 +292,29 @@ jobs:
         if: ${{ inputs.subir_privado }}
         shell: bash
         run: |
-          python registrar_subida.py
+          # La subida ya ha ocurrido: NO volver a subir el MP4 si GitHub cambia.
+          # Fusionar el resultado con el historial más reciente antes de escribir.
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add historial_publicados.json
-          git commit -m "chore: registrar subida privada de Píxel Feroz"
-          git push
+          for intento in 1 2 3 4 5; do
+            git fetch origin main
+            git checkout -B registro-subida-privada FETCH_HEAD
+            python registrar_subida.py
+            git add historial_publicados.json
+            if git diff --cached --quiet; then
+              echo "El vídeo ya está registrado; no se sube otra vez."
+              exit 0
+            fi
+            git commit -m "chore: registrar subida privada de Píxel Feroz"
+            if git push origin HEAD:main; then
+              echo "Historial actualizado sin perder otras subidas."
+              exit 0
+            fi
+            echo "::warning::Otra ejecución actualizó main; reintentando registrar sin resubir."
+            sleep 2
+          done
+          echo "::error::Vídeo YA SUBIDO en privado; no repetir producción. Registrar manualmente la URL del resultado."
+          exit 1
 
       - name: Confirmar miniatura personalizada antes de dar exito
         if: ${{ inputs.subir_privado }}
