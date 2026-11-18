@@ -103,10 +103,13 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .cache/rockstar
-          key: pixel-feroz-gta6-rockstar-screenshots-20261118-v1
+          key: pixel-feroz-gta6-rockstar-screenshots-20261118-v2
 
       - name: Descargar, verificar y clasificar capturas oficiales de GTA VI
-        run: python rockstar_media.py --preparar --revision
+        run: |
+          python rockstar_media.py --preparar
+          python rockstar_extras.py --preparar
+          python rockstar_media.py --revision
 
       # Los clips oficiales son opcionales. Si el ZIP está temporalmente
       # inaccesible, se usan capturas reales con cortes cada siete segundos.
