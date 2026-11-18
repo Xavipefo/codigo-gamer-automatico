@@ -57,7 +57,7 @@ class TestEditorial(unittest.TestCase):
                 proximo = editorial.seleccionado("", "short")
                 self.assertEqual(proximo["id"], "gta6-estreno-espana-0005")
                 largo = editorial.seleccionado("", "largo")
-                self.assertEqual(largo["id"], "gta6-estreno-resumen-oficial-largo")
+                self.assertEqual(largo["id"], "gta6-ya-se-puede-jugar-0020-largo")
 
     def test_descripcion_general_y_suscripcion(self):
         tema = editorial.cargar_elegibles()[0]
