@@ -91,6 +91,47 @@ los largos aún no está verificada.
 Los prototipos anteriores de Piper/Kokoro siguen como scripts históricos de
 prueba, **no como motor de producción**.
 
+## Banco oficial GTA VI y paquetes visuales para revisión (18/11/2026)
+
+**Shorts privados:** el pipeline descarga automáticamente el archivo de
+capturas oficiales de Rockstar desde
+https://www.rockstargames.com/VI/media/screenshots y utiliza estas
+fotografías en casi todas las escenas. No vuelve a producir Shorts
+compuestos únicamente de tarjetas: si el ZIP o las fotos no se pueden
+validar, se corta la producción **antes de cargar Qwen Ryan y antes de subir**.
+Los materiales se almacenan en `.cache/rockstar/`, excluida de Git,
+y `actions/cache` evita repetir descargas entre ejecuciones si conserva
+el archivo. No es una descarga directa desde YouTube.
+
+El Short mantiene tarjetas solo como apoyo (normalmente cierre); usa
+zoom/paneo sobre fotos reales, textos breves y prioridad de clips
+autorizados si ya existiesen. La selección clasifica el nombre de las
+imágenes (Lucia, Jason, Vice City, etc.) y busca coincidencias con el
+tema narrado. Se incluye la atribución automáticamente en
+`salida/descripcion.txt` **únicamente si el Short utiliza material de Rockstar**.
+
+**Qué descargar de GitHub para analizar el resultado:**
+
+- Desde *Píxel Feroz - 1. Crear Short privado* → apartado **Artifacts**:
+  `pixel-feroz-imagenes-y-mosaico-<run_id>`. Contiene
+  `mosaico_escenas.jpg`, capturas de las escenas, originales elegidos,
+  `manifiesto_escenas.json` y un contacto del banco de Rockstar.
+- Para preparar una biblioteca independiente sin producir vídeos:
+  ejecutar manualmente *Píxel Feroz - Banco de imágenes oficiales GTA VI*.
+  Su artifact contiene catálogo, mosaico y una selección de 36 fotos.
+- Se retienen 14 días; no se guardan MP4 privados, audio ni guiones inéditos
+  como artifacts de un repositorio público. El Short se sube **privado**.
+- Si un artifact caduca, hay que generar otro desde Actions. Los recursos
+  originales siguen accesibles desde la página oficial de Rockstar.
+
+**Derechos y monetización:** que Rockstar permita descargar/compartir
+material oficial NO garantiza autorización comercial. La política general
+de Take-Two habla de tolerancia del uso no comercial y puede retirar
+contenido. Añadir el crédito no sustituye obtener permiso ni la revisión
+legal/editorial. Para monetizar o usarlo promocionalmente, consultar
+directamente `copyright@take2games.com` y la política:
+https://support.rockstargames.com/articles/7bNaeoMFTV0iUDGhStTXvz/policy-on-posting-copyrighted-rockstar-games-material
+
 ## Nuevo estilo de Shorts: gaming-news (18 noviembre de 2026)
 
 Los Shorts que no tengan material externo licenciado usan
