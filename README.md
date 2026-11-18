@@ -91,6 +91,20 @@ los largos aún no está verificada.
 Los prototipos anteriores de Piper/Kokoro siguen como scripts históricos de
 prueba, **no como motor de producción**.
 
+## Nuevo estilo de Shorts: gaming-news (18 noviembre de 2026)
+
+Los Shorts que no tengan material externo licenciado usan
+`graficos_gaming.py`: retícula técnica, acentos cian/rosa, módulos
+de información, titulares grandes y cortes más frecuentes (hasta 18
+palabras por segmento de voz). No aparecen las antiguas ilustraciones
+urbanas generadas como fondo del Short. Son gráficos originales:
+**NO se presentan como gameplay real ni como imágenes de GTA VI**.
+Cuando existan fotos y clips válidamente licenciados se priorizan.
+
+La voz Ryan, la revisión humana y las subidas estrictamente privadas
+se mantienen. La prueba de integración completa con la nueva plantilla
+debe revisarse antes de publicar al público.
+
 ## Visuales originales automáticos — sin archivos aportados por el usuario
 
 Desde el 17/11/2026 se genera automáticamente un banco de **seis
