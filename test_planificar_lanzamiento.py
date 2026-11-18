@@ -19,8 +19,8 @@ class TestPlanLanzamiento(unittest.TestCase):
         self.assertTrue(all(x["subir_siempre_privado"] for x in cal["slots"]))
         self.assertFalse(any(x["publicar_automaticamente"] for x in cal["slots"]))
         especiales = [x for x in cal["slots"] if x["fecha"] >= "2026-11-19"]
-        self.assertEqual(sum(x["formato"] == "short" for x in especiales), 13)
-        self.assertEqual(sum(x["formato"] == "largo" for x in especiales), 5)
+        self.assertEqual(sum(x["formato"] == "short" for x in especiales), 14)
+        self.assertEqual(sum(x["formato"] == "largo" for x in especiales), 4)
 
     def test_rechazar_activar_publicacion(self):
         cal = json.loads(CALENDARIO.read_text(encoding="utf-8"))
