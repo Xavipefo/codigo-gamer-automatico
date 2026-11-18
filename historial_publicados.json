@@ -190,5 +190,15 @@
     "formato": "short",
     "fecha": "2026-11-18T23:20:18.283888+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "N0_GdJ3z8Bc",
+    "url": "https://www.youtube.com/watch?v=N0_GdJ3z8Bc",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-galeria-oficial",
+    "formato": "short",
+    "fecha": "2026-11-18T23:23:48.162049+00:00",
+    "miniatura_confirmada": true
   }
 ]
