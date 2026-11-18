@@ -1,0 +1,39 @@
+name: "Píxel Feroz - Preparar Short especial medianoche (SOLO PRIVADO)"
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 18/11/2026 20:37 CET = 19:37 UTC. Antelación para TTS Ryan.
+    # El control de fecha impide que vuelva a producirse otros años.
+    - cron: "37 19 18 11 *"
+
+permissions:
+  contents: write
+
+jobs:
+  comprobar-dia:
+    runs-on: ubuntu-24.04
+    outputs:
+      habilitado: ${{ steps.fecha.outputs.habilitado }}
+    steps:
+      - name: Comprobar que es el día de preparación (solo una vez)
+        id: fecha
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(date -u +%F)" = "2026-11-18" ]; then
+            echo "habilitado=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "habilitado=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  short-privado:
+    needs: comprobar-dia
+    if: ${{ needs.comprobar-dia.outputs.habilitado == 'true' }}
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      tema: gta6-estreno-espana-0005
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+    secrets: inherit
