@@ -150,5 +150,15 @@
     "formato": "short",
     "fecha": "2026-11-18T22:59:29.286783+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "eqJdefWwB34",
+    "url": "https://www.youtube.com/watch?v=eqJdefWwB34",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-mando-dualsense",
+    "formato": "short",
+    "fecha": "2026-11-18T23:06:02.787263+00:00",
+    "miniatura_confirmada": true
   }
 ]
