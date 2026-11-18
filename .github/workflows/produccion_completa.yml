@@ -100,15 +100,32 @@ jobs:
       # La galería oficial se descarga y valida antes de cargar el modelo TTS.
       # No se almacena material de Rockstar en el repositorio Git.
       - name: Restaurar banco oficial GTA VI desde caché
-        if: ${{ inputs.formato == 'short' }}
         uses: actions/cache@v4
         with:
           path: .cache/rockstar
           key: pixel-feroz-gta6-rockstar-screenshots-20261118-v1
 
       - name: Descargar, verificar y clasificar capturas oficiales de GTA VI
-        if: ${{ inputs.formato == 'short' }}
         run: python rockstar_media.py --preparar --revision
+
+      # Los clips oficiales son opcionales. Si el ZIP está temporalmente
+      # inaccesible, se usan capturas reales con cortes cada siete segundos.
+      - name: Restaurar clips oficiales GTA VI
+        if: ${{ inputs.formato == 'largo' }}
+        uses: actions/cache@v4
+        with:
+          path: .cache/rockstar_clips
+          key: pixel-feroz-gta6-clips-oficiales-20261118-v1
+
+      - name: Preparar clips oficiales para largos (sin bloqueo si fallan)
+        if: ${{ inputs.formato == 'largo' }}
+        shell: bash
+        run: |
+          if python rockstar_clips.py --preparar; then
+            echo "Banco de clips oficiales disponible."
+          else
+            echo "::warning::No se pudieron preparar los clips oficiales; el largo se montará con capturas verificadas."
+          fi
 
       - name: Restaurar pesos públicos de Qwen3-TTS Ryan
         if: ${{ inputs.motor_tts == 'qwen' }}
@@ -171,7 +188,8 @@ jobs:
 
       - name: Generar narración en español, gráficos y MP4
         env:
-          PF_ROCKSTAR_MEDIA: ${{ inputs.formato == 'short' && '1' || '0' }}
+          PF_ROCKSTAR_MEDIA: "1"
+          PF_ROCKSTAR_CLIPS: ${{ inputs.formato == 'largo' && '1' || '0' }}
           PF_TTS_PROVIDER: ${{ inputs.motor_tts == 'qwen' && 'qwen' || 'gemini' }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
@@ -218,11 +236,11 @@ jobs:
 
       # Solo previews e imágenes oficiales seleccionadas; nunca MP4 privado.
       # El artefacto sirve para analizar la composición como en Dato Nebular.
-      - name: Descargar revisión visual del Short
-        if: ${{ inputs.formato == 'short' && always() }}
+      - name: Descargar revisión visual de Short o largo
+        if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
-          name: pixel-feroz-imagenes-y-mosaico-${{ github.run_id }}
+          name: pixel-feroz-${{ inputs.formato }}-imagenes-y-mosaico-${{ github.run_id }}
           path: salida/revision_visual/
           retention-days: 14
           if-no-files-found: warn
