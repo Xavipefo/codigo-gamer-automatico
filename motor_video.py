@@ -25,6 +25,7 @@ from voz_gemini_castellano import TTSRateLimitError, TTSDailyQuotaError
 from video_material import descargar_clip, descargar_clips, overlay_clips
 from visuales_autorizados import descargar_imagenes, escena_con_foto
 from visuales_originales import crear_banco_original
+from graficos_gaming import tarjeta_gaming
 
 BASE = Path(__file__).resolve().parent
 SALIDA = BASE / "salida"
@@ -79,7 +80,7 @@ def adaptar_escenas(plan):
         raise ValueError("Formato desconocido")
     # Menos peticiones con bloques equilibrados de hasta 100 palabras.
     # Antes un reportaje requería ~40 peticiones y alcanzaba HTTP 429.
-    limite = 100 if formato == "largo" else 30
+    limite = 100 if formato == "largo" else 18
     salida = []
     for esc in plan["escenas"]:
         for trozo in fragmentar(esc["texto"], limite):
@@ -270,11 +271,13 @@ def montar(plan, guion):
         )
         # Si no se aportan imágenes externas autorizadas, crear ilustraciones
         # originales. No se presentan como capturas ni clips de GTA.
-        if not imagenes_autorizadas:
+        if not imagenes_autorizadas and formato == "largo":
             imagenes_autorizadas = crear_banco_original(
                 plan["tema_id"], directorio / "ilustraciones_originales"
             )
-            print("Modo visual: ilustraciones editoriales originales; no gameplay.", flush=True)
+            print("Modo largo: ilustraciones editoriales originales, no gameplay.", flush=True)
+        elif not imagenes_autorizadas:
+            print("Short gaming-news: gráficos editoriales; no se simula gameplay.", flush=True)
         clips = []
         visuales_usados = {"clip": 0, "foto": 0, "tarjeta": 0}
         for indice, escena in enumerate(escenas):
@@ -309,7 +312,7 @@ def montar(plan, guion):
                 ]
                 escena_con_foto(escena_visible, formato, foto, credito, imagen)
             elif formato == "short":
-                tarjeta_escena(
+                tarjeta_gaming(
                     escena_visible, indice, len(escenas),
                     plan["titulo_propuesto"], imagen
                 )
