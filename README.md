@@ -8,6 +8,11 @@ a YouTube son **PRIVADAS** para revisión. Ninguna acción publica automáticame
 
 **[Guía operativa y tabla de IDs para producir hoy](GUIA_ESTRENO_19_NOVIEMBRE.md)**
 
+El Short de las 00:05 tiene preparada una ejecución cron **solo privada**
+para el 18/11 a las 20:37 CET. La publicación pública sigue siendo manual;
+no asumir que GitHub garantiza la hora de su ejecución.
+
+
 Se han añadido cinco temas nuevos de Shorts para **00:05, 09:00, 12:30,
 16:30 y 20:00** y un largo para **22:00** (hora de Madrid). Las horas
 son propuestas de publicación MANUAL, nunca publicación automática.
