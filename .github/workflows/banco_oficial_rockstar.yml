@@ -2,6 +2,11 @@ name: "Píxel Feroz - Banco de imágenes oficiales GTA VI"
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/banco_oficial_rockstar.yml"
 
 permissions:
   contents: read
