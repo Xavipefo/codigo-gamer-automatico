@@ -30,6 +30,9 @@ BASE = Path(__file__).resolve().parent / ".cache" / "rockstar"
 MAX_ARCHIVO = 450 * 1024 * 1024
 MAX_EXTRAIDO = 1800 * 1024 * 1024
 CLAVES = {
+    "ultimate": ("ultimate", "edition", "grotti", "cheetah"),
+    "vintage": ("vintage", "vice", "bonus"),
+    "artwork": ("arte", "portada", "launch", "trailer"),
     "duo": ("jason", "lucia"),
     "jason": ("jason", "duval"),
     "lucia": ("lucia", "caminos"),
@@ -226,6 +229,7 @@ def muestra_equilibrada(imagenes, cantidad=36):
     """Muestra ubicaciones y protagonistas, no solo los primeros del ZIP."""
     prioridad = (
         "vice", "duo", "jason", "lucia", "leonida", "grassrivers", "port",
+        "ultimate", "vintage", "artwork",
         "ambrosia", "kalaga", "cal", "brian", "raul", "boobie",
         "drequan", "real", "general"
     )
