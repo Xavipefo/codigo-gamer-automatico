@@ -180,5 +180,15 @@
     "formato": "short",
     "fecha": "2026-11-18T23:16:55.614525+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "VGYzluuHJSM",
+    "url": "https://www.youtube.com/watch?v=VGYzluuHJSM",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-estreno-zonas-leonida",
+    "formato": "short",
+    "fecha": "2026-11-18T23:20:18.283888+00:00",
+    "miniatura_confirmada": true
   }
 ]
