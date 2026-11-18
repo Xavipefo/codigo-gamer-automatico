@@ -41,7 +41,7 @@ def comprobar_calendario(calendario, temas, ideas):
             raise ValueError("Prohibido programar publicación pública automática")
         tema = slot.get("tema_confirmado_reserva")
         idea = slot.get("idea_postlanzamiento")
-        if idea not in ideas:
+        if (idea and idea not in ideas) or (not tema and idea not in ideas):
             raise ValueError("Idea sin plantilla de verificación")
         if tema:
             if tema not in temas:
@@ -128,7 +128,7 @@ def preparar(archivo_calendario=CALENDARIO, destino=DESTINO):
     for s in orden:
         lineas.append(
             f"| {s['fecha']} | {s['hora']} | {s['formato']} | "
-            f"{s['reserva'] or '—'} | {s['idea_postlanzamiento']} | "
+            f"{s['reserva'] or '—'} | {s.get('idea_postlanzamiento') or '—'} | "
             f"{s['estado_preparacion']} |"
         )
     lineas += [
