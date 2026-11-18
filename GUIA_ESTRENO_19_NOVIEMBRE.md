@@ -5,18 +5,35 @@
 Rockstar confirma que GTA VI se desbloquea **a las 00:00 hora local del jueves 19 de noviembre** en PlayStation 5 y Xbox Series X|S:
 https://support.rockstargames.com/articles/29jV3Cv2cCgvwM1XgtMO5o/grand-theft-auto-vi-regional-pre-load-and-release-times-on-playstation-5-and-xbox-series-x-or-s
 
+
+## Especial largo de las 00:20: comparación breve
+
+Tema: `gta6-ya-se-puede-jugar-0020-largo`. Guion redactado y cerrado
+con **14 escenas, 1485 palabras**. El bloque específico de GTA V tiene
+**186 palabras**, aproximadamente 1–2 minutos; el resto es estreno,
+protagonistas, historia sin spoilers, Vice City, Leonida, personajes,
+material oficial, ediciones y consejos para el primer día.
+
+A diferencia de un vídeo de comparativa profunda, **no afirma haber
+probado GTA VI ni presenta diferencias técnicas no verificadas**.
+Usa fotografías y clips oficiales de Rockstar con cortes de plano
+frecuentes. Los créditos van a la descripción. La producción sube
+**solo en privado**, y la programación a **19/11/2026 00:20 CET**
+se realiza manualmente en YouTube Studio, no desde GitHub.
+
 ## Calendario recomendado para publicar MANUALMENTE
 
 | Fecha | Hora local | Formato | ID exacto para GitHub Actions | Título editorial |
 |---|---|---|---|---|
 | 19/11 | 00:05 | Short especial | `gta6-estreno-espana-0005` | GTA VI ya se estrena en España |
+| 19/11 | 00:20 | **Largo extra** | `gta6-ya-se-puede-jugar-0020-largo` | Ya se puede jugar: presentación oficial, personajes, mundo y 1–2 minutos sobre GTA V |
 | 19/11 | 09:00 | Short | `gta6-estreno-tres-claves` | Tres claves oficiales del estreno |
 | 19/11 | 12:30 | Short | `gta6-estreno-jason-lucia` | Jason y Lucia |
 | 19/11 | 16:30 | Short | `gta6-estreno-zonas-leonida` | Lugares oficiales de Leonida |
 | 19/11 | 20:00 | Short | `gta6-estreno-ediciones` | Standard, Ultimate y extras |
 | 19/11 | 22:00 | Largo | `gta6-estreno-resumen-oficial-largo` | Todo lo confirmado oficialmente |
 
-Las 00:05 son **después** del desbloqueo español, no «hoy a las doce del mediodía». Si todavía son las 23:xx del 18/11, NO publicar el Short titulado como si el estreno ya hubiera ocurrido.
+Las 00:05 y las 00:20 son **después** del desbloqueo español, no «hoy a las doce del mediodía». Si todavía son las 23:xx del 18/11, NO publicar el Short titulado como si el estreno ya hubiera ocurrido.
 
 **Preparación privada automática:** existe un workflow
 [`estreno_medianoche_privado.yml`](.github/workflows/estreno_medianoche_privado.yml)
