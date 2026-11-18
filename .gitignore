@@ -28,3 +28,6 @@ venv/
 # Material audiovisual autorizado temporal; nunca en repositorio público
 media/
 *.part
+
+# ZIP e imágenes oficiales: caché efímera de GitHub Actions, no versionar
+.cache/
