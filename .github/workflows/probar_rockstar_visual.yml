@@ -1,0 +1,50 @@
+name: "Píxel Feroz - Probar montaje con fotos reales GTA VI"
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/probar_rockstar_visual.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  probar-visual:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      PF_TTS_PROVIDER: gemini
+      PF_ROCKSTAR_MEDIA: "1"
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Preparar FFmpeg y Pillow
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Recuperar banco oficial desde caché
+        uses: actions/cache@v4
+        with:
+          path: .cache/rockstar
+          key: pixel-feroz-gta6-rockstar-screenshots-20261118-v1
+      - name: Validar imágenes y generar catálogo
+        run: python rockstar_media.py --preparar --revision
+      - name: Renderizar Short de prueba sin APIs y sin subir a YouTube
+        run: python probar_montaje_rockstar.py
+      - name: Descargar capturas del montaje para análisis
+        uses: actions/upload-artifact@v4
+        with:
+          name: pixel-feroz-prueba-fotos-reales-${{ github.run_id }}
+          path: salida/revision_visual/
+          retention-days: 14
+          if-no-files-found: error
