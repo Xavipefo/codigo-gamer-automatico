@@ -116,6 +116,9 @@ def preparar_plan(tema, formato):
     plan["texto_miniatura"] = tema.get("texto_miniatura", tema["titulo"])[:90]
     plan["huella_guion"] = hashlib.sha256(texto.encode("utf-8")).hexdigest()
     plan["revision_pendiente"] = True
+    plan["visuales_preferidos"] = tema.get("visuales_preferidos", [])
+    plan["publicacion_objetivo"] = tema.get("publicacion_objetivo")
+    plan["publicacion_manual_desde"] = tema.get("publicacion_manual_desde")
     plan["publicacion_automatica"] = False
     descripcion = construir_descripcion(tema, formato)
     return texto, descripcion, plan
