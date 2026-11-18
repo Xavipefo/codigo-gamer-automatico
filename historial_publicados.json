@@ -170,5 +170,15 @@
     "formato": "short",
     "fecha": "2026-11-18T23:10:46.753354+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "YuWzZo-jb38",
+    "url": "https://www.youtube.com/watch?v=YuWzZo-jb38",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-personajes-secundarios",
+    "formato": "short",
+    "fecha": "2026-11-18T23:16:55.614525+00:00",
+    "miniatura_confirmada": true
   }
 ]
