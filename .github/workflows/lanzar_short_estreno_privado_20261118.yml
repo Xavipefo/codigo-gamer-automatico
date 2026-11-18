@@ -11,7 +11,6 @@ permissions:
 
 jobs:
   corto-estreno:
-    if: ${{ github.event.head_commit.message == 'ci: lanzar una sola vez el Short de estreno GTA VI en privado' }}
     uses: ./.github/workflows/produccion_completa.yml
     with:
       formato: short
