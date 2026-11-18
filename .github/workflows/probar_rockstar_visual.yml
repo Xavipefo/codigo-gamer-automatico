@@ -16,7 +16,7 @@ permissions:
 jobs:
   probar-visual:
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 35
     env:
       PF_TTS_PROVIDER: gemini
       PF_ROCKSTAR_MEDIA: "1"
@@ -43,6 +43,15 @@ jobs:
         run: python rockstar_media.py --preparar --revision
       - name: Renderizar Short de prueba sin APIs y sin subir a YouTube
         run: python probar_montaje_rockstar.py
+      - name: Probar largo con cambios de plano reales sin subir
+        run: python probar_largo_rockstar.py
+      - name: Descargar capturas del montaje largo para análisis
+        uses: actions/upload-artifact@v4
+        with:
+          name: pixel-feroz-prueba-largo-rockstar-${{ github.run_id }}
+          path: salida/prueba_largo/revision_visual/
+          retention-days: 14
+          if-no-files-found: error
       - name: Descargar capturas del montaje para análisis
         uses: actions/upload-artifact@v4
         with:
