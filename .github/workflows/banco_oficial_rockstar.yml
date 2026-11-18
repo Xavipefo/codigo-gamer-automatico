@@ -1,0 +1,60 @@
+name: "Píxel Feroz - Banco de imágenes oficiales GTA VI"
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preparar-banco:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar Pillow y fuente
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-dejavu-core
+          python -m pip install --disable-pip-version-check "Pillow==11.3.0"
+
+      - name: Restaurar banco en caché
+        uses: actions/cache@v4
+        with:
+          path: .cache/rockstar
+          key: pixel-feroz-gta6-rockstar-screenshots-20261118-v1
+
+      - name: Descargar imágenes originales del archivo oficial
+        run: python rockstar_media.py --preparar --revision
+
+      - name: Preparar selección descargable para revisión
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from shutil import copyfile
+          from rockstar_media import cargar_banco, BASE
+          carpeta = Path("salida/revision_visual/imagenes_oficiales")
+          carpeta.mkdir(parents=True, exist_ok=True)
+          datos = cargar_banco()
+          for numero, recurso in enumerate(datos["imagenes"][:36], 1):
+              origen = BASE / recurso["archivo"]
+              copyfile(origen, carpeta / f'{numero:03d}_{origen.name}')
+          print("Imágenes descargables:", len(list(carpeta.glob("*.jpg"))))
+          PY
+
+      - name: Descargar paquete de fotos, contacto y catálogo
+        uses: actions/upload-artifact@v4
+        with:
+          name: pixel-feroz-banco-rockstar-\${{ github.run_id }}
+          path: salida/revision_visual/
+          retention-days: 14
+          if-no-files-found: error
