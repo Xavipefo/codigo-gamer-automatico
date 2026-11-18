@@ -1,0 +1,48 @@
+name: "Píxel Feroz - Validar banco de clips oficiales GTA VI"
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/validar_rockstar_clips.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  verificar-clips:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Instalar FFprobe
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+      - name: Recuperar caché de clips de Rockstar
+        uses: actions/cache@v4
+        with:
+          path: .cache/rockstar_clips
+          key: pixel-feroz-gta6-clips-oficiales-20261118-v1
+      - name: Descargar, extraer y comprobar pistas de vídeo
+        run: python rockstar_clips.py --preparar
+      - name: Comprobar el manifiesto sin exponer los archivos
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          datos=json.loads(Path('.cache/rockstar_clips/catalogo_clips.json').read_text())
+          assert len(datos['clips'])>=4
+          print('Clips oficiales válidos:',len(datos['clips']))
+          for clip in datos['clips']:
+              print(clip['nombre'][:55],clip['segundos'],'segundos')
+          PY
