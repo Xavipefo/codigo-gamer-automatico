@@ -3,7 +3,7 @@
   "edicion": "2026-11-18",
   "lanzamiento_previsto": "2026-11-19T00:00:00+01:00",
   "timezone": "Europe/Madrid",
-  "nota": "Franjas para PUBLICACIÓN MANUAL, no reserva programada de YouTube. 19/11: estreno 00:05 más 4 Shorts y 1 vídeo largo; preparar todos PRIVADOS y revisar antes de publicar. Rockstar confirma desbloqueo a las 00:00 hora local.",
+  "nota": "Franjas para PUBLICACIÓN MANUAL, no programación de YouTube. 19/11: Short especial 00:05, vídeo largo extra 00:20, cuatro Shorts en el día y otro largo opcional 22:00. Los vídeos se suben privados para revisión. Rockstar confirma desbloqueo a las 00:00 hora local.",
   "reglas": {
     "normal": {
       "shorts": [
@@ -23,7 +23,7 @@
       "hasta": "2026-11-22",
       "jueves": {
         "shorts": 5,
-        "largos": 1
+        "largos": 2
       },
       "viernes_sabado_domingo": {
         "shorts": 3,
@@ -89,6 +89,22 @@
       "requiere_revision_visual": true,
       "requiere_revision_fuentes": true,
       "publicacion_manual_no_antes_de": "2026-11-19T00:05:00+01:00"
+    },
+    {
+      "id": "pf-20261119-0020-largo-extra",
+      "fecha": "2026-11-19",
+      "hora": "00:20",
+      "timezone": "Europe/Madrid",
+      "modo": "especial_gta_vi",
+      "formato": "largo",
+      "objetivo_editorial": "ya se puede jugar GTA VI: lanzamiento y solo breve comparativa introductoria con GTA V",
+      "tema_confirmado_reserva": "gta6-ya-se-puede-jugar-0020-largo",
+      "estado": "tema_confirmado_preparar_privado",
+      "subir_siempre_privado": true,
+      "publicar_automaticamente": false,
+      "requiere_revision_visual": true,
+      "requiere_revision_fuentes": true,
+      "publicacion_manual_no_antes_de": "2026-11-19T00:20:00+01:00"
     },
     {
       "id": "pf-20261119-0900-short",
