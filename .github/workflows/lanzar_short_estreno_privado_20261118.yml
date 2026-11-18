@@ -1,0 +1,23 @@
+name: "Píxel Feroz - Estreno GTA VI privado (una sola ejecución)"
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/lanzar_short_estreno_privado_20261118.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  corto-estreno:
+    if: ${{ github.event.head_commit.message == 'ci: lanzar una sola vez el Short de estreno GTA VI en privado' }}
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      tema: gta6-estreno-espana-0005
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
