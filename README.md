@@ -1,8 +1,25 @@
 # Píxel Feroz — automatización de vídeos de videojuegos
 
-**Actualizado:** 17 de noviembre de 2026. Sistema independiente del canal Dato Nebular.
+**Actualizado:** 18 de noviembre de 2026. Sistema independiente del canal Dato Nebular.
 Se generan **Shorts** y **vídeos largos** mediante acciones manuales de GitHub. Todas las subidas
 a YouTube son **PRIVADAS** para revisión. Ninguna acción publica automáticamente al público.
+
+## Estreno de GTA VI — jueves 19 de noviembre
+
+**[Guía operativa y tabla de IDs para producir hoy](GUIA_ESTRENO_19_NOVIEMBRE.md)**
+
+Se han añadido cinco temas nuevos de Shorts para **00:05, 09:00, 12:30,
+16:30 y 20:00** y un largo para **22:00** (hora de Madrid). Las horas
+son propuestas de publicación MANUAL, nunca publicación automática.
+Consultar `calendario_publicacion.json` y los primeros seis registros de
+`temas_verificados.json`. El Short de medianoche puede generarse en
+PRIVADO antes del estreno; publicarlo solo después de las 00:00 locales.
+
+Los Shorts usan imágenes de Rockstar con variedad por escena. Los largos
+comparten esas imágenes, cambian de plano cada ~7 s y pueden intercalar
+clips oficiales breves cuando esté disponible el ZIP de Rockstar.
+Ambos exportan un mosaico y fotos a GitHub Actions (Artifacts), sin
+guardar MP4 inéditos ni secretos en un repositorio público.
 
 ## Situación del canal
 
