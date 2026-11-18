@@ -18,6 +18,17 @@ https://support.rockstargames.com/articles/29jV3Cv2cCgvwM1XgtMO5o/grand-theft-au
 
 Las 00:05 son **después** del desbloqueo español, no «hoy a las doce del mediodía». Si todavía son las 23:xx del 18/11, NO publicar el Short titulado como si el estreno ya hubiera ocurrido.
 
+**Preparación privada automática:** existe un workflow
+[`estreno_medianoche_privado.yml`](.github/workflows/estreno_medianoche_privado.yml)
+con disparo previsto el **18/11 a las 20:37 CET** (19:37 UTC). Solo
+**genera y sube el Short en PRIVADO**, registra su ID y exige comprobación de
+duplicados. El cron se protege por año y GitHub puede retrasar o perder
+ejecuciones programadas. Revisa su estado en Actions; si no termina con
+éxito, usa el botón manual con el ID exacto de arriba. **No se programa
+ninguna publicación pública**: a las 00:05 el vídeo debe publicarse
+manualmente desde YouTube Studio.
+
+
 ## Instrucciones de producción
 
 1. En GitHub Actions ejecutar **Píxel Feroz - 0. Preparar cola y portadas GTA VI (sin subir)** para descargar la agenda y los borradores. Esta fase no crea MP4.
