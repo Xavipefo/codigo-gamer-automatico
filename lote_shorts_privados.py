@@ -72,6 +72,14 @@ def producir(cantidad, lanzar=ejecutar):
         lanzar(sys.executable, "generar_guion_ia.py", "--formato", "short")
         lanzar(sys.executable, "motor_video.py")
         lanzar(sys.executable, "control_calidad.py", "--formato", "short")
+        # Guardar imágenes y mosaico POR TEMA antes de eliminar SALIDA en el
+        # siguiente vídeo; nunca copiar MP4, narraciones o secretos.
+        revision = SALIDA / "revision_visual"
+        if revision.is_dir():
+            destino_revision = BASE / "lote_revision" / tema["id"]
+            if destino_revision.exists():
+                shutil.rmtree(destino_revision)
+            shutil.copytree(revision, destino_revision)
         # Este es el único paso externo irreversible: subida PRIVADA.
         # Si falla no reintentar: revisar el ID en YouTube Studio.
         lanzar(sys.executable, "subir_youtube_privado.py", "--formato", "short")
