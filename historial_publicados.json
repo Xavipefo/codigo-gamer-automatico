@@ -160,5 +160,15 @@
     "formato": "short",
     "fecha": "2026-11-18T23:06:02.787263+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "sRqG9emxgwc",
+    "url": "https://www.youtube.com/watch?v=sRqG9emxgwc",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-estreno-jason-lucia",
+    "formato": "short",
+    "fecha": "2026-11-18T23:10:46.753354+00:00",
+    "miniatura_confirmada": true
   }
 ]
