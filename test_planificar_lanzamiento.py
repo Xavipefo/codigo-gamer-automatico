@@ -15,12 +15,12 @@ class TestPlanLanzamiento(unittest.TestCase):
         temas = {x["id"]: x for x in json.loads(TEMAS.read_text(encoding="utf-8"))}
         ideas = {x["id"]: x for x in json.loads(IDEAS.read_text(encoding="utf-8"))["ideas"]}
         self.assertTrue(comprobar_calendario(cal, temas, ideas))
-        self.assertEqual(len(cal["slots"]), 22)
+        self.assertEqual(len(cal["slots"]), 25)
         self.assertTrue(all(x["subir_siempre_privado"] for x in cal["slots"]))
         self.assertFalse(any(x["publicar_automaticamente"] for x in cal["slots"]))
         especiales = [x for x in cal["slots"] if x["fecha"] >= "2026-11-19"]
-        self.assertEqual(sum(x["formato"] == "short" for x in especiales), 14)
-        self.assertEqual(sum(x["formato"] == "largo" for x in especiales), 5)
+        self.assertEqual(sum(x["formato"] == "short" for x in especiales), 16)
+        self.assertEqual(sum(x["formato"] == "largo" for x in especiales), 6)
 
     def test_rechazar_activar_publicacion(self):
         cal = json.loads(CALENDARIO.read_text(encoding="utf-8"))
@@ -34,7 +34,7 @@ class TestPlanLanzamiento(unittest.TestCase):
         with tempfile.TemporaryDirectory() as carpeta:
             destino = Path(carpeta) / "pack"
             resultado = preparar(destino=destino)
-            self.assertEqual(len(resultado), 22)
+            self.assertEqual(len(resultado), 25)
             self.assertTrue((destino / "agenda.md").is_file())
             self.assertTrue((destino / "pendientes_verificacion.json").is_file())
             self.assertTrue(any((destino / "borradores").glob("*/opciones_ab/miniatura_a.jpg")))
