@@ -132,8 +132,10 @@ def seleccionar_medio(indice, tipo, cuantos_clips, cuantas_fotos):
 def rotulo_breve(escena):
     """Rótulo mínimo solo para material real; narración intacta."""
     palabras = escena["texto"].split()
-    frase = " ".join(palabras[:11]).strip()
-    if len(palabras) > 11:
+    # Evitar el bloque de texto que ocultaba los fotogramas oficiales.
+    # El audio mantiene intacto el guion completo.
+    frase = " ".join(palabras[:7]).strip()
+    if len(palabras) > 7:
         frase = frase.rstrip(",.;:") + "…"
     return {"tipo": escena["tipo"], "texto": frase}
 
