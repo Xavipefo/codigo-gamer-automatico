@@ -56,9 +56,12 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .cache/rockstar
-          key: pixel-feroz-gta6-rockstar-screenshots-20261118-v1
-      - name: Verificar 138 capturas oficiales antes de generar un lote
-        run: python rockstar_media.py --preparar --revision
+          key: pixel-feroz-gta6-rockstar-screenshots-20261118-v2
+      - name: Verificar capturas y extras de Rockstar antes de generar un lote
+        run: |
+          python rockstar_media.py --preparar
+          python rockstar_extras.py --preparar
+          python rockstar_media.py --revision
 
       - name: Reusar pesos públicos de Qwen
         uses: actions/cache@v4
