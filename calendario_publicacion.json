@@ -3,7 +3,7 @@
   "edicion": "2026-11-18",
   "lanzamiento_previsto": "2026-11-19T00:00:00+01:00",
   "timezone": "Europe/Madrid",
-  "nota": "Franjas para PUBLICACIÓN MANUAL, no programación de YouTube. 19/11: Short especial 00:05, vídeo largo extra 00:20, cuatro Shorts en el día y otro largo opcional 22:00. Los vídeos se suben privados para revisión. Rockstar confirma desbloqueo a las 00:00 hora local.",
+  "nota": "Objetivos de PUBLICACIÓN MANUAL en YouTube Studio, no publicaciones ya programadas. Jueves 19/11: EXTRA 00:05 Short y EXTRA 00:20 largo; además 6 Shorts de 09:00 a 20:00 y 2 largos diurnos (14:30 y 22:00). TOTAL 7 Shorts y 3 largos. Todos se generan y suben solo en PRIVADO y se revisan antes de programar. El resumen largo genérico queda en reserva para evitar repetir el especial de las 00:20.",
   "reglas": {
     "normal": {
       "shorts": [
@@ -22,8 +22,16 @@
       "desde": "2026-11-19",
       "hasta": "2026-11-22",
       "jueves": {
-        "shorts": 5,
-        "largos": 2
+        "shorts": 7,
+        "largos": 3,
+        "diurnos": {
+          "shorts": 6,
+          "largos": 2
+        },
+        "extras_medianoche": {
+          "shorts": 1,
+          "largos": 1
+        }
       },
       "viernes_sabado_domingo": {
         "shorts": 3,
@@ -123,6 +131,22 @@
       "publicacion_manual_no_antes_de": null
     },
     {
+      "id": "pf-20261119-1045-short",
+      "fecha": "2026-11-19",
+      "hora": "10:45",
+      "timezone": "Europe/Madrid",
+      "modo": "especial_gta_vi",
+      "formato": "short",
+      "objetivo_editorial": "Qué anuncia Rockstar para PS5: DualSense y audio 3D",
+      "tema_confirmado_reserva": "gta6-mando-dualsense",
+      "estado": "tema_confirmado_preparar_privado",
+      "subir_siempre_privado": true,
+      "publicar_automaticamente": false,
+      "requiere_revision_visual": true,
+      "requiere_revision_fuentes": true,
+      "publicacion_manual_no_antes_de": "2026-11-19T10:45:00+01:00"
+    },
+    {
       "id": "pf-20261119-1230-short",
       "fecha": "2026-11-19",
       "hora": "12:30",
@@ -139,6 +163,22 @@
       "publicacion_manual_no_antes_de": null
     },
     {
+      "id": "pf-20261119-1430-largo",
+      "fecha": "2026-11-19",
+      "hora": "14:30",
+      "timezone": "Europe/Madrid",
+      "modo": "especial_gta_vi",
+      "formato": "largo",
+      "objetivo_editorial": "Personajes secundarios, conexiones y lugares del universo de GTA VI sin spoilers",
+      "tema_confirmado_reserva": "gta6-personajes-secundarios",
+      "estado": "tema_confirmado_preparar_privado",
+      "subir_siempre_privado": true,
+      "publicar_automaticamente": false,
+      "requiere_revision_visual": true,
+      "requiere_revision_fuentes": true,
+      "publicacion_manual_no_antes_de": "2026-11-19T14:30:00+01:00"
+    },
+    {
       "id": "pf-20261119-1630-short",
       "fecha": "2026-11-19",
       "hora": "16:30",
@@ -153,6 +193,22 @@
       "requiere_revision_visual": true,
       "requiere_revision_fuentes": true,
       "publicacion_manual_no_antes_de": null
+    },
+    {
+      "id": "pf-20261119-1815-short",
+      "fecha": "2026-11-19",
+      "hora": "18:15",
+      "timezone": "Europe/Madrid",
+      "modo": "especial_gta_vi",
+      "formato": "short",
+      "objetivo_editorial": "Nuevas capturas y detalles del mundo mostrados en la galería oficial",
+      "tema_confirmado_reserva": "gta6-galeria-oficial",
+      "estado": "tema_confirmado_preparar_privado",
+      "subir_siempre_privado": true,
+      "publicar_automaticamente": false,
+      "requiere_revision_visual": true,
+      "requiere_revision_fuentes": true,
+      "publicacion_manual_no_antes_de": "2026-11-19T18:15:00+01:00"
     },
     {
       "id": "pf-20261119-2000-short",
@@ -177,14 +233,14 @@
       "timezone": "Europe/Madrid",
       "modo": "especial_gta_vi",
       "formato": "largo",
-      "objetivo_editorial": "guía oficial completa del estreno",
-      "tema_confirmado_reserva": "gta6-estreno-resumen-oficial-largo",
+      "objetivo_editorial": "Tecnología y consolas: 30 FPS anunciados, PS5 Pro y funciones DualSense, con límites de lo confirmado",
+      "tema_confirmado_reserva": "gta6-tecnologia-plataformas",
       "estado": "tema_confirmado_preparar_privado",
       "subir_siempre_privado": true,
       "publicar_automaticamente": false,
       "requiere_revision_visual": true,
       "requiere_revision_fuentes": true,
-      "publicacion_manual_no_antes_de": null
+      "publicacion_manual_no_antes_de": "2026-11-19T22:00:00+01:00"
     },
     {
       "id": "pf-20261120-1300-short",
