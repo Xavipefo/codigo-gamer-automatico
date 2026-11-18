@@ -23,15 +23,20 @@ se realiza manualmente en YouTube Studio, no desde GitHub.
 
 ## Calendario recomendado para publicar MANUALMENTE
 
+**Seis Shorts y dos largos diurnos**, además del Short de las 00:05 y del largo de las 00:20: **siete Shorts y tres largos en total**. La versión general `gta6-estreno-resumen-oficial-largo` queda como tema de reserva para evitar repetir el especial de medianoche.
+
 | Fecha | Hora local | Formato | ID exacto para GitHub Actions | Título editorial |
 |---|---|---|---|---|
-| 19/11 | 00:05 | Short especial | `gta6-estreno-espana-0005` | GTA VI ya se estrena en España |
-| 19/11 | 00:20 | **Largo extra** | `gta6-ya-se-puede-jugar-0020-largo` | Ya se puede jugar: presentación oficial, personajes, mundo y 1–2 minutos sobre GTA V |
+| 19/11 | 00:05 | Short extra | `gta6-estreno-espana-0005` | GTA VI ya se estrena en España |
+| 19/11 | 00:20 | Largo extra | `gta6-ya-se-puede-jugar-0020-largo` | Ya se puede jugar: estreno sin spoilers y 1–2 min sobre GTA V |
 | 19/11 | 09:00 | Short | `gta6-estreno-tres-claves` | Tres claves oficiales del estreno |
+| 19/11 | 10:45 | Short | `gta6-mando-dualsense` | Qué ofrece PS5: DualSense y sonido |
 | 19/11 | 12:30 | Short | `gta6-estreno-jason-lucia` | Jason y Lucia |
-| 19/11 | 16:30 | Short | `gta6-estreno-zonas-leonida` | Lugares oficiales de Leonida |
+| 19/11 | 14:30 | Largo | `gta6-personajes-secundarios` | Los personajes secundarios y sus conexiones |
+| 19/11 | 16:30 | Short | `gta6-estreno-zonas-leonida` | Los lugares de Leonida |
+| 19/11 | 18:15 | Short | `gta6-galeria-oficial` | Qué muestra la galería de lanzamiento |
 | 19/11 | 20:00 | Short | `gta6-estreno-ediciones` | Standard, Ultimate y extras |
-| 19/11 | 22:00 | Largo | `gta6-estreno-resumen-oficial-largo` | Todo lo confirmado oficialmente |
+| 19/11 | 22:00 | Largo | `gta6-tecnologia-plataformas` | 30 FPS, consolas y tecnologías confirmadas |
 
 Las 00:05 y las 00:20 son **después** del desbloqueo español, no «hoy a las doce del mediodía». Si todavía son las 23:xx del 18/11, NO publicar el Short titulado como si el estreno ya hubiera ocurrido.
 
