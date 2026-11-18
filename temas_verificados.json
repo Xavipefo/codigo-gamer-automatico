@@ -30,11 +30,11 @@
     "texto_miniatura": "¡YA ES 19 DE NOVIEMBRE!",
     "descripcion_personalizada": "Especial de estreno de GTA VI en España: hora oficial, consolas y protagonistas. Preparado para publicación manual después de las 00:05.",
     "visuales_preferidos": [
+      "artwork",
+      "duo",
       "vice",
       "jason",
-      "lucia",
-      "leonida",
-      "general"
+      "lucia"
     ]
   },
   {
@@ -172,10 +172,11 @@
     "texto_miniatura": "EDICIONES GTA VI",
     "descripcion_personalizada": "Repasamos las ediciones y contenidos adicionales anunciados oficialmente, sin prometer ventajas no verificadas.",
     "visuales_preferidos": [
+      "ultimate",
+      "vintage",
+      "artwork",
       "jason",
-      "lucia",
-      "vice",
-      "general"
+      "lucia"
     ]
   },
   {
@@ -254,6 +255,8 @@
       "Especial GTA VI: 10 claves oficiales del lanzamiento"
     ],
     "visuales_preferidos": [
+      "artwork",
+      "duo",
       "jason",
       "lucia",
       "vice",
@@ -262,7 +265,8 @@
       "port",
       "ambrosia",
       "kalaga",
-      "general"
+      "ultimate",
+      "vintage"
     ]
   },
   {
