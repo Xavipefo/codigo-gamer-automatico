@@ -140,5 +140,15 @@
     "formato": "largo",
     "fecha": "2026-11-18T22:28:00.897788+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "072BowoTC7w",
+    "url": "https://www.youtube.com/watch?v=072BowoTC7w",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-estreno-tres-claves",
+    "formato": "short",
+    "fecha": "2026-11-18T22:59:29.286783+00:00",
+    "miniatura_confirmada": true
   }
 ]
