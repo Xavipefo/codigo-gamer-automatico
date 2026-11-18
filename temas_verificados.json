@@ -38,148 +38,6 @@
     ]
   },
   {
-    "id": "gta6-estreno-tres-claves",
-    "titulo": "GTA VI: tres claves oficiales del día del estreno",
-    "estado": "confirmado",
-    "fecha_verificacion": "2026-11-18",
-    "formatos": [
-      "short"
-    ],
-    "prioridad": 2,
-    "publicacion_objetivo": "2026-11-19T09:00:00+01:00",
-    "gancho": "GTA seis ya tiene fecha de estreno oficial y hay tres datos que merece la pena recordar hoy",
-    "contexto": "Vamos a separar lo confirmado por Rockstar de las teorías que circulan por internet",
-    "hechos": [
-      {
-        "texto": "Rockstar fijó el desbloqueo a medianoche del 19 de noviembre en la hora local de cada región",
-        "fuente": "https://support.rockstargames.com/articles/29jV3Cv2cCgvwM1XgtMO5o/grand-theft-auto-vi-regional-pre-load-and-release-times-on-playstation-5-and-xbox-series-x-or-s"
-      },
-      {
-        "texto": "El juego se lanza para PlayStation 5 y Xbox Series X y S",
-        "fuente": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
-      },
-      {
-        "texto": "La historia sigue a Jason y Lucia dentro del estado ficticio de Leonida",
-        "fuente": "https://www.rockstargames.com/VI"
-      }
-    ],
-    "texto_miniatura": "3 CLAVES DE GTA 6",
-    "descripcion_personalizada": "Tres datos oficiales para el estreno de GTA VI, sin filtraciones ni especulaciones.",
-    "visuales_preferidos": [
-      "vice",
-      "jason",
-      "lucia",
-      "leonida"
-    ]
-  },
-  {
-    "id": "gta6-estreno-jason-lucia",
-    "titulo": "Jason y Lucia: lo que Rockstar confirma en GTA VI",
-    "estado": "confirmado",
-    "fecha_verificacion": "2026-11-18",
-    "formatos": [
-      "short"
-    ],
-    "prioridad": 3,
-    "publicacion_objetivo": "2026-11-19T12:30:00+01:00",
-    "gancho": "Jason y Lucia no son dos personajes cualquiera: Rockstar ya ha explicado el comienzo de su historia",
-    "contexto": "La presentación oficial del juego los sitúa en medio de una conspiración por todo Leonida",
-    "hechos": [
-      {
-        "texto": "Jason Duval pasó una etapa en el Ejército y después trabajó con distribuidores de drogas en los Cayos de Leonida",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      },
-      {
-        "texto": "Lucia Caminos estuvo en la prisión de Leonida tras luchar por su familia, según su biografía oficial",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      },
-      {
-        "texto": "Un golpe aparentemente sencillo sale mal y obliga a ambos a depender el uno del otro",
-        "fuente": "https://www.rockstargames.com/VI"
-      }
-    ],
-    "texto_miniatura": "JASON Y LUCIA",
-    "descripcion_personalizada": "Lo que las biografías oficiales de Rockstar cuentan sobre los protagonistas de GTA VI.",
-    "visuales_preferidos": [
-      "jason",
-      "lucia",
-      "vice"
-    ]
-  },
-  {
-    "id": "gta6-estreno-zonas-leonida",
-    "titulo": "Los lugares oficiales de GTA VI: Vice City y más allá",
-    "estado": "confirmado",
-    "fecha_verificacion": "2026-11-18",
-    "formatos": [
-      "short"
-    ],
-    "prioridad": 4,
-    "publicacion_objetivo": "2026-11-19T16:30:00+01:00",
-    "gancho": "Vice City no es el único lugar confirmado por Rockstar en GTA seis",
-    "contexto": "La web de Only in Leonida enseña varias regiones y la galería oficial permite observarlas",
-    "hechos": [
-      {
-        "texto": "Vice City es un escenario central dentro del estado ficticio de Leonida",
-        "fuente": "https://www.rockstargames.com/VI"
-      },
-      {
-        "texto": "Rockstar muestra los Cayos de Leonida, Grassrivers y Port Gellhorn entre sus localizaciones oficiales",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      },
-      {
-        "texto": "Ambrosia y Mount Kalaga también aparecen en la presentación oficial de lugares del juego",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      }
-    ],
-    "texto_miniatura": "LOS LUGARES DE GTA 6",
-    "descripcion_personalizada": "Recorremos los lugares que Rockstar ha presentado sin inventar dimensiones o detalles de jugabilidad.",
-    "visuales_preferidos": [
-      "vice",
-      "leonida",
-      "grassrivers",
-      "port",
-      "ambrosia",
-      "kalaga"
-    ]
-  },
-  {
-    "id": "gta6-estreno-ediciones",
-    "titulo": "GTA VI: Standard, Ultimate y extras confirmados",
-    "estado": "confirmado",
-    "fecha_verificacion": "2026-11-18",
-    "formatos": [
-      "short"
-    ],
-    "prioridad": 5,
-    "publicacion_objetivo": "2026-11-19T20:00:00+01:00",
-    "gancho": "¿Sabes qué diferencia la edición Standard de la Ultimate en GTA seis? Rockstar lo aclara",
-    "contexto": "Los extras anunciados están detallados en el soporte oficial y en la galería multimedia",
-    "hechos": [
-      {
-        "texto": "Rockstar ofrece Grand Theft Auto VI en Standard Edition y Ultimate Edition",
-        "fuente": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
-      },
-      {
-        "texto": "Ultimate Edition añade contenido como el vehículo noventa y cinco Grotti Cheetah y los revólveres Hawk y Little Morgan",
-        "fuente": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
-      },
-      {
-        "texto": "El soporte oficial también describe el Vintage Vice City Pack con vehículo, peinados, ropa y un diseño de arma para determinados compradores",
-        "fuente": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
-      }
-    ],
-    "texto_miniatura": "EDICIONES GTA VI",
-    "descripcion_personalizada": "Repasamos las ediciones y contenidos adicionales anunciados oficialmente, sin prometer ventajas no verificadas.",
-    "visuales_preferidos": [
-      "ultimate",
-      "vintage",
-      "artwork",
-      "jason",
-      "lucia"
-    ]
-  },
-  {
     "id": "gta6-ya-se-puede-jugar-0020-largo",
     "titulo": "GTA 6 YA SE PUEDE JUGAR: qué trae, Vice City y sus claves del estreno",
     "estado": "confirmado",
@@ -280,6 +138,379 @@
     "nota_comparativa": "Solo escena 10, 186 palabras (~1–2 minutos), sin métricas de rendimiento inventadas. Reserva una comparativa exhaustiva para otro vídeo."
   },
   {
+    "id": "gta6-estreno-tres-claves",
+    "titulo": "GTA VI: tres claves oficiales del día del estreno",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-18",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 2,
+    "publicacion_objetivo": "2026-11-19T09:00:00+01:00",
+    "gancho": "GTA seis ya tiene fecha de estreno oficial y hay tres datos que merece la pena recordar hoy",
+    "contexto": "Vamos a separar lo confirmado por Rockstar de las teorías que circulan por internet",
+    "hechos": [
+      {
+        "texto": "Rockstar fijó el desbloqueo a medianoche del 19 de noviembre en la hora local de cada región",
+        "fuente": "https://support.rockstargames.com/articles/29jV3Cv2cCgvwM1XgtMO5o/grand-theft-auto-vi-regional-pre-load-and-release-times-on-playstation-5-and-xbox-series-x-or-s"
+      },
+      {
+        "texto": "El juego se lanza para PlayStation 5 y Xbox Series X y S",
+        "fuente": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
+      },
+      {
+        "texto": "La historia sigue a Jason y Lucia dentro del estado ficticio de Leonida",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "texto_miniatura": "3 CLAVES DE GTA 6",
+    "descripcion_personalizada": "Tres datos oficiales para el estreno de GTA VI, sin filtraciones ni especulaciones.",
+    "visuales_preferidos": [
+      "vice",
+      "jason",
+      "lucia",
+      "leonida"
+    ]
+  },
+  {
+    "id": "gta6-mando-dualsense",
+    "titulo": "GTA VI: las funciones anunciadas para PS5",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "Rockstar ha detallado algunas funciones concretas de su versión para PlayStation 5",
+    "contexto": "Las mejoras anunciadas para PS5 sin extrapolarlas a otras plataformas",
+    "hechos": [
+      {
+        "texto": "Rockstar indica que GTA VI en PS5 integra respuesta háptica en el mando DualSense",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "La compañía señala que el audio espacial aprovecha Tempest 3D Audio",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "Rockstar ha anunciado mejoras en los tiempos de carga en su descripción de la experiencia para PlayStation 5",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      }
+    ],
+    "prioridad": 8,
+    "texto_miniatura": "GTA VI EN PS5",
+    "descripcion_personalizada": "Las mejoras anunciadas para PS5 sin extrapolarlas a otras plataformas",
+    "formatos": [
+      "short"
+    ],
+    "publicacion_objetivo": "2026-11-19T10:45:00+01:00",
+    "publicacion_manual_desde": "2026-11-19T10:45:00+01:00",
+    "visuales_preferidos": [
+      "vice",
+      "jason",
+      "lucia",
+      "artwork",
+      "duo"
+    ]
+  },
+  {
+    "id": "gta6-estreno-jason-lucia",
+    "titulo": "Jason y Lucia: lo que Rockstar confirma en GTA VI",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-18",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 3,
+    "publicacion_objetivo": "2026-11-19T12:30:00+01:00",
+    "gancho": "Jason y Lucia no son dos personajes cualquiera: Rockstar ya ha explicado el comienzo de su historia",
+    "contexto": "La presentación oficial del juego los sitúa en medio de una conspiración por todo Leonida",
+    "hechos": [
+      {
+        "texto": "Jason Duval pasó una etapa en el Ejército y después trabajó con distribuidores de drogas en los Cayos de Leonida",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Lucia Caminos estuvo en la prisión de Leonida tras luchar por su familia, según su biografía oficial",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Un golpe aparentemente sencillo sale mal y obliga a ambos a depender el uno del otro",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "texto_miniatura": "JASON Y LUCIA",
+    "descripcion_personalizada": "Lo que las biografías oficiales de Rockstar cuentan sobre los protagonistas de GTA VI.",
+    "visuales_preferidos": [
+      "jason",
+      "lucia",
+      "vice"
+    ]
+  },
+  {
+    "id": "gta6-personajes-secundarios",
+    "titulo": "GTA VI: personajes secundarios confirmados",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "Además de Jason y Lucia, Rockstar ya ha dado nombre e historia a varios personajes",
+    "contexto": "Conoce las conexiones de los personajes que ya figuran en la página oficial",
+    "hechos": [
+      {
+        "texto": "La web de Rockstar presenta a Cal Hampton como amigo de Jason y asociado de Brian",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Boobie Ike figura como empresario de Vice City ligado al sector de la música",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Dre'Quan Priest aparece vinculado al sello Only Raw Records",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Rockstar presenta a Real Dimez como el dúo integrado por Bae-Luxe y Roxy",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Raul Bautista figura en la web oficial como ladrón de bancos experimentado",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Brian Heder aparece presentado como un veterano del contrabando en los Cayos",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Rockstar cuenta que Brian permite a Jason vivir sin alquiler a cambio de trabajos locales",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Lucia Caminos salió de prisión y quiere alcanzar una vida mejor",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Jason Duval tuvo una etapa en el Ejército y trabajó en los Cayos",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      }
+    ],
+    "prioridad": 9,
+    "texto_miniatura": "PERSONAJES CONFIRMADOS",
+    "descripcion_personalizada": "Conoce las conexiones de los personajes que ya figuran en la página oficial",
+    "formatos": [
+      "short",
+      "largo"
+    ],
+    "esquema_largo": [
+      "Presentación de los personajes oficialmente anunciados",
+      "Cal Hampton y su amistad con Jason",
+      "Brian Heder y la situación de Jason en los Cayos",
+      "Boobie Ike y su papel empresarial en Vice City",
+      "Dre'Quan Priest y Only Raw Records",
+      "El dúo Real Dimez",
+      "Raul Bautista y los atracos",
+      "Conexiones con Jason y Lucia sin especulación",
+      "Lo que Rockstar aún no ha explicado"
+    ],
+    "titulos_experimento": [
+      "GTA VI: los personajes que Rockstar ya ha presentado",
+      "Quién es quién en GTA VI: personajes confirmados",
+      "GTA VI: Cal, Brian, Boobie, Raul y Real Dimez"
+    ],
+    "publicacion_objetivo": "2026-11-19T14:30:00+01:00",
+    "publicacion_manual_desde": "2026-11-19T14:30:00+01:00",
+    "visuales_preferidos": [
+      "cal",
+      "brian",
+      "boobie",
+      "drequan",
+      "real",
+      "raul",
+      "vice",
+      "duo"
+    ]
+  },
+  {
+    "id": "gta6-estreno-zonas-leonida",
+    "titulo": "Los lugares oficiales de GTA VI: Vice City y más allá",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-18",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 4,
+    "publicacion_objetivo": "2026-11-19T16:30:00+01:00",
+    "gancho": "Vice City no es el único lugar confirmado por Rockstar en GTA seis",
+    "contexto": "La web de Only in Leonida enseña varias regiones y la galería oficial permite observarlas",
+    "hechos": [
+      {
+        "texto": "Vice City es un escenario central dentro del estado ficticio de Leonida",
+        "fuente": "https://www.rockstargames.com/VI"
+      },
+      {
+        "texto": "Rockstar muestra los Cayos de Leonida, Grassrivers y Port Gellhorn entre sus localizaciones oficiales",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Ambrosia y Mount Kalaga también aparecen en la presentación oficial de lugares del juego",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      }
+    ],
+    "texto_miniatura": "LOS LUGARES DE GTA 6",
+    "descripcion_personalizada": "Recorremos los lugares que Rockstar ha presentado sin inventar dimensiones o detalles de jugabilidad.",
+    "visuales_preferidos": [
+      "vice",
+      "leonida",
+      "grassrivers",
+      "port",
+      "ambrosia",
+      "kalaga"
+    ]
+  },
+  {
+    "id": "gta6-galeria-oficial",
+    "titulo": "GTA VI: qué muestra la galería oficial de estreno",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "Rockstar ha publicado nuevas capturas de GTA VI antes de la llegada del juego",
+    "contexto": "Revisamos únicamente lo que la galería y su anuncio oficiales permiten afirmar",
+    "hechos": [
+      {
+        "texto": "Rockstar publicó un anuncio de su galería de lanzamiento el 5 de noviembre de 2026",
+        "fuente": "https://www.rockstargames.com/es/newswire/article/39ak81277255o9/explore-the-grand-theft-auto-vi-launch-gallery"
+      },
+      {
+        "texto": "El anuncio invita a explorar nuevas capturas de Vice City y de otras zonas de Leonida",
+        "fuente": "https://www.rockstargames.com/es/newswire/article/39ak81277255o9/explore-the-grand-theft-auto-vi-launch-gallery"
+      },
+      {
+        "texto": "La galería completa está enlazada desde la web oficial de GTA VI",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "prioridad": 11,
+    "texto_miniatura": "NUEVAS CAPTURAS",
+    "descripcion_personalizada": "Revisamos únicamente lo que la galería y su anuncio oficiales permiten afirmar",
+    "formatos": [
+      "short"
+    ],
+    "publicacion_objetivo": "2026-11-19T18:15:00+01:00",
+    "publicacion_manual_desde": "2026-11-19T18:15:00+01:00",
+    "visuales_preferidos": [
+      "vice",
+      "duo",
+      "leonida",
+      "grassrivers",
+      "port",
+      "lucia"
+    ]
+  },
+  {
+    "id": "gta6-estreno-ediciones",
+    "titulo": "GTA VI: Standard, Ultimate y extras confirmados",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-18",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 5,
+    "publicacion_objetivo": "2026-11-19T20:00:00+01:00",
+    "gancho": "¿Sabes qué diferencia la edición Standard de la Ultimate en GTA seis? Rockstar lo aclara",
+    "contexto": "Los extras anunciados están detallados en el soporte oficial y en la galería multimedia",
+    "hechos": [
+      {
+        "texto": "Rockstar ofrece Grand Theft Auto VI en Standard Edition y Ultimate Edition",
+        "fuente": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
+      },
+      {
+        "texto": "Ultimate Edition añade contenido como el vehículo noventa y cinco Grotti Cheetah y los revólveres Hawk y Little Morgan",
+        "fuente": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
+      },
+      {
+        "texto": "El soporte oficial también describe el Vintage Vice City Pack con vehículo, peinados, ropa y un diseño de arma para determinados compradores",
+        "fuente": "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions"
+      }
+    ],
+    "texto_miniatura": "EDICIONES GTA VI",
+    "descripcion_personalizada": "Repasamos las ediciones y contenidos adicionales anunciados oficialmente, sin prometer ventajas no verificadas.",
+    "visuales_preferidos": [
+      "ultimate",
+      "vintage",
+      "artwork",
+      "jason",
+      "lucia"
+    ]
+  },
+  {
+    "id": "gta6-tecnologia-plataformas",
+    "titulo": "GTA VI: 30 FPS y tecnología en consolas",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "El objetivo de rendimiento del estreno es un detalle que Rockstar ha explicado",
+    "contexto": "Recopilación de anuncios de rendimiento y funciones sin suposiciones técnicas",
+    "hechos": [
+      {
+        "texto": "Rockstar apunta a 30 fotogramas por segundo para GTA VI en PS5 y Xbox Series X y S",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "Rockstar ha comunicado mejoras de claridad de imagen con PSSR para PlayStation 5 Pro",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "En PlayStation 5 Pro también se anuncian sombras con trazado de rayos",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "La versión de PS5 incluye respuesta háptica aprovechando DualSense",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "Rockstar menciona audio espacial con Tempest 3D Audio en PlayStation 5",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "La compañía ha informado de mejoras de tiempos de carga en PlayStation 5",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "El vídeo de mirada extendida fue capturado íntegramente en PS5",
+        "fuente": "https://www.rockstargames.com/es/newswire/article/4k138k8okkk483/grand-theft-auto-vi-an-extended-look-now-playing"
+      },
+      {
+        "texto": "Las dos familias de consolas anunciadas para el estreno son PlayStation 5 y Xbox Series X y S",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "prioridad": 13,
+    "texto_miniatura": "30 FPS Y TECNOLOGÍA",
+    "descripcion_personalizada": "Recopilación de anuncios de rendimiento y funciones sin suposiciones técnicas",
+    "formatos": [
+      "short",
+      "largo"
+    ],
+    "esquema_largo": [
+      "Objetivo de rendimiento de lanzamiento según Rockstar",
+      "Qué significa 30 FPS y qué NO implica",
+      "Plataformas oficiales, sin añadir una versión PC no anunciada",
+      "Funciones de PlayStation 5 confirmadas",
+      "DualSense y respuesta háptica",
+      "Tempest 3D Audio y tiempos de carga",
+      "Mejoras exclusivas anunciadas de PlayStation 5 Pro",
+      "PSSR y sombras trazadas por rayos",
+      "Comparaciones que no se pueden afirmar sin pruebas técnicas propias"
+    ],
+    "titulos_experimento": [
+      "GTA VI a 30 FPS: tecnología y consolas confirmadas",
+      "GTA VI en PS5, PS5 Pro y Xbox: lo que sabemos",
+      "Rockstar explica las funciones y el rendimiento de GTA VI"
+    ],
+    "publicacion_objetivo": "2026-11-19T22:00:00+01:00",
+    "publicacion_manual_desde": "2026-11-19T22:00:00+01:00",
+    "visuales_preferidos": [
+      "vice",
+      "leonida",
+      "duo",
+      "jason",
+      "lucia",
+      "artwork"
+    ]
+  },
+  {
     "id": "gta6-estreno-resumen-oficial-largo",
     "titulo": "GTA VI: todo lo confirmado oficialmente en el lanzamiento",
     "estado": "confirmado",
@@ -287,8 +518,7 @@
     "formatos": [
       "largo"
     ],
-    "prioridad": 6,
-    "publicacion_objetivo": "2026-11-19T22:00:00+01:00",
+    "prioridad": 60,
     "gancho": "Grand Theft Auto seis marca su estreno y en este reportaje reunimos los detalles verdaderamente confirmados por Rockstar",
     "contexto": "Un análisis narrado de la fecha, plataformas, personajes, mundo y contenidos; no es una reseña de gameplay",
     "hechos": [
@@ -367,7 +597,8 @@
       "kalaga",
       "ultimate",
       "vintage"
-    ]
+    ],
+    "en_reserva": true
   },
   {
     "id": "gta6-lanzamiento-oficial",
@@ -795,34 +1026,6 @@
     ]
   },
   {
-    "id": "gta6-galeria-oficial",
-    "titulo": "GTA VI: qué muestra la galería oficial de estreno",
-    "estado": "confirmado",
-    "fecha_verificacion": "2026-11-17",
-    "gancho": "Rockstar ha publicado nuevas capturas de GTA VI antes de la llegada del juego",
-    "contexto": "Revisamos únicamente lo que la galería y su anuncio oficiales permiten afirmar",
-    "hechos": [
-      {
-        "texto": "Rockstar publicó un anuncio de su galería de lanzamiento el 5 de noviembre de 2026",
-        "fuente": "https://www.rockstargames.com/es/newswire/article/39ak81277255o9/explore-the-grand-theft-auto-vi-launch-gallery"
-      },
-      {
-        "texto": "El anuncio invita a explorar nuevas capturas de Vice City y de otras zonas de Leonida",
-        "fuente": "https://www.rockstargames.com/es/newswire/article/39ak81277255o9/explore-the-grand-theft-auto-vi-launch-gallery"
-      },
-      {
-        "texto": "La galería completa está enlazada desde la web oficial de GTA VI",
-        "fuente": "https://www.rockstargames.com/VI"
-      }
-    ],
-    "prioridad": 50,
-    "texto_miniatura": "NUEVAS CAPTURAS",
-    "descripcion_personalizada": "Revisamos únicamente lo que la galería y su anuncio oficiales permiten afirmar",
-    "formatos": [
-      "short"
-    ]
-  },
-  {
     "id": "gta6-mirada-extendida",
     "titulo": "GTA VI: la mirada extendida y lo que enseña",
     "estado": "confirmado",
@@ -846,34 +1049,6 @@
     "prioridad": 50,
     "texto_miniatura": "ADELANTO EXTENDIDO",
     "descripcion_personalizada": "Qué puede afirmarse del vídeo extendido distribuido oficialmente",
-    "formatos": [
-      "short"
-    ]
-  },
-  {
-    "id": "gta6-mando-dualsense",
-    "titulo": "GTA VI: las funciones anunciadas para PS5",
-    "estado": "confirmado",
-    "fecha_verificacion": "2026-11-17",
-    "gancho": "Rockstar ha detallado algunas funciones concretas de su versión para PlayStation 5",
-    "contexto": "Las mejoras anunciadas para PS5 sin extrapolarlas a otras plataformas",
-    "hechos": [
-      {
-        "texto": "Rockstar indica que GTA VI en PS5 integra respuesta háptica en el mando DualSense",
-        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
-      },
-      {
-        "texto": "La compañía señala que el audio espacial aprovecha Tempest 3D Audio",
-        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
-      },
-      {
-        "texto": "Rockstar ha anunciado mejoras en los tiempos de carga en su descripción de la experiencia para PlayStation 5",
-        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
-      }
-    ],
-    "prioridad": 50,
-    "texto_miniatura": "GTA VI EN PS5",
-    "descripcion_personalizada": "Las mejoras anunciadas para PS5 sin extrapolarlas a otras plataformas",
     "formatos": [
       "short"
     ]
@@ -904,140 +1079,6 @@
     "descripcion_personalizada": "Revisamos el horario comunicado por el soporte de Rockstar",
     "formatos": [
       "short"
-    ]
-  },
-  {
-    "id": "gta6-personajes-secundarios",
-    "titulo": "GTA VI: personajes secundarios confirmados",
-    "estado": "confirmado",
-    "fecha_verificacion": "2026-11-17",
-    "gancho": "Además de Jason y Lucia, Rockstar ya ha dado nombre e historia a varios personajes",
-    "contexto": "Conoce las conexiones de los personajes que ya figuran en la página oficial",
-    "hechos": [
-      {
-        "texto": "La web de Rockstar presenta a Cal Hampton como amigo de Jason y asociado de Brian",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      },
-      {
-        "texto": "Boobie Ike figura como empresario de Vice City ligado al sector de la música",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      },
-      {
-        "texto": "Dre'Quan Priest aparece vinculado al sello Only Raw Records",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      },
-      {
-        "texto": "Rockstar presenta a Real Dimez como el dúo integrado por Bae-Luxe y Roxy",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      },
-      {
-        "texto": "Raul Bautista figura en la web oficial como ladrón de bancos experimentado",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      },
-      {
-        "texto": "Brian Heder aparece presentado como un veterano del contrabando en los Cayos",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      },
-      {
-        "texto": "Rockstar cuenta que Brian permite a Jason vivir sin alquiler a cambio de trabajos locales",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      },
-      {
-        "texto": "Lucia Caminos salió de prisión y quiere alcanzar una vida mejor",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      },
-      {
-        "texto": "Jason Duval tuvo una etapa en el Ejército y trabajó en los Cayos",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      }
-    ],
-    "prioridad": 50,
-    "texto_miniatura": "PERSONAJES CONFIRMADOS",
-    "descripcion_personalizada": "Conoce las conexiones de los personajes que ya figuran en la página oficial",
-    "formatos": [
-      "short",
-      "largo"
-    ],
-    "esquema_largo": [
-      "Presentación de los personajes oficialmente anunciados",
-      "Cal Hampton y su amistad con Jason",
-      "Brian Heder y la situación de Jason en los Cayos",
-      "Boobie Ike y su papel empresarial en Vice City",
-      "Dre'Quan Priest y Only Raw Records",
-      "El dúo Real Dimez",
-      "Raul Bautista y los atracos",
-      "Conexiones con Jason y Lucia sin especulación",
-      "Lo que Rockstar aún no ha explicado"
-    ],
-    "titulos_experimento": [
-      "GTA VI: los personajes que Rockstar ya ha presentado",
-      "Quién es quién en GTA VI: personajes confirmados",
-      "GTA VI: Cal, Brian, Boobie, Raul y Real Dimez"
-    ]
-  },
-  {
-    "id": "gta6-tecnologia-plataformas",
-    "titulo": "GTA VI: 30 FPS y tecnología en consolas",
-    "estado": "confirmado",
-    "fecha_verificacion": "2026-11-17",
-    "gancho": "El objetivo de rendimiento del estreno es un detalle que Rockstar ha explicado",
-    "contexto": "Recopilación de anuncios de rendimiento y funciones sin suposiciones técnicas",
-    "hechos": [
-      {
-        "texto": "Rockstar apunta a 30 fotogramas por segundo para GTA VI en PS5 y Xbox Series X y S",
-        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
-      },
-      {
-        "texto": "Rockstar ha comunicado mejoras de claridad de imagen con PSSR para PlayStation 5 Pro",
-        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
-      },
-      {
-        "texto": "En PlayStation 5 Pro también se anuncian sombras con trazado de rayos",
-        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
-      },
-      {
-        "texto": "La versión de PS5 incluye respuesta háptica aprovechando DualSense",
-        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
-      },
-      {
-        "texto": "Rockstar menciona audio espacial con Tempest 3D Audio en PlayStation 5",
-        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
-      },
-      {
-        "texto": "La compañía ha informado de mejoras de tiempos de carga en PlayStation 5",
-        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
-      },
-      {
-        "texto": "El vídeo de mirada extendida fue capturado íntegramente en PS5",
-        "fuente": "https://www.rockstargames.com/es/newswire/article/4k138k8okkk483/grand-theft-auto-vi-an-extended-look-now-playing"
-      },
-      {
-        "texto": "Las dos familias de consolas anunciadas para el estreno son PlayStation 5 y Xbox Series X y S",
-        "fuente": "https://www.rockstargames.com/VI"
-      }
-    ],
-    "prioridad": 50,
-    "texto_miniatura": "30 FPS Y TECNOLOGÍA",
-    "descripcion_personalizada": "Recopilación de anuncios de rendimiento y funciones sin suposiciones técnicas",
-    "formatos": [
-      "short",
-      "largo"
-    ],
-    "esquema_largo": [
-      "Objetivo de rendimiento de lanzamiento según Rockstar",
-      "Qué significa 30 FPS y qué NO implica",
-      "Plataformas oficiales, sin añadir una versión PC no anunciada",
-      "Funciones de PlayStation 5 confirmadas",
-      "DualSense y respuesta háptica",
-      "Tempest 3D Audio y tiempos de carga",
-      "Mejoras exclusivas anunciadas de PlayStation 5 Pro",
-      "PSSR y sombras trazadas por rayos",
-      "Comparaciones que no se pueden afirmar sin pruebas técnicas propias"
-    ],
-    "titulos_experimento": [
-      "GTA VI a 30 FPS: tecnología y consolas confirmadas",
-      "GTA VI en PS5, PS5 Pro y Xbox: lo que sabemos",
-      "Rockstar explica las funciones y el rendimiento de GTA VI"
     ]
   },
   {
