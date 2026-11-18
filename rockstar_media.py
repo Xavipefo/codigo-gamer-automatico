@@ -31,7 +31,7 @@ MAX_ARCHIVO = 450 * 1024 * 1024
 MAX_EXTRAIDO = 1800 * 1024 * 1024
 CLAVES = {
     "ultimate": ("ultimate", "edition", "grotti", "cheetah"),
-    "vintage": ("vintage", "vice", "bonus"),
+    "vintage": ("vintage", "bonus", "stanier"),
     "artwork": ("arte", "portada", "launch", "trailer"),
     "duo": ("jason", "lucia"),
     "jason": ("jason", "duval"),
@@ -61,6 +61,8 @@ def categoria(nombre):
     if "jason" in n and "lucia" in n:
         return "duo"
     for key, aliases in CLAVES.items():
+        if key == "duo":
+            continue
         if any(a in n.split() for a in aliases):
             return key
     return "general"
