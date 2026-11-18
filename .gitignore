@@ -31,3 +31,6 @@ media/
 
 # ZIP e imágenes oficiales: caché efímera de GitHub Actions, no versionar
 .cache/
+
+# Revisiones de Shorts por lotes solo en artefactos temporales
+lote_revision/
