@@ -644,6 +644,45 @@
     ]
   },
   {
+    "id": "gta6-cal-hampton-imagenes-20261118",
+    "titulo": "GTA VI: quién es Cal Hampton y qué relación tiene con Jason",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-18",
+    "gancho": "¿Quién es Cal Hampton? Rockstar ya ha explicado qué relación tiene con Jason en GTA seis",
+    "contexto": "Las imágenes y la biografía oficiales de Cal Hampton muestran a un personaje desconfiado, amigo de Jason y relacionado con Brian",
+    "hechos": [
+      {
+        "texto": "Cal Hampton aparece identificado oficialmente como amigo de Jason",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Rockstar describe a Cal como otro asociado de Brian",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "La web oficial cuenta que Cal escucha comunicaciones de la Guardia Costera desde casa y muestra una personalidad desconfiada",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      }
+    ],
+    "prioridad": 8,
+    "texto_miniatura": "¿QUIÉN ES CAL?",
+    "descripcion_personalizada": "Conoce quién es Cal Hampton en GTA VI, su relación con Jason y Brian y el detalle de la Guardia Costera, con capturas oficiales de Rockstar. Nueva edición visual del Short, sin inventar gameplay.",
+    "formatos": [
+      "short"
+    ],
+    "vigente_hasta": "2026-11-25",
+    "visuales_preferidos": [
+      "cal",
+      "cal",
+      "jason",
+      "cal",
+      "brian",
+      "cal"
+    ],
+    "revision_de_tema": "gta6-cal-hampton",
+    "tipo_revision": "reedicion_visual_con_capturas_oficiales"
+  },
+  {
     "id": "gta6-brian-heder",
     "titulo": "GTA VI: Brian Heder y su relación con Jason",
     "estado": "confirmado",
