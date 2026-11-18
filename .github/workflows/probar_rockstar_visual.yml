@@ -1,5 +1,7 @@
 name: "Píxel Feroz - Probar montaje con fotos reales GTA VI"
 
+# Validación de montaje real, sin servicios de IA ni publicación de vídeos.
+
 on:
   workflow_dispatch:
   push:
