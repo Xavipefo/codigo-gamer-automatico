@@ -54,7 +54,7 @@ jobs:
       - name: Descargar paquete de fotos, contacto y catálogo
         uses: actions/upload-artifact@v4
         with:
-          name: pixel-feroz-banco-rockstar-\${{ github.run_id }}
+          name: pixel-feroz-banco-rockstar-${{ github.run_id }}
           path: salida/revision_visual/
           retention-days: 14
           if-no-files-found: error
