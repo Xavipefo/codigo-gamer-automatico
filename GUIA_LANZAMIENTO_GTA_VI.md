@@ -1,5 +1,13 @@
 # Píxel Feroz — lanzamiento de GTA VI (17–22 noviembre de 2026)
 
+**Actualización de 18/11/2026:** la guía operativa vigente y el orden de
+producción están en [GUIA_ESTRENO_19_NOVIEMBRE.md](GUIA_ESTRENO_19_NOVIEMBRE.md).
+Los horarios anteriores de esta guía son históricos: el 19/11 hay Short extra
+a las **00:05**, cuatro Shorts a lo largo del día y un largo a las **22:00**.
+Los largos ya tienen capturas oficiales y montaje con subplanos; clips
+oficiales opcionales. Publicación pública siempre MANUAL.
+
+
 **Estado: infraestructura editorial preparada; NO equivale a 21 MP4 renderizados.**
 El canal solo sube vídeos **privados**. Los horarios son objetivos de
 PUBLICACIÓN MANUAL en YouTube Studio, no cronjobs de publicación pública.
