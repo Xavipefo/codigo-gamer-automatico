@@ -1,10 +1,15 @@
 name: "Píxel Feroz - 3. Producir lote de Shorts PRIVADOS (Ryan)"
 
 on:
+  # Única activación del lote de lanzamiento al editar este workflow.
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/lote_shorts_privados.yml"
   workflow_dispatch:
     inputs:
       cantidad:
-        description: "Número de Shorts nuevos verificados, entre 1 y 5"
+        description: "Número de Shorts nuevos verificados, entre 1 y 6"
         type: choice
         required: true
         default: "2"
@@ -14,6 +19,7 @@ on:
           - "3"
           - "4"
           - "5"
+          - "6"
 
 permissions:
   contents: write
@@ -92,7 +98,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PF_CLIPS_JSON: ${{ secrets.PF_CLIPS_JSON }}
           PF_IMAGENES_JSON: ${{ secrets.PF_IMAGENES_JSON }}
-          CANTIDAD: ${{ inputs.cantidad }}
+          CANTIDAD: ${{ inputs.cantidad || '6' }}
         run: python -u lote_shorts_privados.py --cantidad "$CANTIDAD"
 
       # Paquete único con mosaicos y fotos por cada tema producido en el lote.
