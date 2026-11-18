@@ -13,7 +13,7 @@ class TestLotePrivado(unittest.TestCase):
         with self.assertRaises(ValueError):
             lote.producir(0)
         with self.assertRaises(ValueError):
-            lote.producir(6)
+            lote.producir(7)
         with self.assertRaises(ValueError):
             lote.producir(-1)
 
