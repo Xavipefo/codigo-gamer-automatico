@@ -100,5 +100,15 @@
     "formato": "short",
     "fecha": "2026-11-18T11:55:46.183296+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "dg_HrQV6Lxo",
+    "url": "https://www.youtube.com/watch?v=dg_HrQV6Lxo",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-brian-heder",
+    "formato": "short",
+    "fecha": "2026-11-18T14:14:17.536782+00:00",
+    "miniatura_confirmada": true
   }
 ]
