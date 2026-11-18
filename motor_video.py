@@ -26,6 +26,8 @@ from video_material import descargar_clip, descargar_clips, overlay_clips
 from visuales_autorizados import descargar_imagenes, escena_con_foto
 from visuales_originales import crear_banco_original
 from graficos_gaming import tarjeta_gaming
+from rockstar_media import elegir_imagenes, BASE as ROCKSTAR_BASE
+from revision_visual import exportar_revision, anadir_fuente_descripcion
 
 BASE = Path(__file__).resolve().parent
 SALIDA = BASE / "salida"
@@ -269,8 +271,20 @@ def montar(plan, guion):
         imagenes_autorizadas = descargar_imagenes(
             plan["tema_id"], directorio / "imagenes_autorizadas"
         )
-        # Si no se aportan imágenes externas autorizadas, crear ilustraciones
-        # originales. No se presentan como capturas ni clips de GTA.
+        # Capturas oficiales, por escena, solo cuando se solicita este modo.
+        # Descargar/verificar el banco ANTES de comenzar la voz para evitar
+        # consumir minutos y producir únicamente tarjetas.
+        usa_rockstar = formato == "short" and os.environ.get("PF_ROCKSTAR_MEDIA") == "1"
+        fotos_rockstar = []
+        revision_escenas = []
+        if usa_rockstar:
+            fotos_rockstar = elegir_imagenes(plan, escenas)
+            imagenes_autorizadas = [(foto, credito) for foto, credito, _ in fotos_rockstar]
+            if len(imagenes_autorizadas) < len(escenas):
+                raise RuntimeError("El banco de Rockstar no cubre las escenas del Short")
+            print("Short con imágenes oficiales Rockstar:",len(imagenes_autorizadas),flush=True)
+        # Los largos siguen usando sus recursos originales con las restricciones
+        # previas; no se afirma que los fondos sintéticos sean gameplay.
         if not imagenes_autorizadas and formato == "largo":
             imagenes_autorizadas = crear_banco_original(
                 plan["tema_id"], directorio / "ilustraciones_originales"
@@ -307,9 +321,13 @@ def montar(plan, guion):
                     imagen, credito=recurso_clip["credito"]
                 )
             elif medio == "foto":
-                foto, credito = imagenes_autorizadas[
-                    (indice // 2) % len(imagenes_autorizadas)
-                ]
+                if usa_rockstar:
+                    foto, credito, titulo_foto = fotos_rockstar[indice]
+                else:
+                    foto, credito = imagenes_autorizadas[
+                        (indice // 2) % len(imagenes_autorizadas)
+                    ]
+                    titulo_foto = foto.stem
                 escena_con_foto(escena_visible, formato, foto, credito, imagen)
             elif formato == "short":
                 tarjeta_gaming(
@@ -322,6 +340,14 @@ def montar(plan, guion):
                     plan["titulo_propuesto"], imagen
                 )
 
+            if usa_rockstar:
+                revision_escenas.append({
+                    "pantalla": imagen,
+                    "medio": medio,
+                    "foto": foto if medio == "foto" else None,
+                    "credito": credito if medio == "foto" else "",
+                    "titulo": titulo_foto if medio == "foto" else ""
+                })
             clip = directorio / f"clip_{indice:03}.mp4"
             if clip.is_file() and validar_clip_checkpoint(
                 clip, duracion_escena, formato
@@ -410,9 +436,17 @@ def montar(plan, guion):
 
         crear_miniatura(plan.get("texto_miniatura", plan["titulo_propuesto"]),
                         formato, SALIDA / "miniatura.jpg")
+        if usa_rockstar:
+            if sum(x["medio"] in ("foto", "clip") for x in revision_escenas) < max(
+                1, len(revision_escenas)-1
+            ):
+                raise RuntimeError("Control visual: demasiadas tarjetas, no subir")
+            exportar_revision(SALIDA, revision_escenas, catalogo=True)
+            anadir_fuente_descripcion(SALIDA / "descripcion.txt")
+            print("Créditos oficiales añadidos a la descripción.",flush=True)
         print("Archivo:", salida, flush=True)
         print("Clips autorizados disponibles:", len(clips_autorizados), flush=True)
-        print("Imágenes autorizadas disponibles:", len(imagenes_autorizadas), flush=True)
+        print("Imágenes disponibles (origen comprobado):", len(imagenes_autorizadas), flush=True)
         print("Escenas por tipo visual:", visuales_usados, flush=True)
         print("Motor de voz:", narrador.proveedor, flush=True)
         print("Voz efectiva del vídeo:", narrador.voz_real, flush=True)
