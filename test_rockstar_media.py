@@ -36,7 +36,14 @@ class TestBancoOficial(unittest.TestCase):
             self.assertEqual(len({x[0] for x in fotos}),5)
             self.assertTrue(all(p.is_file() and credito==rockstar_media.CREDITO
                                 for p,credito,_ in fotos))
-            self.assertTrue(all("jason" in titulo.lower() for _,_,titulo in fotos))
+            # Evita los cuatro primeros planos consecutivos del mismo
+            # personaje aunque el tema lo mencione en todas las frases.
+            etiquetas = [rockstar_media.categoria(t) for _,_,t in fotos]
+            self.assertGreaterEqual(etiquetas.count("jason"), 2)
+            self.assertTrue(all(
+                not (etiquetas[i] == etiquetas[i+1] == etiquetas[i+2])
+                for i in range(len(etiquetas)-2)
+            ))
             self.assertEqual(len(rockstar_media.cargar_banco(base)["imagenes"]),16)
 
     def test_zip_malicioso_no_extrae_rutas_externas(self):
