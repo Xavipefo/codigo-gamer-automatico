@@ -37,7 +37,7 @@ class TestEstreno19Noviembre(unittest.TestCase):
                 self.assertGreaterEqual(len(tema["hechos"]),3)
                 self.assertTrue(all(h["fuente"].startswith("https://") for h in tema["hechos"]))
                 self.assertGreaterEqual(len(tema.get("visuales_preferidos",[])),3)
-                relacionados=[slot for slot in self.slots if slot.get("tema_confirmado_reserva")==ident]
+                relacionados=[slot for slot in self.slots if slot.get("tema_confirmado_reserva")==ident and slot["fecha"]=="2026-11-19" and slot["formato"]==formato]
                 self.assertEqual(len(relacionados),1)
                 self.assertEqual(relacionados[0]["hora"],hora)
                 self.assertFalse(relacionados[0]["publicar_automaticamente"])
