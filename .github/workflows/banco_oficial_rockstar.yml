@@ -36,10 +36,13 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .cache/rockstar
-          key: pixel-feroz-gta6-rockstar-screenshots-20261118-v1
+          key: pixel-feroz-gta6-rockstar-screenshots-20261118-v2
 
-      - name: Descargar imágenes originales del archivo oficial
-        run: python rockstar_media.py --preparar --revision
+      - name: Descargar capturas, extras y arte promocional
+        run: |
+          python rockstar_media.py --preparar
+          python rockstar_extras.py --preparar
+          python rockstar_media.py --revision
 
       - name: Preparar selección descargable para revisión
         run: |
