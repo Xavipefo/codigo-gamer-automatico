@@ -89,6 +89,16 @@ jobs:
           sudo apt-get install -y ffmpeg fonts-dejavu-core
           python -m pip install --disable-pip-version-check -r requirements.txt
 
+      - name: Comprobar fuentes y Python
+        # Los tests antiguos de Gemini/Azure verifican sus propias voces.
+        # El paso de PRODUCCIÓN volverá a usar PF_TTS_PROVIDER=qwen.
+        # Los tests Qwen activan el proveedor local dentro de su contexto.
+        env:
+          PF_TTS_PROVIDER: ""
+        run: |
+          python -m py_compile *.py
+          python -m unittest discover -s . -p 'test_*.py'
+
       - name: Bloquear largo sin banco visual cuando se exige calidad multimedia
         if: ${{ inputs.formato == 'largo' && inputs.exigir_multimedia }}
         env:
@@ -146,16 +156,6 @@ jobs:
           python -m pip install --no-cache-dir \
             "transformers==4.57.3" "accelerate==1.12.0" \
             librosa soundfile sox onnxruntime einops huggingface_hub
-
-      - name: Comprobar fuentes y Python
-        # Los tests antiguos de Gemini/Azure verifican sus propias voces.
-        # El paso de PRODUCCIÓN volverá a usar PF_TTS_PROVIDER=qwen.
-        # Los tests Qwen activan el proveedor local dentro de su contexto.
-        env:
-          PF_TTS_PROVIDER: ""
-        run: |
-          python -m py_compile *.py
-          python -m unittest discover -s . -p 'test_*.py'
 
       - name: Confirmar Gemini TTS para narración española
         if: ${{ inputs.motor_tts != 'qwen' }}
