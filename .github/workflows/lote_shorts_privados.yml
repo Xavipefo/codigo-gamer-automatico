@@ -52,6 +52,14 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y ffmpeg fonts-dejavu-core sox libsox-fmt-all libsndfile1
           python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Recuperar banco oficial de imágenes de GTA VI
+        uses: actions/cache@v4
+        with:
+          path: .cache/rockstar
+          key: pixel-feroz-gta6-rockstar-screenshots-20261118-v1
+      - name: Verificar 138 capturas oficiales antes de generar un lote
+        run: python rockstar_media.py --preparar --revision
+
       - name: Reusar pesos públicos de Qwen
         uses: actions/cache@v4
         with:
@@ -75,6 +83,7 @@ jobs:
       - name: Producir lote, controlar duplicados, subir PRIVADOS y registrar cada uno
         env:
           PF_TTS_PROVIDER: qwen
+          PF_ROCKSTAR_MEDIA: "1"
           PF_SUBIR_PRIVADO: "SI"
           YOUTUBE_OAUTH_JSON: ${{ secrets.YOUTUBE_OAUTH_JSON }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -82,3 +91,13 @@ jobs:
           PF_IMAGENES_JSON: ${{ secrets.PF_IMAGENES_JSON }}
           CANTIDAD: ${{ inputs.cantidad }}
         run: python -u lote_shorts_privados.py --cantidad "$CANTIDAD"
+
+      # Paquete único con mosaicos y fotos por cada tema producido en el lote.
+      - name: Descargar imágenes de revisión del lote
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: pixel-feroz-lote-imagenes-${{ github.run_id }}
+          path: lote_revision/
+          retention-days: 14
+          if-no-files-found: warn
