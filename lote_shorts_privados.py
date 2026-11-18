@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prepara hasta cinco Shorts verificados de forma SECUENCIAL y PRIVADA.
+"""Prepara hasta seis Shorts verificados de forma SECUENCIAL y PRIVADA.
 
 Reutiliza una sola instalación de dependencias por lote (no reentrena
 Qwen); cada Short se graba y confirma de manera independiente.
@@ -45,17 +45,40 @@ def estado_youtube():
 
 
 def registrar_y_guardar(video):
-    ejecutar(sys.executable, "registrar_subida.py")
-    ejecutar("git", "add", "historial_publicados.json")
-    ejecutar("git", "commit", "-m", "chore: registrar Short PRIVADO " + video["tema_id"])
-    ejecutar("git", "push")
-    print("Registrado en GitHub sin duplicar:", video["tema_id"], flush=True)
+    """Actualiza el historial desde main, sin repetir una subida ya confirmada."""
+    for intento in range(5):
+        ejecutar("git", "fetch", "origin", "main")
+        ejecutar("git", "checkout", "-B", "registro-lote", "FETCH_HEAD")
+        ejecutar(sys.executable, "registrar_subida.py")
+        ejecutar("git", "add", "historial_publicados.json")
+        sin_cambios = subprocess.run(
+            ["git", "diff", "--cached", "--quiet"], cwd=BASE,
+            check=False
+        ).returncode == 0
+        if sin_cambios:
+            print("Short ya registrado:", video["tema_id"], flush=True)
+            return
+        ejecutar("git", "commit", "-m",
+                "chore: registrar Short PRIVADO " + video["tema_id"])
+        resultado = subprocess.run(
+            ["git", "push", "origin", "HEAD:main"],
+            cwd=BASE, check=False
+        )
+        if resultado.returncode == 0:
+            print("Registrado en GitHub sin duplicar:", video["tema_id"], flush=True)
+            return
+        print("GitHub cambió durante el registro. Reintentando sin subir otro MP4.",
+              flush=True)
+    raise RuntimeError(
+        "Short YA SUBIDO en privado; no volver a producir: "
+        + video["video_id"] + ". Hay que registrar su ID."
+    )
 
 
 def producir(cantidad, lanzar=ejecutar):
     cantidad = int(cantidad)
-    if not 1 <= cantidad <= 5:
-        raise ValueError("El lote solo admite de uno a cinco Shorts")
+    if not 1 <= cantidad <= 6:
+        raise ValueError("El lote solo admite de uno a seis Shorts")
     comprobar_configuracion()
     resultados = []
     for indice in range(cantidad):
