@@ -28,6 +28,8 @@ from visuales_originales import crear_banco_original
 from graficos_gaming import tarjeta_gaming
 from rockstar_media import elegir_imagenes, BASE as ROCKSTAR_BASE
 from revision_visual import exportar_revision, anadir_fuente_descripcion
+from rockstar_clips import cargar as cargar_clips_rockstar
+from montaje_rockstar import elegir_tomas, rotulo_editorial, crear_preview, renderizar
 
 BASE = Path(__file__).resolve().parent
 SALIDA = BASE / "salida"
@@ -274,17 +276,32 @@ def montar(plan, guion):
         # Capturas oficiales, por escena, solo cuando se solicita este modo.
         # Descargar/verificar el banco ANTES de comenzar la voz para evitar
         # consumir minutos y producir únicamente tarjetas.
-        usa_rockstar = formato == "short" and os.environ.get("PF_ROCKSTAR_MEDIA") == "1"
+        usa_rockstar = (
+            os.environ.get("PF_ROCKSTAR_MEDIA") == "1"
+            and plan["tema_id"].startswith("gta6")
+        )
         fotos_rockstar = []
         revision_escenas = []
+        usa_clips_rockstar = False
         if usa_rockstar:
-            fotos_rockstar = elegir_imagenes(plan, escenas)
-            imagenes_autorizadas = [(foto, credito) for foto, credito, _ in fotos_rockstar]
+            escenas_elegir = (
+                [escena for escena in escenas for _ in range(12)]
+                if formato == "largo" else escenas
+            )
+            fotos_rockstar = elegir_imagenes(plan, escenas_elegir)
+            imagenes_autorizadas = [
+                (foto, credito) for foto, credito, _ in fotos_rockstar
+            ]
             if len(imagenes_autorizadas) < len(escenas):
-                raise RuntimeError("El banco de Rockstar no cubre las escenas del Short")
-            print("Short con imágenes oficiales Rockstar:",len(imagenes_autorizadas),flush=True)
-        # Los largos siguen usando sus recursos originales con las restricciones
-        # previas; no se afirma que los fondos sintéticos sean gameplay.
+                raise RuntimeError("El banco oficial no cubre las escenas del vídeo")
+            if formato == "largo" and os.environ.get("PF_ROCKSTAR_CLIPS") == "1":
+                oficiales = cargar_clips_rockstar()
+                if oficiales and not clips_autorizados:
+                    clips_autorizados = oficiales
+                    usa_clips_rockstar = True
+            print("Capturas oficiales disponibles:",len(imagenes_autorizadas),
+                  "| clips oficiales:",len(clips_autorizados),flush=True)
+        # Si el modo oficial está apagado, conservar el motor anterior.
         if not imagenes_autorizadas and formato == "largo":
             imagenes_autorizadas = crear_banco_original(
                 plan["tema_id"], directorio / "ilustraciones_originales"
@@ -300,6 +317,38 @@ def montar(plan, guion):
             # Exactamente un número entero de fotogramas por escena.
             fotogramas = max(1, int(math.ceil((duracion_audio + 0.22) * fps)))
             duracion_escena = fotogramas / fps
+            if usa_rockstar and formato == "largo":
+                # Una narración de 30–50 s no mantiene una foto estática:
+                # se divide en subplanos de hasta siete segundos sin
+                # multiplicar peticiones TTS ni alterar el audio generado.
+                fotos_escena = fotos_rockstar[indice*12:(indice+1)*12]
+                tomas = elegir_tomas(fotos_escena, clips_autorizados,
+                                    fotogramas, indice)
+                capa = rotulo_editorial(
+                    escena, directorio / f"rotulo_{indice:03}.png"
+                )
+                clip_escena = directorio / f"clip_{indice:03}.mp4"
+                for j, toma in enumerate(tomas):
+                    previo = crear_preview(
+                        toma, capa, directorio / f"previo_{indice:03}_{j:02}.jpg"
+                    )
+                    revision_escenas.append({
+                        "pantalla": previo,
+                        "medio": toma["tipo"],
+                        "foto": toma["ruta"] if toma["tipo"] == "foto" else None,
+                        "credito": toma["credito"],
+                        "titulo": toma["titulo"]
+                    })
+                    visuales_usados[toma["tipo"]] += 1
+                if not (
+                    clip_escena.is_file() and validar_clip_checkpoint(
+                        clip_escena, duracion_escena, formato
+                    )
+                ):
+                    renderizar(tomas, capa, audio, clip_escena, comando)
+                clips.append(clip_escena)
+                duracion_total += duracion_escena
+                continue
             medio = seleccionar_medio(
                 indice, escena["tipo"],
                 len(clips_autorizados), len(imagenes_autorizadas)
@@ -449,7 +498,10 @@ def montar(plan, guion):
             ):
                 raise RuntimeError("Control visual: demasiadas tarjetas, no subir")
             exportar_revision(SALIDA, revision_escenas, catalogo=True)
-            anadir_fuente_descripcion(SALIDA / "descripcion.txt")
+            anadir_fuente_descripcion(
+                SALIDA / "descripcion.txt",
+                incluir_clips=any(x["medio"] == "clip" for x in revision_escenas)
+            )
             print("Créditos oficiales añadidos a la descripción.",flush=True)
         print("Archivo:", salida, flush=True)
         print("Clips autorizados disponibles:", len(clips_autorizados), flush=True)
