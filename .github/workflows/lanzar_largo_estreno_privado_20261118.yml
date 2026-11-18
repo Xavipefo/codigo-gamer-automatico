@@ -1,0 +1,22 @@
+name: "Píxel Feroz - Largo GTA VI estreno 00:20 privado (ejecución única)"
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/lanzar_largo_estreno_privado_20261118.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  largo-estreno:
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: largo
+      tema: gta6-ya-se-puede-jugar-0020-largo
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
