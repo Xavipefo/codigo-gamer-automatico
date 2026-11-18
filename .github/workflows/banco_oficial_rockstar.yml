@@ -46,11 +46,11 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           from shutil import copyfile
-          from rockstar_media import cargar_banco, BASE
+          from rockstar_media import cargar_banco, muestra_equilibrada, BASE
           carpeta = Path("salida/revision_visual/imagenes_oficiales")
           carpeta.mkdir(parents=True, exist_ok=True)
           datos = cargar_banco()
-          for numero, recurso in enumerate(datos["imagenes"][:36], 1):
+          for numero, recurso in enumerate(muestra_equilibrada(datos["imagenes"], 36), 1):
               origen = BASE / recurso["archivo"]
               copyfile(origen, carpeta / f'{numero:03d}_{origen.name}')
           print("Imágenes descargables:", len(list(carpeta.glob("*.jpg"))))
