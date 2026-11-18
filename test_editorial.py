@@ -55,9 +55,9 @@ class TestEditorial(unittest.TestCase):
             ]), encoding="utf-8")
             with patch.object(editorial, "HISTORIAL", hist):
                 proximo = editorial.seleccionado("", "short")
-                self.assertEqual(proximo["id"], "gta6-30fps-ps5pro")
+                self.assertEqual(proximo["id"], "gta6-estreno-espana-0005")
                 largo = editorial.seleccionado("", "largo")
-                self.assertEqual(largo["id"], "gta6-jason-lucia")
+                self.assertEqual(largo["id"], "gta6-estreno-resumen-oficial-largo")
 
     def test_descripcion_general_y_suscripcion(self):
         tema = editorial.cargar_elegibles()[0]
