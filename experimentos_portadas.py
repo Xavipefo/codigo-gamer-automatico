@@ -89,40 +89,11 @@ def _fondo(imagen, variante, colores):
                             radius=18, outline=acento, width=4)
 
 
-def crear_portada(texto, variante, formato, destino):
-    w, h = (1280, 720) if formato == "largo" else (720, 1280)
-    imagen = Image.new("RGB", (w, h))
-    colores = PALETAS[variante]
-    _fondo(imagen, variante, colores)
-    d = ImageDraw.Draw(imagen)
-    _, acento, blanco = colores
-    d.text((int(w*.09), int(h*.12)), "PÍXEL FEROZ",
-           font=fuente(37 if formato == "largo" else 29, True), fill=acento)
-    d.text((int(w*.09), int(h*.22)), "GTA VI",
-           font=fuente(74 if formato == "largo" else 60, True), fill=blanco)
-    original = titulo_corto(texto).upper()
-    ancho = int(w*.77)
-    max_lineas = 3 if formato == "largo" else 5
-    for tam in range(68 if formato == "largo" else 54, 27, -2):
-        f = fuente(tam, True)
-        lineas = partir_lineas(d, original, f, ancho)
-        if len(lineas) <= max_lineas:
-            break
-    linea = int(tam * 1.26)
-    y = int(h*.40)
-    for una in lineas:
-        if y + linea >= int(h*.86):
-            break
-        d.text((int(w*.09), y), una, font=f, fill=blanco)
-        y += linea
-    d.text((int(w*.09), int(h*.86)),
-           SUBTITULOS[variante],
-           font=fuente(25 if formato == "largo" else 28, True), fill=acento)
-    destino.parent.mkdir(parents=True, exist_ok=True)
-    imagen.save(destino, format="JPEG", quality=88, optimize=True)
-    if destino.stat().st_size > 2_000_000:
-        raise RuntimeError("Miniatura A/B supera 2 MB")
-    return destino
+def crear_portada(texto, variante, formato, destino, plan=None):
+    """Tres composiciones con captura real y colores neón GTA VI."""
+    from portadas_gta_neon import crear_portada_gta
+    return crear_portada_gta(plan or {}, texto, formato, destino, variante=variante)
+
 
 
 def generar(plan, tema, directorio):
@@ -130,13 +101,18 @@ def generar(plan, tema, directorio):
     alternativas = titulos_originales(plan, tema)
     directorio.mkdir(parents=True, exist_ok=True)
     etiquetas = ("a", "b", "c")
+    opciones = tema.get("miniatura_opciones", [])
+    if opciones and (not isinstance(opciones, list) or len(opciones) != 3):
+        raise ValueError("Se requieren tres titulares cortos de portada")
+    base = tema.get("texto_miniatura", plan["titulo_propuesto"])
+    rotulos = opciones if opciones else [base, "GTA VI EN DETALLE", "LOS HECHOS"]
+    estilo = dict(plan)
+    estilo["portada_paleta"] = tema.get("portada_paleta", plan.get("portada_paleta", "fucsia"))
+    estilo["portada_categoria"] = tema.get("portada_categoria", plan.get("portada_categoria"))
+    estilo["visuales_preferidos"] = tema.get("visuales_preferidos", plan.get("visuales_preferidos", []))
     for i, letra in enumerate(etiquetas):
-        rotulo = tema.get("texto_miniatura", plan["titulo_propuesto"])
-        if i == 1:
-            rotulo = "CLAVES DE " + tema["titulo"].replace("GTA VI:", "").strip()
-        elif i == 2:
-            rotulo = tema["titulo"]
-        crear_portada(rotulo, i, formato, directorio / f"miniatura_{letra}.jpg")
+        crear_portada(rotulos[i], i, formato,
+                      directorio / f"miniatura_{letra}.jpg", plan=estilo)
     datos = {
         "tema_id": plan["tema_id"],
         "formato": formato,
