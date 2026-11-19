@@ -230,5 +230,15 @@
     "formato": "short",
     "fecha": "2026-11-19T10:10:34.524596+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "dN58XrAxHN0",
+    "url": "https://www.youtube.com/watch?v=dN58XrAxHN0",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-raul-bautista",
+    "formato": "short",
+    "fecha": "2026-11-19T13:21:54.747967+00:00",
+    "miniatura_confirmada": true
   }
 ]
