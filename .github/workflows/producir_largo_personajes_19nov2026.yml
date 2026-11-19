@@ -1,0 +1,19 @@
+name: "Píxel Feroz - Largo personajes secundarios 19/11 14:30 PRIVADO"
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/producir_largo_personajes_19nov2026.yml"
+permissions:
+  contents: write
+jobs:
+  generar-personajes:
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: largo
+      tema: gta6-personajes-secundarios
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
