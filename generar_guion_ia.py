@@ -179,25 +179,81 @@ def construir_prompt(tema, formato):
     )
 
 
+def repartir_escenas_largas(escenas, objetivo=9):
+    """Reorganiza pausas sin alterar, inventar ni resumir el guion de Gemini.
+
+    Las respuestas de Gemini pueden traer 8 o 12 escenas aunque tengan una
+    narración suficiente. Redistribuimos el texto conservando el orden de las
+    palabras. No modifica hechos, cifras ni contenido: solo dónde cortar.
+    """
+    if not 4 <= len(escenas) <= 18:
+        raise ValueError("Gemini entregó una estructura de escenas irreparable")
+    fragmentos = []
+    for escena in escenas:
+        fragmentos.extend(
+            parte for parte in re.split(r"(?<=[.!?])\\s+", escena)
+            if parte.strip()
+        )
+    while len(fragmentos) < objetivo:
+        indice = max(range(len(fragmentos)),
+                     key=lambda n: len(fragmentos[n].split()))
+        palabras = fragmentos[indice].split()
+        if len(palabras) < 24:
+            raise ValueError("No se pueden dividir escenas demasiado breves")
+        punto = len(palabras) // 2
+        fragmentos[indice:indice+1] = [
+            " ".join(palabras[:punto]), " ".join(palabras[punto:])
+        ]
+    grupos = []
+    pos = 0
+    for numero in range(objetivo):
+        pendientes = objetivo - numero
+        if pendientes == 1:
+            grupos.append(" ".join(fragmentos[pos:]))
+            break
+        max_fin = len(fragmentos) - (pendientes - 1)
+        palabras_restantes = sum(len(s.split()) for s in fragmentos[pos:])
+        meta = palabras_restantes / pendientes
+        acumulado = 0
+        mejor_fin = pos + 1
+        error = float("inf")
+        for fin in range(pos+1, max_fin+1):
+            acumulado += len(fragmentos[fin-1].split())
+            distancia = abs(acumulado - meta)
+            if distancia < error:
+                mejor_fin, error = fin, distancia
+        grupos.append(" ".join(fragmentos[pos:mejor_fin]))
+        pos = mejor_fin
+    if len(grupos) != objetivo or any(not g.strip() for g in grupos):
+        raise ValueError("No se pudo reorganizar el guion largo")
+    return grupos
+
+
 def normalizar_escenas(datos, tema, formato):
     if not isinstance(datos, list) or not all(
         isinstance(x, str) and x.strip() for x in datos
     ):
         raise ValueError("Escenas no válidas")
-    minesc, maxesc = (5, 7) if formato == "short" else (9, 11)
-    if not minesc <= len(datos) <= maxesc:
-        raise ValueError("Número de escenas narradas fuera de rango")
     escenas = [texto_plano(s) for s in datos]
-    todo = " ".join(escenas)
-    # Añadimos la CTA exactamente una vez al final, incluso si el modelo
-    # la omitió o la escribió alterada. La versión exacta es la aprobada.
-    if CTA_SUSCRIPCION not in escenas[-1]:
-        if CTA_SUSCRIPCION in todo:
-            escenas = [s.replace(CTA_SUSCRIPCION, "").strip() for s in escenas]
-        escenas[-1] = (escenas[-1] + " " + CTA_SUSCRIPCION).strip()
+    if formato == "short":
+        if not 5 <= len(escenas) <= 7:
+            raise ValueError("Número de escenas narradas fuera de rango")
+    else:
+        # Gemini a menudo devuelve 8 o 12 escenas con texto válido. No
+        # descartamos una narración íntegra solo por sus límites de escena.
+        if not 9 <= len(escenas) <= 11:
+            escenas = repartir_escenas_largas(escenas)
+    # La CTA aprobada va al final y se presenta exactamente una vez.
+    escenas = [s.replace(CTA_SUSCRIPCION, "").strip() for s in escenas]
+    if any(not s for s in escenas):
+        raise ValueError("Gemini devolvió una escena vacía")
+    escenas[-1] = (escenas[-1] + " " + CTA_SUSCRIPCION).strip()
     todo = " ".join(escenas)
     palabras = len(todo.split())
-    limites = (70, 125) if formato == "short" else (1100, 1900)
+    # Un guion de 1053 palabras ya supera ampliamente un Short. Evitamos
+    # repetir una generación completa por desviarse un ~4% del mínimo
+    # anterior, manteniendo el límite superior y todas las comprobaciones.
+    limites = (70, 125) if formato == "short" else (1000, 1900)
     if not limites[0] <= palabras <= limites[1]:
         raise ValueError(
             f"Guion de {palabras} palabras fuera de {limites}"
