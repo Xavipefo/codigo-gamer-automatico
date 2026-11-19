@@ -84,6 +84,26 @@ class TestEditorial(unittest.TestCase):
                         "tema_id": ident, "formato": "short", "estado": "subido"
                     })
 
+    def test_proximo_largo_del_viernes_no_es_resumen_de_reserva(self):
+        usados = [
+            "gta6-ya-se-puede-jugar-0020-largo",
+            "gta6-jason-lucia",
+            "gta6-vice-city-leonida",
+            "gta6-personajes-secundarios",
+            "gta6-tecnologia-plataformas",
+        ]
+        with tempfile.TemporaryDirectory() as tmp:
+            hist = Path(tmp) / "hist.json"
+            hist.write_text(json.dumps([
+                {"tema_id": tema, "formato": "largo", "estado": "subido"}
+                for tema in usados
+            ]), encoding="utf-8")
+            with patch.object(editorial, "HISTORIAL", hist):
+                tema = editorial.seleccionado("", "largo")
+            self.assertEqual(tema["id"], "gta6-seis-regiones-leonida-20261120")
+            self.assertEqual(tema["portada_categoria"], "vice")
+            self.assertEqual(tema["portada_paleta"], "cian")
+
     def test_descripcion_general_y_suscripcion(self):
         tema = editorial.cargar_elegibles()[0]
         guion, descripcion, plan = editorial.preparar_plan(tema, "short")
