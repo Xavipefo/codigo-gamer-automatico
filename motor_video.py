@@ -169,28 +169,13 @@ def imagen_horizontal(escena, i, total, titulo, ruta):
     img.save(ruta)
 
 
-def crear_miniatura(titulo, formato, ruta):
-    w,h=(1280,720) if formato=="largo" else (720,1280)
-    img=Image.new("RGB",(w,h),(8,14,29))
-    d=ImageDraw.Draw(img)
-    d.rounded_rectangle((30,30,w-30,h-30),radius=35,outline=(45,232,218),width=8)
-    d.text((64,55),"PÍXEL FEROZ",font=fuente(35,True),fill=(59,232,223))
-    tam=78 if formato=="largo" else 54
-    maximo=w-140
-    while tam>=28:
-        f=fuente(tam,True)
-        lineas=partir_lineas(d,titulo.upper(),f,maximo)
-        if len(lineas)*int(tam*1.35) < h*0.55:
-            break
-        tam-=4
-    paso=int(tam*1.35)
-    y=h/2-len(lineas)*paso/2
-    for linea in lineas:
-        d.text((70,int(y)),linea,font=f,fill=(255,252,255))
-        y+=paso
-    d.text((70,h-100),"VIDEOJUEGOS · NOVEDADES VERIFICADAS",
-           font=fuente(22),fill=(255,99,169))
-    img.save(ruta,quality=92,optimize=True)
+def crear_miniatura(titulo, formato, ruta, plan=None):
+    """Miniatura con foto oficial GTA VI si está disponible y acentos neón.
+
+    La ausencia del banco no se disfraza con una foto falsa: fondo original.
+    """
+    from portadas_gta_neon import crear_portada_gta
+    return crear_portada_gta(plan or {}, titulo, formato, ruta)
 
 
 
@@ -493,7 +478,7 @@ def montar(plan, guion):
             raise RuntimeError("MP4 vacío o incompleto")
 
         crear_miniatura(plan.get("texto_miniatura", plan["titulo_propuesto"]),
-                        formato, SALIDA / "miniatura.jpg")
+                        formato, SALIDA / "miniatura.jpg", plan=plan)
         if usa_rockstar:
             if sum(x["medio"] in ("foto", "clip") for x in revision_escenas) < max(
                 1, len(revision_escenas)-1
