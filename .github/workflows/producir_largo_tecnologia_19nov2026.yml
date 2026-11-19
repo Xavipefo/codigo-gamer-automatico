@@ -1,0 +1,19 @@
+name: "Píxel Feroz - Largo tecnologia y FPS 19/11 22:00 PRIVADO"
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/producir_largo_tecnologia_19nov2026.yml"
+permissions:
+  contents: write
+jobs:
+  generar-tecnologia:
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: largo
+      tema: gta6-tecnologia-plataformas
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
