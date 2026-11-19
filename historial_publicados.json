@@ -260,5 +260,15 @@
     "formato": "short",
     "fecha": "2026-11-19T19:12:30.929085+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "k3RRuputFl4",
+    "url": "https://www.youtube.com/watch?v=k3RRuputFl4",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-seis-regiones-leonida-20261120",
+    "formato": "largo",
+    "fecha": "2026-11-19T21:58:27.886844+00:00",
+    "miniatura_confirmada": true
   }
 ]
