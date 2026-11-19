@@ -140,23 +140,6 @@ jobs:
             echo "::warning::No se pudieron preparar los clips oficiales; el largo se montará con capturas verificadas."
           fi
 
-      - name: Restaurar pesos públicos de Qwen3-TTS Ryan
-        if: ${{ inputs.motor_tts == 'qwen' }}
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.HF_HOME }}/hub
-          key: pixel-feroz-qwen3tts-${{ runner.os }}-ligero-12hz-v1
-
-      - name: Instalar narrador local Qwen3-TTS (CPU, sin API)
-        if: ${{ inputs.motor_tts == 'qwen' }}
-        run: |
-          sudo apt-get install -y sox libsox-fmt-all libsndfile1
-          python -m pip install --no-cache-dir --index-url https://download.pytorch.org/whl/cpu torch torchaudio
-          python -m pip install --no-cache-dir "qwen-tts==0.1.1" --no-deps
-          python -m pip install --no-cache-dir \
-            "transformers==4.57.3" "accelerate==1.12.0" \
-            librosa soundfile sox onnxruntime einops huggingface_hub
-
       - name: Confirmar Gemini TTS para narración española
         if: ${{ inputs.motor_tts != 'qwen' }}
         env:
@@ -188,6 +171,23 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           FORMATO: ${{ inputs.formato }}
         run: python generar_guion_ia.py --formato "$FORMATO"
+
+      - name: Restaurar pesos públicos de Qwen3-TTS Ryan
+        if: ${{ inputs.motor_tts == 'qwen' }}
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.HF_HOME }}/hub
+          key: pixel-feroz-qwen3tts-${{ runner.os }}-ligero-12hz-v1
+
+      - name: Instalar narrador local Qwen3-TTS (CPU, sin API)
+        if: ${{ inputs.motor_tts == 'qwen' }}
+        run: |
+          sudo apt-get install -y sox libsox-fmt-all libsndfile1
+          python -m pip install --no-cache-dir --index-url https://download.pytorch.org/whl/cpu torch torchaudio
+          python -m pip install --no-cache-dir "qwen-tts==0.1.1" --no-deps
+          python -m pip install --no-cache-dir \
+            "transformers==4.57.3" "accelerate==1.12.0" \
+            librosa soundfile sox onnxruntime einops huggingface_hub
 
       - name: Generar narración en español, gráficos y MP4
         env:
