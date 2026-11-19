@@ -1,0 +1,19 @@
+name: "Píxel Feroz - Short ediciones GTA VI 19/11 20:00 PRIVADO"
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/lanzar_short_ediciones_19nov2026.yml"
+permissions:
+  contents: write
+jobs:
+  generar-short-ediciones:
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      tema: gta6-estreno-ediciones
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
