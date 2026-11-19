@@ -57,7 +57,7 @@ class TestEditorial(unittest.TestCase):
                 proximo = editorial.seleccionado("", "short")
                 self.assertEqual(proximo["id"], "gta6-raul-bautista")
                 largo = editorial.seleccionado("", "largo")
-                self.assertEqual(largo["id"], "gta6-ya-se-puede-jugar-0020-largo")
+                self.assertEqual(largo["id"], "gta6-seis-regiones-leonida-20261120")
 
     def test_cola_manual_shorts_viernes_20_y_miniaturas(self):
         previstos = [
