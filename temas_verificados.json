@@ -962,11 +962,27 @@
         "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
       }
     ],
-    "prioridad": 50,
-    "texto_miniatura": "NEGOCIOS EN VICE CITY",
+    "prioridad": 15,
+    "texto_miniatura": "NEGOCIOS DE BOOBIE",
     "descripcion_personalizada": "Estas son las actividades descritas por Rockstar para Boobie Ike",
     "formatos": [
       "short"
+    ],
+    "publicacion_objetivo": "2026-11-20T18:00:00+01:00",
+    "publicacion_manual_desde": "2026-11-20T18:00:00+01:00",
+    "portada_paleta": "fucsia",
+    "portada_categoria": "boobie",
+    "miniatura_opciones": [
+      "NEGOCIOS DE BOOBIE",
+      "BOOBIE IKE",
+      "DINERO EN VICE CITY"
+    ],
+    "visuales_preferidos": [
+      "boobie",
+      "boobie",
+      "vice",
+      "drequan",
+      "boobie"
     ]
   },
   {
@@ -990,11 +1006,27 @@
         "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
       }
     ],
-    "prioridad": 50,
-    "texto_miniatura": "EL MUNDO MUSICAL",
+    "prioridad": 16,
+    "texto_miniatura": "REAL DIMEZ",
     "descripcion_personalizada": "Conocemos a Dre'Quan, su sello y el dúo Real Dimez según las fichas oficiales",
     "formatos": [
       "short"
+    ],
+    "publicacion_objetivo": "2026-11-20T21:00:00+01:00",
+    "publicacion_manual_desde": "2026-11-20T21:00:00+01:00",
+    "portada_paleta": "violeta",
+    "portada_categoria": "real",
+    "miniatura_opciones": [
+      "REAL DIMEZ",
+      "MÚSICA EN GTA VI",
+      "EL DÚO DE LEONIDA"
+    ],
+    "visuales_preferidos": [
+      "real",
+      "drequan",
+      "real",
+      "vice",
+      "real"
     ]
   },
   {
@@ -1018,11 +1050,27 @@
         "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
       }
     ],
-    "prioridad": 50,
-    "texto_miniatura": "RAUL BAUTISTA",
+    "prioridad": 14,
+    "texto_miniatura": "RAUL: EL ATRACADOR",
     "descripcion_personalizada": "Lo confirmado sobre Raul Bautista y sus operaciones",
     "formatos": [
       "short"
+    ],
+    "publicacion_objetivo": "2026-11-20T13:00:00+01:00",
+    "publicacion_manual_desde": "2026-11-20T13:00:00+01:00",
+    "portada_paleta": "amarillo",
+    "portada_categoria": "raul",
+    "miniatura_opciones": [
+      "RAUL: EL ATRACADOR",
+      "¿QUIÉN ES RAUL?",
+      "ATRACOS EN LEONIDA"
+    ],
+    "visuales_preferidos": [
+      "raul",
+      "raul",
+      "duo",
+      "vice",
+      "raul"
     ]
   },
   {
@@ -1107,6 +1155,90 @@
     "descripcion_personalizada": "Sin spoilers ni finales inventados, repasamos su sinopsis oficial",
     "formatos": [
       "short"
+    ]
+  },
+  {
+    "id": "gta6-seis-regiones-leonida-20261120",
+    "titulo": "GTA VI: las 6 regiones oficiales de Leonida, explicadas sin spoilers",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-19",
+    "gancho": "Vice City es solo una parte del mundo de GTA VI: Rockstar ya ha presentado seis zonas distintas de Leonida",
+    "contexto": "Recorrido visual por cada región mostrada oficialmente, comparando ambientes y lugares sin inventar mecánicas ni tamaños de mapa",
+    "hechos": [
+      {
+        "texto": "Vice City es una de las principales localizaciones anunciadas del estado ficticio de Leonida",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Rockstar presenta los Cayos de Leonida como una de las regiones diferenciadas del juego",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "La presentación oficial incluye la región de Grassrivers entre los escenarios de Leonida",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Port Gellhorn es otra de las localizaciones oficiales identificadas en la guía de Rockstar",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Ambrosia aparece dentro de las regiones de Leonida presentadas por Rockstar",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Mount Kalaga también figura en la presentación oficial de lugares de GTA VI",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "La página oficial de GTA VI incluye imágenes de sus ciudades, paisajes y personajes",
+        "fuente": "https://www.rockstargames.com/VI/media"
+      },
+      {
+        "texto": "Las imágenes oficiales muestran escenarios diferentes, pero no permiten cuantificar por sí solas el tamaño total del mapa",
+        "fuente": "https://www.rockstargames.com/VI/media"
+      }
+    ],
+    "formatos": [
+      "largo"
+    ],
+    "esquema_largo": [
+      "Por qué Leonida es más que Vice City: presentación factual sin spoilers ni suposiciones",
+      "Vice City: ambiente urbano, calles, playas y material visual publicado",
+      "Los Cayos de Leonida: sus escenarios a partir de imágenes confirmadas",
+      "Grassrivers: contrastes ambientales que muestran las capturas oficiales",
+      "Port Gellhorn: detalles visibles y límites de lo que se ha explicado",
+      "Ambrosia: características del escenario en la documentación de Rockstar",
+      "Mount Kalaga: otra región confirmada y sus imágenes oficiales",
+      "Qué tienen en común las seis regiones y qué las diferencia visualmente",
+      "Qué NO sabemos aún: tamaño del mapa, mecánicas y rutas no verificadas",
+      "Recorrido final por imágenes oficiales de Leonida y conclusiones sin spoilers"
+    ],
+    "texto_miniatura": "6 ZONAS DE LEONIDA",
+    "miniatura_opciones": [
+      "6 ZONAS DE LEONIDA",
+      "VICE CITY Y MÁS",
+      "EL MUNDO DE GTA"
+    ],
+    "portada_paleta": "cian",
+    "portada_categoria": "vice",
+    "visuales_preferidos": [
+      "vice",
+      "leonida",
+      "grassrivers",
+      "port",
+      "ambrosia",
+      "kalaga",
+      "vice",
+      "artwork"
+    ],
+    "prioridad": 17,
+    "publicacion_objetivo": "2026-11-20T22:00:00+01:00",
+    "publicacion_manual_desde": "2026-11-20T22:00:00+01:00",
+    "descripcion_personalizada": "Visitamos las seis zonas del mundo de Leonida presentadas oficialmente por Rockstar, utilizando sus capturas y sin introducir rumores ni spoilers.",
+    "titulos_experimento": [
+      "GTA VI: estas son las 6 regiones oficiales de Leonida",
+      "Vice City y más: exploramos las seis zonas de GTA VI",
+      "Cómo es Leonida: guía visual de los lugares oficiales de GTA VI"
     ]
   }
 ]
