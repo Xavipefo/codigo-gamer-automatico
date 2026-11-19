@@ -250,5 +250,15 @@
     "formato": "short",
     "fecha": "2026-11-19T18:28:33.823651+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "gHkFP7w3Pik",
+    "url": "https://www.youtube.com/watch?v=gHkFP7w3Pik",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-drequan-real-dimez",
+    "formato": "short",
+    "fecha": "2026-11-19T19:12:30.929085+00:00",
+    "miniatura_confirmada": true
   }
 ]
