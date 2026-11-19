@@ -55,9 +55,34 @@ class TestEditorial(unittest.TestCase):
             ]), encoding="utf-8")
             with patch.object(editorial, "HISTORIAL", hist):
                 proximo = editorial.seleccionado("", "short")
-                self.assertEqual(proximo["id"], "gta6-estreno-espana-0005")
+                self.assertEqual(proximo["id"], "gta6-raul-bautista")
                 largo = editorial.seleccionado("", "largo")
                 self.assertEqual(largo["id"], "gta6-ya-se-puede-jugar-0020-largo")
+
+    def test_cola_manual_shorts_viernes_20_y_miniaturas(self):
+        previstos = [
+            ("gta6-raul-bautista", "amarillo", "raul"),
+            ("gta6-boobie-ike", "fucsia", "boobie"),
+            ("gta6-drequan-real-dimez", "violeta", "real"),
+        ]
+        with tempfile.TemporaryDirectory() as tmp:
+            historial = Path(tmp) / "historial.json"
+            usados = []
+            with patch.object(editorial, "HISTORIAL", historial):
+                for ident, paleta, categoria in previstos:
+                    historial.write_text(json.dumps(usados), encoding="utf-8")
+                    tema = editorial.seleccionado("", "short")
+                    self.assertEqual(tema["id"], ident)
+                    self.assertEqual(tema["portada_paleta"], paleta)
+                    self.assertEqual(tema["portada_categoria"], categoria)
+                    self.assertIn("short", tema["formatos"])
+                    _, _, plan = editorial.preparar_plan(tema, "short")
+                    self.assertEqual(plan["portada_paleta"], paleta)
+                    self.assertEqual(plan["portada_categoria"], categoria)
+                    self.assertFalse(plan["publicacion_automatica"])
+                    usados.append({
+                        "tema_id": ident, "formato": "short", "estado": "subido"
+                    })
 
     def test_descripcion_general_y_suscripcion(self):
         tema = editorial.cargar_elegibles()[0]
