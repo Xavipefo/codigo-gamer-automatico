@@ -1,0 +1,21 @@
+name: "Píxel Feroz - REINTENTO Largo Leonida 20/11 (guion corregido, PRIVADO)"
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/reintento_largo_leonida_20nov2026_guion_corregido.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  generar-largo-leonida:
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: largo
+      tema: gta6-seis-regiones-leonida-20261120
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
