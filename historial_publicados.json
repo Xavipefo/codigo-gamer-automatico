@@ -210,5 +210,15 @@
     "formato": "largo",
     "fecha": "2026-11-19T08:17:52.949888+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "FvX3MdnlAdM",
+    "url": "https://www.youtube.com/watch?v=FvX3MdnlAdM",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-tecnologia-plataformas",
+    "formato": "largo",
+    "fecha": "2026-11-19T09:32:57.083275+00:00",
+    "miniatura_confirmada": true
   }
 ]
