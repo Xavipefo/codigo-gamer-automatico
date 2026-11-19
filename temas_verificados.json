@@ -1,5 +1,137 @@
 [
   {
+    "id": "gta6-raul-bautista",
+    "titulo": "GTA VI: el atracador Raul Bautista",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "Rockstar ha presentado a un atracador con experiencia que busca nuevos talentos",
+    "contexto": "Lo confirmado sobre Raul Bautista y sus operaciones",
+    "hechos": [
+      {
+        "texto": "Rockstar define a Raul Bautista como un ladrón de bancos experimentado",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Su biografía oficial destaca su confianza y su tendencia a asumir grandes riesgos",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "La web señala que su manera de actuar aumenta las apuestas para su equipo en cada golpe",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      }
+    ],
+    "prioridad": 14,
+    "texto_miniatura": "RAUL: EL ATRACADOR",
+    "descripcion_personalizada": "Lo confirmado sobre Raul Bautista y sus operaciones",
+    "formatos": [
+      "short"
+    ],
+    "publicacion_objetivo": "2026-11-20T13:00:00+01:00",
+    "publicacion_manual_desde": "2026-11-20T13:00:00+01:00",
+    "portada_paleta": "amarillo",
+    "portada_categoria": "raul",
+    "miniatura_opciones": [
+      "RAUL: EL ATRACADOR",
+      "¿QUIÉN ES RAUL?",
+      "ATRACOS EN LEONIDA"
+    ],
+    "visuales_preferidos": [
+      "raul",
+      "raul",
+      "duo",
+      "vice",
+      "raul"
+    ]
+  },
+  {
+    "id": "gta6-boobie-ike",
+    "titulo": "GTA VI: Boobie Ike y sus negocios",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "Vice City tiene personajes secundarios con negocios muy distintos",
+    "contexto": "Estas son las actividades descritas por Rockstar para Boobie Ike",
+    "hechos": [
+      {
+        "texto": "Rockstar presenta a Boobie Ike como un personaje conocido en Vice City",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Su biografía menciona inversiones y negocios en inmuebles, un club y un estudio de grabación",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "La web oficial vincula su proyecto discográfico Only Raw Records con Dre'Quan",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      }
+    ],
+    "prioridad": 15,
+    "texto_miniatura": "NEGOCIOS DE BOOBIE",
+    "descripcion_personalizada": "Estas son las actividades descritas por Rockstar para Boobie Ike",
+    "formatos": [
+      "short"
+    ],
+    "publicacion_objetivo": "2026-11-20T18:00:00+01:00",
+    "publicacion_manual_desde": "2026-11-20T18:00:00+01:00",
+    "portada_paleta": "fucsia",
+    "portada_categoria": "boobie",
+    "miniatura_opciones": [
+      "NEGOCIOS DE BOOBIE",
+      "BOOBIE IKE",
+      "DINERO EN VICE CITY"
+    ],
+    "visuales_preferidos": [
+      "boobie",
+      "boobie",
+      "vice",
+      "drequan",
+      "boobie"
+    ]
+  },
+  {
+    "id": "gta6-drequan-real-dimez",
+    "titulo": "GTA VI: Dre'Quan y Real Dimez",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-17",
+    "gancho": "Rockstar también ha presentado el entorno musical de Vice City",
+    "contexto": "Conocemos a Dre'Quan, su sello y el dúo Real Dimez según las fichas oficiales",
+    "hechos": [
+      {
+        "texto": "Dre'Quan Priest es presentado como una persona que intenta abrirse camino en la música",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Rockstar explica que Dre'Quan ha firmado al dúo Real Dimez para su sello",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Bae-Luxe y Roxy forman Real Dimez y, según la biografía oficial, son amigas desde el instituto",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      }
+    ],
+    "prioridad": 16,
+    "texto_miniatura": "REAL DIMEZ",
+    "descripcion_personalizada": "Conocemos a Dre'Quan, su sello y el dúo Real Dimez según las fichas oficiales",
+    "formatos": [
+      "short"
+    ],
+    "publicacion_objetivo": "2026-11-20T21:00:00+01:00",
+    "publicacion_manual_desde": "2026-11-20T21:00:00+01:00",
+    "portada_paleta": "violeta",
+    "portada_categoria": "real",
+    "miniatura_opciones": [
+      "REAL DIMEZ",
+      "MÚSICA EN GTA VI",
+      "EL DÚO DE LEONIDA"
+    ],
+    "visuales_preferidos": [
+      "real",
+      "drequan",
+      "real",
+      "vice",
+      "real"
+    ]
+  },
+  {
     "id": "gta6-estreno-espana-0005",
     "titulo": "GTA VI ya se estrena en España: fecha, plataformas y mundo",
     "estado": "confirmado",
@@ -939,138 +1071,6 @@
     "descripcion_personalizada": "Lo que sabemos sobre Brian Heder y su vínculo con el protagonista",
     "formatos": [
       "short"
-    ]
-  },
-  {
-    "id": "gta6-boobie-ike",
-    "titulo": "GTA VI: Boobie Ike y sus negocios",
-    "estado": "confirmado",
-    "fecha_verificacion": "2026-11-17",
-    "gancho": "Vice City tiene personajes secundarios con negocios muy distintos",
-    "contexto": "Estas son las actividades descritas por Rockstar para Boobie Ike",
-    "hechos": [
-      {
-        "texto": "Rockstar presenta a Boobie Ike como un personaje conocido en Vice City",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      },
-      {
-        "texto": "Su biografía menciona inversiones y negocios en inmuebles, un club y un estudio de grabación",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      },
-      {
-        "texto": "La web oficial vincula su proyecto discográfico Only Raw Records con Dre'Quan",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      }
-    ],
-    "prioridad": 15,
-    "texto_miniatura": "NEGOCIOS DE BOOBIE",
-    "descripcion_personalizada": "Estas son las actividades descritas por Rockstar para Boobie Ike",
-    "formatos": [
-      "short"
-    ],
-    "publicacion_objetivo": "2026-11-20T18:00:00+01:00",
-    "publicacion_manual_desde": "2026-11-20T18:00:00+01:00",
-    "portada_paleta": "fucsia",
-    "portada_categoria": "boobie",
-    "miniatura_opciones": [
-      "NEGOCIOS DE BOOBIE",
-      "BOOBIE IKE",
-      "DINERO EN VICE CITY"
-    ],
-    "visuales_preferidos": [
-      "boobie",
-      "boobie",
-      "vice",
-      "drequan",
-      "boobie"
-    ]
-  },
-  {
-    "id": "gta6-drequan-real-dimez",
-    "titulo": "GTA VI: Dre'Quan y Real Dimez",
-    "estado": "confirmado",
-    "fecha_verificacion": "2026-11-17",
-    "gancho": "Rockstar también ha presentado el entorno musical de Vice City",
-    "contexto": "Conocemos a Dre'Quan, su sello y el dúo Real Dimez según las fichas oficiales",
-    "hechos": [
-      {
-        "texto": "Dre'Quan Priest es presentado como una persona que intenta abrirse camino en la música",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      },
-      {
-        "texto": "Rockstar explica que Dre'Quan ha firmado al dúo Real Dimez para su sello",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      },
-      {
-        "texto": "Bae-Luxe y Roxy forman Real Dimez y, según la biografía oficial, son amigas desde el instituto",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      }
-    ],
-    "prioridad": 16,
-    "texto_miniatura": "REAL DIMEZ",
-    "descripcion_personalizada": "Conocemos a Dre'Quan, su sello y el dúo Real Dimez según las fichas oficiales",
-    "formatos": [
-      "short"
-    ],
-    "publicacion_objetivo": "2026-11-20T21:00:00+01:00",
-    "publicacion_manual_desde": "2026-11-20T21:00:00+01:00",
-    "portada_paleta": "violeta",
-    "portada_categoria": "real",
-    "miniatura_opciones": [
-      "REAL DIMEZ",
-      "MÚSICA EN GTA VI",
-      "EL DÚO DE LEONIDA"
-    ],
-    "visuales_preferidos": [
-      "real",
-      "drequan",
-      "real",
-      "vice",
-      "real"
-    ]
-  },
-  {
-    "id": "gta6-raul-bautista",
-    "titulo": "GTA VI: el atracador Raul Bautista",
-    "estado": "confirmado",
-    "fecha_verificacion": "2026-11-17",
-    "gancho": "Rockstar ha presentado a un atracador con experiencia que busca nuevos talentos",
-    "contexto": "Lo confirmado sobre Raul Bautista y sus operaciones",
-    "hechos": [
-      {
-        "texto": "Rockstar define a Raul Bautista como un ladrón de bancos experimentado",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      },
-      {
-        "texto": "Su biografía oficial destaca su confianza y su tendencia a asumir grandes riesgos",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      },
-      {
-        "texto": "La web señala que su manera de actuar aumenta las apuestas para su equipo en cada golpe",
-        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
-      }
-    ],
-    "prioridad": 14,
-    "texto_miniatura": "RAUL: EL ATRACADOR",
-    "descripcion_personalizada": "Lo confirmado sobre Raul Bautista y sus operaciones",
-    "formatos": [
-      "short"
-    ],
-    "publicacion_objetivo": "2026-11-20T13:00:00+01:00",
-    "publicacion_manual_desde": "2026-11-20T13:00:00+01:00",
-    "portada_paleta": "amarillo",
-    "portada_categoria": "raul",
-    "miniatura_opciones": [
-      "RAUL: EL ATRACADOR",
-      "¿QUIÉN ES RAUL?",
-      "ATRACOS EN LEONIDA"
-    ],
-    "visuales_preferidos": [
-      "raul",
-      "raul",
-      "duo",
-      "vice",
-      "raul"
     ]
   },
   {
