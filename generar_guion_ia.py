@@ -191,7 +191,7 @@ def repartir_escenas_largas(escenas, objetivo=9):
     fragmentos = []
     for escena in escenas:
         fragmentos.extend(
-            parte for parte in re.split(r"(?<=[.!?])\\s+", escena)
+            parte for parte in re.split(r"(?<=[.!?])\s+", escena)
             if parte.strip()
         )
     while len(fragmentos) < objetivo:
