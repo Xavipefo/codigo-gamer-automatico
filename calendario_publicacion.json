@@ -3,7 +3,7 @@
   "edicion": "2026-11-18",
   "lanzamiento_previsto": "2026-11-19T00:00:00+01:00",
   "timezone": "Europe/Madrid",
-  "nota": "Objetivos de PUBLICACIÓN MANUAL en YouTube Studio, no publicaciones ya programadas. Jueves 19/11: EXTRA 00:05 Short y EXTRA 00:20 largo; además 6 Shorts de 09:00 a 20:00 y 2 largos diurnos (14:30 y 22:00). TOTAL 7 Shorts y 3 largos. Todos se generan y suben solo en PRIVADO y se revisan antes de programar. El resumen largo genérico queda en reserva para evitar repetir el especial de las 00:20.",
+  "nota": "Agenda para PUBLICACIÓN MANUAL en YouTube Studio: los vídeos solo se generan y suben en PRIVADO. 19/11: 7 Shorts y 3 largos. 20/11: 3 Shorts nuevos (Raul, Boobie, Real Dimez) y 1 largo nuevo (seis regiones de Leonida), sin reutilizar IDs ya publicados. Todas las horas son Europe/Madrid y exigen revisión humana.",
   "reglas": {
     "normal": {
       "shorts": [
@@ -249,12 +249,12 @@
       "timezone": "Europe/Madrid",
       "modo": "especial_gta_vi",
       "formato": "short",
-      "objetivo_editorial": "rendimiento real ps5",
-      "tema_confirmado_reserva": "gta6-brian-heder",
-      "idea_postlanzamiento": "rendimiento_real_ps5",
-      "estado": "reserva_verificada_preparable",
+      "objetivo_editorial": "Raul Bautista: biografía oficial de un ladrón de bancos",
+      "tema_confirmado_reserva": "gta6-raul-bautista",
+      "estado": "tema_confirmado_preparar_privado",
       "subir_siempre_privado": true,
-      "publicar_automaticamente": false
+      "publicar_automaticamente": false,
+      "publicacion_manual_no_antes_de": "2026-11-20T13:00:00+01:00"
     },
     {
       "id": "pf-20261120-1800-short",
@@ -263,12 +263,12 @@
       "timezone": "Europe/Madrid",
       "modo": "especial_gta_vi",
       "formato": "short",
-      "objetivo_editorial": "mecanica interesante",
+      "objetivo_editorial": "Boobie Ike y sus negocios en Vice City",
       "tema_confirmado_reserva": "gta6-boobie-ike",
-      "idea_postlanzamiento": "mecanica_interesante",
-      "estado": "reserva_verificada_preparable",
+      "estado": "tema_confirmado_preparar_privado",
       "subir_siempre_privado": true,
-      "publicar_automaticamente": false
+      "publicar_automaticamente": false,
+      "publicacion_manual_no_antes_de": "2026-11-20T18:00:00+01:00"
     },
     {
       "id": "pf-20261120-2100-short",
@@ -277,12 +277,12 @@
       "timezone": "Europe/Madrid",
       "modo": "especial_gta_vi",
       "formato": "short",
-      "objetivo_editorial": "descubrimiento segundo dia",
+      "objetivo_editorial": "Dre'Quan y Real Dimez: el mundo musical oficial de Leonida",
       "tema_confirmado_reserva": "gta6-drequan-real-dimez",
-      "idea_postlanzamiento": "descubrimiento_segundo_dia",
-      "estado": "reserva_verificada_preparable",
+      "estado": "tema_confirmado_preparar_privado",
       "subir_siempre_privado": true,
-      "publicar_automaticamente": false
+      "publicar_automaticamente": false,
+      "publicacion_manual_no_antes_de": "2026-11-20T21:00:00+01:00"
     },
     {
       "id": "pf-20261120-2200-largo",
@@ -291,12 +291,12 @@
       "timezone": "Europe/Madrid",
       "modo": "especial_gta_vi",
       "formato": "largo",
-      "objetivo_editorial": "analisis historia sin spoilers",
-      "tema_confirmado_reserva": "gta6-personajes-secundarios",
-      "idea_postlanzamiento": "analisis_historia_sin_spoilers",
-      "estado": "reserva_verificada_preparable",
+      "objetivo_editorial": "Análisis visual sin spoilers de seis regiones oficiales de Leonida",
+      "tema_confirmado_reserva": "gta6-seis-regiones-leonida-20261120",
+      "estado": "tema_confirmado_preparar_privado",
       "subir_siempre_privado": true,
-      "publicar_automaticamente": false
+      "publicar_automaticamente": false,
+      "publicacion_manual_no_antes_de": "2026-11-20T22:00:00+01:00"
     },
     {
       "id": "pf-20261121-1300-short",
