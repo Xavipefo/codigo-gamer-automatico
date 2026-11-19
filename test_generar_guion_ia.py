@@ -40,7 +40,7 @@ class TestsGuionIA(unittest.TestCase):
 
     def test_largo_1053_palabras_y_ocho_escenas_es_recuperable(self):
         # Caso real observado: 1053 palabras y una estructura fuera de rango.
-        escena = ("Rockstar ha presentado Leonida y sus regiones oficialmente. " * 15).strip()
+        escena = ("Rockstar ha presentado Leonida y sus regiones oficialmente. " * 16).strip()
         originales = [escena for _ in range(8)]
         hechos_antes = " ".join(originales)
         normalizadas, guion = normalizar_escenas(originales, TEMA, "largo")
