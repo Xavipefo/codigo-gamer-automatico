@@ -38,6 +38,40 @@ class TestsGuionIA(unittest.TestCase):
         with self.assertRaises(ValueError):
             normalizar_escenas([frase] * 5, TEMA, "short")
 
+    def test_largo_1053_palabras_y_ocho_escenas_es_recuperable(self):
+        # Caso real observado: 1053 palabras y una estructura fuera de rango.
+        escena = ("Rockstar ha presentado Leonida y sus regiones oficialmente. " * 15).strip()
+        originales = [escena for _ in range(8)]
+        hechos_antes = " ".join(originales)
+        normalizadas, guion = normalizar_escenas(originales, TEMA, "largo")
+        self.assertEqual(len(normalizadas), 9)
+        self.assertEqual(guion.count(CTA_SUSCRIPCION), 1)
+        self.assertTrue(guion.endswith(CTA_SUSCRIPCION))
+        self.assertEqual(
+            " ".join(guion.replace(CTA_SUSCRIPCION, "").split()),
+            " ".join(hechos_antes.split())
+        )
+
+    def test_largo_con_doce_escenas_conserva_texto(self):
+        escena = ("Rockstar sitúa la historia en Leonida oficialmente. " * 14).strip()
+        originales = [escena for _ in range(12)]
+        normalizadas, guion = normalizar_escenas(originales, TEMA, "largo")
+        self.assertEqual(len(normalizadas), 9)
+        self.assertEqual(
+            " ".join(guion.replace(CTA_SUSCRIPCION, "").split()),
+            " ".join(" ".join(originales).split())
+        )
+
+    def test_largo_realmente_corto_sigue_bloqueado(self):
+        escena = ("Rockstar confirma la historia en Leonida. " * 8).strip()
+        with self.assertRaisesRegex(ValueError, "fuera"):
+            normalizar_escenas([escena] * 9, TEMA, "largo")
+
+    def test_largo_cifras_inventadas_siguen_bloqueadas(self):
+        escena = ("Rockstar ha presentado 999 regiones en Leonida oficialmente. " * 17).strip()
+        with self.assertRaisesRegex(ValueError, "cifras no verificadas"):
+            normalizar_escenas([escena] * 9, TEMA, "largo")
+
     def test_cta_obligatoria(self):
         escenas = [
             ("Rockstar explica GTA VI y su lanzamiento. " * 3).strip(),
