@@ -1,0 +1,21 @@
+name: "Píxel Feroz - 21 Nov Largo Radios GTA VI PRIVADO"
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/largo_radios_21nov2026_privado.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  generar-largo-radios:
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: largo
+      tema: gta6-radios-musica-leonida-20261121
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
