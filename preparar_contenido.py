@@ -112,10 +112,8 @@ def cargar_temas(ruta):
     return temas
 
 
-CTA_SUSCRIPCION = (
-    "Suscríbete a Píxel Feroz para estar al día de todas las "
-    "novedades sobre videojuegos."
-)
+CTA_SUSCRIPCION = "Suscríbete a Píxel Feroz."
+MAX_PALABRAS_SHORT = 88
 DESCRIPCION_COMUN = BASE / "descripcion_general.txt"
 
 
@@ -166,12 +164,34 @@ def preparar(tema):
               for h in tema["hechos"][:3]]
     gancho = texto_limpio(tema["gancho"], "gancho")
     contexto = texto_limpio(tema["contexto"], "contexto")
-    cierre = (
-        "Seguiremos las novedades confirmadas, sin confundir "
-        "rumores con anuncios oficiales. " + CTA_SUSCRIPCION
-    )
-    frases = [gancho, contexto] + hechos + [cierre]
-    guion = " ".join(frase.rstrip(".!?") + "." for frase in frases)
+    # PF-41: un Short es una noticia concreta, no una recapitulación
+    # exhaustiva. Los hechos omitidos siguen disponibles, íntegros y con
+    # sus fuentes en la descripción, sin recortar frases a mitad.
+    cierre = CTA_SUSCRIPCION
+    seleccion = [
+        {"tipo": "gancho", "texto": gancho},
+        *[
+            {
+                "tipo": "hecho_verificado",
+                "texto": x,
+                "fuente": tema["hechos"][i]["fuente"]
+            }
+            for i, x in enumerate(hechos[:2])
+        ],
+    ]
+    base_palabras = sum(len(x["texto"].split()) for x in seleccion)
+    margen = MAX_PALABRAS_SHORT - base_palabras - len(cierre.split())
+    if len(contexto.split()) <= margen and contexto not in (gancho, *hechos):
+        seleccion.insert(1, {"tipo": "contexto", "texto": contexto})
+        margen -= len(contexto.split())
+    if len(hechos) > 2 and len(hechos[2].split()) <= margen:
+        seleccion.append({
+            "tipo": "hecho_verificado",
+            "texto": hechos[2],
+            "fuente": tema["hechos"][2]["fuente"],
+        })
+    seleccion.append({"tipo": "cierre", "texto": cierre})
+    guion = " ".join(x["texto"] for x in seleccion)
     referencias = list(dict.fromkeys(h["fuente"] for h in tema["hechos"]))
     descripcion = construir_descripcion(tema, "short")
     plan = {
@@ -187,15 +207,10 @@ def preparar(tema):
         "publicacion_automatica": False,
         "fecha_preparacion": date.today().isoformat(),
         "fecha_verificacion": tema["fecha_verificacion"],
-        "duracion_objetivo_segundos": [35, 65],
+        "duracion_objetivo_segundos": [25, 42],
+        "estilo_retencion": "PF-41-ganchos-directos-planos-3s",
         "visual": "Gráficos originales; no usar gameplay ajeno sin permiso",
-        "escenas": [
-            {"tipo": "gancho", "texto": gancho},
-            {"tipo": "contexto", "texto": contexto},
-            *[{"tipo": "hecho_verificado", "texto": h["texto"], "fuente": h["fuente"]}
-              for h in tema["hechos"][:3]],
-            {"tipo": "cierre", "texto": cierre},
-        ],
+        "escenas": seleccion,
         "fuentes": referencias,
         "revisiones_pendientes": [
             "Comprobar que las fuentes respaldan cada afirmación",

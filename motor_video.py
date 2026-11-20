@@ -30,6 +30,10 @@ from rockstar_media import elegir_imagenes, BASE as ROCKSTAR_BASE
 from revision_visual import exportar_revision, anadir_fuente_descripcion
 from rockstar_clips import cargar as cargar_clips_rockstar
 from montaje_rockstar import elegir_tomas, rotulo_editorial, crear_preview, renderizar
+from ritmo_shorts_rockstar import (
+    FOTOS_POR_BLOQUE, compactar_pausas_wav, contextos_visuales,
+    preparar_tomas, renderizar_short,
+)
 
 BASE = Path(__file__).resolve().parent
 SALIDA = BASE / "salida"
@@ -273,7 +277,8 @@ def montar(plan, guion):
         if usa_rockstar:
             escenas_elegir = (
                 [escena for escena in escenas for _ in range(12)]
-                if formato == "largo" else escenas
+                if formato == "largo"
+                else contextos_visuales(escenas)
             )
             fotos_rockstar = elegir_imagenes(plan, escenas_elegir)
             imagenes_autorizadas = [
@@ -297,13 +302,48 @@ def montar(plan, guion):
         elif not imagenes_autorizadas:
             print("Short gaming-news: gráficos editoriales; no se simula gameplay.", flush=True)
         clips = []
+        planos_pf41 = []
+        cierre_pf41 = 0.0
         visuales_usados = {"clip": 0, "foto": 0, "tarjeta": 0}
         for indice, escena in enumerate(escenas):
             audio = directorio / f"audio_{indice:03}.wav"
             duracion_audio = narrador.narrar(escena["texto"], audio)
+            if formato == "short":
+                # Quita solo silencios TTS claramente largos; conserva las
+                # palabras y sincroniza después los planos con el WAV real.
+                duracion_audio = compactar_pausas_wav(audio)
             # Exactamente un número entero de fotogramas por escena.
             fotogramas = max(1, int(math.ceil((duracion_audio + 0.22) * fps)))
             duracion_escena = fotogramas / fps
+            if usa_rockstar and formato == "short" and escena["tipo"] != "cierre":
+                # PF-41: 2-4 segundos por imagen, sin generar más audios.
+                fotos_escena = fotos_rockstar[
+                    indice * FOTOS_POR_BLOQUE:
+                    (indice + 1) * FOTOS_POR_BLOQUE
+                ]
+                tomas = preparar_tomas(
+                    fotos_escena, escena, fotogramas, directorio, indice
+                )
+                for toma in tomas:
+                    revision_escenas.append({
+                        "pantalla": toma["archivo"],
+                        "medio": "foto",
+                        "foto": toma["foto"],
+                        "credito": toma["credito"],
+                        "titulo": toma["titulo"],
+                    })
+                    planos_pf41.append({
+                        "indice_bloque": indice,
+                        "segundos": round(toma["fotogramas"] / fps, 3),
+                        "medio": "foto",
+                        "titulo": toma["titulo"],
+                    })
+                clip_escena = directorio / f"clip_{indice:03}.mp4"
+                renderizar_short(tomas, audio, clip_escena, comando)
+                visuales_usados["foto"] += len(tomas)
+                clips.append(clip_escena)
+                duracion_total += duracion_escena
+                continue
             if usa_rockstar and formato == "largo":
                 # Una narración de 30–50 s no mantiene una foto estática:
                 # se divide en subplanos de hasta siete segundos sin
@@ -348,6 +388,8 @@ def montar(plan, guion):
                 elif medio == "tarjeta":
                     medio = "foto"
             visuales_usados[medio] += 1
+            if formato == "short" and usa_rockstar and escena["tipo"] == "cierre":
+                cierre_pf41 += duracion_escena
             usa_material = medio == "clip"
             escena_visible = (
                 rotulo_breve(escena) if medio != "tarjeta"
@@ -445,7 +487,7 @@ def montar(plan, guion):
                 "-af", audio_filtro,
                 "-frames:v", str(fotogramas),
                 "-c:v", "libx264", "-preset", "veryfast",
-                "-crf", "25", "-pix_fmt", "yuv420p",
+                "-crf", "23", "-pix_fmt", "yuv420p",
                 "-r", str(fps),
                 "-c:a", "aac", "-ar", "48000", "-ac", "1",
                 "-b:a", "128k",
@@ -476,10 +518,38 @@ def montar(plan, guion):
         ])
         if salida.stat().st_size < 20_000:
             raise RuntimeError("MP4 vacío o incompleto")
+        if formato == "short" and usa_rockstar:
+            if not planos_pf41 or planos_pf41[0]["medio"] != "foto":
+                raise RuntimeError("PF-41: falta captura oficial en el inicio")
+            informe_pf41 = {
+                "version": "PF-41",
+                "tema_id": plan["tema_id"],
+                "formato": "short",
+                "duracion_segundos": round(duracion_total, 3),
+                "duracion_cierre_segundos": round(cierre_pf41, 3),
+                "primer_plano": planos_pf41[0]["medio"],
+                "numero_planos": len(planos_pf41),
+                "plano_maximo_segundos": max(
+                    t["segundos"] for t in planos_pf41
+                ),
+                "planos": planos_pf41,
+                "narrador": narrador.voz_real,
+                "repeticiones_tts_adicionales": 0,
+                "aviso": "Requiere comprobación editorial de relación imagen-guion",
+            }
+            (SALIDA / "informe_ritmo_pf41.json").write_text(
+                json.dumps(informe_pf41, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8"
+            )
 
         crear_miniatura(plan.get("texto_miniatura", plan["titulo_propuesto"]),
                         formato, SALIDA / "miniatura.jpg", plan=plan)
         if usa_rockstar:
+            if (formato == "short" and revision_escenas
+                    and revision_escenas[0]["medio"] != "foto"):
+                raise RuntimeError(
+                    "PF-41: el primer fotograma no muestra una captura oficial"
+                )
             if sum(x["medio"] in ("foto", "clip") for x in revision_escenas) < max(
                 1, len(revision_escenas)-1
             ):

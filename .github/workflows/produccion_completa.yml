@@ -234,6 +234,7 @@ jobs:
       - name: Control tecnico de calidad
         env:
           PF_TTS_PROVIDER: ${{ inputs.motor_tts == 'qwen' && 'qwen' || 'gemini' }}
+          PF_ROCKSTAR_MEDIA: "1"
           FORMATO: ${{ inputs.formato }}
         run: python control_calidad.py --formato "$FORMATO"
 
@@ -276,6 +277,7 @@ jobs:
             salida/descripcion.txt
             salida/plan.json
             salida/calidad.json
+            salida/informe_ritmo_pf41.json
           retention-days: 7
           if-no-files-found: error
 
