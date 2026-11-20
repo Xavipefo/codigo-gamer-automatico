@@ -3,7 +3,7 @@
   "edicion": "2026-11-18",
   "lanzamiento_previsto": "2026-11-19T00:00:00+01:00",
   "timezone": "Europe/Madrid",
-  "nota": "Agenda para PUBLICACIÓN MANUAL en YouTube Studio: los vídeos solo se generan y suben en PRIVADO. 19/11: 7 Shorts y 3 largos. 20/11: 3 Shorts nuevos (Raul, Boobie, Real Dimez) y 1 largo nuevo (seis regiones de Leonida), sin reutilizar IDs ya publicados. Todas las horas son Europe/Madrid y exigen revisión humana.",
+  "nota": "Agenda con publicación MANUAL en YouTube Studio (Europe/Madrid). 19/11: 7 Shorts y 3 largos; 20/11: 3 Shorts y 1 largo; 21/11: 3 Shorts inéditos y 1 largo de música y radios sin spoilers. Todos se generan y suben solo PRIVADOS, sin automatizar su publicación. Las ideas de gameplay real sin pruebas se sustituyen por hechos oficiales verificados para evitar rumores.",
   "reglas": {
     "normal": {
       "shorts": [
@@ -305,12 +305,12 @@
       "timezone": "Europe/Madrid",
       "modo": "especial_gta_vi",
       "formato": "short",
-      "objetivo_editorial": "zonas del mapa",
-      "tema_confirmado_reserva": "gta6-raul-bautista",
-      "idea_postlanzamiento": "zonas_del_mapa",
-      "estado": "reserva_verificada_preparable",
+      "objetivo_editorial": "Mapa oficial de Leonida publicado por Rockstar, disponible para descargar",
+      "tema_confirmado_reserva": "gta6-mapa-oficial-descargable-20261121",
+      "estado": "tema_confirmado_preparar_privado",
       "subir_siempre_privado": true,
-      "publicar_automaticamente": false
+      "publicar_automaticamente": false,
+      "publicacion_manual_no_antes_de": "2026-11-21T13:00:00+01:00"
     },
     {
       "id": "pf-20261121-1800-short",
@@ -319,12 +319,12 @@
       "timezone": "Europe/Madrid",
       "modo": "especial_gta_vi",
       "formato": "short",
-      "objetivo_editorial": "sonido ambientacion",
-      "tema_confirmado_reserva": "gta6-mando-dualsense",
-      "idea_postlanzamiento": "sonido_ambientacion",
-      "estado": "reserva_verificada_preparable",
+      "objetivo_editorial": "Audio espacial Tempest 3D y ambientación confirmada de GTA VI en PS5",
+      "tema_confirmado_reserva": "gta6-audio-3d-ps5-20261121",
+      "estado": "tema_confirmado_preparar_privado",
       "subir_siempre_privado": true,
-      "publicar_automaticamente": false
+      "publicar_automaticamente": false,
+      "publicacion_manual_no_antes_de": "2026-11-21T18:00:00+01:00"
     },
     {
       "id": "pf-20261121-2100-short",
@@ -333,12 +333,12 @@
       "timezone": "Europe/Madrid",
       "modo": "especial_gta_vi",
       "formato": "short",
-      "objetivo_editorial": "comparativa gta v dos",
-      "tema_confirmado_reserva": "gta6-historia-duo",
-      "idea_postlanzamiento": "comparativa_gta_v_dos",
-      "estado": "reserva_verificada_preparable",
+      "objetivo_editorial": "El golpe de Jason y Lucia que inicia la trama, sin spoilers",
+      "tema_confirmado_reserva": "gta6-golpe-sin-spoilers-20261121",
+      "estado": "tema_confirmado_preparar_privado",
       "subir_siempre_privado": true,
-      "publicar_automaticamente": false
+      "publicar_automaticamente": false,
+      "publicacion_manual_no_antes_de": "2026-11-21T21:00:00+01:00"
     },
     {
       "id": "pf-20261121-2200-largo",
@@ -347,12 +347,12 @@
       "timezone": "Europe/Madrid",
       "modo": "especial_gta_vi",
       "formato": "largo",
-      "objetivo_editorial": "mapa y exploracion real",
-      "tema_confirmado_reserva": null,
-      "idea_postlanzamiento": "mapa_y_exploracion_real",
-      "estado": "pendiente_hechos_postlanzamiento",
+      "objetivo_editorial": "Radios y música confirmadas oficialmente en GTA VI, análisis sin spoilers",
+      "tema_confirmado_reserva": "gta6-radios-musica-leonida-20261121",
+      "estado": "tema_confirmado_preparar_privado",
       "subir_siempre_privado": true,
-      "publicar_automaticamente": false
+      "publicar_automaticamente": false,
+      "publicacion_manual_no_antes_de": "2026-11-21T22:00:00+01:00"
     },
     {
       "id": "pf-20261122-1300-short",
