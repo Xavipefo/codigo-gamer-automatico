@@ -79,7 +79,7 @@ class TestsGuionIA(unittest.TestCase):
 
     def test_short_acepta_cta_sola_como_escena_final(self):
         base = [
-            "Rockstar presenta la historia de Jason y Lucia en el estado de Leonida.",
+            "Rockstar presenta la historia de Jason y Lucia en el estado de Leonida. Las capturas oficiales muestran algunos ambientes de la región anunciada.",
             "GTA VI tiene personajes y lugares anunciados por Rockstar en su sitio oficial.",
             "Vice City es una de las regiones del mundo ficticio de Leonida.",
             "Jason y Lucia afrontan problemas después de un golpe que sale mal.",
