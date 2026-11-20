@@ -55,15 +55,15 @@ class TestEditorial(unittest.TestCase):
             ]), encoding="utf-8")
             with patch.object(editorial, "HISTORIAL", hist):
                 proximo = editorial.seleccionado("", "short")
-                self.assertEqual(proximo["id"], "gta6-raul-bautista")
+                self.assertEqual(proximo["id"], "gta6-mapa-oficial-descargable-20261121")
                 largo = editorial.seleccionado("", "largo")
-                self.assertEqual(largo["id"], "gta6-seis-regiones-leonida-20261120")
+                self.assertEqual(largo["id"], "gta6-radios-musica-leonida-20261121")
 
-    def test_cola_manual_shorts_viernes_20_y_miniaturas(self):
+    def test_cola_manual_shorts_sabado_21_y_miniaturas(self):
         previstos = [
-            ("gta6-raul-bautista", "amarillo", "raul"),
-            ("gta6-boobie-ike", "fucsia", "boobie"),
-            ("gta6-drequan-real-dimez", "violeta", "real"),
+            ("gta6-mapa-oficial-descargable-20261121", "amarillo", "vice"),
+            ("gta6-audio-3d-ps5-20261121", "cian", "artwork"),
+            ("gta6-golpe-sin-spoilers-20261121", "fucsia", "duo"),
         ]
         with tempfile.TemporaryDirectory() as tmp:
             historial = Path(tmp) / "historial.json"
@@ -84,7 +84,7 @@ class TestEditorial(unittest.TestCase):
                         "tema_id": ident, "formato": "short", "estado": "subido"
                     })
 
-    def test_proximo_largo_del_viernes_no_es_resumen_de_reserva(self):
+    def test_proximo_largo_sabado_21_sobre_radios_no_reserva(self):
         usados = [
             "gta6-ya-se-puede-jugar-0020-largo",
             "gta6-jason-lucia",
@@ -100,9 +100,9 @@ class TestEditorial(unittest.TestCase):
             ]), encoding="utf-8")
             with patch.object(editorial, "HISTORIAL", hist):
                 tema = editorial.seleccionado("", "largo")
-            self.assertEqual(tema["id"], "gta6-seis-regiones-leonida-20261120")
+            self.assertEqual(tema["id"], "gta6-radios-musica-leonida-20261121")
             self.assertEqual(tema["portada_categoria"], "vice")
-            self.assertEqual(tema["portada_paleta"], "cian")
+            self.assertEqual(tema["portada_paleta"], "violeta")
 
     def test_descripcion_general_y_suscripcion(self):
         tema = editorial.cargar_elegibles()[0]
