@@ -51,7 +51,18 @@ class TestPlanLanzamiento(unittest.TestCase):
             self.assertEqual(len(resultado), 25)
             self.assertTrue((destino / "agenda.md").is_file())
             self.assertTrue((destino / "pendientes_verificacion.json").is_file())
-            self.assertTrue(any((destino / "borradores").glob("*/opciones_ab/miniatura_a.jpg")))
+            # Los largos ya subidos no vuelven a producir portadas; solo
+            # se exportan miniaturas A/B de los largos aún pendientes.
+            para_preparar = [
+                s for s in resultado
+                if s["formato"] == "largo"
+                and s["estado_preparacion"] == "lista_preparacion"
+            ]
+            for slot in para_preparar:
+                portada = (destino / "borradores" /
+                           (slot["tema_confirmado_reserva"] + "_largo") /
+                           "opciones_ab" / "miniatura_a.jpg")
+                self.assertTrue(portada.is_file(), str(portada))
             self.assertFalse(any(destino.rglob("*.mp4")))
             self.assertFalse(any(destino.rglob("*.wav")))
 
