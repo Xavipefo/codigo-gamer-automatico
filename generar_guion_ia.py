@@ -154,9 +154,13 @@ def construir_prompt(tema, formato):
     if formato == "short":
         return (
             base
-            + "\nProduce un Short de 75 a 115 palabras. Divide la narración "
-            "en 5 a 7 escenas breves. Empieza con un gancho que genere "
-            "curiosidad, desarrolla los hechos y termina con la suscripción.\n"
+            + "\nProduce un Short dinámico de 65 a 90 palabras, "
+            "en 5 a 7 escenas breves. El primer segundo debe comunicar "
+            "directamente el hecho más llamativo y verificable del tema; "
+            "sin saludo, bienvenida ni introducción genérica. "
+            "Desarrolla uno o dos datos esenciales con frases concisas. "
+            "Reserva la última escena SOLO para la CTA exacta. "
+            "No diluyas los datos oficiales ni inventes afirmaciones.\n"
             'Devuelve SOLO JSON: {"escenas":["texto escena 1", ...]}.\n'
         )
     esquema = tema.get("esquema_largo") or []
@@ -170,8 +174,10 @@ def construir_prompt(tema, formato):
         + "\nProducción larga de alrededor de 10 a 13 minutos de voz."
         " Redacta 9 a 11 escenas narrativas, de 140 a 170 palabras "
         "por escena; total 1250 a 1850 palabras. "
-        "Estructura: gran pregunta inicial, contexto, desarrollo por "
-        "temas, delimitación de lo desconocido y conclusión con "
+        "Estructura: dato o pregunta importante y verificable desde "
+        "la primera frase, sin saludo introductorio; contexto breve, "
+        "desarrollo por temas, delimitación de lo desconocido "
+        "y conclusión con "
         "la llamada a suscribirse. Si la información oficial es "
         "insuficiente, NO rellenes el texto inventando ni repitiendo "
         "datos: devuelve escenas vacías para abortar la producción.\n"
@@ -252,12 +258,18 @@ def normalizar_escenas(datos, tema, formato):
     if any(not s for s in escenas[:-1]):
         raise ValueError("Gemini devolvió una escena vacía")
     escenas[-1] = (escenas[-1] + " " + CTA_SUSCRIPCION).strip()
+    if formato == "short" and escenas[-1] != CTA_SUSCRIPCION:
+        # El último bloque narrativo no se convierte en una pantalla
+        # promocional de diez segundos: la CTA lleva su propio bloque.
+        anterior = escenas[-1][:-len(CTA_SUSCRIPCION)].strip()
+        escenas[-1] = anterior
+        escenas.append(CTA_SUSCRIPCION)
     todo = " ".join(escenas)
     palabras = len(todo.split())
     # Un guion de 1053 palabras ya supera ampliamente un Short. Evitamos
     # repetir una generación completa por desviarse un ~4% del mínimo
     # anterior, manteniendo el límite superior y todas las comprobaciones.
-    limites = (70, 125) if formato == "short" else (1000, 1900)
+    limites = (60, 115) if formato == "short" else (1000, 1900)
     if not limites[0] <= palabras <= limites[1]:
         raise ValueError(
             f"Guion de {palabras} palabras fuera de {limites}"
