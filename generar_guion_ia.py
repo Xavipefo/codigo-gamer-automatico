@@ -245,7 +245,11 @@ def normalizar_escenas(datos, tema, formato):
             escenas = repartir_escenas_largas(escenas)
     # La CTA aprobada va al final y se presenta exactamente una vez.
     escenas = [s.replace(CTA_SUSCRIPCION, "").strip() for s in escenas]
-    if any(not s for s in escenas):
+    # Es perfectamente válido que Gemini dedique la última escena SOLO a
+    # la CTA solicitada. Tras quitar duplicados, esa última escena queda
+    # vacía: debemos restaurar la CTA, no rechazar todo el guion.
+    # Una escena vacía en otra posición sigue siendo un error real.
+    if any(not s for s in escenas[:-1]):
         raise ValueError("Gemini devolvió una escena vacía")
     escenas[-1] = (escenas[-1] + " " + CTA_SUSCRIPCION).strip()
     todo = " ".join(escenas)
@@ -315,6 +319,18 @@ def main():
                 "-", str(exc)[:150], flush=True
             )
             if intento == 1:
+                if args.formato == "short":
+                    # Ya se preparó un guion local con hechos y enlaces
+                    # verificados en editorial.py. Evitar que una salida
+                    # defectuosa de Gemini bloquee los demás Shorts del lote.
+                    # No se añaden afirmaciones ni cifras de la IA fallida.
+                    print(
+                        "::warning::Gemini no produjo un Short válido tras "
+                        "dos intentos; se conserva el guion editorial "
+                        "verificado y se aplicará el control de calidad.",
+                        flush=True,
+                    )
+                    return
                 raise
     plan["escenas"] = escenas
     plan["huella_guion"] = hashlib.sha256(texto.encode("utf-8")).hexdigest()
