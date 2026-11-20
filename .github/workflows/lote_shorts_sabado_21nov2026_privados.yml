@@ -94,3 +94,4 @@ jobs:
           path: lote_revision/
           retention-days: 14
           if-no-files-found: warn
+# Reintento controlado 20/11/2026: escenas CTA-only corregidas, respaldo factual validado.
