@@ -102,6 +102,34 @@ def comprobar(formato):
             f"Desincronización: vídeo {video_seg:.2f}s, audio {audio_seg:.2f}s"
         )
 
+    ritmo_pf41 = None
+    if (formato == "short"
+            and plan.get("estilo_retencion") == "PF-41-ganchos-directos-planos-3s"
+            and os.environ.get("PF_ROCKSTAR_MEDIA") == "1"):
+        informe = OUT / "informe_ritmo_pf41.json"
+        if not informe.is_file():
+            raise ValueError(
+                "PF-41: falta informe de subplanos del Short"
+            )
+        ritmo_pf41 = json.loads(informe.read_text(encoding="utf-8"))
+        if (ritmo_pf41.get("tema_id") != plan["tema_id"]
+                or ritmo_pf41.get("primer_plano") != "foto"
+                or ritmo_pf41.get("numero_planos", 0) < 2):
+            raise ValueError(
+                "PF-41: no hay suficientes planos oficiales en el vídeo"
+            )
+        if not all(
+            0 < t["segundos"] <= 3.801 and t.get("medio") == "foto"
+            for t in ritmo_pf41.get("planos", [])
+        ):
+            raise ValueError(
+                "PF-41: un plano supera 3,8 segundos o no es oficial"
+            )
+        if abs(float(ritmo_pf41["duracion_segundos"]) - duracion) > 1.0:
+            raise ValueError(
+                "PF-41: diferencia entre montaje y duración informada"
+            )
+
     miniatura = OUT / "miniatura.jpg"
     if not miniatura.is_file() or miniatura.stat().st_size > 2 * 1024 * 1024:
         raise ValueError("Miniatura ausente o demasiado grande")
@@ -145,6 +173,11 @@ def comprobar(formato):
         "narrador_sintetico": True,
         "revision_editorial_pendiente": True,
         "listo_para_subida_privada": True,
+        "informe_ritmo_pf41": ritmo_pf41 and {
+            "numero_planos": ritmo_pf41["numero_planos"],
+            "plano_maximo_segundos": ritmo_pf41["plano_maximo_segundos"],
+            "duracion_cierre_segundos": ritmo_pf41["duracion_cierre_segundos"],
+        },
     }
     (OUT / "calidad.json").write_text(
         json.dumps(resultado, ensure_ascii=False, indent=2) + "\n",
