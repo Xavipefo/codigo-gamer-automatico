@@ -270,5 +270,15 @@
     "formato": "largo",
     "fecha": "2026-11-19T21:58:27.886844+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "BEfIMJzvtfY",
+    "url": "https://www.youtube.com/watch?v=BEfIMJzvtfY",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-radios-musica-leonida-20261121",
+    "formato": "largo",
+    "fecha": "2026-11-20T14:18:31.087618+00:00",
+    "miniatura_confirmada": true
   }
 ]
