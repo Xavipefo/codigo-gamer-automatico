@@ -280,5 +280,15 @@
     "formato": "largo",
     "fecha": "2026-11-20T14:18:31.087618+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "t5qmMJy4Xuw",
+    "url": "https://www.youtube.com/watch?v=t5qmMJy4Xuw",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-mapa-oficial-descargable-20261121",
+    "formato": "short",
+    "fecha": "2026-11-20T15:46:00.968186+00:00",
+    "miniatura_confirmada": true
   }
 ]
