@@ -11,7 +11,7 @@ from generar_short import fuente, partir_lineas
 
 W,H,FPS=1280,720,20
 
-def repartir_frames(frames,max_por_plano=FPS*7):
+def repartir_frames(frames,max_por_plano=FPS*6):
     if frames<1:
         raise ValueError("La escena no tiene fotogramas")
     cantidad=math.ceil(frames/max_por_plano)
@@ -44,13 +44,13 @@ def rotulo_editorial(escena,destino):
     return destino
 
 def elegir_tomas(fotos,clips,fotogramas,indice):
-    """Plano real distinto cada ~7 segundos; hasta un clip cada 5 tomas."""
+    """Plano distinto cada ~6 s; alternar capturas y clips autorizados."""
     if not fotos:
         raise ValueError("Se necesita al menos una foto oficial")
     cuenta=repartir_frames(fotogramas)
     tomas=[]
     for i,frames in enumerate(cuenta):
-        foto,credito,titulo=fotos[(indice*3+i)%len(fotos)]
+        foto,credito,titulo=fotos[i%len(fotos)]
         if clips and (i+indice*3)%5==0 and len(cuenta)>1:
             fuente_clip=clips[(i+indice)%len(clips)]
             tomas.append({"tipo":"clip","ruta":Path(fuente_clip["ruta"]),
@@ -97,11 +97,19 @@ def renderizar(tomas,capa,audio,destino,comando):
                     f"crop={W}:{H},setsar=1,")
         else:
             entrada+=["-loop","1","-framerate",str(FPS),"-i",str(toma["ruta"])]
+            pan = (
+                "z='min(zoom+0.00040,1.060)':"
+                "x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2'"
+                if i % 3 == 0 else
+                "z='1.055':x='(iw-iw/zoom)*min(1,on/100)':"
+                "y='(ih-ih/zoom)/2'"
+                if i % 3 == 1 else
+                "z='1.055':x='(iw-iw/zoom)*(1-min(1,on/100))':"
+                "y='(ih-ih/zoom)/2'"
+            )
             fuente=(f"[{i}:v]scale={W}:{H}:force_original_aspect_ratio=increase,"
                     f"crop={W}:{H},setsar=1,"
-                    f"zoompan=z='min(zoom+0.00030,1.045)':"
-                    f"x='(iw-iw/zoom)/2':y='(ih-ih/zoom)/2':"
-                    f"d=1:s={W}x{H}:fps={FPS},")
+                    f"zoompan={pan}:d=1:s={W}x{H}:fps={FPS},")
         filtros.append(fuente+
                        f"trim=end_frame={toma['frames']},"
                        f"setpts=PTS-STARTPTS[p{i}]")
@@ -110,7 +118,11 @@ def renderizar(tomas,capa,audio,destino,comando):
     entrada+=["-i",str(audio)]
     concatenados="".join(f"[p{i}]" for i in range(len(tomas)))
     filtros.append(f"{concatenados}concat=n={len(tomas)}:v=1:a=0[base]")
-    filtros.append(f"[base][{len(tomas)}:v]overlay=0:0:shortest=1,format=yuv420p[v]")
+    # El rótulo explica el bloque al inicio sin tapar el juego 30-50 s.
+    filtros.append(
+        f"[base][{len(tomas)}:v]overlay=0:0:shortest=1:"
+        "enable='lt(t,4.0)',format=yuv420p[v]"
+    )
     total=sum(t["frames"] for t in tomas)
     duracion=total/FPS
     filtro_audio=(f"aresample=48000,apad,atrim=duration={duracion:.6f},"
@@ -119,7 +131,7 @@ def renderizar(tomas,capa,audio,destino,comando):
         "-filter_complex",";".join(filtros),"-map","[v]",
         "-map",f"{audio_idx}:a:0","-af",filtro_audio,
         "-frames:v",str(total),
-        "-c:v","libx264","-preset","veryfast","-crf","25",
+        "-c:v","libx264","-preset","veryfast","-crf","23",
         "-pix_fmt","yuv420p","-r",str(FPS),
         "-c:a","aac","-ar","48000","-ac","1","-b:a","128k",
         "-t",f"{duracion:.6f}",str(destino)
