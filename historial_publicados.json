@@ -300,5 +300,15 @@
     "formato": "short",
     "fecha": "2026-11-20T15:53:28.550855+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "cFE4_SvomGE",
+    "url": "https://www.youtube.com/watch?v=cFE4_SvomGE",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-golpe-sin-spoilers-20261121",
+    "formato": "short",
+    "fecha": "2026-11-20T15:58:40.941063+00:00",
+    "miniatura_confirmada": true
   }
 ]
