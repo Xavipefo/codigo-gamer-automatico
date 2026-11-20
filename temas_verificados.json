@@ -1,5 +1,253 @@
 [
   {
+    "id": "gta6-mapa-oficial-descargable-20261121",
+    "titulo": "GTA VI: Rockstar ofrece el mapa oficial de Leonida para descargar",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-20",
+    "gancho": "Rockstar ha publicado un mapa oficial de Leonida: aquí puedes encontrarlo sin recurrir a mapas filtrados",
+    "contexto": "Guía para localizar el mapa oficial de Leonida publicado por Rockstar y distinguirlo de reconstrucciones hechas por fans.",
+    "hechos": [
+      {
+        "texto": "Rockstar anunció que el 19 de noviembre de 2026 estaría disponible un póster imprimible con la portada y el mapa oficial de Leonida en su web",
+        "fuente": "https://www.rockstargames.com/newswire/article/39akk424a9oo53/grand-theft-auto-vi-now-available"
+      },
+      {
+        "texto": "La web oficial de GTA VI permite acceder a contenido y materiales descargables publicados por Rockstar",
+        "fuente": "https://www.rockstargames.com/VI"
+      },
+      {
+        "texto": "Vice City y Leonida Keys figuran entre las localizaciones oficiales de Leonida presentadas por Rockstar",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "El mapa oficial y las capturas de Rockstar no equivalen a una confirmación de rutas, secretos o ubicaciones de coleccionables",
+        "fuente": "https://www.rockstargames.com/newswire/article/39akk424a9oo53/grand-theft-auto-vi-now-available"
+      }
+    ],
+    "formatos": [
+      "short"
+    ],
+    "texto_miniatura": "MAPA OFICIAL GTA VI",
+    "miniatura_opciones": [
+      "MAPA OFICIAL GTA VI",
+      "DESCARGA EL MAPA",
+      "LEONIDA AL DETALLE"
+    ],
+    "portada_paleta": "amarillo",
+    "portada_categoria": "vice",
+    "visuales_preferidos": [
+      "vice",
+      "leonida",
+      "artwork",
+      "grassrivers"
+    ],
+    "prioridad": 20,
+    "publicacion_objetivo": "2026-11-21T13:00:00+01:00",
+    "publicacion_manual_desde": "2026-11-21T13:00:00+01:00",
+    "descripcion_personalizada": "Guía para localizar el mapa oficial de Leonida publicado por Rockstar y distinguirlo de reconstrucciones hechas por fans."
+  },
+  {
+    "id": "gta6-audio-3d-ps5-20261121",
+    "titulo": "GTA VI en PS5: audio espacial y funciones de sonido anunciadas",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-20",
+    "gancho": "El sonido de GTA VI en PlayStation tiene un detalle oficial que muchos pasan por alto",
+    "contexto": "Repaso de las funciones anunciadas para la experiencia sonora de GTA VI en PlayStation 5, sin atribuir rendimiento no medido.",
+    "hechos": [
+      {
+        "texto": "Rockstar anuncia soporte de audio espacial Tempest 3D Audio para GTA VI en PlayStation 5",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "Rockstar ha anunciado que la versión de PlayStation 5 aprovecha la respuesta háptica del DualSense",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      },
+      {
+        "texto": "La presentación de Rockstar identifica PlayStation 5 y Xbox Series X y S entre las plataformas del lanzamiento",
+        "fuente": "https://www.rockstargames.com/VI"
+      },
+      {
+        "texto": "Rockstar no ha publicado en esa comunicación una medición independiente de latencia sonora o comparaciones auditivas objetivas entre consolas",
+        "fuente": "https://www.rockstargames.com/newswire/article/89834o94713o21/pre-load-grand-theft-auto-vi-now"
+      }
+    ],
+    "formatos": [
+      "short"
+    ],
+    "texto_miniatura": "SONIDO 3D EN GTA VI",
+    "miniatura_opciones": [
+      "SONIDO 3D EN GTA VI",
+      "AUDIO 3D EN PS5",
+      "ESCUCHA LEONIDA"
+    ],
+    "portada_paleta": "cian",
+    "portada_categoria": "artwork",
+    "visuales_preferidos": [
+      "vice",
+      "duo",
+      "artwork",
+      "jason"
+    ],
+    "prioridad": 20,
+    "publicacion_objetivo": "2026-11-21T18:00:00+01:00",
+    "publicacion_manual_desde": "2026-11-21T18:00:00+01:00",
+    "descripcion_personalizada": "Repaso de las funciones anunciadas para la experiencia sonora de GTA VI en PlayStation 5, sin atribuir rendimiento no medido."
+  },
+  {
+    "id": "gta6-golpe-sin-spoilers-20261121",
+    "titulo": "GTA VI: el golpe que pone en peligro a Jason y Lucia, sin spoilers",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-20",
+    "gancho": "Un golpe sencillo sale mal y desencadena la historia oficial de Jason y Lucia: esto es lo que Rockstar sí ha revelado",
+    "contexto": "Explicación de la premisa oficial de GTA VI sin adelantar eventos de la campaña ni afirmar detalles no publicados.",
+    "hechos": [
+      {
+        "texto": "La sinopsis de Rockstar presenta a Jason y Lucia como protagonistas de GTA VI",
+        "fuente": "https://www.rockstargames.com/VI"
+      },
+      {
+        "texto": "Rockstar explica que un golpe que parecía sencillo termina saliendo mal",
+        "fuente": "https://www.rockstargames.com/newswire/article/517572321a549a/watch-the-grand-theft-auto-vi-launch-trailer"
+      },
+      {
+        "texto": "Según la historia presentada oficialmente, la pareja se ve envuelta en una conspiración criminal que atraviesa Leonida",
+        "fuente": "https://www.rockstargames.com/VI"
+      },
+      {
+        "texto": "La premisa hace que ambos personajes tengan que apoyarse mutuamente para salir adelante",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "formatos": [
+      "short"
+    ],
+    "texto_miniatura": "EL GOLPE SALE MAL",
+    "miniatura_opciones": [
+      "EL GOLPE SALE MAL",
+      "JASON Y LUCIA",
+      "SIN SPOILERS GTA VI"
+    ],
+    "portada_paleta": "fucsia",
+    "portada_categoria": "duo",
+    "visuales_preferidos": [
+      "duo",
+      "jason",
+      "lucia",
+      "vice"
+    ],
+    "prioridad": 20,
+    "publicacion_objetivo": "2026-11-21T21:00:00+01:00",
+    "publicacion_manual_desde": "2026-11-21T21:00:00+01:00",
+    "descripcion_personalizada": "Explicación de la premisa oficial de GTA VI sin adelantar eventos de la campaña ni afirmar detalles no publicados."
+  },
+  {
+    "id": "gta6-radios-musica-leonida-20261121",
+    "titulo": "GTA VI: todas las claves de las radios, la música y Vice City",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-20",
+    "gancho": "Las emisoras de GTA VI van del pop al metal, la música latina y la electrónica, y Rockstar ya ha enseñado cómo son",
+    "contexto": "Análisis documental de las emisoras oficiales, la banda sonora anunciada y los personajes vinculados a la música de Vice City, sin reproducir canciones ni inventar estaciones.",
+    "hechos": [
+      {
+        "texto": "Rockstar ha presentado adelantos de distintas emisoras dentro del apartado oficial Music de GTA VI",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "La selección oficial de radios de GTA VI incluye géneros desde rock clásico y pop hasta espacios de entrevistas y actualidad",
+        "fuente": "https://www.rockstargames.com/newswire/article/o3982oa93a23k4/the-music-of-grand-theft-auto-vi-in-game-radio-stations"
+      },
+      {
+        "texto": "Flash FM figura en la web oficial como una emisora de pop vinculada a Vice City",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "Cocoteo aparece como emisora de música latina contemporánea",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "Circoloco Records destaca por la música house y techno de club",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "Afro Bank FM incluye amapiano y otros estilos de música africana",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "Back Country se presenta como una emisora de country",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "The Chamber se dedica a la música metal",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "Dirty South Classics centra su propuesta en clásicos de rap y hip hop sureños",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "Rockstar presentó Grand Theft Auto VI: The Album con 34 temas originales",
+        "fuente": "https://www.rockstargames.com/newswire/article/o3982oa93a23k4/the-music-of-grand-theft-auto-vi-in-game-radio-stations"
+      },
+      {
+        "texto": "La compañía también presentó una banda sonora original, Original Score, atribuida a Justice",
+        "fuente": "https://www.rockstargames.com/newswire/article/39ak8a12395591/grand-theft-auto-vi-original-score-by-justice"
+      },
+      {
+        "texto": "Boobie Ike dirige negocios en Vice City y está relacionado con Only Raw Records",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Dre'Quan Priest trabaja en el sector musical y ha firmado al dúo Real Dimez para su sello",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Real Dimez es el dúo integrado por Bae-Luxe y Roxy",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      }
+    ],
+    "formatos": [
+      "largo"
+    ],
+    "texto_miniatura": "RADIOS DE GTA VI",
+    "miniatura_opciones": [
+      "RADIOS DE GTA VI",
+      "LA MÚSICA DE VICE",
+      "SOUNDTRACK GTA VI"
+    ],
+    "portada_paleta": "violeta",
+    "portada_categoria": "vice",
+    "visuales_preferidos": [
+      "vice",
+      "real",
+      "drequan",
+      "boobie",
+      "artwork",
+      "duo"
+    ],
+    "prioridad": 20,
+    "publicacion_objetivo": "2026-11-21T22:00:00+01:00",
+    "publicacion_manual_desde": "2026-11-21T22:00:00+01:00",
+    "descripcion_personalizada": "Análisis documental de las emisoras oficiales, la banda sonora anunciada y los personajes vinculados a la música de Vice City, sin reproducir canciones ni inventar estaciones.",
+    "esquema_largo": [
+      "Qué ha anunciado Rockstar sobre la música y cómo distinguir las emisoras confirmadas de los rumores",
+      "Flash FM y el pop de Vice City: contexto oficial y qué sabemos de su retorno",
+      "Cocoteo: la presencia de la música latina dentro del universo de Leonida",
+      "Circoloco Records y las raíces electrónicas: música house y techno en la propuesta anunciada",
+      "Afro Bank FM: amapiano y diferentes estilos africanos que Rockstar enumera",
+      "Back Country: el country en los paisajes de Leonida y lo que conocemos de la emisora",
+      "The Chamber: la emisora de metal y el contraste de ambientes musicales",
+      "Dirty South Classics: rap y hip hop de la región en el GTA anunciado",
+      "La música original del juego: Grand Theft Auto VI The Album y la partitura Original Score",
+      "El tejido musical narrativo de Vice City: Boobie Ike, Dre'Quan Priest y el dúo Real Dimez",
+      "Conclusión sin spoilers: cómo escuchar los adelantos oficiales, lo que falta por confirmar y dónde consultar las fuentes"
+    ],
+    "titulos_experimento": [
+      "GTA VI: las emisoras y la música que Rockstar ya ha confirmado",
+      "Las radios de GTA VI: pop, metal, reguetón y más en Vice City",
+      "GTA VI y su banda sonora: descubre la música oficial de Leonida"
+    ]
+  },
+  {
     "id": "gta6-raul-bautista",
     "titulo": "GTA VI: el atracador Raul Bautista",
     "estado": "confirmado",
