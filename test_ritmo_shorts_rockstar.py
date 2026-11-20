@@ -42,6 +42,7 @@ class TestPlanPF41(unittest.TestCase):
     def test_cierre_corto_y_datos_con_fuente(self):
         tema = {
             "id": "gta6-test-pf41", "titulo": "GTA VI: novedades verificadas",
+            "fecha_verificacion": "2026-11-18",
             "gancho": "Rockstar ha mostrado nuevos detalles sobre GTA VI.",
             "contexto": "La información procede de su sitio oficial.",
             "hechos": [
