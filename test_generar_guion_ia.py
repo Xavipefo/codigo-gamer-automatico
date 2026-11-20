@@ -1,5 +1,10 @@
 """Test de guiones IA: sin red ni secretos."""
 import unittest
+import json
+import tempfile
+from pathlib import Path
+from unittest.mock import patch
+import generar_guion_ia as guion_ia
 from generar_guion_ia import (
     cifras, hechos_permitidos, construir_prompt, normalizar_escenas
 )
@@ -71,6 +76,66 @@ class TestsGuionIA(unittest.TestCase):
         escena = ("Rockstar ha presentado 999 regiones en Leonida oficialmente. " * 17).strip()
         with self.assertRaisesRegex(ValueError, "cifras no verificadas"):
             normalizar_escenas([escena] * 9, TEMA, "largo")
+
+    def test_short_acepta_cta_sola_como_escena_final(self):
+        base = [
+            "Rockstar presenta la historia de Jason y Lucia en el estado de Leonida.",
+            "GTA VI tiene personajes y lugares anunciados por Rockstar en su sitio oficial.",
+            "Vice City es una de las regiones del mundo ficticio de Leonida.",
+            "Jason y Lucia afrontan problemas después de un golpe que sale mal.",
+            CTA_SUSCRIPCION,
+        ]
+        normalizadas, texto = normalizar_escenas(base, TEMA, "short")
+        self.assertEqual(len(normalizadas), 5)
+        self.assertEqual(normalizadas[-1]["texto"], CTA_SUSCRIPCION)
+        self.assertEqual(texto.count(CTA_SUSCRIPCION), 1)
+
+    def test_short_rechaza_cta_sola_en_escena_intermedia(self):
+        escenas = [
+            "Rockstar anuncia una historia protagonizada por Jason y Lucia.",
+            CTA_SUSCRIPCION,
+            "Rockstar ha presentado el estado de Leonida en el sitio oficial.",
+            "Vice City es una localización del mundo oficial de GTA VI.",
+            "La historia anunciada por Rockstar incluye una conspiración criminal.",
+        ]
+        with self.assertRaisesRegex(ValueError, "escena vacía"):
+            normalizar_escenas(escenas, TEMA, "short")
+
+    def test_short_gemini_invalido_dos_veces_conserva_plan_factual(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            carpeta = Path(tmp) / "salida"
+            carpeta.mkdir()
+            plan = {
+                "tema_id": TEMA["id"], "formato": "short",
+                "requiere_guion_ia": False,
+                "escenas": [{"tipo": "gancho", "texto": "Guion oficial preparado."}],
+                "huella_guion": "huella_original",
+            }
+            (carpeta / "plan.json").write_text(
+                json.dumps(plan), encoding="utf-8"
+            )
+            (carpeta / "guion.txt").write_text(
+                "Guion oficial preparado.\\n", encoding="utf-8"
+            )
+            temas = Path(tmp) / "temas.json"
+            temas.write_text(json.dumps([dict(TEMA, estado="confirmado")]))
+            with patch.object(guion_ia, "SALIDA", carpeta), patch.object(
+                guion_ia, "TEMAS", temas
+            ), patch.object(
+                guion_ia, "solicitar", return_value=[""]
+            ) as llamada, patch.dict(
+                "os.environ", {"GEMINI_API_KEY": "clave_simulada"}
+            ), patch(
+                "sys.argv", ["generar_guion_ia.py", "--formato", "short"]
+            ):
+                guion_ia.main()
+            self.assertEqual(llamada.call_count, 2)
+            self.assertEqual(json.loads(
+                (carpeta / "plan.json").read_text()), plan)
+            self.assertEqual(
+                (carpeta / "guion.txt").read_text(),
+                "Guion oficial preparado.\\n"
+            )
 
     def test_cta_obligatoria(self):
         escenas = [
