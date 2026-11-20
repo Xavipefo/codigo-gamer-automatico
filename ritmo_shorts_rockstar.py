@@ -81,7 +81,13 @@ def preparar_tomas(fotos, escena, fotogramas, carpeta, indice):
     resultado = []
     carpeta = Path(carpeta)
     for j, (frames, linea) in enumerate(zip(reparto, rotulos)):
-        foto, credito, titulo = fotos[j]
+        # Repartir las fotos sobre TODA la narración (inicio, centro y
+        # final), no solo coger las primeras de las seis consultas.
+        posicion = min(
+            len(fotos) - 1,
+            int((j + 0.5) * len(fotos) / len(reparto))
+        )
+        foto, credito, titulo = fotos[posicion]
         foto = Path(foto)
         if not foto.is_file():
             raise FileNotFoundError("No existe foto oficial: " + str(foto))
