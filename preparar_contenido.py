@@ -171,8 +171,12 @@ def preparar(tema):
     seleccion = [
         {"tipo": "gancho", "texto": gancho},
         *[
-            {"tipo": "hecho_verificado", "texto": x}
-            for x in hechos[:2]
+            {
+                "tipo": "hecho_verificado",
+                "texto": x,
+                "fuente": tema["hechos"][i]["fuente"]
+            }
+            for i, x in enumerate(hechos[:2])
         ],
     ]
     base_palabras = sum(len(x["texto"].split()) for x in seleccion)
@@ -181,9 +185,13 @@ def preparar(tema):
         seleccion.insert(1, {"tipo": "contexto", "texto": contexto})
         margen -= len(contexto.split())
     if len(hechos) > 2 and len(hechos[2].split()) <= margen:
-        seleccion.append({"tipo": "hecho_verificado", "texto": hechos[2]})
+        seleccion.append({
+            "tipo": "hecho_verificado",
+            "texto": hechos[2],
+            "fuente": tema["hechos"][2]["fuente"],
+        })
     seleccion.append({"tipo": "cierre", "texto": cierre})
-    guion = " ".join(x["texto"].rstrip(".!?") + "." for x in seleccion)
+    guion = " ".join(x["texto"] for x in seleccion)
     referencias = list(dict.fromkeys(h["fuente"] for h in tema["hechos"]))
     descripcion = construir_descripcion(tema, "short")
     plan = {
