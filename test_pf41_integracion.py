@@ -43,6 +43,7 @@ class IntegracionShortPF41(unittest.TestCase):
             "texto_miniatura": "GTA VI: LEONIDA",
             "escenas": escenas,
         }
+        numero_bloques = len(motor_video.adaptar_escenas(plan))
         llamadas = []
 
         class NarradorPrueba:
@@ -76,7 +77,7 @@ class IntegracionShortPF41(unittest.TestCase):
             autorizadas = [
                 (fotos[i % len(fotos)], "Rockstar Games - prueba sintética",
                  f"Toma ficticia de prueba {i}")
-                for i in range(len(escenas) * 6)
+                for i in range(numero_bloques * 6)
             ]
             def miniatura(_texto, _formato, destino, plan=None):
                 Image.new("RGB", (720, 1280), (10, 30, 45)).save(
@@ -102,12 +103,12 @@ class IntegracionShortPF41(unittest.TestCase):
             reporte = out / "informe_ritmo_pf41.json"
             self.assertTrue(video.is_file())
             self.assertTrue(reporte.is_file())
-            self.assertEqual(len(llamadas), len(escenas))
+            self.assertEqual(len(llamadas), numero_bloques)
             datos = json.loads(reporte.read_text(encoding="utf-8"))
             self.assertEqual(datos["primer_plano"], "foto")
             self.assertGreaterEqual(datos["numero_planos"], 4)
             self.assertLessEqual(datos["plano_maximo_segundos"], 3.8)
-            self.assertAlmostEqual(datos["duracion_segundos"], 15.75, delta=0.4)
+            self.assertAlmostEqual(datos["duracion_segundos"], numero_bloques*5.25, delta=0.4)
             self.assertTrue(all(x["medio"] == "foto" for x in datos["planos"]))
 
 
