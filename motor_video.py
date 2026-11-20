@@ -302,6 +302,8 @@ def montar(plan, guion):
         elif not imagenes_autorizadas:
             print("Short gaming-news: gráficos editoriales; no se simula gameplay.", flush=True)
         clips = []
+        planos_pf41 = []
+        cierre_pf41 = 0.0
         visuales_usados = {"clip": 0, "foto": 0, "tarjeta": 0}
         for indice, escena in enumerate(escenas):
             audio = directorio / f"audio_{indice:03}.wav"
@@ -328,6 +330,12 @@ def montar(plan, guion):
                         "medio": "foto",
                         "foto": toma["foto"],
                         "credito": toma["credito"],
+                        "titulo": toma["titulo"],
+                    })
+                    planos_pf41.append({
+                        "indice_bloque": indice,
+                        "segundos": round(toma["fotogramas"] / fps, 3),
+                        "medio": "foto",
                         "titulo": toma["titulo"],
                     })
                 clip_escena = directorio / f"clip_{indice:03}.mp4"
@@ -380,6 +388,8 @@ def montar(plan, guion):
                 elif medio == "tarjeta":
                     medio = "foto"
             visuales_usados[medio] += 1
+            if formato == "short" and usa_rockstar and escena["tipo"] == "cierre":
+                cierre_pf41 += duracion_escena
             usa_material = medio == "clip"
             escena_visible = (
                 rotulo_breve(escena) if medio != "tarjeta"
@@ -508,6 +518,29 @@ def montar(plan, guion):
         ])
         if salida.stat().st_size < 20_000:
             raise RuntimeError("MP4 vacío o incompleto")
+        if formato == "short" and usa_rockstar:
+            if not planos_pf41 or planos_pf41[0]["medio"] != "foto":
+                raise RuntimeError("PF-41: falta captura oficial en el inicio")
+            informe_pf41 = {
+                "version": "PF-41",
+                "tema_id": plan["tema_id"],
+                "formato": "short",
+                "duracion_segundos": round(duracion_total, 3),
+                "duracion_cierre_segundos": round(cierre_pf41, 3),
+                "primer_plano": planos_pf41[0]["medio"],
+                "numero_planos": len(planos_pf41),
+                "plano_maximo_segundos": max(
+                    t["segundos"] for t in planos_pf41
+                ),
+                "planos": planos_pf41,
+                "narrador": narrador.voz_real,
+                "repeticiones_tts_adicionales": 0,
+                "aviso": "Requiere comprobación editorial de relación imagen-guion",
+            }
+            (SALIDA / "informe_ritmo_pf41.json").write_text(
+                json.dumps(informe_pf41, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8"
+            )
 
         crear_miniatura(plan.get("texto_miniatura", plan["titulo_propuesto"]),
                         formato, SALIDA / "miniatura.jpg", plan=plan)
