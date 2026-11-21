@@ -337,6 +337,7 @@ def montar(plan, guion):
                         "segundos": round(toma["fotogramas"] / fps, 3),
                         "medio": "foto",
                         "titulo": toma["titulo"],
+                        "fuente_foto": Path(toma["foto"]).name,
                     })
                 clip_escena = directorio / f"clip_{indice:03}.mp4"
                 renderizar_short(tomas, audio, clip_escena, comando)
