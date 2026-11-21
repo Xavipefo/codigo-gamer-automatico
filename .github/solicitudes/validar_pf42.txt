@@ -1,0 +1,6 @@
+Solicitud autorizada por el usuario: validación real de PF-42.
+privacidad=private
+tema=gta6-historia-duo
+Objetivo: Short sobre la historia de Jason y Lucia, con imágenes oficiales y auditoría de ritmo PF-42.
+Rama main; no publicar en abierto. Fecha 2026-11-21.
+Petición única VALIDACION-PF42-HISTORIA-DUO-20261121-01.
