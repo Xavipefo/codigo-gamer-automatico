@@ -1,0 +1,43 @@
+name: "Píxel Feroz - Lanzar validación privada solicitada"
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/solicitudes/validar_pf42.txt"
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: pixel-feroz-validacion-privada-solicitada
+  cancel-in-progress: false
+
+jobs:
+  lanzar:
+    if: contains(github.event.head_commit.message, 'solicitar ejecucion privada')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - name: Obtener solicitud exacta
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Iniciar Short en modo privado
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          fichero=".github/solicitudes/validar_pf42.txt"
+          grep -qx "privacidad=private" "$fichero"
+          tema="$(sed -n 's/^tema=//p' "$fichero" | head -n 1)"
+          if [[ ! "$tema" =~ ^gta6-[a-z0-9-]{3,55}$ ]]; then
+            echo "::error::Identificador de tema no permitido"
+            exit 1
+          fi
+          gh workflow run crear_short_privado.yml --ref main -f tema="$tema"
+          echo "PF-42: solicitado Short PRIVADO; tema=$tema"
