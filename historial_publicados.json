@@ -310,5 +310,15 @@
     "formato": "short",
     "fecha": "2026-11-20T15:58:40.941063+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "lDcVdi-SVqE",
+    "url": "https://www.youtube.com/watch?v=lDcVdi-SVqE",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-historia-duo",
+    "formato": "short",
+    "fecha": "2026-11-21T20:29:34.507152+00:00",
+    "miniatura_confirmada": true
   }
 ]
