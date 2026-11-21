@@ -57,13 +57,16 @@ def comprobar_calendario(calendario, temas, ideas):
 def preparar(archivo_calendario=CALENDARIO, destino=DESTINO):
     calendario = json.loads(Path(archivo_calendario).read_text(encoding="utf-8"))
     temas_lista = json.loads(TEMAS.read_text(encoding="utf-8"))
+    # El calendario histórico conserva reservas que ERAN válidas en su día.
+    # No ofrecer un tema caducado para una nueva producción.
     temas = {
-        x["id"]: validar_tema(x) for x in temas_lista
-        if x["estado"] == "confirmado"
-        and (
-            not x.get("vigente_hasta")
-            or date.fromisoformat(x["vigente_hasta"]) >= date.today()
+        x["id"]: (
+            validar_tema(x) if (
+                not x.get("vigente_hasta")
+                or date.fromisoformat(x["vigente_hasta"]) >= date.today()
+            ) else x
         )
+        for x in temas_lista if x["estado"] == "confirmado"
     }
     ideas_lista = json.loads(IDEAS.read_text(encoding="utf-8"))["ideas"]
     ideas = {x["id"]: x for x in ideas_lista}
@@ -81,9 +84,14 @@ def preparar(archivo_calendario=CALENDARIO, destino=DESTINO):
         formato = slot["formato"]
         tema_id = slot.get("tema_confirmado_reserva")
         clave = (tema_id, formato)
+        caducado = bool(
+            tema_id and temas[tema_id].get("vigente_hasta")
+            and date.fromisoformat(temas[tema_id]["vigente_hasta"]) < date.today()
+        )
         estado = ("pendiente_verificacion_postlanzamiento"
                   if not tema_id else "ya_subido_privado"
-                  if clave in usados else "lista_preparacion")
+                  if clave in usados else "reserva_caducada_no_preparar"
+                  if caducado else "lista_preparacion")
         if tema_id and clave in creados:
             estado = "reserva_repetida"
         if estado == "lista_preparacion":
