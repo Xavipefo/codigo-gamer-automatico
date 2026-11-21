@@ -38,10 +38,10 @@ def validar_ritmo_pf42(informe, duracion):
     for plano in planos:
         if not isinstance(plano, dict):
             raise ValueError("PF-42: plano sin metadatos")
-        titulo = plano.get("titulo")
-        if not isinstance(titulo, str) or not titulo.strip():
+        fuente = plano.get("fuente_foto") or plano.get("titulo")
+        if not isinstance(fuente, str) or not fuente.strip():
             raise ValueError("PF-42: plano sin fuente identificable")
-        titulos.append(titulo.casefold().strip())
+        titulos.append(fuente.casefold().strip())
     diferentes = len(set(titulos))
     if len(planos) >= 4 and diferentes < 2:
         raise ValueError("PF-42: el montaje repite una única fotografía")
