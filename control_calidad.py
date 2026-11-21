@@ -22,6 +22,41 @@ OUT = BASE / "salida"
 THEMES = BASE / "temas_verificados.json"
 
 
+
+def validar_ritmo_pf42(informe, duracion):
+    """PF-42: auditar diversidad visual y coherencia del informe de PF-41.
+
+    No analiza la calidad artística ni sustituye la revisión humana.
+    """
+    if informe.get("version") != "PF-41":
+        raise ValueError("PF-42: informe audiovisual con versión incorrecta")
+    planos = informe.get("planos")
+    if (not isinstance(planos, list) or
+            len(planos) < 2 or len(planos) != informe.get("numero_planos")):
+        raise ValueError("PF-42: contadores de planos inconsistentes")
+    titulos = []
+    for plano in planos:
+        if not isinstance(plano, dict):
+            raise ValueError("PF-42: plano sin metadatos")
+        titulo = plano.get("titulo")
+        if not isinstance(titulo, str) or not titulo.strip():
+            raise ValueError("PF-42: plano sin fuente identificable")
+        titulos.append(titulo.casefold().strip())
+    diferentes = len(set(titulos))
+    if len(planos) >= 4 and diferentes < 2:
+        raise ValueError("PF-42: el montaje repite una única fotografía")
+    cierre = float(informe.get("duracion_cierre_segundos", -1))
+    if not 0 < cierre <= 8:
+        raise ValueError("PF-42: cierre demasiado largo o ausente")
+    duracion_fotos = sum(float(p["segundos"]) for p in planos)
+    if abs(duracion_fotos + cierre - duracion) > 1.0:
+        raise ValueError("PF-42: no cuadran montaje, voz y cierre")
+    if informe.get("repeticiones_tts_adicionales") != 0:
+        raise ValueError("PF-42: narración duplicada por los subplanos")
+    return diferentes
+
+
+
 def comprobar(formato):
     if formato not in ("short", "largo"):
         raise ValueError("Formato desconocido")
@@ -130,6 +165,8 @@ def comprobar(formato):
                 "PF-41: diferencia entre montaje y duración informada"
             )
 
+        diversidad_pf42 = validar_ritmo_pf42(ritmo_pf41, duracion)
+
     miniatura = OUT / "miniatura.jpg"
     if not miniatura.is_file() or miniatura.stat().st_size > 2 * 1024 * 1024:
         raise ValueError("Miniatura ausente o demasiado grande")
@@ -177,6 +214,7 @@ def comprobar(formato):
             "numero_planos": ritmo_pf41["numero_planos"],
             "plano_maximo_segundos": ritmo_pf41["plano_maximo_segundos"],
             "duracion_cierre_segundos": ritmo_pf41["duracion_cierre_segundos"],
+            "fotografias_distintas_por_titulo": diversidad_pf42,
         },
     }
     (OUT / "calidad.json").write_text(
