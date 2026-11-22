@@ -360,5 +360,15 @@
     "formato": "largo",
     "fecha": "2026-11-22T16:51:02.542748+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "emwdcqKLOwU",
+    "url": "https://www.youtube.com/watch?v=emwdcqKLOwU",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-vice-city-fotos-oficiales",
+    "formato": "short",
+    "fecha": "2026-11-22T19:09:21.558381+00:00",
+    "miniatura_confirmada": true
   }
 ]
