@@ -1,7 +1,7 @@
 """Largo especial de lanzamiento: guion cerrado y comparación limitada."""
 import json
 import unittest
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 from editorial import preparar_plan
 from preparar_contenido import validar_tema
@@ -15,7 +15,15 @@ class TestLargoEstreno0020(unittest.TestCase):
         cls.tema=next(t for t in json.loads((BASE/"temas_verificados.json").read_text(encoding="utf-8")) if t["id"]==ID)
 
     def test_largo_de_estreno_no_es_una_comparativa_completa(self):
-        t=validar_tema(self.tema)
+        # Se verifica el guion histórico sin volver a declararlo vigente:
+        # el motor de producción debe seguir rechazando temas caducados.
+        vence = date.fromisoformat(self.tema["vigente_hasta"])
+        self.assertLess(vence, date.today())
+        with self.assertRaisesRegex(ValueError, "Tema caducado"):
+            validar_tema(self.tema)
+        historico = dict(self.tema)
+        historico.pop("vigente_hasta")
+        t = validar_tema(historico)
         escenas=t["escenas_largas"]
         self.assertEqual(len(escenas),14)
         self.assertTrue(1100 <= len(" ".join(escenas).split()) <= 1800)
