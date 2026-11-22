@@ -27,12 +27,13 @@
     "texto_miniatura": "ROCKSTAR ENSEÑA VICE CITY",
     "descripcion_personalizada": "Análisis editorial de fuentes oficiales de Rockstar. Las fotografías son promocionales; no se afirma gameplay propio ni detalles de misiones no comprobados.",
     "visuales_preferidos": [
-      "vice",
-      "leonida",
-      "artwork"
+      "vice"
     ],
     "portada_paleta": "cian",
-    "portada_categoria": "vice"
+    "portada_categoria": "vice",
+    "categorias_visuales_exclusivas": [
+      "vice"
+    ]
   },
   {
     "id": "gta6-leonida-keys-fotos",
