@@ -191,6 +191,18 @@ def elegir_imagenes(plan, escenas, base=BASE):
     """Relevancia por escena + variedad real; evita 4 fotos seguidas del mismo personaje."""
     datos = cargar_banco(base)
     fotos = datos["imagenes"]
+    exclusivas=plan.get("categorias_visuales_exclusivas") or []
+    if exclusivas:
+        if not isinstance(exclusivas,list) or any(
+            not isinstance(x,str) or x not in CLAVES for x in exclusivas
+        ):
+            raise ValueError("Categorías visuales exclusivas desconocidas")
+        fotos=[x for x in fotos if x["categoria"] in exclusivas]
+        if len(fotos)<max(5,len(escenas)):
+            raise RuntimeError(
+                "No hay suficientes fotografías OFICIALES del tema concreto; "
+                "se bloquea en lugar de mostrar zonas ajenas"
+            )
     usados = set()
     resultado = []
     categorias_previas = []
