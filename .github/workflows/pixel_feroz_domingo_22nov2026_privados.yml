@@ -1,0 +1,59 @@
+name: "Píxel Feroz - Domingo 22 Nov 3 Shorts y Largo PRIVADOS"
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/solicitudes/producir_pf_20261122.txt"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  short-1300-festival:
+    name: "13:00 - Festival Miami (Short PRIVADO)"
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      tema: gta6-festival-miami-20261122
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+    secrets: inherit
+
+  short-1800-album:
+    name: "18:00 - Album oficial (Short PRIVADO)"
+    needs: [short-1300-festival]
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      tema: gta6-album-disponible-20261122
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+    secrets: inherit
+
+  short-2100-extras:
+    name: "21:00 - Extras estreno (Short PRIVADO)"
+    needs: [short-1800-album]
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      tema: gta6-bonus-estreno-20261122
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+    secrets: inherit
+
+  largo-2200-fin-semana:
+    name: "22:00 - Siete claves primer fin de semana (Largo PRIVADO)"
+    needs: [short-2100-extras]
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: largo
+      tema: gta6-fin-semana-oficial-20261122
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+    secrets: inherit
