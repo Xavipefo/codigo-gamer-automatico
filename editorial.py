@@ -49,6 +49,38 @@ def cargar_elegibles():
     return temas
 
 
+
+def _cobertura_visual_exclusiva(tema, formato, banco):
+    """Exige suficientes imágenes exactas antes de consumir un tema automático.
+
+    Si el tema es concreto (por ejemplo Vice City), no sustituir con capturas
+    de otras zonas. Las producciones manuales conservan su propia auditoría.
+    """
+    exclusivas=tema.get("categorias_visuales_exclusivas") or []
+    if not exclusivas or banco is None:
+        return True
+    if not isinstance(exclusivas,list) or not all(isinstance(x,str) for x in exclusivas):
+        raise ValueError("Categorías visuales exclusivas inválidas")
+    fotos=[x for x in banco.get("imagenes",[])
+           if x.get("categoria") in exclusivas]
+    if formato=="short":
+        _, _, plan=preparar(tema)
+        escenas=len(plan.get("escenas",[]))
+    else:
+        # El número final de escenas largas se define más tarde.
+        escenas=5
+    minimo=max(5,escenas)
+    return len({x["archivo"] for x in fotos})>=minimo
+
+
+def _banco_para_preflight():
+    """Solo se activa cuando ya se ha descargado y validado el banco."""
+    from rockstar_media import BASE as BANCO, cargar_banco
+    if not (BANCO/"catalogo.json").is_file():
+        return None
+    return cargar_banco()
+
+
 def seleccionado(identificador, formato):
     if formato not in ("short", "largo"):
         raise ValueError("Formato incorrecto")
@@ -76,7 +108,22 @@ def seleccionado(identificador, formato):
             "No quedan temas vigentes y no usados para "
             + formato + ". Actualiza temas_verificados.json."
         )
-    # Sin sorted(): el primer elemento de la lista es la próxima producción.
+    # Una categoría muy específica puede no disponer de suficientes capturas
+    # oficiales. No detener toda la cola ni mezclar escenarios ajenos.
+    if not identificador:
+        banco=_banco_para_preflight()
+        aptos=[]
+        for tema in posibles:
+            if _cobertura_visual_exclusiva(tema,formato,banco):
+                aptos.append(tema)
+            else:
+                print("PF-46: tema reservado sin fotos suficientes:",
+                      tema["id"],flush=True)
+        if not aptos:
+            raise RuntimeError("Ningún tema pendiente dispone de un banco visual "
+                               "oficial suficiente. Revisar cola sin publicar.")
+        posibles=aptos
+    # Sin sorted(): se conserva el orden editorial de los temas aptos.
     return posibles[0]
 
 
