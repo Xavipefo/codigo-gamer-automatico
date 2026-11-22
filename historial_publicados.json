@@ -340,5 +340,15 @@
     "formato": "short",
     "fecha": "2026-11-22T15:18:15.733858+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "wMOZtE64LlA",
+    "url": "https://www.youtube.com/watch?v=wMOZtE64LlA",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-bonus-estreno-20261122",
+    "formato": "short",
+    "fecha": "2026-11-22T15:24:03.293126+00:00",
+    "miniatura_confirmada": true
   }
 ]
