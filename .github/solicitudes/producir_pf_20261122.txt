@@ -7,3 +7,6 @@ publicacion_automatica=false
 revision_humana=true
 solicitud=activar-generacion-privada-2026-11-22
 confirmacion=SUBIR_PRIVADO
+reintento=tras-correccion-tests-2026-11-22
+validacion_exitosa=45036413156
+confirmacion=SUBIR_PRIVADO
