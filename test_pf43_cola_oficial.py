@@ -2,6 +2,7 @@
 import unittest
 from pathlib import Path
 import json
+import tempfile
 from unittest.mock import patch
 
 from preparar_contenido import validar_tema
@@ -51,12 +52,23 @@ class ColaPF43(unittest.TestCase):
                     self.assertEqual(len(tema["titulos_experimento"]),3)
 
     def test_prioriza_nuevos_temas_no_publicados(self):
-        hist=RAIZ/"historial_publicados.json"
-        with patch.object(editorial,"HISTORIAL",hist):
-            next_short=editorial.seleccionado("","short")
-            next_long=editorial.seleccionado("","largo")
-        self.assertEqual(next_short["id"],IDS[0])
-        self.assertEqual(next_long["id"],IDS[-2])
+        # Un historial de producción real es mutable; el test no debe depender
+        # de las subidas que se hayan hecho en el canal.
+        with tempfile.TemporaryDirectory() as tmp:
+            hist=Path(tmp)/"historial.json"
+            hist.write_text("[]", encoding="utf-8")
+            with patch.object(editorial,"HISTORIAL",hist):
+                next_short=editorial.seleccionado("","short")
+                next_long=editorial.seleccionado("","largo")
+                self.assertEqual(next_short["id"],IDS[0])
+                self.assertEqual(next_long["id"],IDS[-2])
+
+                # Una subida real se salta y se utiliza el siguiente tema.
+                hist.write_text(json.dumps([
+                    {"tema_id": IDS[0], "formato": "short", "estado": "subido"}
+                ]), encoding="utf-8")
+                siguiente=editorial.seleccionado("","short")
+                self.assertEqual(siguiente["id"],IDS[1])
 
     def test_plan_y_descripcion_primer_short(self):
         tema=self.nuevos[IDS[0]]

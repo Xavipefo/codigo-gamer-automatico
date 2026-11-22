@@ -117,6 +117,7 @@ def preparar_plan(tema, formato):
     plan["huella_guion"] = hashlib.sha256(texto.encode("utf-8")).hexdigest()
     plan["revision_pendiente"] = True
     plan["visuales_preferidos"] = tema.get("visuales_preferidos", [])
+    plan["categorias_visuales_exclusivas"] = tema.get("categorias_visuales_exclusivas", [])
     plan["portada_categoria"] = tema.get("portada_categoria")
     plan["portada_paleta"] = tema.get("portada_paleta", "fucsia")
     plan["miniatura_opciones"] = tema.get("miniatura_opciones", [])
