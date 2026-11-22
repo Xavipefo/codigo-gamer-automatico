@@ -95,6 +95,11 @@ def producir(cantidad, lanzar=ejecutar):
         lanzar(sys.executable, "generar_guion_ia.py", "--formato", "short")
         lanzar(sys.executable, "motor_video.py")
         lanzar(sys.executable, "control_calidad.py", "--formato", "short")
+        lanzar(sys.executable, "auditoria_audiovisual.py",
+               "--video", "salida/pixel_feroz_short.mp4",
+               "--orientacion", "vertical", "--minimo", "10",
+               "--maximo", "180",
+               "--informe", "salida/auditoria_audiovisual.json")
         # Guardar imágenes y mosaico POR TEMA antes de eliminar SALIDA en el
         # siguiente vídeo; nunca copiar MP4, narraciones o secretos.
         revision = SALIDA / "revision_visual"
