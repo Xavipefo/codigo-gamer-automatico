@@ -330,5 +330,15 @@
     "formato": "short",
     "fecha": "2026-11-22T15:12:50.526390+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "xxRXMWdy8tU",
+    "url": "https://www.youtube.com/watch?v=xxRXMWdy8tU",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-album-disponible-20261122",
+    "formato": "short",
+    "fecha": "2026-11-22T15:18:15.733858+00:00",
+    "miniatura_confirmada": true
   }
 ]
