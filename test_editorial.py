@@ -47,19 +47,30 @@ class TestEditorial(unittest.TestCase):
         self.assertNotIn("Identificador editorial:", descripcion)
 
     def test_orden_y_formatos_independientes(self):
+        # La cabecera de la cola cambia cada día: comprobar el orden real
+        # y la independencia por formato, sin codificar una fecha pasada.
+        elegibles = editorial.cargar_elegibles()
+        primero_short = next(t["id"] for t in elegibles if "short" in t.get("formatos", ["short"]))
+        segundo_short = next(
+            t["id"] for t in elegibles
+            if "short" in t.get("formatos", ["short"]) and t["id"] != primero_short
+        )
+        primero_largo = next(t["id"] for t in elegibles if "largo" in t.get("formatos", ["short"]))
         with tempfile.TemporaryDirectory() as tmp:
             hist = Path(tmp) / "hist.json"
-            hist.write_text(json.dumps([
-                {"tema_id": "gta6-lanzamiento-oficial",
-                 "estado": "subido", "formato": "short"}
-            ]), encoding="utf-8")
             with patch.object(editorial, "HISTORIAL", hist):
-                proximo = editorial.seleccionado("", "short")
-                self.assertEqual(proximo["id"], "gta6-mapa-oficial-descargable-20261121")
-                largo = editorial.seleccionado("", "largo")
-                self.assertEqual(largo["id"], "gta6-radios-musica-leonida-20261121")
+                hist.write_text("[]", encoding="utf-8")
+                self.assertEqual(editorial.seleccionado("", "short")["id"], primero_short)
+                self.assertEqual(editorial.seleccionado("", "largo")["id"], primero_largo)
+                hist.write_text(json.dumps([
+                    {"tema_id": primero_short, "estado": "subido", "formato": "short"}
+                ]), encoding="utf-8")
+                self.assertEqual(editorial.seleccionado("", "short")["id"], segundo_short)
+                self.assertEqual(editorial.seleccionado("", "largo")["id"], primero_largo)
 
     def test_cola_manual_shorts_sabado_21_y_miniaturas(self):
+        # Los temas del 21 son históricos: verificar sus portadas sin
+        # exigir que sigan siendo los próximos de la cola editorial.
         previstos = [
             ("gta6-mapa-oficial-descargable-20261121", "amarillo", "vice"),
             ("gta6-audio-3d-ps5-20261121", "cian", "artwork"),
@@ -67,12 +78,10 @@ class TestEditorial(unittest.TestCase):
         ]
         with tempfile.TemporaryDirectory() as tmp:
             historial = Path(tmp) / "historial.json"
-            usados = []
+            historial.write_text("[]", encoding="utf-8")
             with patch.object(editorial, "HISTORIAL", historial):
                 for ident, paleta, categoria in previstos:
-                    historial.write_text(json.dumps(usados), encoding="utf-8")
-                    tema = editorial.seleccionado("", "short")
-                    self.assertEqual(tema["id"], ident)
+                    tema = editorial.seleccionado(ident, "short")
                     self.assertEqual(tema["portada_paleta"], paleta)
                     self.assertEqual(tema["portada_categoria"], categoria)
                     self.assertIn("short", tema["formatos"])
@@ -80,29 +89,37 @@ class TestEditorial(unittest.TestCase):
                     self.assertEqual(plan["portada_paleta"], paleta)
                     self.assertEqual(plan["portada_categoria"], categoria)
                     self.assertFalse(plan["publicacion_automatica"])
-                    usados.append({
-                        "tema_id": ident, "formato": "short", "estado": "subido"
-                    })
+
+    def test_agenda_domingo_22_solo_privados_y_nuevos_temas(self):
+        agenda = json.loads(
+            Path(__file__).with_name("calendario_publicacion.json").read_text(encoding="utf-8")
+        )
+        slots = [s for s in agenda["slots"] if s["fecha"] == "2026-11-22"]
+        self.assertEqual(len(slots), 4)
+        self.assertEqual([s["formato"] for s in slots], ["short", "short", "short", "largo"])
+        self.assertEqual(
+            [s["tema_confirmado_reserva"] for s in slots],
+            ["gta6-festival-miami-20261122", "gta6-album-disponible-20261122",
+             "gta6-bonus-estreno-20261122", "gta6-fin-semana-oficial-20261122"]
+        )
+        for slot in slots:
+            self.assertTrue(slot["subir_siempre_privado"])
+            self.assertFalse(slot["publicar_automaticamente"])
+            self.assertTrue(slot["requiere_revision_visual"])
 
     def test_proximo_largo_sabado_21_sobre_radios_no_reserva(self):
-        usados = [
-            "gta6-ya-se-puede-jugar-0020-largo",
-            "gta6-jason-lucia",
-            "gta6-vice-city-leonida",
-            "gta6-personajes-secundarios",
-            "gta6-tecnologia-plataformas",
-        ]
+        # Comprobación histórica del estilo: el largo del 21 sigue
+        # seleccionable por ID si se usa un historial ficticio vacío.
         with tempfile.TemporaryDirectory() as tmp:
             hist = Path(tmp) / "hist.json"
-            hist.write_text(json.dumps([
-                {"tema_id": tema, "formato": "largo", "estado": "subido"}
-                for tema in usados
-            ]), encoding="utf-8")
+            hist.write_text("[]", encoding="utf-8")
             with patch.object(editorial, "HISTORIAL", hist):
-                tema = editorial.seleccionado("", "largo")
-            self.assertEqual(tema["id"], "gta6-radios-musica-leonida-20261121")
+                tema = editorial.seleccionado("gta6-radios-musica-leonida-20261121", "largo")
             self.assertEqual(tema["portada_categoria"], "vice")
             self.assertEqual(tema["portada_paleta"], "violeta")
+            _, _, plan = editorial.preparar_plan(tema, "largo")
+            self.assertFalse(plan["publicacion_automatica"])
+            self.assertTrue(plan["requiere_guion_ia"])
 
     def test_descripcion_general_y_suscripcion(self):
         tema = editorial.cargar_elegibles()[0]
