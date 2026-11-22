@@ -320,5 +320,15 @@
     "formato": "short",
     "fecha": "2026-11-21T20:29:34.507152+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "T1sqz4Ydm_Q",
+    "url": "https://www.youtube.com/watch?v=T1sqz4Ydm_Q",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-festival-miami-20261122",
+    "formato": "short",
+    "fecha": "2026-11-22T15:12:50.526390+00:00",
+    "miniatura_confirmada": true
   }
 ]
