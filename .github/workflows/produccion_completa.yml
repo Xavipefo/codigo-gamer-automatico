@@ -238,6 +238,27 @@ jobs:
           FORMATO: ${{ inputs.formato }}
         run: python control_calidad.py --formato "$FORMATO"
 
+      - name: PF-43 - Detectar vídeo negro, congelado o sin narración
+        env:
+          FORMATO: ${{ inputs.formato }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$FORMATO" = "short" ]; then
+            archivo="salida/pixel_feroz_short.mp4"
+            orientacion="vertical"
+            minimo=10
+            maximo=180
+          else
+            archivo="salida/pixel_feroz_largo.mp4"
+            orientacion="horizontal"
+            minimo=180
+            maximo=1200
+          fi
+          python auditoria_audiovisual.py --video "$archivo" \
+            --orientacion "$orientacion" --minimo "$minimo" \
+            --maximo "$maximo" --informe salida/auditoria_audiovisual.json
+
       # Solo previews e imágenes oficiales seleccionadas; nunca MP4 privado.
       # El artefacto sirve para analizar la composición como en Dato Nebular.
       - name: Descargar revisión visual de Short o largo

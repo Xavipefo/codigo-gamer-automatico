@@ -1,5 +1,437 @@
 [
   {
+    "id": "gta6-vice-city-fotos-oficiales",
+    "titulo": "Vice City: qué muestran las capturas oficiales de GTA VI",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-22",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 180,
+    "gancho": "La galería de Rockstar enseña Vice City con fotografías oficiales y recursos de la nueva ciudad.",
+    "contexto": "Análisis sin spoilers de materiales y fichas publicados por Rockstar; distinguir material promocional y mecánicas de juego verificadas.",
+    "hechos": [
+      {
+        "texto": "Rockstar incluye a Vice City entre los lugares de Leonida en la web oficial.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "La galería de capturas oficial clasifica varias fotografías con el nombre Vice City.",
+        "fuente": "https://www.rockstargames.com/VI/media/screenshots"
+      },
+      {
+        "texto": "Estas capturas documentan los escenarios mostrados, pero no certifican mecánicas o misiones concretas.",
+        "fuente": "https://www.rockstargames.com/VI/media/screenshots"
+      }
+    ],
+    "texto_miniatura": "ROCKSTAR ENSEÑA VICE CITY",
+    "descripcion_personalizada": "Análisis editorial de fuentes oficiales de Rockstar. Las fotografías son promocionales; no se afirma gameplay propio ni detalles de misiones no comprobados.",
+    "visuales_preferidos": [
+      "vice",
+      "leonida",
+      "artwork"
+    ],
+    "portada_paleta": "cian",
+    "portada_categoria": "vice"
+  },
+  {
+    "id": "gta6-leonida-keys-fotos",
+    "titulo": "Leonida Keys: las islas que muestra Rockstar",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-22",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 179,
+    "gancho": "Las islas de Leonida tienen su propia galería oficial, con fotografías descargables.",
+    "contexto": "Análisis sin spoilers de materiales y fichas publicados por Rockstar; distinguir material promocional y mecánicas de juego verificadas.",
+    "hechos": [
+      {
+        "texto": "Rockstar destaca Leonida Keys como una zona diferenciada en su página de lugares.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "La galería oficial contiene una colección de fotografías etiquetadas Leonida Keys.",
+        "fuente": "https://www.rockstargames.com/VI/media/screenshots"
+      },
+      {
+        "texto": "Los materiales promocionales permiten comentar paisajes sin deducir funciones jugables no confirmadas.",
+        "fuente": "https://www.rockstargames.com/VI/media/screenshots"
+      }
+    ],
+    "texto_miniatura": "LEONIDA KEYS",
+    "descripcion_personalizada": "Análisis editorial de fuentes oficiales de Rockstar. Las fotografías son promocionales; no se afirma gameplay propio ni detalles de misiones no comprobados.",
+    "visuales_preferidos": [
+      "leonida",
+      "vice",
+      "brian"
+    ],
+    "portada_paleta": "fucsia",
+    "portada_categoria": "leonida"
+  },
+  {
+    "id": "gta6-grassrivers-oficial",
+    "titulo": "Grassrivers: lo que sí se ve en la galería de GTA VI",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-22",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 178,
+    "gancho": "Rockstar ha publicado imágenes específicas de Grassrivers dentro de Leonida.",
+    "contexto": "Análisis sin spoilers de materiales y fichas publicados por Rockstar; distinguir material promocional y mecánicas de juego verificadas.",
+    "hechos": [
+      {
+        "texto": "Grassrivers aparece como una zona de Leonida en la página oficial de Rockstar.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Las capturas oficiales están etiquetadas Grassrivers dentro de su galería de GTA VI.",
+        "fuente": "https://www.rockstargames.com/VI/media/screenshots"
+      },
+      {
+        "texto": "El análisis se limita a fotografías oficiales, sin afirmar animales, misiones o secretos no documentados.",
+        "fuente": "https://www.rockstargames.com/VI/media/screenshots"
+      }
+    ],
+    "texto_miniatura": "GRASSRIVERS",
+    "descripcion_personalizada": "Análisis editorial de fuentes oficiales de Rockstar. Las fotografías son promocionales; no se afirma gameplay propio ni detalles de misiones no comprobados.",
+    "visuales_preferidos": [
+      "grassrivers",
+      "leonida",
+      "artwork"
+    ],
+    "portada_paleta": "verde",
+    "portada_categoria": "grassrivers"
+  },
+  {
+    "id": "gta6-port-gellhorn-galeria",
+    "titulo": "Port Gellhorn: nueva parada en las capturas de GTA VI",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-22",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 177,
+    "gancho": "Una de las regiones identificadas oficialmente por Rockstar es Port Gellhorn.",
+    "contexto": "Análisis sin spoilers de materiales y fichas publicados por Rockstar; distinguir material promocional y mecánicas de juego verificadas.",
+    "hechos": [
+      {
+        "texto": "Port Gellhorn figura en la lista oficial de destinos de Leonida.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Rockstar ofrece varias fotografías promocionales etiquetadas Port Gellhorn.",
+        "fuente": "https://www.rockstargames.com/VI/media/screenshots"
+      },
+      {
+        "texto": "Las capturas permiten comparar entornos presentados por Rockstar, no afirmar que ya se hayan explorado en una partida.",
+        "fuente": "https://www.rockstargames.com/VI/media/screenshots"
+      }
+    ],
+    "texto_miniatura": "PORT GELLHORN",
+    "descripcion_personalizada": "Análisis editorial de fuentes oficiales de Rockstar. Las fotografías son promocionales; no se afirma gameplay propio ni detalles de misiones no comprobados.",
+    "visuales_preferidos": [
+      "port",
+      "leonida",
+      "vice"
+    ],
+    "portada_paleta": "violeta",
+    "portada_categoria": "port"
+  },
+  {
+    "id": "gta6-ambrosia-imagenes",
+    "titulo": "Ambrosia: las imágenes oficiales de esta región",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-22",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 176,
+    "gancho": "Ambrosia no es un rumor: Rockstar la identifica y muestra imágenes propias de la zona.",
+    "contexto": "Análisis sin spoilers de materiales y fichas publicados por Rockstar; distinguir material promocional y mecánicas de juego verificadas.",
+    "hechos": [
+      {
+        "texto": "La web oficial de GTA VI presenta Ambrosia como un lugar de Leonida.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "La galería de capturas de Rockstar incluye imágenes etiquetadas Ambrosia.",
+        "fuente": "https://www.rockstargames.com/VI/media/screenshots"
+      },
+      {
+        "texto": "La información visual procede de promoción oficial y no prueba detalles de misiones o actividades.",
+        "fuente": "https://www.rockstargames.com/VI/media/screenshots"
+      }
+    ],
+    "texto_miniatura": "AMBROSIA",
+    "descripcion_personalizada": "Análisis editorial de fuentes oficiales de Rockstar. Las fotografías son promocionales; no se afirma gameplay propio ni detalles de misiones no comprobados.",
+    "visuales_preferidos": [
+      "ambrosia",
+      "vice",
+      "leonida"
+    ],
+    "portada_paleta": "amarillo",
+    "portada_categoria": "ambrosia"
+  },
+  {
+    "id": "gta6-mount-kalaga-parque",
+    "titulo": "Mount Kalaga: el parque que Rockstar destaca en GTA VI",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-22",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 175,
+    "gancho": "Rockstar dedica imágenes y una postal oficial a Mount Kalaga National Park.",
+    "contexto": "Análisis sin spoilers de materiales y fichas publicados por Rockstar; distinguir material promocional y mecánicas de juego verificadas.",
+    "hechos": [
+      {
+        "texto": "Mount Kalaga National Park figura como destino en el mapa promocional de Leonida.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Rockstar publica capturas identificadas con Mount Kalaga National Park.",
+        "fuente": "https://www.rockstargames.com/VI/media/screenshots"
+      },
+      {
+        "texto": "La colección oficial de arte y fondos incluye una postal promocional de esa zona.",
+        "fuente": "https://www.rockstargames.com/VI/media/artwork-wallpapers"
+      }
+    ],
+    "texto_miniatura": "MOUNT KALAGA",
+    "descripcion_personalizada": "Análisis editorial de fuentes oficiales de Rockstar. Las fotografías son promocionales; no se afirma gameplay propio ni detalles de misiones no comprobados.",
+    "visuales_preferidos": [
+      "kalaga",
+      "leonida",
+      "artwork"
+    ],
+    "portada_paleta": "cian",
+    "portada_categoria": "kalaga"
+  },
+  {
+    "id": "gta6-real-dimez-bae-roxy",
+    "titulo": "Real Dimez: quiénes son Bae-Luxe y Roxy en GTA VI",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-22",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 174,
+    "gancho": "Bae-Luxe y Roxy forman Real Dimez: Rockstar detalla su vínculo con la música de Vice City.",
+    "contexto": "Análisis sin spoilers de materiales y fichas publicados por Rockstar; distinguir material promocional y mecánicas de juego verificadas.",
+    "hechos": [
+      {
+        "texto": "Rockstar identifica a Real Dimez como el dúo integrado por Bae-Luxe y Roxy.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Su biografía oficial explica que se conocen desde el instituto y publican música rap.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Rockstar las presenta como artistas firmadas por Only Raw Records, con relación al personaje Dre'Quan.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      }
+    ],
+    "texto_miniatura": "REAL DIMEZ",
+    "descripcion_personalizada": "Análisis editorial de fuentes oficiales de Rockstar. Las fotografías son promocionales; no se afirma gameplay propio ni detalles de misiones no comprobados.",
+    "visuales_preferidos": [
+      "real",
+      "drequan",
+      "boobie"
+    ],
+    "portada_paleta": "fucsia",
+    "portada_categoria": "real"
+  },
+  {
+    "id": "gta6-only-raw-records",
+    "titulo": "Only Raw Records: el sello musical de GTA VI",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-22",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 173,
+    "gancho": "El sello de Dre'Quan conecta el negocio musical con varios personajes de Vice City.",
+    "contexto": "Análisis sin spoilers de materiales y fichas publicados por Rockstar; distinguir material promocional y mecánicas de juego verificadas.",
+    "hechos": [
+      {
+        "texto": "Rockstar describe a Dre'Quan Priest como un aspirante a empresario musical.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Su página oficial menciona Only Raw Records y la firma de Real Dimez.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Boobie Ike mantiene una asociación empresarial con Dre'Quan relacionada con la discográfica.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      }
+    ],
+    "texto_miniatura": "ONLY RAW RECORDS",
+    "descripcion_personalizada": "Análisis editorial de fuentes oficiales de Rockstar. Las fotografías son promocionales; no se afirma gameplay propio ni detalles de misiones no comprobados.",
+    "visuales_preferidos": [
+      "drequan",
+      "boobie",
+      "real",
+      "vice"
+    ],
+    "portada_paleta": "verde",
+    "portada_categoria": "drequan"
+  },
+  {
+    "id": "gta6-galeria-videos-oficiales",
+    "titulo": "Dónde encontrar las capturas y vídeos oficiales de GTA VI",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-22",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 172,
+    "gancho": "Antes de dar por cierta una captura viral, compárala con la colección oficial de Rockstar.",
+    "contexto": "Análisis sin spoilers de materiales y fichas publicados por Rockstar; distinguir material promocional y mecánicas de juego verificadas.",
+    "hechos": [
+      {
+        "texto": "Rockstar mantiene una galería oficial de capturas de GTA VI.",
+        "fuente": "https://www.rockstargames.com/VI/media/screenshots"
+      },
+      {
+        "texto": "La web de Rockstar incluye vídeos oficiales relacionados con personajes del juego.",
+        "fuente": "https://www.rockstargames.com/VI/media/videos"
+      },
+      {
+        "texto": "Las imágenes de la fuente oficial no deben describirse automáticamente como gameplay propio.",
+        "fuente": "https://www.rockstargames.com/VI/media/screenshots"
+      }
+    ],
+    "texto_miniatura": "FUENTES OFICIALES",
+    "descripcion_personalizada": "Análisis editorial de fuentes oficiales de Rockstar. Las fotografías son promocionales; no se afirma gameplay propio ni detalles de misiones no comprobados.",
+    "visuales_preferidos": [
+      "vice",
+      "artwork",
+      "leonida"
+    ],
+    "portada_paleta": "violeta",
+    "portada_categoria": "vice"
+  },
+  {
+    "id": "gta6-escenas-leonida-sin-spoilers",
+    "titulo": "GTA VI: guía visual de las regiones de Leonida sin spoilers",
+    "gancho": "Seis zonas, una galería oficial y preguntas que solo las imágenes pueden contestar.",
+    "contexto": "Recorrido por cada región con fuentes de Rockstar, sin inventar actividades jugables, misiones o ubicaciones exactas.",
+    "hechos": [
+      {
+        "texto": "La web Only in Leonida de Rockstar presenta Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia y Mount Kalaga.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Rockstar dispone de capturas individuales clasificadas por zonas dentro de la galería de GTA VI.",
+        "fuente": "https://www.rockstargames.com/VI/media/screenshots"
+      },
+      {
+        "texto": "El catálogo de postales oficiales incluye áreas como Mount Kalaga National Park, Ambrosia y Grassrivers.",
+        "fuente": "https://www.rockstargames.com/VI/media/artwork-wallpapers"
+      }
+    ],
+    "esquema_largo": [
+      "Introducción: por qué explorar las regiones mostradas por Rockstar sin inventar detalles ni rutas jugadas",
+      "Vice City: analizar únicamente las capturas oficiales y distinguir promoción de vídeo grabado en una partida",
+      "Leonida Keys: contrastar galería y materiales publicados para señalar similitudes y diferencias visibles",
+      "Grassrivers: elementos paisajísticos observables y límites de las hipótesis sobre actividades del juego",
+      "Port Gellhorn: revisar la galería oficial sin atribuir misiones o funciones que la fuente no pruebe",
+      "Ambrosia: comparar imágenes oficiales y destacar elementos que merecen exploración posterior",
+      "Mount Kalaga: relacionar las capturas con la postal promocional de su parque nacional",
+      "Cierre: qué documentación oficial consultar para analizar nuevas zonas sin spoilers ni filtraciones falsas"
+    ],
+    "visuales_preferidos": [
+      "vice",
+      "leonida",
+      "grassrivers",
+      "port",
+      "ambrosia",
+      "kalaga",
+      "artwork"
+    ],
+    "titulos_experimento": [
+      "GTA VI: las seis regiones de Leonida según Rockstar",
+      "GTA 6 sin spoilers: guía visual oficial de Leonida",
+      "Vice City y más allá: las regiones confirmadas de GTA VI"
+    ],
+    "miniatura_opciones": [
+      "6 REGIONES OFICIALES",
+      "EL MUNDO DE GTA VI",
+      "LEONIDA SIN SPOILERS"
+    ],
+    "texto_miniatura": "6 ZONAS DE LEONIDA",
+    "portada_categoria": "leonida",
+    "portada_paleta": "cian",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-22",
+    "formatos": [
+      "largo"
+    ],
+    "prioridad": 165,
+    "descripcion_personalizada": "Análisis de fuentes oficiales de GTA VI. No incluye canciones protegidas ni escenas de gameplay no comprobadas; las ilustraciones son promocionales."
+  },
+  {
+    "id": "gta6-vice-city-escena-musical",
+    "titulo": "GTA VI: la escena musical de Vice City según Rockstar",
+    "gancho": "Boobie Ike, Dre'Quan y Real Dimez: una historia empresarial que Rockstar ya describe.",
+    "contexto": "Perfiles de personajes de Rockstar sin mezclar canciones protegidas ni inventar escenas, actuaciones o misiones.",
+    "hechos": [
+      {
+        "texto": "Rockstar presenta a Boobie Ike como empresario de Vice City con negocios inmobiliarios, un club y un estudio musical.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Dre'Quan Priest busca abrirse camino en la industria musical y colabora con Boobie Ike en Only Raw Records.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Real Dimez es el dúo de Bae-Luxe y Roxy firmado por Only Raw Records, según las fichas oficiales.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      }
+    ],
+    "esquema_largo": [
+      "Introducción: la historia de personajes musicales que Rockstar ya ha mostrado sin reproducir canciones protegidas",
+      "Boobie Ike: qué negocios especifica la biografía oficial y qué partes no se pueden deducir",
+      "Dre'Quan Priest: su trayectoria y los objetivos musicales descritos en el material promocional",
+      "Only Raw Records: relación empresarial entre Boobie y Dre'Quan sin añadir funciones jugables inventadas",
+      "Real Dimez: Bae-Luxe y Roxy, biografía oficial, trayectoria musical y su contrato",
+      "Cómo las fichas oficiales conectan personajes con la atmósfera de Vice City",
+      "Qué imágenes y vídeos de personajes ofrece Rockstar y cómo distinguirlos de gameplay propio",
+      "Cierre: las preguntas sobre música y personajes que requerirán fuentes adicionales fiables"
+    ],
+    "visuales_preferidos": [
+      "drequan",
+      "real",
+      "boobie",
+      "vice",
+      "artwork"
+    ],
+    "titulos_experimento": [
+      "Real Dimez y Only Raw: la música de GTA VI explicada",
+      "GTA 6: el negocio de Boobie, Dre'Quan y Real Dimez",
+      "Vice City: la historia musical oficial que Rockstar ya contó"
+    ],
+    "miniatura_opciones": [
+      "ONLY RAW RECORDS",
+      "MÚSICA EN VICE CITY",
+      "LOS ARTISTAS GTA VI"
+    ],
+    "texto_miniatura": "MÚSICA VICE CITY",
+    "portada_categoria": "drequan",
+    "portada_paleta": "fucsia",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-22",
+    "formatos": [
+      "largo"
+    ],
+    "prioridad": 164,
+    "descripcion_personalizada": "Análisis de fuentes oficiales de GTA VI. No incluye canciones protegidas ni escenas de gameplay no comprobadas; las ilustraciones son promocionales."
+  },
+  {
     "id": "gta6-festival-miami-20261122",
     "titulo": "GTA VI celebró su estreno con un festival en Miami",
     "estado": "confirmado",
