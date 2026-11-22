@@ -5,3 +5,5 @@ workflow=pixel_feroz_domingo_22nov2026_privados.yml
 temas=gta6-festival-miami-20261122,gta6-album-disponible-20261122,gta6-bonus-estreno-20261122,gta6-fin-semana-oficial-20261122
 publicacion_automatica=false
 revision_humana=true
+solicitud=activar-generacion-privada-2026-11-22
+confirmacion=SUBIR_PRIVADO
