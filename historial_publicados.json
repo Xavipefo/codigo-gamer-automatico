@@ -350,5 +350,15 @@
     "formato": "short",
     "fecha": "2026-11-22T15:24:03.293126+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "6tBb7xBP5xU",
+    "url": "https://www.youtube.com/watch?v=6tBb7xBP5xU",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-fin-semana-oficial-20261122",
+    "formato": "largo",
+    "fecha": "2026-11-22T16:51:02.542748+00:00",
+    "miniatura_confirmada": true
   }
 ]
