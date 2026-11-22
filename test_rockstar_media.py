@@ -46,6 +46,26 @@ class TestBancoOficial(unittest.TestCase):
             ))
             self.assertEqual(len(rockstar_media.cargar_banco(base)["imagenes"]),16)
 
+    def test_vice_city_no_usa_imagenes_de_otras_zonas(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            base=Path(tmp)/"banco"
+            with patch.object(rockstar_media,"descargar_zip",side_effect=zip_de_prueba):
+                rockstar_media.preparar_banco(base)
+            escenas=[{"texto":"Las imágenes de Vice City son oficiales"} for _ in range(6)]
+            plan={
+                "titulo_propuesto":"Vice City - fotografías oficiales",
+                "tema_id":"gta6-vice-city-fotos-oficiales",
+                "categorias_visuales_exclusivas":["vice"],
+                "visuales_preferidos":["vice"]
+            }
+            fotos=rockstar_media.elegir_imagenes(plan,escenas,base)
+            self.assertTrue(all(rockstar_media.categoria(t)=="vice" for _,_,t in fotos))
+            with self.assertRaisesRegex(RuntimeError,"No hay suficientes fotografías"):
+                rockstar_media.elegir_imagenes(plan,escenas*2,base)
+            plan["categorias_visuales_exclusivas"]=["no_existe"]
+            with self.assertRaisesRegex(ValueError,"desconocidas"):
+                rockstar_media.elegir_imagenes(plan,escenas,base)
+
     def test_zip_malicioso_no_extrae_rutas_externas(self):
         with tempfile.TemporaryDirectory() as tmp:
             base=Path(tmp)/"banco"
