@@ -1,0 +1,5 @@
+solicitud=PF44-20261122-01
+confirmacion=SOLO_PRIVADO
+short=gta6-vice-city-fotos-oficiales
+largo=gta6-escenas-leonida-sin-spoilers
+revision=Un Short y un largo real con control QC-01, sin publicación pública
