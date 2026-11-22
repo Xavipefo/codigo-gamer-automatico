@@ -1,0 +1,56 @@
+name: "PF-44 - Validar Short y largo reales PRIVADOS"
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/solicitudes/validar_seis_pf.txt"
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: pf44-lanzar-dos-generaciones-reales
+  cancel-in-progress: false
+
+jobs:
+  pedir-dos-videos:
+    if: contains(github.event.head_commit.message, 'PF44 VALIDAR6 PRIVADO')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - name: Descargar solicitud sin credenciales persistidas
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Confirmar los dos temas no usados y solicitar SOLO privados
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          solicitud=".github/solicitudes/validar_seis_pf.txt"
+          grep -qx 'confirmacion=SOLO_PRIVADO' "$solicitud"
+          grep -qx 'solicitud=PF44-20261122-01' "$solicitud"
+          grep -qx 'short=gta6-vice-city-fotos-oficiales' "$solicitud"
+          grep -qx 'largo=gta6-escenas-leonida-sin-spoilers' "$solicitud"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          temas=json.loads(Path("temas_verificados.json").read_text(encoding="utf-8"))
+          historial=json.loads(Path("historial_publicados.json").read_text(encoding="utf-8"))
+          requeridos={"gta6-vice-city-fotos-oficiales":"short","gta6-escenas-leonida-sin-spoilers":"largo"}
+          for ident,formato in requeridos.items():
+              candidatos=[x for x in temas if x["id"]==ident]
+              if len(candidatos)!=1 or formato not in candidatos[0].get("formatos",[]):
+                  raise RuntimeError("Tema no encontrado o formato inválido: "+ident)
+              if any(x.get("tema_id")==ident and x.get("formato")==formato and x.get("estado") in ("subido","publicado") for x in historial):
+                  raise RuntimeError("Tema ya generado, prohibido repetir: "+ident)
+          PY
+          gh workflow run crear_short_privado.yml --ref main -f tema=gta6-vice-city-fotos-oficiales
+          gh workflow run crear_largo_privado.yml --ref main -f tema=gta6-escenas-leonida-sin-spoilers -f exigir_material_real=false
+          echo "PF44: solicitados un Short y un largo, ambos PRIVADOS. Revisar Actions."
+
