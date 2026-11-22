@@ -1,0 +1,82 @@
+name: "Píxel Feroz - 4. Producir lote de LARGOS PRIVADOS"
+
+on:
+  workflow_dispatch:
+    inputs:
+      cantidad:
+        description: "Documentales nuevos por lote (1–3), solo en PRIVADO"
+        required: true
+        type: choice
+        options:
+          - "1"
+          - "2"
+          - "3"
+        default: "2"
+      temas:
+        description: "Opcional: IDs exactos separados por |. Vacío = próximos largos libres"
+        required: false
+        type: string
+        default: ""
+      confirmacion:
+        description: "GENERAR_PRIVADO para solicitar el lote"
+        required: true
+        type: choice
+        options:
+          - NO_EJECUTAR
+          - GENERAR_PRIVADO
+        default: NO_EJECUTAR
+
+permissions:
+  actions: write
+  contents: write
+
+concurrency:
+  group: pixel-feroz-reservas-largos-privados
+  cancel-in-progress: false
+
+jobs:
+  reservar-y-solicitar:
+    if: inputs.confirmacion == 'GENERAR_PRIVADO'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Obtener versión principal
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+
+      - name: Planificar y reservar largos verificados
+        env:
+          CANTIDAD: ${{ inputs.cantidad }}
+          TEMAS: ${{ inputs.temas }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git pull --rebase origin main
+          python lote_largos_privados.py --cantidad "$CANTIDAD" \
+            --temas "$TEMAS" --reservar
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reservas_largos.json
+          git commit -m "PF-43: reservar documentales privados [skip ci]"
+          git push origin HEAD:main
+
+      - name: Solicitar cada generación larga SOLO en privado
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          PF_CONFIRMACION: GENERAR_PRIVADO
+        run: |
+          set -euo pipefail
+          python lote_largos_privados.py --despachar
+          echo "Lote solicitado. Revisa cada vídeo en Actions y YouTube Studio."
+
+      - name: Conservar solo el plan, nunca MP4 privados
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pixel-feroz-plan-largos-privados
+          path: lote_largos_plan.json
+          retention-days: 14
+          if-no-files-found: ignore
