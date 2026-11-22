@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - pf43-cola-oficial-auditoria-20261122
     paths:
       - "*.py"
       - "*.json"
