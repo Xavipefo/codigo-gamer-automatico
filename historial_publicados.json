@@ -370,5 +370,15 @@
     "formato": "short",
     "fecha": "2026-11-22T19:09:21.558381+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "fj3oVfLUe28",
+    "url": "https://www.youtube.com/watch?v=fj3oVfLUe28",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-escenas-leonida-sin-spoilers",
+    "formato": "largo",
+    "fecha": "2026-11-22T19:56:29.555844+00:00",
+    "miniatura_confirmada": true
   }
 ]
