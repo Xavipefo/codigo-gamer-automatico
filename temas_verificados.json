@@ -1,5 +1,195 @@
 [
   {
+    "id": "gta6-festival-miami-20261122",
+    "titulo": "GTA VI celebró su estreno con un festival en Miami",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-22",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 220,
+    "gancho": "Rockstar preparó un festival real para celebrar GTA seis en Miami.",
+    "contexto": "No es una misión del juego: se trata de un evento musical anunciado oficialmente para el 21 de noviembre.",
+    "hechos": [
+      {
+        "texto": "Rockstar y PlayStation anunciaron Grand Theft Auto VI: The Festival para el 21 de noviembre en Mana Wynwood, Miami.",
+        "fuente": "https://www.rockstargames.com/newswire/article/o39o87a435a25a/grand-theft-auto-vi-the-festival"
+      },
+      {
+        "texto": "El evento se presentó como una celebración del estreno con artistas vinculados al juego y a su banda sonora.",
+        "fuente": "https://www.rockstargames.com/newswire/article/o39o87a435a25a/grand-theft-auto-vi-the-festival"
+      },
+      {
+        "texto": "GTA VI ya estaba disponible desde el 19 de noviembre para PlayStation 5 y Xbox Series X y S.",
+        "fuente": "https://www.rockstargames.com/newswire/article/39akk424a9oo53/grand-theft-auto-vi-now-available"
+      }
+    ],
+    "texto_miniatura": "GTA VI FESTIVAL",
+    "descripcion_personalizada": "El festival anunciado por Rockstar y PlayStation en Miami para celebrar el lanzamiento. Sin afirmar resultados o actuaciones no verificadas.",
+    "visuales_preferidos": [
+      "vice",
+      "leonida",
+      "artwork",
+      "duo"
+    ],
+    "publicacion_objetivo": "2026-11-22T13:00:00+01:00",
+    "publicacion_manual_desde": "2026-11-22T13:00:00+01:00"
+  },
+  {
+    "id": "gta6-album-disponible-20261122",
+    "titulo": "GTA VI: su álbum oficial ya está disponible",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-22",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 219,
+    "gancho": "La música de GTA seis ya se puede escuchar fuera del videojuego.",
+    "contexto": "Rockstar ha confirmado la disponibilidad del álbum oficial, una noticia distinta de las emisoras que suenan dentro del juego.",
+    "hechos": [
+      {
+        "texto": "Rockstar anunció el 20 de noviembre que Grand Theft Auto VI: The Album ya estaba disponible.",
+        "fuente": "https://www.rockstargames.com/newswire/article/k4a8955a93o747/grand-theft-auto-vi-the-album-now-available"
+      },
+      {
+        "texto": "El disco oficial se creó en colaboración con Atlantic Records y se ofrece en las principales plataformas de música en streaming.",
+        "fuente": "https://www.rockstargames.com/newswire/article/k4a8955a93o747/grand-theft-auto-vi-the-album-now-available"
+      },
+      {
+        "texto": "Rockstar anunció también ediciones limitadas en vinilo y CD a través de la web del álbum y comercios seleccionados.",
+        "fuente": "https://www.rockstargames.com/newswire/article/k4a8955a93o747/grand-theft-auto-vi-the-album-now-available"
+      }
+    ],
+    "texto_miniatura": "ÁLBUM OFICIAL",
+    "descripcion_personalizada": "Rockstar anuncia el lanzamiento del álbum de GTA VI. No reproducimos canciones ni fragmentos protegidos.",
+    "visuales_preferidos": [
+      "vice",
+      "artwork",
+      "duo",
+      "leonida"
+    ],
+    "publicacion_objetivo": "2026-11-22T18:00:00+01:00",
+    "publicacion_manual_desde": "2026-11-22T18:00:00+01:00"
+  },
+  {
+    "id": "gta6-bonus-estreno-20261122",
+    "titulo": "GTA VI: el detalle del estreno que muchos pasaron por alto",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-22",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 218,
+    "gancho": "Rockstar acompañó el estreno de GTA seis con extras que tienen condiciones concretas.",
+    "contexto": "Es importante separar los regalos temporales del acceso normal al videojuego.",
+    "hechos": [
+      {
+        "texto": "En su anuncio de lanzamiento del 19 de noviembre, Rockstar detalló el paquete Vintage Vice City y un mes gratuito de GTA+ para compras que cumplieran las condiciones de aquella promoción.",
+        "fuente": "https://www.rockstargames.com/newswire/article/39akk424a9oo53/grand-theft-auto-vi-now-available"
+      },
+      {
+        "texto": "Rockstar indicó que el 19 de noviembre era el último día de esa promoción y que GTA+ incluía también ventajas relacionadas con GTA VI.",
+        "fuente": "https://www.rockstargames.com/newswire/article/39akk424a9oo53/grand-theft-auto-vi-now-available"
+      },
+      {
+        "texto": "La misma noticia remitió a un póster de portada y mapa de Leonida descargables desde los recursos oficiales.",
+        "fuente": "https://www.rockstargames.com/newswire/article/39akk424a9oo53/grand-theft-auto-vi-now-available"
+      }
+    ],
+    "texto_miniatura": "EXTRAS DEL ESTRENO",
+    "descripcion_personalizada": "Explicamos qué extras anunció Rockstar para el lanzamiento, dejando claro que la promoción vencía el 19 de noviembre y no debe anunciarse como vigente el 22.",
+    "visuales_preferidos": [
+      "vintage",
+      "ultimate",
+      "artwork",
+      "leonida"
+    ],
+    "publicacion_objetivo": "2026-11-22T21:00:00+01:00",
+    "publicacion_manual_desde": "2026-11-22T21:00:00+01:00"
+  },
+  {
+    "id": "gta6-fin-semana-oficial-20261122",
+    "titulo": "GTA VI: 7 claves oficiales de su primer fin de semana",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-22",
+    "formatos": [
+      "largo"
+    ],
+    "prioridad": 217,
+    "gancho": "GTA seis ya se ha estrenado; estas son las noticias del primer fin de semana que Rockstar sí ha confirmado.",
+    "contexto": "Balance de anuncios oficiales del 19 al 22 de noviembre, sin fingir gameplay propio, filtraciones ni reseñas.",
+    "hechos": [
+      {
+        "texto": "Rockstar confirmó la disponibilidad mundial de GTA VI desde el 19 de noviembre para PS5 y Xbox Series X y S.",
+        "fuente": "https://www.rockstargames.com/newswire/article/39akk424a9oo53/grand-theft-auto-vi-now-available"
+      },
+      {
+        "texto": "Rockstar presentó un mapa de Leonida y el póster oficial descargables, y anunció una futura versión física de doble cara.",
+        "fuente": "https://www.rockstargames.com/newswire/article/39akk424a9oo53/grand-theft-auto-vi-now-available"
+      },
+      {
+        "texto": "Rockstar detalló las condiciones de los extras temporales de estreno, cuyo último día fue el 19 de noviembre.",
+        "fuente": "https://www.rockstargames.com/newswire/article/39akk424a9oo53/grand-theft-auto-vi-now-available"
+      },
+      {
+        "texto": "Rockstar comunicó que GTA+ incorporaba ventajas relacionadas con GTA VI.",
+        "fuente": "https://www.rockstargames.com/newswire/article/39akk424a9oo53/grand-theft-auto-vi-now-available"
+      },
+      {
+        "texto": "Rockstar anunció el lanzamiento de Grand Theft Auto VI: The Album el 20 de noviembre en colaboración con Atlantic Records.",
+        "fuente": "https://www.rockstargames.com/newswire/article/k4a8955a93o747/grand-theft-auto-vi-the-album-now-available"
+      },
+      {
+        "texto": "Rockstar y PlayStation anunciaron The Festival para el 21 de noviembre en Mana Wynwood, Miami.",
+        "fuente": "https://www.rockstargames.com/newswire/article/o39o87a435a25a/grand-theft-auto-vi-the-festival"
+      },
+      {
+        "texto": "Rockstar publicó una galería oficial de lanzamiento con nuevas imágenes el 5 de noviembre.",
+        "fuente": "https://www.rockstargames.com/newswire/article/39ak81277255o9/explore-the-grand-theft-auto-vi-launch-gallery"
+      },
+      {
+        "texto": "La web oficial de GTA VI incluye vídeos, capturas y recursos descargables para consultar los anuncios de Rockstar.",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "texto_miniatura": "7 CLAVES DEL ESTRENO",
+    "descripcion_personalizada": "Análisis documental de noticias y recursos oficiales del primer fin de semana de GTA VI. Sin spoilers, sin reseña jugada y sin suposiciones.",
+    "esquema_largo": [
+      "Gancho: siete detalles oficiales tras el lanzamiento, diferenciando noticias y experiencias personales",
+      "Disponibilidad en PS5 y Xbox Series X y S desde el 19 de noviembre según Rockstar",
+      "Qué muestra el póster de lanzamiento y el mapa descargable, sin inventar ubicaciones",
+      "Bonos del estreno Vintage Vice City y condiciones temporales: no ofrecerlos como vigentes",
+      "GTA+: qué es lo que Rockstar anunció respecto a los beneficios vinculados a GTA VI",
+      "El álbum oficial con Atlantic Records anunciado como disponible el 20 de noviembre",
+      "Festival anunciado para el 21 de noviembre en Miami: qué se anunció y qué no sabemos",
+      "Cómo usar la galería y la web oficial para comprobar capturas y materiales visuales",
+      "Comparativa entre lo que Rockstar ha mostrado y lo que no podemos probar sin gameplay propio",
+      "Resumen de las siete claves y invitación a comentar qué aspecto merece análisis posterior"
+    ],
+    "titulos_experimento": [
+      "GTA VI: 7 detalles oficiales que dejó su lanzamiento",
+      "GTA 6 ya está aquí: lo más importante del primer fin de semana",
+      "GTA VI tras el estreno: música, extras y novedades verificadas"
+    ],
+    "miniatura_opciones": [
+      "7 CLAVES GTA VI",
+      "PRIMER FIN DE SEMANA",
+      "ROCKSTAR LO CONFIRMA"
+    ],
+    "visuales_preferidos": [
+      "vice",
+      "leonida",
+      "artwork",
+      "duo",
+      "vintage",
+      "ultimate",
+      "jason",
+      "lucia"
+    ],
+    "publicacion_objetivo": "2026-11-22T22:00:00+01:00",
+    "publicacion_manual_desde": "2026-11-22T22:00:00+01:00"
+  },
+  {
     "id": "gta6-mapa-oficial-descargable-20261121",
     "titulo": "GTA VI: Rockstar ofrece el mapa oficial de Leonida para descargar",
     "estado": "confirmado",
