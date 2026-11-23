@@ -1,0 +1,28 @@
+name: "PF-49 - Tests ligeros de fidelidad visual"
+on:
+  pull_request:
+    paths:
+      - "rockstar_media.py"
+      - "auditoria_visual_pf49.py"
+      - "test_pf49_regiones_escenas.py"
+      - "test_auditoria_visual_pf49.py"
+      - ".github/workflows/quality_pf49_smoke.yml"
+permissions:
+  contents: read
+jobs:
+  pruebas-visuales:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Dependencias mínimas sin FFmpeg
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Tests PF-49 y banco oficial sin YouTube ni modelos
+        run: |
+          python -m py_compile rockstar_media.py auditoria_visual_pf49.py
+          python -m unittest -v test_pf49_regiones_escenas test_auditoria_visual_pf49 test_rockstar_media
