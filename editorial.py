@@ -69,7 +69,7 @@ def _cobertura_visual_exclusiva(tema, formato, banco):
     else:
         # El número final de escenas largas se define más tarde.
         escenas=5
-    minimo=max(5,escenas)
+    minimo=max(5,(escenas+1)//2)
     return len({x["archivo"] for x in fotos})>=minimo
 
 
