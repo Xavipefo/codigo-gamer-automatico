@@ -49,13 +49,12 @@ class TestEditorial(unittest.TestCase):
     def test_orden_y_formatos_independientes(self):
         # La cabecera de la cola cambia cada día: comprobar el orden real
         # y la independencia por formato, sin codificar una fecha pasada.
-        elegibles = editorial.cargar_elegibles()
-        primero_short = next(t["id"] for t in elegibles if "short" in t.get("formatos", ["short"]))
-        segundo_short = next(
-            t["id"] for t in elegibles
-            if "short" in t.get("formatos", ["short"]) and t["id"] != primero_short
-        )
-        primero_largo = next(t["id"] for t in elegibles if "largo" in t.get("formatos", ["short"]))
+        # PF-90: el orden real está en las colas, no en el catálogo.
+        from cola_editorial_pf import cargar
+        cola_shorts = cargar("short")
+        cola_largos = cargar("largo")
+        primero_short, segundo_short = cola_shorts[:2]
+        primero_largo = cola_largos[0]
         with tempfile.TemporaryDirectory() as tmp:
             hist = Path(tmp) / "hist.json"
             with patch.object(editorial, "HISTORIAL", hist):
