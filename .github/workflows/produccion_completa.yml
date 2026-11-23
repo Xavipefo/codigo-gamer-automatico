@@ -326,7 +326,7 @@ jobs:
             git fetch origin main
             git checkout -B registro-subida-privada FETCH_HEAD
             python registrar_subida.py
-            git add historial_publicados.json
+            git add historial_publicados.json colas/shorts.json colas/documentales.json
             if git diff --cached --quiet; then
               echo "El vídeo ya está registrado; no se sube otra vez."
               exit 0
