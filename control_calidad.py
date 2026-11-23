@@ -127,7 +127,9 @@ def comprobar(formato):
     duracion = float(info.get("format", {}).get("duration", 0))
     if not math.isfinite(duracion):
         raise ValueError("La duración del MP4 no es finita")
-    limites = (10, 180) if formato == "short" else (180, 1200)
+    limites = ((10,180) if formato=="short" else
+               ((180,1500) if plan.get("documental_profundo") is True
+                else (180,1200)))
     if not limites[0] <= duracion <= limites[1]:
         raise ValueError(f"Duración fuera de rango: {duracion:.1f} segundos")
     video_seg = float(vis.get("duration") or duracion)
