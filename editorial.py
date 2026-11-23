@@ -165,9 +165,10 @@ def preparar_plan(tema, formato):
             plan["escenas"] = []
             plan["requiere_guion_ia"] = True
         plan["esquema_largo"] = tema.get("esquema_largo", [])
-        plan["documental_profundo"] = bool(tema.get("documental_profundo")) if formato == "largo" else False
-    plan["duracion_objetivo_segundos"] = ([900, 1500]
-            if tema.get("documental_profundo") else [540, 900])
+        plan["documental_profundo"] = bool(tema.get("documental_profundo"))
+        plan["duracion_objetivo_segundos"] = (
+            [900, 1500] if tema.get("documental_profundo") else [540, 900]
+        )
     else:
         texto = " ".join(s["texto"].strip() for s in plan["escenas"])
         plan["requiere_guion_ia"] = False
