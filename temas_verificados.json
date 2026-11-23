@@ -2298,5 +2298,581 @@
     "episodio_serie": 1,
     "spoilers": false,
     "publicacion_automatica": false
+  },
+  {
+    "id": "pf92-justice-compositor",
+    "titulo": "Justice creó la banda sonora original de GTA VI",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-23",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 500,
+    "gancho": "Justice creó la banda sonora original de GTA VI — un detalle confirmado que merece la pena ver.",
+    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "hechos": [
+      {
+        "texto": "La música original está compuesta por el dúo francés Justice, formado por Gaspard Augé y Xavier de Rosnay.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "Rockstar describe esa banda sonora como adaptativa: acompaña de maneras distintas la actividad de Jason y Lucia.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      }
+    ],
+    "texto_miniatura": "Justice creó la banda sonora original de GTA ",
+    "visuales_preferidos": [
+      "artwork",
+      "artwork"
+    ],
+    "portada_categoria": "artwork",
+    "portada_paleta": "amarillo",
+    "publicacion_automatica": false,
+    "tema_especial": "gta6_2026",
+    "titulo_no_enganoso": true
+  },
+  {
+    "id": "pf92-score-album-30",
+    "titulo": "El álbum instrumental de GTA VI: 30 temas de Justice",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-23",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 499,
+    "gancho": "El álbum instrumental de GTA VI: 30 temas de Justice — un detalle confirmado que merece la pena ver.",
+    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "hechos": [
+      {
+        "texto": "Rockstar anunció para el 11 de diciembre de 2026 el álbum Grand Theft Auto VI: Original Score.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "La publicación reúne 30 temas principales, además de pistas digitales extra según la edición.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      }
+    ],
+    "texto_miniatura": "El álbum instrumental de GTA VI: 30 temas de ",
+    "visuales_preferidos": [
+      "artwork",
+      "artwork"
+    ],
+    "portada_categoria": "artwork",
+    "portada_paleta": "fucsia",
+    "publicacion_automatica": false,
+    "tema_especial": "gta6_2026",
+    "titulo_no_enganoso": true
+  },
+  {
+    "id": "pf92-gta6-album-34",
+    "titulo": "GTA VI: el álbum oficial reúne 34 canciones originales",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-23",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 498,
+    "gancho": "el álbum oficial reúne 34 canciones originales — un detalle confirmado que merece la pena ver.",
+    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "hechos": [
+      {
+        "texto": "Grand Theft Auto VI: The Album contiene 34 temas originales anunciados por Rockstar.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "El disco agrupa artistas de estilos distintos, vinculados a la identidad cultural de Vice City y Leonida.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      }
+    ],
+    "texto_miniatura": "el álbum oficial reúne 34 canciones originale",
+    "visuales_preferidos": [
+      "artwork",
+      "artwork"
+    ],
+    "portada_categoria": "artwork",
+    "portada_paleta": "cian",
+    "publicacion_automatica": false,
+    "tema_especial": "gta6_2026",
+    "titulo_no_enganoso": true
+  },
+  {
+    "id": "pf92-radio-cocoteo",
+    "titulo": "Cocoteo: la radio latina de GTA VI que puedes descubrir",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-23",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 497,
+    "gancho": "Cocoteo: la radio latina de GTA VI que puedes descubrir — un detalle confirmado que merece la pena ver.",
+    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "hechos": [
+      {
+        "texto": "Rockstar presenta Cocoteo como una emisora de música latina moderna en GTA VI.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "Sus presentadores oficiales son El Martillo y La Gata, según la sección musical del juego.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      }
+    ],
+    "texto_miniatura": "Cocoteo: la radio latina de GTA VI que puedes",
+    "visuales_preferidos": [
+      "vice",
+      "artwork"
+    ],
+    "portada_categoria": "vice",
+    "portada_paleta": "violeta",
+    "publicacion_automatica": false,
+    "tema_especial": "gta6_2026",
+    "titulo_no_enganoso": true
+  },
+  {
+    "id": "pf92-radio-back-country",
+    "titulo": "Back Country: el country rebelde de las radios de Leonida",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-23",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 496,
+    "gancho": "Back Country: el country rebelde de las radios de Leonida — un detalle confirmado que merece la pena ver.",
+    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "hechos": [
+      {
+        "texto": "Back Country es una emisora centrada en country dentro de GTA VI.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "Rockstar presenta a MW y Delta Dawne como sus voces principales.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      }
+    ],
+    "texto_miniatura": "Back Country: el country rebelde de las radio",
+    "visuales_preferidos": [
+      "artwork",
+      "artwork"
+    ],
+    "portada_categoria": "artwork",
+    "portada_paleta": "amarillo",
+    "publicacion_automatica": false,
+    "tema_especial": "gta6_2026",
+    "titulo_no_enganoso": true
+  },
+  {
+    "id": "pf92-radio-afro-bank",
+    "titulo": "Afro Bank FM: la emisora de amapiano de GTA VI",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-23",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 495,
+    "gancho": "Afro Bank FM: la emisora de amapiano de GTA VI — un detalle confirmado que merece la pena ver.",
+    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "hechos": [
+      {
+        "texto": "Afro Bank FM incluye amapiano y clásicos africanos, según Rockstar.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "La presentación oficial de esta emisora menciona a Burna y Palmsy.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      }
+    ],
+    "texto_miniatura": "Afro Bank FM: la emisora de amapiano de GTA V",
+    "visuales_preferidos": [
+      "artwork",
+      "artwork"
+    ],
+    "portada_categoria": "artwork",
+    "portada_paleta": "fucsia",
+    "publicacion_automatica": false,
+    "tema_especial": "gta6_2026",
+    "titulo_no_enganoso": true
+  },
+  {
+    "id": "pf92-radio-the-chamber",
+    "titulo": "The Chamber: la radio metalera de GTA VI",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-23",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 494,
+    "gancho": "The Chamber: la radio metalera de GTA VI — un detalle confirmado que merece la pena ver.",
+    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "hechos": [
+      {
+        "texto": "Rockstar incluye The Chamber como emisora dedicada al metal.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "La descripción oficial identifica a DJ Kerry y DJ Tom como sus presentadores.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      }
+    ],
+    "texto_miniatura": "The Chamber: la radio metalera de GTA VI",
+    "visuales_preferidos": [
+      "artwork",
+      "artwork"
+    ],
+    "portada_categoria": "artwork",
+    "portada_paleta": "cian",
+    "publicacion_automatica": false,
+    "tema_especial": "gta6_2026",
+    "titulo_no_enganoso": true
+  },
+  {
+    "id": "pf92-radio-flash-fm",
+    "titulo": "Flash FM vuelve a Vice City en GTA VI",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-23",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 493,
+    "gancho": "Flash FM vuelve a Vice City en GTA VI — un detalle confirmado que merece la pena ver.",
+    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "hechos": [
+      {
+        "texto": "Flash FM figura en el listado oficial de emisoras de GTA VI.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "Rockstar la describe como una radio de música pop con Robyn y Alex.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      }
+    ],
+    "texto_miniatura": "Flash FM vuelve a Vice City en GTA VI",
+    "visuales_preferidos": [
+      "vice",
+      "artwork"
+    ],
+    "portada_categoria": "vice",
+    "portada_paleta": "violeta",
+    "publicacion_automatica": false,
+    "tema_especial": "gta6_2026",
+    "titulo_no_enganoso": true
+  },
+  {
+    "id": "pf92-radio-dirty-south",
+    "titulo": "Dirty South Classics: el rap sureño de GTA VI",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-23",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 492,
+    "gancho": "Dirty South Classics: el rap sureño de GTA VI — un detalle confirmado que merece la pena ver.",
+    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "hechos": [
+      {
+        "texto": "Dirty South Classics está dedicada al rap y al hip hop regional, según Rockstar.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "La presentación de la emisora nombra a Trick y Trina como sus voces.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      }
+    ],
+    "texto_miniatura": "Dirty South Classics: el rap sureño de GTA VI",
+    "visuales_preferidos": [
+      "artwork",
+      "artwork"
+    ],
+    "portada_categoria": "artwork",
+    "portada_paleta": "amarillo",
+    "publicacion_automatica": false,
+    "tema_especial": "gta6_2026",
+    "titulo_no_enganoso": true
+  },
+  {
+    "id": "pf92-score-flower",
+    "titulo": "Flower in a Hurricane: la colaboración sorpresa del score",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-23",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 491,
+    "gancho": "Flower in a Hurricane: la colaboración sorpresa del score — un detalle confirmado que merece la pena ver.",
+    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "hechos": [
+      {
+        "texto": "Rockstar identifica Flower in a Hurricane como uno de los sencillos de la banda sonora de GTA VI.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "En su ficha aparecen colaboraciones de Tame Impala, SZA y King Gizzard & The Lizard Wizard.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      }
+    ],
+    "texto_miniatura": "Flower in a Hurricane: la colaboración sorpre",
+    "visuales_preferidos": [
+      "artwork",
+      "artwork"
+    ],
+    "portada_categoria": "artwork",
+    "portada_paleta": "fucsia",
+    "publicacion_automatica": false,
+    "tema_especial": "gta6_2026",
+    "titulo_no_enganoso": true
+  },
+  {
+    "id": "pf92-score-pusher",
+    "titulo": "Pusher: otra pieza de Justice para GTA VI",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-23",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 490,
+    "gancho": "Pusher: otra pieza de Justice para GTA VI — un detalle confirmado que merece la pena ver.",
+    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "hechos": [
+      {
+        "texto": "La sección musical oficial presenta Pusher como un sencillo de Justice asociado a GTA VI.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "Rockstar también acredita en ese tema una colaboración con Gesaffelstein.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      }
+    ],
+    "texto_miniatura": "Pusher: otra pieza de Justice para GTA VI",
+    "visuales_preferidos": [
+      "artwork",
+      "artwork"
+    ],
+    "portada_categoria": "artwork",
+    "portada_paleta": "cian",
+    "publicacion_automatica": false,
+    "tema_especial": "gta6_2026",
+    "titulo_no_enganoso": true
+  },
+  {
+    "id": "pf92-album-rhyno",
+    "titulo": "RHYNO: Travis Scott en el álbum de GTA VI",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-23",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 489,
+    "gancho": "RHYNO: Travis Scott en el álbum de GTA VI — un detalle confirmado que merece la pena ver.",
+    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "hechos": [
+      {
+        "texto": "Rockstar incluye RHYNO entre los sencillos destacados de Grand Theft Auto VI: The Album.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "La página musical oficial identifica a Travis Scott como artista de esa canción.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      }
+    ],
+    "texto_miniatura": "RHYNO: Travis Scott en el álbum de GTA VI",
+    "visuales_preferidos": [
+      "artwork",
+      "artwork"
+    ],
+    "portada_categoria": "artwork",
+    "portada_paleta": "violeta",
+    "publicacion_automatica": false,
+    "tema_especial": "gta6_2026",
+    "titulo_no_enganoso": true
+  },
+  {
+    "id": "pf92-album-suzuki",
+    "titulo": "Suzuki: Fuerza Regida también aparece en GTA VI",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-23",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 488,
+    "gancho": "Suzuki: Fuerza Regida también aparece en GTA VI — un detalle confirmado que merece la pena ver.",
+    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "hechos": [
+      {
+        "texto": "La lista oficial de canciones del álbum de GTA VI incluye Suzuki.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "Rockstar atribuye ese tema al grupo Fuerza Regida.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      }
+    ],
+    "texto_miniatura": "Suzuki: Fuerza Regida también aparece en GTA ",
+    "visuales_preferidos": [
+      "artwork",
+      "artwork"
+    ],
+    "portada_categoria": "artwork",
+    "portada_paleta": "amarillo",
+    "publicacion_automatica": false,
+    "tema_especial": "gta6_2026",
+    "titulo_no_enganoso": true
+  },
+  {
+    "id": "pf92-album-last-thing",
+    "titulo": "Last Thing You Need: el sonido country en GTA VI",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-23",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 487,
+    "gancho": "Last Thing You Need: el sonido country en GTA VI — un detalle confirmado que merece la pena ver.",
+    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "hechos": [
+      {
+        "texto": "Rockstar incluye Last Thing You Need como sencillo asociado al álbum de GTA VI.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      },
+      {
+        "texto": "La página musical atribuye este tema a Morgan Wallen.",
+        "fuente": "https://www.rockstargames.com/VI/music"
+      }
+    ],
+    "texto_miniatura": "Last Thing You Need: el sonido country en GTA",
+    "visuales_preferidos": [
+      "artwork",
+      "artwork"
+    ],
+    "portada_categoria": "artwork",
+    "portada_paleta": "fucsia",
+    "publicacion_automatica": false,
+    "tema_especial": "gta6_2026",
+    "titulo_no_enganoso": true
+  },
+  {
+    "id": "pf92-gta5vs6-protagonistas",
+    "titulo": "GTA VI vs GTA V: dos protagonistas frente a tres",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-23",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 486,
+    "gancho": "GTA VI vs GTA V: dos protagonistas frente a tres — un detalle confirmado que merece la pena ver.",
+    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "hechos": [
+      {
+        "texto": "GTA V cuenta las vidas entrelazadas de Michael, Franklin y Trevor.",
+        "fuente": "https://www.rockstargames.com/newswire/article/o349k552525a57/Grand-Theft-Auto-V-Coming-this-Fall-to-PlayStation-4-Xbox"
+      },
+      {
+        "texto": "La sinopsis oficial de GTA VI coloca a Jason y Lucia en el centro de su conspiración criminal.",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "texto_miniatura": "GTA VI vs GTA V: dos protagonistas frente a t",
+    "visuales_preferidos": [
+      "duo",
+      "artwork"
+    ],
+    "portada_categoria": "duo",
+    "portada_paleta": "cian",
+    "publicacion_automatica": false,
+    "tema_especial": "gta6_2026",
+    "titulo_no_enganoso": true
+  },
+  {
+    "id": "pf92-gta5vs6-mapa",
+    "titulo": "Los Santos vs Leonida: el cambio de escenario entre los GTA",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-23",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 485,
+    "gancho": "Los Santos vs Leonida: el cambio de escenario entre los GTA — un detalle confirmado que merece la pena ver.",
+    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "hechos": [
+      {
+        "texto": "Rockstar sitúa GTA V en Los Santos y Blaine County, dentro de su representación del sur de California.",
+        "fuente": "https://www.rockstargames.com/newswire/article/o349k552525a57/Grand-Theft-Auto-V-Coming-this-Fall-to-PlayStation-4-Xbox"
+      },
+      {
+        "texto": "GTA VI transcurre en Leonida, donde Vice City es una de las localizaciones principales.",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "texto_miniatura": "Los Santos vs Leonida: el cambio de escenario",
+    "visuales_preferidos": [
+      "vice",
+      "artwork"
+    ],
+    "portada_categoria": "vice",
+    "portada_paleta": "violeta",
+    "publicacion_automatica": false,
+    "tema_especial": "gta6_2026",
+    "titulo_no_enganoso": true
+  },
+  {
+    "id": "pf92-gta5vs6-mejoras",
+    "titulo": "GTA V también tiene ray tracing: ojo con esta comparativa",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-23",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 484,
+    "gancho": "GTA V también tiene ray tracing: ojo con esta comparativa — un detalle confirmado que merece la pena ver.",
+    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "hechos": [
+      {
+        "texto": "Rockstar confirma mejoras de ray tracing y texturas para GTA V en las versiones de consolas modernas.",
+        "fuente": "https://www.rockstargames.com/newswire/article/4ka18ao8a4o227/grand-theft-auto-v-and-gta-online-out-now-on-playstation-5-and-xbox-se"
+      },
+      {
+        "texto": "GTA VI se lanzó posteriormente para PlayStation 5 y Xbox Series X|S; los dos juegos no deben compararse como si GTA V solo existiera en su edición original.",
+        "fuente": "https://www.rockstargames.com/newswire/article/39akk424a9oo53/grand-theft-auto-vi-now-available"
+      }
+    ],
+    "texto_miniatura": "GTA V también tiene ray tracing: ojo con esta",
+    "visuales_preferidos": [
+      "artwork",
+      "artwork"
+    ],
+    "portada_categoria": "artwork",
+    "portada_paleta": "amarillo",
+    "publicacion_automatica": false,
+    "tema_especial": "gta6_2026",
+    "titulo_no_enganoso": true
+  },
+  {
+    "id": "pf92-gta5vs6-historia",
+    "titulo": "GTA VI vs GTA V: la diferencia entre sus tramas criminales",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-23",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 483,
+    "gancho": "GTA VI vs GTA V: la diferencia entre sus tramas criminales — un detalle confirmado que merece la pena ver.",
+    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "hechos": [
+      {
+        "texto": "GTA V entrelaza tres vidas mediante una sucesión de golpes en Los Santos y Blaine County.",
+        "fuente": "https://www.rockstargames.com/newswire/article/o349k552525a57/Grand-Theft-Auto-V-Coming-this-Fall-to-PlayStation-4-Xbox"
+      },
+      {
+        "texto": "Rockstar describe GTA VI mediante un golpe que sale mal y una conspiración en torno a Jason y Lucia.",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "texto_miniatura": "GTA VI vs GTA V: la diferencia entre sus tram",
+    "visuales_preferidos": [
+      "duo",
+      "artwork"
+    ],
+    "portada_categoria": "duo",
+    "portada_paleta": "fucsia",
+    "publicacion_automatica": false,
+    "tema_especial": "gta6_2026",
+    "titulo_no_enganoso": true
   }
 ]
