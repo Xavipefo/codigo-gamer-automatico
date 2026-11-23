@@ -259,7 +259,7 @@ jobs:
             archivo="salida/pixel_feroz_largo.mp4"
             orientacion="horizontal"
             minimo=180
-            maximo=1200
+            maximo=$(python -c 'import json; p=json.load(open("salida/plan.json")); print(1500 if p.get("documental_profundo") is True else 1200)')
           fi
           python auditoria_audiovisual.py --video "$archivo" \
             --orientacion "$orientacion" --minimo "$minimo" \
