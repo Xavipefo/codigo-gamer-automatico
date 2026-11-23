@@ -64,6 +64,12 @@ def planificar(cantidad,temas="",raiz=RAIZ,ahora=None):
         if (ident,"largo") in usados or ident in apartados:
             continue
         disponibles.append(ident)
+    # PF-90: lote ordenado por cola específica de documentales.
+    from cola_editorial_pf import cargar as cargar_cola
+    orden = cargar_cola("largo", base=raiz)
+    if orden is not None:
+        elegibles = set(disponibles)
+        disponibles = [x for x in orden if x in elegibles]
     if temas.strip():
         elegidos=[x.strip() for x in temas.split("|")]
         if (len(elegidos)!=cantidad or len(set(elegidos))!=cantidad or
