@@ -1,0 +1,2583 @@
+{
+  "version": "PF-92",
+  "inicio": "2026-11-24",
+  "fin": "2027-02-23",
+  "zona_horaria": "Europe/Madrid",
+  "fuente_prioritaria": "Gameplay propio o expresamente autorizado; nombres de misiones contrastados de forma provisional con guías PowerPyx y PC Gamer",
+  "politica_spoilers": "Aviso al principio y en la descripción, títulos sin desvelar giros o finales; no avanzar sin evidencia de historia",
+  "episodios": [
+    {
+      "id": "historia-gtavi-001",
+      "episodio": 1,
+      "fecha_objetivo": "2026-11-24",
+      "hora_objetivo": "14:30",
+      "capitulo": "Introducción",
+      "tema": "GTA VI Historia #001: Cómo empieza la historia de Jason y Lucia",
+      "mision_reportada": null,
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "confirmado_fuentes_oficiales",
+      "spoilers": false,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.rockstargames.com/VI",
+        "https://www.rockstargames.com/VI/only-in-leonida"
+      ],
+      "objetivo_editorial": "Presentar los antecedentes de Jason y Lucia según Rockstar sin anticipar sucesos posteriores.",
+      "pruebas_requeridas": [
+        "Rockstar ficha oficial Jason y Lucia",
+        "capturas autorizadas de los protagonistas"
+      ],
+      "licencia_video_requerida": false,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-002",
+      "episodio": 2,
+      "fecha_objetivo": "2026-11-25",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 1",
+      "tema": "GTA VI Historia #002: Prologue",
+      "mision_reportada": "Prologue",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-003",
+      "episodio": 3,
+      "fecha_objetivo": "2026-11-26",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 1",
+      "tema": "GTA VI Historia #003: Gone Fishing",
+      "mision_reportada": "Gone Fishing",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-004",
+      "episodio": 4,
+      "fecha_objetivo": "2026-11-27",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 1",
+      "tema": "GTA VI Historia #004: Gear Up",
+      "mision_reportada": "Gear Up",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-005",
+      "episodio": 5,
+      "fecha_objetivo": "2026-11-28",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 1",
+      "tema": "GTA VI Historia #005: Lab Fees",
+      "mision_reportada": "Lab Fees",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-006",
+      "episodio": 6,
+      "fecha_objetivo": "2026-11-29",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 1",
+      "tema": "GTA VI Historia #006: Just a Scratch",
+      "mision_reportada": "Just a Scratch",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-007",
+      "episodio": 7,
+      "fecha_objetivo": "2026-11-30",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 1",
+      "tema": "GTA VI Historia #007: Unwanted Attention",
+      "mision_reportada": "Unwanted Attention",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-008",
+      "episodio": 8,
+      "fecha_objetivo": "2026-12-01",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 1",
+      "tema": "GTA VI Historia #008: Pipework",
+      "mision_reportada": "Pipework",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-009",
+      "episodio": 9,
+      "fecha_objetivo": "2026-12-02",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 1",
+      "tema": "GTA VI Historia #009: Hey Arnold!",
+      "mision_reportada": "Hey Arnold!",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-010",
+      "episodio": 10,
+      "fecha_objetivo": "2026-12-03",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 1",
+      "tema": "GTA VI Historia #010: Island Dreams",
+      "mision_reportada": "Island Dreams",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-011",
+      "episodio": 11,
+      "fecha_objetivo": "2026-12-04",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 1",
+      "tema": "GTA VI Historia #011: Feng Shui",
+      "mision_reportada": "Feng Shui",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-012",
+      "episodio": 12,
+      "fecha_objetivo": "2026-12-05",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 1",
+      "tema": "GTA VI Historia #012: Coming Home",
+      "mision_reportada": "Coming Home",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-013",
+      "episodio": 13,
+      "fecha_objetivo": "2026-12-06",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 1",
+      "tema": "GTA VI Historia #013: Clean Up After Donnie",
+      "mision_reportada": "Clean Up After Donnie",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-014",
+      "episodio": 14,
+      "fecha_objetivo": "2026-12-07",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 1",
+      "tema": "GTA VI Historia #014: Buck Me",
+      "mision_reportada": "Buck Me",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-015",
+      "episodio": 15,
+      "fecha_objetivo": "2026-12-08",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 1",
+      "tema": "GTA VI Historia #015: Down to Earth",
+      "mision_reportada": "Down to Earth",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-016",
+      "episodio": 16,
+      "fecha_objetivo": "2026-12-09",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 1",
+      "tema": "GTA VI Historia #016: Day Release",
+      "mision_reportada": "Day Release",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-017",
+      "episodio": 17,
+      "fecha_objetivo": "2026-12-10",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 1",
+      "tema": "GTA VI Historia #017: Clear Skies",
+      "mision_reportada": "Clear Skies",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-018",
+      "episodio": 18,
+      "fecha_objetivo": "2026-12-11",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 1",
+      "tema": "GTA VI Historia #018: Building a Life",
+      "mision_reportada": "Building a Life",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-019",
+      "episodio": 19,
+      "fecha_objetivo": "2026-12-12",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 1",
+      "tema": "GTA VI Historia #019: Swamped",
+      "mision_reportada": "Swamped",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-020",
+      "episodio": 20,
+      "fecha_objetivo": "2026-12-13",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 1",
+      "tema": "GTA VI Historia #020: Don Gone",
+      "mision_reportada": "Don Gone",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-021",
+      "episodio": 21,
+      "fecha_objetivo": "2026-12-14",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 1",
+      "tema": "GTA VI Historia #021: Tourist Trap",
+      "mision_reportada": "Tourist Trap",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-022",
+      "episodio": 22,
+      "fecha_objetivo": "2026-12-15",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 2",
+      "tema": "GTA VI Historia #022: What's in the Bag?",
+      "mision_reportada": "What's in the Bag?",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-023",
+      "episodio": 23,
+      "fecha_objetivo": "2026-12-16",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 2",
+      "tema": "GTA VI Historia #023: Take Care of Jason",
+      "mision_reportada": "Take Care of Jason",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-024",
+      "episodio": 24,
+      "fecha_objetivo": "2026-12-17",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 2",
+      "tema": "GTA VI Historia #024: Overnight Charges",
+      "mision_reportada": "Overnight Charges",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-025",
+      "episodio": 25,
+      "fecha_objetivo": "2026-12-18",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 2",
+      "tema": "GTA VI Historia #025: Just Moved In",
+      "mision_reportada": "Just Moved In",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-026",
+      "episodio": 26,
+      "fecha_objetivo": "2026-12-19",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 2",
+      "tema": "GTA VI Historia #026: Girl's Trip",
+      "mision_reportada": "Girl's Trip",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-027",
+      "episodio": 27,
+      "fecha_objetivo": "2026-12-20",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 2",
+      "tema": "GTA VI Historia #027: Moses",
+      "mision_reportada": "Moses",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-028",
+      "episodio": 28,
+      "fecha_objetivo": "2026-12-21",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 2",
+      "tema": "GTA VI Historia #028: New Look",
+      "mision_reportada": "New Look",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-029",
+      "episodio": 29,
+      "fecha_objetivo": "2026-12-22",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 2",
+      "tema": "GTA VI Historia #029: How Do I Look?",
+      "mision_reportada": "How Do I Look?",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-030",
+      "episodio": 30,
+      "fecha_objetivo": "2026-12-23",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 2",
+      "tema": "GTA VI Historia #030: Painkiller Supplier",
+      "mision_reportada": "Painkiller Supplier",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-031",
+      "episodio": 31,
+      "fecha_objetivo": "2026-12-24",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 2",
+      "tema": "GTA VI Historia #031: Ambulance Chaser",
+      "mision_reportada": "Ambulance Chaser",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-032",
+      "episodio": 32,
+      "fecha_objetivo": "2026-12-25",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 2",
+      "tema": "GTA VI Historia #032: Daily Driver",
+      "mision_reportada": "Daily Driver",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-033",
+      "episodio": 33,
+      "fecha_objetivo": "2026-12-26",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 2",
+      "tema": "GTA VI Historia #033: Breakfast Run",
+      "mision_reportada": "Breakfast Run",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-034",
+      "episodio": 34,
+      "fecha_objetivo": "2026-12-27",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 2",
+      "tema": "GTA VI Historia #034: Checking Out",
+      "mision_reportada": "Checking Out",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-035",
+      "episodio": 35,
+      "fecha_objetivo": "2026-12-28",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #035: Welcome to Vice City",
+      "mision_reportada": "Welcome to Vice City",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-036",
+      "episodio": 36,
+      "fecha_objetivo": "2026-12-29",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #036: Dealer's Choice",
+      "mision_reportada": "Dealer's Choice",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-037",
+      "episodio": 37,
+      "fecha_objetivo": "2026-12-30",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #037: Dubious Provenance",
+      "mision_reportada": "Dubious Provenance",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-038",
+      "episodio": 38,
+      "fecha_objetivo": "2026-12-31",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #038: Mami Knows Best",
+      "mision_reportada": "Mami Knows Best",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-039",
+      "episodio": 39,
+      "fecha_objetivo": "2027-01-01",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #039: Here, Kitty Kitty",
+      "mision_reportada": "Here, Kitty Kitty",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-040",
+      "episodio": 40,
+      "fecha_objetivo": "2027-01-02",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #040: Boobie Time",
+      "mision_reportada": "Boobie Time",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-041",
+      "episodio": 41,
+      "fecha_objetivo": "2027-01-03",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #041: Meet the Heders",
+      "mision_reportada": "Meet the Heders",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-042",
+      "episodio": 42,
+      "fecha_objetivo": "2027-01-04",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #042: Yasmani's Jewelry Jobs",
+      "mision_reportada": "Yasmani's Jewelry Jobs",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-043",
+      "episodio": 43,
+      "fecha_objetivo": "2027-01-05",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #043: Car Service",
+      "mision_reportada": "Car Service",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-044",
+      "episodio": 44,
+      "fecha_objetivo": "2027-01-06",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #044: Top Billing",
+      "mision_reportada": "Top Billing",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-045",
+      "episodio": 45,
+      "fecha_objetivo": "2027-01-07",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #045: First Impressions",
+      "mision_reportada": "First Impressions",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-046",
+      "episodio": 46,
+      "fecha_objetivo": "2027-01-08",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #046: Crosstown Traffic",
+      "mision_reportada": "Crosstown Traffic",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-047",
+      "episodio": 47,
+      "fecha_objetivo": "2027-01-09",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #047: Credit Check",
+      "mision_reportada": "Credit Check",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-048",
+      "episodio": 48,
+      "fecha_objetivo": "2027-01-10",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #048: Clonin' Keys, Makin' GS",
+      "mision_reportada": "Clonin' Keys, Makin' GS",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-049",
+      "episodio": 49,
+      "fecha_objetivo": "2027-01-11",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #049: Ride or Die",
+      "mision_reportada": "Ride or Die",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-050",
+      "episodio": 50,
+      "fecha_objetivo": "2027-01-12",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #050: Sinfrontera National Bank",
+      "mision_reportada": "Sinfrontera National Bank",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-051",
+      "episodio": 51,
+      "fecha_objetivo": "2027-01-13",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #051: Security Expert",
+      "mision_reportada": "Security Expert",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-052",
+      "episodio": 52,
+      "fecha_objetivo": "2027-01-14",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #052: Caught Slipping",
+      "mision_reportada": "Caught Slipping",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-053",
+      "episodio": 53,
+      "fecha_objetivo": "2027-01-15",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #053: Company Property",
+      "mision_reportada": "Company Property",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-054",
+      "episodio": 54,
+      "fecha_objetivo": "2027-01-16",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #054: Safe Word",
+      "mision_reportada": "Safe Word",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-055",
+      "episodio": 55,
+      "fecha_objetivo": "2027-01-17",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #055: The Missing Link",
+      "mision_reportada": "The Missing Link",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-056",
+      "episodio": 56,
+      "fecha_objetivo": "2027-01-18",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #056: Cooties",
+      "mision_reportada": "Cooties",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-057",
+      "episodio": 57,
+      "fecha_objetivo": "2027-01-19",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #057: Hidden Charges",
+      "mision_reportada": "Hidden Charges",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-058",
+      "episodio": 58,
+      "fecha_objetivo": "2027-01-20",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #058: Bricked Up",
+      "mision_reportada": "Bricked Up",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-059",
+      "episodio": 59,
+      "fecha_objetivo": "2027-01-21",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #059: South Leonida Real Estate",
+      "mision_reportada": "South Leonida Real Estate",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-060",
+      "episodio": 60,
+      "fecha_objetivo": "2027-01-22",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 3",
+      "tema": "GTA VI Historia #060: The Cartel Heist",
+      "mision_reportada": "The Cartel Heist",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-061",
+      "episodio": 61,
+      "fecha_objetivo": "2027-01-23",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #061: Ocean Beach",
+      "mision_reportada": "Ocean Beach",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-062",
+      "episodio": 62,
+      "fecha_objetivo": "2027-01-24",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #062: Another Life",
+      "mision_reportada": "Another Life",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-063",
+      "episodio": 63,
+      "fecha_objetivo": "2027-01-25",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #063: Pool Day",
+      "mision_reportada": "Pool Day",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-064",
+      "episodio": 64,
+      "fecha_objetivo": "2027-01-26",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #064: Company Cars",
+      "mision_reportada": "Company Cars",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-065",
+      "episodio": 65,
+      "fecha_objetivo": "2027-01-27",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #065: Lawyer Up",
+      "mision_reportada": "Lawyer Up",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-066",
+      "episodio": 66,
+      "fecha_objetivo": "2027-01-28",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #066: Heavy Lifting",
+      "mision_reportada": "Heavy Lifting",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-067",
+      "episodio": 67,
+      "fecha_objetivo": "2027-01-29",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #067: Party Hard",
+      "mision_reportada": "Party Hard",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-068",
+      "episodio": 68,
+      "fecha_objetivo": "2027-01-30",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #068: Photo/Shoot",
+      "mision_reportada": "Photo/Shoot",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-069",
+      "episodio": 69,
+      "fecha_objetivo": "2027-01-31",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #069: Making Gainz",
+      "mision_reportada": "Making Gainz",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-070",
+      "episodio": 70,
+      "fecha_objetivo": "2027-02-01",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #070: Blood Sweat and Gear",
+      "mision_reportada": "Blood Sweat and Gear",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-071",
+      "episodio": 71,
+      "fecha_objetivo": "2027-02-02",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #071: Too Much Baggage",
+      "mision_reportada": "Too Much Baggage",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-072",
+      "episodio": 72,
+      "fecha_objetivo": "2027-02-03",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #072: Watch It",
+      "mision_reportada": "Watch It",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-073",
+      "episodio": 73,
+      "fecha_objetivo": "2027-02-04",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #073: Amateur Hour",
+      "mision_reportada": "Amateur Hour",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-074",
+      "episodio": 74,
+      "fecha_objetivo": "2027-02-05",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #074: Call Nate",
+      "mision_reportada": "Call Nate",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-075",
+      "episodio": 75,
+      "fecha_objetivo": "2027-02-06",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #075: Cash Injections",
+      "mision_reportada": "Cash Injections",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-076",
+      "episodio": 76,
+      "fecha_objetivo": "2027-02-07",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #076: Adventures in Babysitting",
+      "mision_reportada": "Adventures in Babysitting",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-077",
+      "episodio": 77,
+      "fecha_objetivo": "2027-02-08",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #077: Child's Play",
+      "mision_reportada": "Child's Play",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-078",
+      "episodio": 78,
+      "fecha_objetivo": "2027-02-09",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #078: Power Play",
+      "mision_reportada": "Power Play",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-079",
+      "episodio": 79,
+      "fecha_objetivo": "2027-02-10",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #079: Close Surveillance",
+      "mision_reportada": "Close Surveillance",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-080",
+      "episodio": 80,
+      "fecha_objetivo": "2027-02-11",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #080: Delivery Method",
+      "mision_reportada": "Delivery Method",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-081",
+      "episodio": 81,
+      "fecha_objetivo": "2027-02-12",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #081: Team Building",
+      "mision_reportada": "Team Building",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-082",
+      "episodio": 82,
+      "fecha_objetivo": "2027-02-13",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #082: VCIA Takedown",
+      "mision_reportada": "VCIA Takedown",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-083",
+      "episodio": 83,
+      "fecha_objetivo": "2027-02-14",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 4",
+      "tema": "GTA VI Historia #083: Starting From Zero",
+      "mision_reportada": "Starting From Zero",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-084",
+      "episodio": 84,
+      "fecha_objetivo": "2027-02-15",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 5",
+      "tema": "GTA VI Historia #084: Bird in the Hand",
+      "mision_reportada": "Bird in the Hand",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-085",
+      "episodio": 85,
+      "fecha_objetivo": "2027-02-16",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 5",
+      "tema": "GTA VI Historia #085: Taking Liberties",
+      "mision_reportada": "Taking Liberties",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-086",
+      "episodio": 86,
+      "fecha_objetivo": "2027-02-17",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 5",
+      "tema": "GTA VI Historia #086: Doggie Bag",
+      "mision_reportada": "Doggie Bag",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-087",
+      "episodio": 87,
+      "fecha_objetivo": "2027-02-18",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 5",
+      "tema": "GTA VI Historia #087: VC Baby",
+      "mision_reportada": "VC Baby",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-088",
+      "episodio": 88,
+      "fecha_objetivo": "2027-02-19",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 5",
+      "tema": "GTA VI Historia #088: Operation Savage Glory",
+      "mision_reportada": "Operation Savage Glory",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-089",
+      "episodio": 89,
+      "fecha_objetivo": "2027-02-20",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 5",
+      "tema": "GTA VI Historia #089: Honest Abe",
+      "mision_reportada": "Honest Abe",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-090",
+      "episodio": 90,
+      "fecha_objetivo": "2027-02-21",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 5",
+      "tema": "GTA VI Historia #090: Unfinished Business",
+      "mision_reportada": "Unfinished Business",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-091",
+      "episodio": 91,
+      "fecha_objetivo": "2027-02-22",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 5",
+      "tema": "GTA VI Historia #091: Protective Custody",
+      "mision_reportada": "Protective Custody",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    },
+    {
+      "id": "historia-gtavi-092",
+      "episodio": 92,
+      "fecha_objetivo": "2027-02-23",
+      "hora_objetivo": "14:30",
+      "capitulo": "Capítulo 5",
+      "tema": "GTA VI Historia #092: The End of the Road",
+      "mision_reportada": "The End of the Road",
+      "linea_editorial": "historia",
+      "formato": "short",
+      "estado": "pendiente_verificacion_gameplay",
+      "spoilers": true,
+      "publicacion_automatica": false,
+      "fuentes": [
+        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
+        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+      ],
+      "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
+      "pruebas_requeridas": [
+        "Nombre y ubicación en la partida",
+        "grabación propia/autorizada de la misión",
+        "dos acontecimientos documentados",
+        "consecuencia narrativa sin inventar",
+        "verificación de orden; las guías no coinciden siempre"
+      ],
+      "licencia_video_requerida": true,
+      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+    }
+  ]
+}
