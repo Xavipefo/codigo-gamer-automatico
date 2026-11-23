@@ -50,7 +50,7 @@ def registrar_y_guardar(video):
         ejecutar("git", "fetch", "origin", "main")
         ejecutar("git", "checkout", "-B", "registro-lote", "FETCH_HEAD")
         ejecutar(sys.executable, "registrar_subida.py")
-        ejecutar("git", "add", "historial_publicados.json")
+        ejecutar("git", "add", "historial_publicados.json", "colas/shorts.json", "colas/documentales.json")
         sin_cambios = subprocess.run(
             ["git", "diff", "--cached", "--quiet"], cwd=BASE,
             check=False
