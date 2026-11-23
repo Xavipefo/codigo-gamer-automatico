@@ -17,8 +17,8 @@ def main():
     if not isinstance(historial,list):
         raise ValueError("Historial no válido")
     if any(x.get("video_id")==dato["video_id"] for x in historial):
-        from cola_editorial_pf import retirar
-        retirar(dato["formato"], dato["tema_id"])
+        from cola_editorial_pf import retirar_por_video
+        retirar_por_video(dato["formato"], dato["tema_id"])
         print("El vídeo ya figura en el historial y se sincroniza su cola")
         return
     if any(
@@ -30,8 +30,8 @@ def main():
         raise ValueError("El tema ya tiene una subida en este formato")
     historial.append(dato)
     HISTORIAL.write_text(json.dumps(historial,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    from cola_editorial_pf import retirar
-    retirar(dato["formato"], dato["tema_id"])
+    from cola_editorial_pf import retirar_por_video
+    retirar_por_video(dato["formato"], dato["tema_id"])
     print("Historial y cola actualizados:",dato["video_id"])
 
 
