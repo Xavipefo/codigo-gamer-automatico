@@ -1,0 +1,32 @@
+name: "PF-41 - Verificar corrección de Shorts Historia (sin subir)"
+on:
+  push:
+    branches: [main]
+    paths:
+      - "politica_visual_pf.py"
+      - "motor_video.py"
+      - "control_calidad.py"
+      - "test_pf41_historia_gtavi.py"
+      - ".github/workflows/validar_pf41_historia.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: validacion-historia-pf41
+  cancel-in-progress: true
+jobs:
+  probar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Instalar dependencia de la validación
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Sintaxis y pruebas de la ruta de historia
+        run: |
+          python -m py_compile politica_visual_pf.py motor_video.py control_calidad.py
+          python -m unittest -v test_pf41_historia_gtavi test_control_ritmo_pf42
+          echo "No se ha subido ni publicado ningún vídeo."
