@@ -12,18 +12,41 @@
     "slot_documental": 2,
     "titulo_editorial": "GTA VI a fondo: Jason Duval — motivaciones y conexiones de personajes",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre Jason Duval que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Cómo se presenta Jason Duval en las fuentes oficiales",
+      "2. Pasado, motivaciones y conexiones confirmadas",
+      "3. La función narrativa y lo que no podemos dar por hecho",
+      "4. Comparación con los personajes equivalentes en GTA V",
+      "5. Tres escenas para estudiar su actuación y diálogo",
+      "6. Cómo cambia su papel a medida que avanza la partida",
+      "7. Decisiones, conflictos y relaciones con evidencia de gameplay",
+      "8. Análisis visual: gestos, doblaje, dirección artística",
+      "9. Qué revelan las misiones y qué seguimos sin saber",
+      "10. Conclusión: su importancia real para la historia de Leonida"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE JASON DUVAL?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: Jason Duval — motivaciones y conexiones de personajes",
+      "GTA VI: Jason Duval, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de Jason Duval en GTA VI"
+    ],
+    "visuales_minimos": [
+      "retrato autorizado del personaje",
+      "captura contextual de dos personajes",
+      "escena propia de misión"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-013-1",
@@ -38,18 +61,41 @@
     "slot_documental": 3,
     "titulo_editorial": "GTA VI a fondo: Vice City — mundo abierto y geografía jugable",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre Vice City que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. En qué lugar del mapa se encuentra Vice City",
+      "2. Fuentes oficiales: paisaje, identidad y contexto social",
+      "3. Tres rutas distintas para explorar el territorio",
+      "4. Transporte, accesos y contraste entre barrios",
+      "5. Actividades observables y misiones vinculadas",
+      "6. La relación entre este lugar y la historia de Jason y Lucia",
+      "7. Paralelos útiles con Los Santos y Blaine County de GTA V",
+      "8. Diseño visual: iluminación, vegetación, señales y tráfico",
+      "9. Límites de las comparaciones de tamaño o densidad",
+      "10. Veredicto: por qué merece visitar esta zona"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE VICE CITY?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: Vice City — mundo abierto y geografía jugable",
+      "GTA VI: Vice City, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de Vice City en GTA VI"
+    ],
+    "visuales_minimos": [
+      "mapa de Leonida",
+      "paisaje oficial de la región",
+      "recorrido propio con señalización"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-052-1",
@@ -64,18 +110,41 @@
     "slot_documental": 4,
     "titulo_editorial": "GTA VI a fondo: las funciones de PS5 — pruebas reproducibles de mecánicas y rendimiento",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre las funciones de PS5 que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Qué significa realmente analizar las funciones de PS5",
+      "2. Diferencias entre el material promocional y el juego publicado",
+      "3. Método de prueba: plataformas y modos bien identificados",
+      "4. Prueba 1: registro de un caso reproducible",
+      "5. Prueba 2: comparación con GTA V en condiciones equivalentes",
+      "6. Prueba 3: variación de escenarios y errores posibles",
+      "7. Cómo influyen los controles, cámara y recursos visuales",
+      "8. Resultados documentados y afirmaciones todavía no probadas",
+      "9. Consejos prácticos para el jugador y sus limitaciones",
+      "10. Conclusión sin FPS o cifras inventadas"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LAS FUNCIONES DE PS5?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: las funciones de PS5 — pruebas reproducibles de mecánicas y rendimiento",
+      "GTA VI: las funciones de PS5, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de las funciones de PS5 en GTA VI"
+    ],
+    "visuales_minimos": [
+      "captura A/B en condiciones comparables",
+      "plano cercano de mecánica",
+      "tabla de observaciones propias"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-027-1",
@@ -90,18 +159,41 @@
     "slot_documental": 5,
     "titulo_editorial": "GTA VI a fondo: la galería oficial — comparación visual y diseño del mundo",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre la galería oficial que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Por qué llama la atención la galería oficial",
+      "2. Dónde aparece exactamente en la galería oficial",
+      "3. Análisis de planos, iluminación y composición",
+      "4. Qué imagen pertenece a un tráiler y cuál a una captura",
+      "5. Detalles de ambientación y objetos del mundo",
+      "6. Cómo se integra visualmente en una misión real",
+      "7. Comparativa equivalente con GTA V, cuando exista gameplay",
+      "8. Prueba en distintas condiciones de luz y cámara",
+      "9. Qué muestran las fuentes y qué no permiten asegurar",
+      "10. Conclusión visual y tres detalles para observar"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LA GALERÍA OFICIAL?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: la galería oficial — comparación visual y diseño del mundo",
+      "GTA VI: la galería oficial, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de la galería oficial en GTA VI"
+    ],
+    "visuales_minimos": [
+      "galería oficial de Rockstar",
+      "detalle visual ampliado",
+      "comparación de escenas"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-044-1",
@@ -116,18 +208,41 @@
     "slot_documental": 6,
     "titulo_editorial": "GTA VI a fondo: la escena musical — identidad sonora y fuentes oficiales",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre la escena musical que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Cómo encaja la escena musical en la identidad sonora de Leonida",
+      "2. La ficha oficial, emisoras y artistas relacionados",
+      "3. Qué aporta al tono del juego sin reproducir música protegida",
+      "4. Cómo se presenta dentro de las emisoras o la historia",
+      "5. La relación entre audio ambiental, música y narración",
+      "6. Qué diferencias se oyen frente a GTA V",
+      "7. Momentos de gameplay en que el sonido cambia el ambiente",
+      "8. Fuentes de bandas sonoras y derechos de uso",
+      "9. Detalles confirmados frente a interpretaciones personales",
+      "10. Conclusión: aportación real al carácter de Vice City"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LA ESCENA MUSICAL?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: la escena musical — identidad sonora y fuentes oficiales",
+      "GTA VI: la escena musical, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de la escena musical en GTA VI"
+    ],
+    "visuales_minimos": [
+      "interfaz oficial de emisoras",
+      "portada del score con atribución",
+      "captura de interfaz de radio sin reproducir audio protegido"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-001-1",
@@ -142,18 +257,41 @@
     "slot_documental": 7,
     "titulo_editorial": "GTA VI a fondo: Lucia Caminos — motivaciones y conexiones de personajes",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre Lucia Caminos que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Cómo se presenta Lucia Caminos en las fuentes oficiales",
+      "2. Pasado, motivaciones y conexiones confirmadas",
+      "3. La función narrativa y lo que no podemos dar por hecho",
+      "4. Comparación con los personajes equivalentes en GTA V",
+      "5. Tres escenas para estudiar su actuación y diálogo",
+      "6. Cómo cambia su papel a medida que avanza la partida",
+      "7. Decisiones, conflictos y relaciones con evidencia de gameplay",
+      "8. Análisis visual: gestos, doblaje, dirección artística",
+      "9. Qué revelan las misiones y qué seguimos sin saber",
+      "10. Conclusión: su importancia real para la historia de Leonida"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LUCIA CAMINOS?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: Lucia Caminos — motivaciones y conexiones de personajes",
+      "GTA VI: Lucia Caminos, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de Lucia Caminos en GTA VI"
+    ],
+    "visuales_minimos": [
+      "retrato autorizado del personaje",
+      "captura contextual de dos personajes",
+      "escena propia de misión"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-028-1",
@@ -168,18 +306,41 @@
     "slot_documental": 8,
     "titulo_editorial": "GTA VI a fondo: las imágenes de lanzamiento — comparación visual y diseño del mundo",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre las imágenes de lanzamiento que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Por qué llama la atención las imágenes de lanzamiento",
+      "2. Dónde aparece exactamente en la galería oficial",
+      "3. Análisis de planos, iluminación y composición",
+      "4. Qué imagen pertenece a un tráiler y cuál a una captura",
+      "5. Detalles de ambientación y objetos del mundo",
+      "6. Cómo se integra visualmente en una misión real",
+      "7. Comparativa equivalente con GTA V, cuando exista gameplay",
+      "8. Prueba en distintas condiciones de luz y cámara",
+      "9. Qué muestran las fuentes y qué no permiten asegurar",
+      "10. Conclusión visual y tres detalles para observar"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LAS IMÁGENES DE LANZ?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: las imágenes de lanzamiento — comparación visual y diseño del mundo",
+      "GTA VI: las imágenes de lanzamiento, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de las imágenes de lanzamiento en GTA VI"
+    ],
+    "visuales_minimos": [
+      "galería oficial de Rockstar",
+      "detalle visual ampliado",
+      "comparación de escenas"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-014-1",
@@ -194,18 +355,41 @@
     "slot_documental": 9,
     "titulo_editorial": "GTA VI a fondo: Leonida Keys — mundo abierto y geografía jugable",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre Leonida Keys que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. En qué lugar del mapa se encuentra Leonida Keys",
+      "2. Fuentes oficiales: paisaje, identidad y contexto social",
+      "3. Tres rutas distintas para explorar el territorio",
+      "4. Transporte, accesos y contraste entre barrios",
+      "5. Actividades observables y misiones vinculadas",
+      "6. La relación entre este lugar y la historia de Jason y Lucia",
+      "7. Paralelos útiles con Los Santos y Blaine County de GTA V",
+      "8. Diseño visual: iluminación, vegetación, señales y tráfico",
+      "9. Límites de las comparaciones de tamaño o densidad",
+      "10. Veredicto: por qué merece visitar esta zona"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LEONIDA KEYS?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: Leonida Keys — mundo abierto y geografía jugable",
+      "GTA VI: Leonida Keys, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de Leonida Keys en GTA VI"
+    ],
+    "visuales_minimos": [
+      "mapa de Leonida",
+      "paisaje oficial de la región",
+      "recorrido propio con señalización"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-053-1",
@@ -220,18 +404,41 @@
     "slot_documental": 10,
     "titulo_editorial": "GTA VI a fondo: las funciones del DualSense — pruebas reproducibles de mecánicas y rendimiento",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre las funciones del DualSense que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Qué significa realmente analizar las funciones del DualSense",
+      "2. Diferencias entre el material promocional y el juego publicado",
+      "3. Método de prueba: plataformas y modos bien identificados",
+      "4. Prueba 1: registro de un caso reproducible",
+      "5. Prueba 2: comparación con GTA V en condiciones equivalentes",
+      "6. Prueba 3: variación de escenarios y errores posibles",
+      "7. Cómo influyen los controles, cámara y recursos visuales",
+      "8. Resultados documentados y afirmaciones todavía no probadas",
+      "9. Consejos prácticos para el jugador y sus limitaciones",
+      "10. Conclusión sin FPS o cifras inventadas"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LAS FUNCIONES DEL DU?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: las funciones del DualSense — pruebas reproducibles de mecánicas y rendimiento",
+      "GTA VI: las funciones del DualSense, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de las funciones del DualSense en GTA VI"
+    ],
+    "visuales_minimos": [
+      "captura A/B en condiciones comparables",
+      "plano cercano de mecánica",
+      "tabla de observaciones propias"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-029-1",
@@ -246,18 +453,41 @@
     "slot_documental": 11,
     "titulo_editorial": "GTA VI a fondo: el tráiler oficial — comparación visual y diseño del mundo",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre el tráiler oficial que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Por qué llama la atención el tráiler oficial",
+      "2. Dónde aparece exactamente en la galería oficial",
+      "3. Análisis de planos, iluminación y composición",
+      "4. Qué imagen pertenece a un tráiler y cuál a una captura",
+      "5. Detalles de ambientación y objetos del mundo",
+      "6. Cómo se integra visualmente en una misión real",
+      "7. Comparativa equivalente con GTA V, cuando exista gameplay",
+      "8. Prueba en distintas condiciones de luz y cámara",
+      "9. Qué muestran las fuentes y qué no permiten asegurar",
+      "10. Conclusión visual y tres detalles para observar"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE EL TRÁILER OFICIAL?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: el tráiler oficial — comparación visual y diseño del mundo",
+      "GTA VI: el tráiler oficial, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de el tráiler oficial en GTA VI"
+    ],
+    "visuales_minimos": [
+      "galería oficial de Rockstar",
+      "detalle visual ampliado",
+      "comparación de escenas"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-002-1",
@@ -272,18 +502,41 @@
     "slot_documental": 12,
     "titulo_editorial": "GTA VI a fondo: Cal Hampton — motivaciones y conexiones de personajes",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre Cal Hampton que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Cómo se presenta Cal Hampton en las fuentes oficiales",
+      "2. Pasado, motivaciones y conexiones confirmadas",
+      "3. La función narrativa y lo que no podemos dar por hecho",
+      "4. Comparación con los personajes equivalentes en GTA V",
+      "5. Tres escenas para estudiar su actuación y diálogo",
+      "6. Cómo cambia su papel a medida que avanza la partida",
+      "7. Decisiones, conflictos y relaciones con evidencia de gameplay",
+      "8. Análisis visual: gestos, doblaje, dirección artística",
+      "9. Qué revelan las misiones y qué seguimos sin saber",
+      "10. Conclusión: su importancia real para la historia de Leonida"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE CAL HAMPTON?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: Cal Hampton — motivaciones y conexiones de personajes",
+      "GTA VI: Cal Hampton, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de Cal Hampton en GTA VI"
+    ],
+    "visuales_minimos": [
+      "retrato autorizado del personaje",
+      "captura contextual de dos personajes",
+      "escena propia de misión"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-015-1",
@@ -298,18 +551,41 @@
     "slot_documental": 13,
     "titulo_editorial": "GTA VI a fondo: Grassrivers — mundo abierto y geografía jugable",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre Grassrivers que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. En qué lugar del mapa se encuentra Grassrivers",
+      "2. Fuentes oficiales: paisaje, identidad y contexto social",
+      "3. Tres rutas distintas para explorar el territorio",
+      "4. Transporte, accesos y contraste entre barrios",
+      "5. Actividades observables y misiones vinculadas",
+      "6. La relación entre este lugar y la historia de Jason y Lucia",
+      "7. Paralelos útiles con Los Santos y Blaine County de GTA V",
+      "8. Diseño visual: iluminación, vegetación, señales y tráfico",
+      "9. Límites de las comparaciones de tamaño o densidad",
+      "10. Veredicto: por qué merece visitar esta zona"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE GRASSRIVERS?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: Grassrivers — mundo abierto y geografía jugable",
+      "GTA VI: Grassrivers, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de Grassrivers en GTA VI"
+    ],
+    "visuales_minimos": [
+      "mapa de Leonida",
+      "paisaje oficial de la región",
+      "recorrido propio con señalización"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-054-1",
@@ -324,18 +600,41 @@
     "slot_documental": 14,
     "titulo_editorial": "GTA VI a fondo: las versiones de consola — pruebas reproducibles de mecánicas y rendimiento",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre las versiones de consola que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Qué significa realmente analizar las versiones de consola",
+      "2. Diferencias entre el material promocional y el juego publicado",
+      "3. Método de prueba: plataformas y modos bien identificados",
+      "4. Prueba 1: registro de un caso reproducible",
+      "5. Prueba 2: comparación con GTA V en condiciones equivalentes",
+      "6. Prueba 3: variación de escenarios y errores posibles",
+      "7. Cómo influyen los controles, cámara y recursos visuales",
+      "8. Resultados documentados y afirmaciones todavía no probadas",
+      "9. Consejos prácticos para el jugador y sus limitaciones",
+      "10. Conclusión sin FPS o cifras inventadas"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LAS VERSIONES DE CON?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: las versiones de consola — pruebas reproducibles de mecánicas y rendimiento",
+      "GTA VI: las versiones de consola, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de las versiones de consola en GTA VI"
+    ],
+    "visuales_minimos": [
+      "captura A/B en condiciones comparables",
+      "plano cercano de mecánica",
+      "tabla de observaciones propias"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-030-1",
@@ -350,18 +649,41 @@
     "slot_documental": 15,
     "titulo_editorial": "GTA VI a fondo: la mirada extendida de Rockstar — comparación visual y diseño del mundo",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre la mirada extendida de Rockstar que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Por qué llama la atención la mirada extendida de Rockstar",
+      "2. Dónde aparece exactamente en la galería oficial",
+      "3. Análisis de planos, iluminación y composición",
+      "4. Qué imagen pertenece a un tráiler y cuál a una captura",
+      "5. Detalles de ambientación y objetos del mundo",
+      "6. Cómo se integra visualmente en una misión real",
+      "7. Comparativa equivalente con GTA V, cuando exista gameplay",
+      "8. Prueba en distintas condiciones de luz y cámara",
+      "9. Qué muestran las fuentes y qué no permiten asegurar",
+      "10. Conclusión visual y tres detalles para observar"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LA MIRADA EXTENDIDA ?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: la mirada extendida de Rockstar — comparación visual y diseño del mundo",
+      "GTA VI: la mirada extendida de Rockstar, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de la mirada extendida de Rockstar en GTA VI"
+    ],
+    "visuales_minimos": [
+      "galería oficial de Rockstar",
+      "detalle visual ampliado",
+      "comparación de escenas"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-045-1",
@@ -376,18 +698,41 @@
     "slot_documental": 16,
     "titulo_editorial": "GTA VI a fondo: las radios del juego — identidad sonora y fuentes oficiales",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre las radios del juego que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Cómo encaja las radios del juego en la identidad sonora de Leonida",
+      "2. La ficha oficial, emisoras y artistas relacionados",
+      "3. Qué aporta al tono del juego sin reproducir música protegida",
+      "4. Cómo se presenta dentro de las emisoras o la historia",
+      "5. La relación entre audio ambiental, música y narración",
+      "6. Qué diferencias se oyen frente a GTA V",
+      "7. Momentos de gameplay en que el sonido cambia el ambiente",
+      "8. Fuentes de bandas sonoras y derechos de uso",
+      "9. Detalles confirmados frente a interpretaciones personales",
+      "10. Conclusión: aportación real al carácter de Vice City"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LAS RADIOS DEL JUEGO?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: las radios del juego — identidad sonora y fuentes oficiales",
+      "GTA VI: las radios del juego, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de las radios del juego en GTA VI"
+    ],
+    "visuales_minimos": [
+      "interfaz oficial de emisoras",
+      "portada del score con atribución",
+      "captura de interfaz de radio sin reproducir audio protegido"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-003-1",
@@ -402,18 +747,41 @@
     "slot_documental": 17,
     "titulo_editorial": "GTA VI a fondo: Brian Heder — motivaciones y conexiones de personajes",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre Brian Heder que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Cómo se presenta Brian Heder en las fuentes oficiales",
+      "2. Pasado, motivaciones y conexiones confirmadas",
+      "3. La función narrativa y lo que no podemos dar por hecho",
+      "4. Comparación con los personajes equivalentes en GTA V",
+      "5. Tres escenas para estudiar su actuación y diálogo",
+      "6. Cómo cambia su papel a medida que avanza la partida",
+      "7. Decisiones, conflictos y relaciones con evidencia de gameplay",
+      "8. Análisis visual: gestos, doblaje, dirección artística",
+      "9. Qué revelan las misiones y qué seguimos sin saber",
+      "10. Conclusión: su importancia real para la historia de Leonida"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE BRIAN HEDER?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: Brian Heder — motivaciones y conexiones de personajes",
+      "GTA VI: Brian Heder, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de Brian Heder en GTA VI"
+    ],
+    "visuales_minimos": [
+      "retrato autorizado del personaje",
+      "captura contextual de dos personajes",
+      "escena propia de misión"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-031-1",
@@ -428,18 +796,41 @@
     "slot_documental": 18,
     "titulo_editorial": "GTA VI a fondo: el póster de estreno — comparación visual y diseño del mundo",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre el póster de estreno que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Por qué llama la atención el póster de estreno",
+      "2. Dónde aparece exactamente en la galería oficial",
+      "3. Análisis de planos, iluminación y composición",
+      "4. Qué imagen pertenece a un tráiler y cuál a una captura",
+      "5. Detalles de ambientación y objetos del mundo",
+      "6. Cómo se integra visualmente en una misión real",
+      "7. Comparativa equivalente con GTA V, cuando exista gameplay",
+      "8. Prueba en distintas condiciones de luz y cámara",
+      "9. Qué muestran las fuentes y qué no permiten asegurar",
+      "10. Conclusión visual y tres detalles para observar"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE EL PÓSTER DE ESTRENO?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: el póster de estreno — comparación visual y diseño del mundo",
+      "GTA VI: el póster de estreno, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de el póster de estreno en GTA VI"
+    ],
+    "visuales_minimos": [
+      "galería oficial de Rockstar",
+      "detalle visual ampliado",
+      "comparación de escenas"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-016-1",
@@ -454,18 +845,41 @@
     "slot_documental": 19,
     "titulo_editorial": "GTA VI a fondo: Port Gellhorn — mundo abierto y geografía jugable",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre Port Gellhorn que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. En qué lugar del mapa se encuentra Port Gellhorn",
+      "2. Fuentes oficiales: paisaje, identidad y contexto social",
+      "3. Tres rutas distintas para explorar el territorio",
+      "4. Transporte, accesos y contraste entre barrios",
+      "5. Actividades observables y misiones vinculadas",
+      "6. La relación entre este lugar y la historia de Jason y Lucia",
+      "7. Paralelos útiles con Los Santos y Blaine County de GTA V",
+      "8. Diseño visual: iluminación, vegetación, señales y tráfico",
+      "9. Límites de las comparaciones de tamaño o densidad",
+      "10. Veredicto: por qué merece visitar esta zona"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE PORT GELLHORN?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: Port Gellhorn — mundo abierto y geografía jugable",
+      "GTA VI: Port Gellhorn, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de Port Gellhorn en GTA VI"
+    ],
+    "visuales_minimos": [
+      "mapa de Leonida",
+      "paisaje oficial de la región",
+      "recorrido propio con señalización"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-055-1",
@@ -480,18 +894,41 @@
     "slot_documental": 20,
     "titulo_editorial": "GTA VI a fondo: los gráficos de última generación — pruebas reproducibles de mecánicas y rendimiento",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre los gráficos de última generación que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Qué significa realmente analizar los gráficos de última generación",
+      "2. Diferencias entre el material promocional y el juego publicado",
+      "3. Método de prueba: plataformas y modos bien identificados",
+      "4. Prueba 1: registro de un caso reproducible",
+      "5. Prueba 2: comparación con GTA V en condiciones equivalentes",
+      "6. Prueba 3: variación de escenarios y errores posibles",
+      "7. Cómo influyen los controles, cámara y recursos visuales",
+      "8. Resultados documentados y afirmaciones todavía no probadas",
+      "9. Consejos prácticos para el jugador y sus limitaciones",
+      "10. Conclusión sin FPS o cifras inventadas"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LOS GRÁFICOS DE ÚLTI?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: los gráficos de última generación — pruebas reproducibles de mecánicas y rendimie",
+      "GTA VI: los gráficos de última generación, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de los gráficos de última generación en GTA VI"
+    ],
+    "visuales_minimos": [
+      "captura A/B en condiciones comparables",
+      "plano cercano de mecánica",
+      "tabla de observaciones propias"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-032-1",
@@ -506,18 +943,41 @@
     "slot_documental": 21,
     "titulo_editorial": "GTA VI a fondo: el mapa de Leonida — comparación visual y diseño del mundo",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre el mapa de Leonida que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Por qué llama la atención el mapa de Leonida",
+      "2. Dónde aparece exactamente en la galería oficial",
+      "3. Análisis de planos, iluminación y composición",
+      "4. Qué imagen pertenece a un tráiler y cuál a una captura",
+      "5. Detalles de ambientación y objetos del mundo",
+      "6. Cómo se integra visualmente en una misión real",
+      "7. Comparativa equivalente con GTA V, cuando exista gameplay",
+      "8. Prueba en distintas condiciones de luz y cámara",
+      "9. Qué muestran las fuentes y qué no permiten asegurar",
+      "10. Conclusión visual y tres detalles para observar"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE EL MAPA DE LEONIDA?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: el mapa de Leonida — comparación visual y diseño del mundo",
+      "GTA VI: el mapa de Leonida, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de el mapa de Leonida en GTA VI"
+    ],
+    "visuales_minimos": [
+      "galería oficial de Rockstar",
+      "detalle visual ampliado",
+      "comparación de escenas"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-004-1",
@@ -532,18 +992,41 @@
     "slot_documental": 22,
     "titulo_editorial": "GTA VI a fondo: Boobie Ike — motivaciones y conexiones de personajes",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre Boobie Ike que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Cómo se presenta Boobie Ike en las fuentes oficiales",
+      "2. Pasado, motivaciones y conexiones confirmadas",
+      "3. La función narrativa y lo que no podemos dar por hecho",
+      "4. Comparación con los personajes equivalentes en GTA V",
+      "5. Tres escenas para estudiar su actuación y diálogo",
+      "6. Cómo cambia su papel a medida que avanza la partida",
+      "7. Decisiones, conflictos y relaciones con evidencia de gameplay",
+      "8. Análisis visual: gestos, doblaje, dirección artística",
+      "9. Qué revelan las misiones y qué seguimos sin saber",
+      "10. Conclusión: su importancia real para la historia de Leonida"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE BOOBIE IKE?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: Boobie Ike — motivaciones y conexiones de personajes",
+      "GTA VI: Boobie Ike, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de Boobie Ike en GTA VI"
+    ],
+    "visuales_minimos": [
+      "retrato autorizado del personaje",
+      "captura contextual de dos personajes",
+      "escena propia de misión"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-017-1",
@@ -558,18 +1041,41 @@
     "slot_documental": 23,
     "titulo_editorial": "GTA VI a fondo: Ambrosia — mundo abierto y geografía jugable",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre Ambrosia que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. En qué lugar del mapa se encuentra Ambrosia",
+      "2. Fuentes oficiales: paisaje, identidad y contexto social",
+      "3. Tres rutas distintas para explorar el territorio",
+      "4. Transporte, accesos y contraste entre barrios",
+      "5. Actividades observables y misiones vinculadas",
+      "6. La relación entre este lugar y la historia de Jason y Lucia",
+      "7. Paralelos útiles con Los Santos y Blaine County de GTA V",
+      "8. Diseño visual: iluminación, vegetación, señales y tráfico",
+      "9. Límites de las comparaciones de tamaño o densidad",
+      "10. Veredicto: por qué merece visitar esta zona"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE AMBROSIA?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: Ambrosia — mundo abierto y geografía jugable",
+      "GTA VI: Ambrosia, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de Ambrosia en GTA VI"
+    ],
+    "visuales_minimos": [
+      "mapa de Leonida",
+      "paisaje oficial de la región",
+      "recorrido propio con señalización"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-056-1",
@@ -584,18 +1090,41 @@
     "slot_documental": 24,
     "titulo_editorial": "GTA VI a fondo: la estabilidad visual — pruebas reproducibles de mecánicas y rendimiento",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre la estabilidad visual que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Qué significa realmente analizar la estabilidad visual",
+      "2. Diferencias entre el material promocional y el juego publicado",
+      "3. Método de prueba: plataformas y modos bien identificados",
+      "4. Prueba 1: registro de un caso reproducible",
+      "5. Prueba 2: comparación con GTA V en condiciones equivalentes",
+      "6. Prueba 3: variación de escenarios y errores posibles",
+      "7. Cómo influyen los controles, cámara y recursos visuales",
+      "8. Resultados documentados y afirmaciones todavía no probadas",
+      "9. Consejos prácticos para el jugador y sus limitaciones",
+      "10. Conclusión sin FPS o cifras inventadas"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LA ESTABILIDAD VISUA?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: la estabilidad visual — pruebas reproducibles de mecánicas y rendimiento",
+      "GTA VI: la estabilidad visual, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de la estabilidad visual en GTA VI"
+    ],
+    "visuales_minimos": [
+      "captura A/B en condiciones comparables",
+      "plano cercano de mecánica",
+      "tabla de observaciones propias"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-033-1",
@@ -610,18 +1139,41 @@
     "slot_documental": 25,
     "titulo_editorial": "GTA VI a fondo: las capturas de los personajes — comparación visual y diseño del mundo",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre las capturas de los personajes que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Por qué llama la atención las capturas de los personajes",
+      "2. Dónde aparece exactamente en la galería oficial",
+      "3. Análisis de planos, iluminación y composición",
+      "4. Qué imagen pertenece a un tráiler y cuál a una captura",
+      "5. Detalles de ambientación y objetos del mundo",
+      "6. Cómo se integra visualmente en una misión real",
+      "7. Comparativa equivalente con GTA V, cuando exista gameplay",
+      "8. Prueba en distintas condiciones de luz y cámara",
+      "9. Qué muestran las fuentes y qué no permiten asegurar",
+      "10. Conclusión visual y tres detalles para observar"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LAS CAPTURAS DE LOS ?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: las capturas de los personajes — comparación visual y diseño del mundo",
+      "GTA VI: las capturas de los personajes, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de las capturas de los personajes en GTA VI"
+    ],
+    "visuales_minimos": [
+      "galería oficial de Rockstar",
+      "detalle visual ampliado",
+      "comparación de escenas"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-046-1",
@@ -636,18 +1188,41 @@
     "slot_documental": 26,
     "titulo_editorial": "GTA VI a fondo: Only Raw Records — identidad sonora y fuentes oficiales",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre Only Raw Records que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Cómo encaja Only Raw Records en la identidad sonora de Leonida",
+      "2. La ficha oficial, emisoras y artistas relacionados",
+      "3. Qué aporta al tono del juego sin reproducir música protegida",
+      "4. Cómo se presenta dentro de las emisoras o la historia",
+      "5. La relación entre audio ambiental, música y narración",
+      "6. Qué diferencias se oyen frente a GTA V",
+      "7. Momentos de gameplay en que el sonido cambia el ambiente",
+      "8. Fuentes de bandas sonoras y derechos de uso",
+      "9. Detalles confirmados frente a interpretaciones personales",
+      "10. Conclusión: aportación real al carácter de Vice City"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE ONLY RAW RECORDS?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: Only Raw Records — identidad sonora y fuentes oficiales",
+      "GTA VI: Only Raw Records, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de Only Raw Records en GTA VI"
+    ],
+    "visuales_minimos": [
+      "interfaz oficial de emisoras",
+      "portada del score con atribución",
+      "captura de interfaz de radio sin reproducir audio protegido"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-005-1",
@@ -662,18 +1237,41 @@
     "slot_documental": 27,
     "titulo_editorial": "GTA VI a fondo: Raul Bautista — motivaciones y conexiones de personajes",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre Raul Bautista que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Cómo se presenta Raul Bautista en las fuentes oficiales",
+      "2. Pasado, motivaciones y conexiones confirmadas",
+      "3. La función narrativa y lo que no podemos dar por hecho",
+      "4. Comparación con los personajes equivalentes en GTA V",
+      "5. Tres escenas para estudiar su actuación y diálogo",
+      "6. Cómo cambia su papel a medida que avanza la partida",
+      "7. Decisiones, conflictos y relaciones con evidencia de gameplay",
+      "8. Análisis visual: gestos, doblaje, dirección artística",
+      "9. Qué revelan las misiones y qué seguimos sin saber",
+      "10. Conclusión: su importancia real para la historia de Leonida"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE RAUL BAUTISTA?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: Raul Bautista — motivaciones y conexiones de personajes",
+      "GTA VI: Raul Bautista, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de Raul Bautista en GTA VI"
+    ],
+    "visuales_minimos": [
+      "retrato autorizado del personaje",
+      "captura contextual de dos personajes",
+      "escena propia de misión"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-034-1",
@@ -688,18 +1286,41 @@
     "slot_documental": 28,
     "titulo_editorial": "GTA VI a fondo: la luz de atardecer — comparación visual y diseño del mundo",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre la luz de atardecer que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Por qué llama la atención la luz de atardecer",
+      "2. Dónde aparece exactamente en la galería oficial",
+      "3. Análisis de planos, iluminación y composición",
+      "4. Qué imagen pertenece a un tráiler y cuál a una captura",
+      "5. Detalles de ambientación y objetos del mundo",
+      "6. Cómo se integra visualmente en una misión real",
+      "7. Comparativa equivalente con GTA V, cuando exista gameplay",
+      "8. Prueba en distintas condiciones de luz y cámara",
+      "9. Qué muestran las fuentes y qué no permiten asegurar",
+      "10. Conclusión visual y tres detalles para observar"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LA LUZ DE ATARDECER?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: la luz de atardecer — comparación visual y diseño del mundo",
+      "GTA VI: la luz de atardecer, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de la luz de atardecer en GTA VI"
+    ],
+    "visuales_minimos": [
+      "galería oficial de Rockstar",
+      "detalle visual ampliado",
+      "comparación de escenas"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-018-1",
@@ -714,18 +1335,41 @@
     "slot_documental": 29,
     "titulo_editorial": "GTA VI a fondo: Mount Kalaga — mundo abierto y geografía jugable",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre Mount Kalaga que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. En qué lugar del mapa se encuentra Mount Kalaga",
+      "2. Fuentes oficiales: paisaje, identidad y contexto social",
+      "3. Tres rutas distintas para explorar el territorio",
+      "4. Transporte, accesos y contraste entre barrios",
+      "5. Actividades observables y misiones vinculadas",
+      "6. La relación entre este lugar y la historia de Jason y Lucia",
+      "7. Paralelos útiles con Los Santos y Blaine County de GTA V",
+      "8. Diseño visual: iluminación, vegetación, señales y tráfico",
+      "9. Límites de las comparaciones de tamaño o densidad",
+      "10. Veredicto: por qué merece visitar esta zona"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE MOUNT KALAGA?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: Mount Kalaga — mundo abierto y geografía jugable",
+      "GTA VI: Mount Kalaga, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de Mount Kalaga en GTA VI"
+    ],
+    "visuales_minimos": [
+      "mapa de Leonida",
+      "paisaje oficial de la región",
+      "recorrido propio con señalización"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-057-1",
@@ -740,18 +1384,41 @@
     "slot_documental": 30,
     "titulo_editorial": "GTA VI a fondo: el diseño del mundo abierto — pruebas reproducibles de mecánicas y rendimiento",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre el diseño del mundo abierto que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Qué significa realmente analizar el diseño del mundo abierto",
+      "2. Diferencias entre el material promocional y el juego publicado",
+      "3. Método de prueba: plataformas y modos bien identificados",
+      "4. Prueba 1: registro de un caso reproducible",
+      "5. Prueba 2: comparación con GTA V en condiciones equivalentes",
+      "6. Prueba 3: variación de escenarios y errores posibles",
+      "7. Cómo influyen los controles, cámara y recursos visuales",
+      "8. Resultados documentados y afirmaciones todavía no probadas",
+      "9. Consejos prácticos para el jugador y sus limitaciones",
+      "10. Conclusión sin FPS o cifras inventadas"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE EL DISEÑO DEL MUNDO ?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: el diseño del mundo abierto — pruebas reproducibles de mecánicas y rendimiento",
+      "GTA VI: el diseño del mundo abierto, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de el diseño del mundo abierto en GTA VI"
+    ],
+    "visuales_minimos": [
+      "captura A/B en condiciones comparables",
+      "plano cercano de mecánica",
+      "tabla de observaciones propias"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-035-1",
@@ -766,18 +1433,41 @@
     "slot_documental": 31,
     "titulo_editorial": "GTA VI a fondo: las escenas nocturnas — comparación visual y diseño del mundo",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre las escenas nocturnas que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Por qué llama la atención las escenas nocturnas",
+      "2. Dónde aparece exactamente en la galería oficial",
+      "3. Análisis de planos, iluminación y composición",
+      "4. Qué imagen pertenece a un tráiler y cuál a una captura",
+      "5. Detalles de ambientación y objetos del mundo",
+      "6. Cómo se integra visualmente en una misión real",
+      "7. Comparativa equivalente con GTA V, cuando exista gameplay",
+      "8. Prueba en distintas condiciones de luz y cámara",
+      "9. Qué muestran las fuentes y qué no permiten asegurar",
+      "10. Conclusión visual y tres detalles para observar"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LAS ESCENAS NOCTURNA?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: las escenas nocturnas — comparación visual y diseño del mundo",
+      "GTA VI: las escenas nocturnas, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de las escenas nocturnas en GTA VI"
+    ],
+    "visuales_minimos": [
+      "galería oficial de Rockstar",
+      "detalle visual ampliado",
+      "comparación de escenas"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-006-1",
@@ -792,18 +1482,41 @@
     "slot_documental": 32,
     "titulo_editorial": "GTA VI a fondo: Dre'Quan Priest — motivaciones y conexiones de personajes",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre Dre'Quan Priest que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Cómo se presenta Dre'Quan Priest en las fuentes oficiales",
+      "2. Pasado, motivaciones y conexiones confirmadas",
+      "3. La función narrativa y lo que no podemos dar por hecho",
+      "4. Comparación con los personajes equivalentes en GTA V",
+      "5. Tres escenas para estudiar su actuación y diálogo",
+      "6. Cómo cambia su papel a medida que avanza la partida",
+      "7. Decisiones, conflictos y relaciones con evidencia de gameplay",
+      "8. Análisis visual: gestos, doblaje, dirección artística",
+      "9. Qué revelan las misiones y qué seguimos sin saber",
+      "10. Conclusión: su importancia real para la historia de Leonida"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE DRE'QUAN PRIEST?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: Dre'Quan Priest — motivaciones y conexiones de personajes",
+      "GTA VI: Dre'Quan Priest, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de Dre'Quan Priest en GTA VI"
+    ],
+    "visuales_minimos": [
+      "retrato autorizado del personaje",
+      "captura contextual de dos personajes",
+      "escena propia de misión"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-019-1",
@@ -818,18 +1531,41 @@
     "slot_documental": 33,
     "titulo_editorial": "GTA VI a fondo: las seis regiones de Leonida — mundo abierto y geografía jugable",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre las seis regiones de Leonida que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. En qué lugar del mapa se encuentra las seis regiones de Leonida",
+      "2. Fuentes oficiales: paisaje, identidad y contexto social",
+      "3. Tres rutas distintas para explorar el territorio",
+      "4. Transporte, accesos y contraste entre barrios",
+      "5. Actividades observables y misiones vinculadas",
+      "6. La relación entre este lugar y la historia de Jason y Lucia",
+      "7. Paralelos útiles con Los Santos y Blaine County de GTA V",
+      "8. Diseño visual: iluminación, vegetación, señales y tráfico",
+      "9. Límites de las comparaciones de tamaño o densidad",
+      "10. Veredicto: por qué merece visitar esta zona"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LAS SEIS REGIONES DE?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: las seis regiones de Leonida — mundo abierto y geografía jugable",
+      "GTA VI: las seis regiones de Leonida, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de las seis regiones de Leonida en GTA VI"
+    ],
+    "visuales_minimos": [
+      "mapa de Leonida",
+      "paisaje oficial de la región",
+      "recorrido propio con señalización"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-058-1",
@@ -844,18 +1580,41 @@
     "slot_documental": 34,
     "titulo_editorial": "GTA VI a fondo: la narrativa sin spoilers — pruebas reproducibles de mecánicas y rendimiento",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre la narrativa sin spoilers que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Qué significa realmente analizar la narrativa sin spoilers",
+      "2. Diferencias entre el material promocional y el juego publicado",
+      "3. Método de prueba: plataformas y modos bien identificados",
+      "4. Prueba 1: registro de un caso reproducible",
+      "5. Prueba 2: comparación con GTA V en condiciones equivalentes",
+      "6. Prueba 3: variación de escenarios y errores posibles",
+      "7. Cómo influyen los controles, cámara y recursos visuales",
+      "8. Resultados documentados y afirmaciones todavía no probadas",
+      "9. Consejos prácticos para el jugador y sus limitaciones",
+      "10. Conclusión sin FPS o cifras inventadas"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LA NARRATIVA SIN SPO?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: la narrativa sin spoilers — pruebas reproducibles de mecánicas y rendimiento",
+      "GTA VI: la narrativa sin spoilers, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de la narrativa sin spoilers en GTA VI"
+    ],
+    "visuales_minimos": [
+      "captura A/B en condiciones comparables",
+      "plano cercano de mecánica",
+      "tabla de observaciones propias"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-036-1",
@@ -870,18 +1629,41 @@
     "slot_documental": 35,
     "titulo_editorial": "GTA VI a fondo: los reflejos de agua — comparación visual y diseño del mundo",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre los reflejos de agua que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Por qué llama la atención los reflejos de agua",
+      "2. Dónde aparece exactamente en la galería oficial",
+      "3. Análisis de planos, iluminación y composición",
+      "4. Qué imagen pertenece a un tráiler y cuál a una captura",
+      "5. Detalles de ambientación y objetos del mundo",
+      "6. Cómo se integra visualmente en una misión real",
+      "7. Comparativa equivalente con GTA V, cuando exista gameplay",
+      "8. Prueba en distintas condiciones de luz y cámara",
+      "9. Qué muestran las fuentes y qué no permiten asegurar",
+      "10. Conclusión visual y tres detalles para observar"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LOS REFLEJOS DE AGUA?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: los reflejos de agua — comparación visual y diseño del mundo",
+      "GTA VI: los reflejos de agua, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de los reflejos de agua en GTA VI"
+    ],
+    "visuales_minimos": [
+      "galería oficial de Rockstar",
+      "detalle visual ampliado",
+      "comparación de escenas"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-047-1",
@@ -896,18 +1678,41 @@
     "slot_documental": 36,
     "titulo_editorial": "GTA VI a fondo: la música de Vice City — identidad sonora y fuentes oficiales",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre la música de Vice City que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Cómo encaja la música de Vice City en la identidad sonora de Leonida",
+      "2. La ficha oficial, emisoras y artistas relacionados",
+      "3. Qué aporta al tono del juego sin reproducir música protegida",
+      "4. Cómo se presenta dentro de las emisoras o la historia",
+      "5. La relación entre audio ambiental, música y narración",
+      "6. Qué diferencias se oyen frente a GTA V",
+      "7. Momentos de gameplay en que el sonido cambia el ambiente",
+      "8. Fuentes de bandas sonoras y derechos de uso",
+      "9. Detalles confirmados frente a interpretaciones personales",
+      "10. Conclusión: aportación real al carácter de Vice City"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LA MÚSICA DE VICE CI?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: la música de Vice City — identidad sonora y fuentes oficiales",
+      "GTA VI: la música de Vice City, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de la música de Vice City en GTA VI"
+    ],
+    "visuales_minimos": [
+      "interfaz oficial de emisoras",
+      "portada del score con atribución",
+      "captura de interfaz de radio sin reproducir audio protegido"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-007-1",
@@ -922,18 +1727,41 @@
     "slot_documental": 37,
     "titulo_editorial": "GTA VI a fondo: Bae-Luxe — motivaciones y conexiones de personajes",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre Bae-Luxe que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Cómo se presenta Bae-Luxe en las fuentes oficiales",
+      "2. Pasado, motivaciones y conexiones confirmadas",
+      "3. La función narrativa y lo que no podemos dar por hecho",
+      "4. Comparación con los personajes equivalentes en GTA V",
+      "5. Tres escenas para estudiar su actuación y diálogo",
+      "6. Cómo cambia su papel a medida que avanza la partida",
+      "7. Decisiones, conflictos y relaciones con evidencia de gameplay",
+      "8. Análisis visual: gestos, doblaje, dirección artística",
+      "9. Qué revelan las misiones y qué seguimos sin saber",
+      "10. Conclusión: su importancia real para la historia de Leonida"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE BAE-LUXE?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: Bae-Luxe — motivaciones y conexiones de personajes",
+      "GTA VI: Bae-Luxe, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de Bae-Luxe en GTA VI"
+    ],
+    "visuales_minimos": [
+      "retrato autorizado del personaje",
+      "captura contextual de dos personajes",
+      "escena propia de misión"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-037-1",
@@ -948,18 +1776,41 @@
     "slot_documental": 38,
     "titulo_editorial": "GTA VI a fondo: la arquitectura costera — comparación visual y diseño del mundo",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre la arquitectura costera que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Por qué llama la atención la arquitectura costera",
+      "2. Dónde aparece exactamente en la galería oficial",
+      "3. Análisis de planos, iluminación y composición",
+      "4. Qué imagen pertenece a un tráiler y cuál a una captura",
+      "5. Detalles de ambientación y objetos del mundo",
+      "6. Cómo se integra visualmente en una misión real",
+      "7. Comparativa equivalente con GTA V, cuando exista gameplay",
+      "8. Prueba en distintas condiciones de luz y cámara",
+      "9. Qué muestran las fuentes y qué no permiten asegurar",
+      "10. Conclusión visual y tres detalles para observar"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LA ARQUITECTURA COST?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: la arquitectura costera — comparación visual y diseño del mundo",
+      "GTA VI: la arquitectura costera, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de la arquitectura costera en GTA VI"
+    ],
+    "visuales_minimos": [
+      "galería oficial de Rockstar",
+      "detalle visual ampliado",
+      "comparación de escenas"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-020-1",
@@ -974,18 +1825,41 @@
     "slot_documental": 39,
     "titulo_editorial": "GTA VI a fondo: las playas y costa — mundo abierto y geografía jugable",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre las playas y costa que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. En qué lugar del mapa se encuentra las playas y costa",
+      "2. Fuentes oficiales: paisaje, identidad y contexto social",
+      "3. Tres rutas distintas para explorar el territorio",
+      "4. Transporte, accesos y contraste entre barrios",
+      "5. Actividades observables y misiones vinculadas",
+      "6. La relación entre este lugar y la historia de Jason y Lucia",
+      "7. Paralelos útiles con Los Santos y Blaine County de GTA V",
+      "8. Diseño visual: iluminación, vegetación, señales y tráfico",
+      "9. Límites de las comparaciones de tamaño o densidad",
+      "10. Veredicto: por qué merece visitar esta zona"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LAS PLAYAS Y COSTA?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: las playas y costa — mundo abierto y geografía jugable",
+      "GTA VI: las playas y costa, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de las playas y costa en GTA VI"
+    ],
+    "visuales_minimos": [
+      "mapa de Leonida",
+      "paisaje oficial de la región",
+      "recorrido propio con señalización"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-059-1",
@@ -1000,18 +1874,41 @@
     "slot_documental": 40,
     "titulo_editorial": "GTA VI a fondo: la evolución respecto a GTA V — pruebas reproducibles de mecánicas y rendimiento",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre la evolución respecto a GTA V que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Qué significa realmente analizar la evolución respecto a GTA V",
+      "2. Diferencias entre el material promocional y el juego publicado",
+      "3. Método de prueba: plataformas y modos bien identificados",
+      "4. Prueba 1: registro de un caso reproducible",
+      "5. Prueba 2: comparación con GTA V en condiciones equivalentes",
+      "6. Prueba 3: variación de escenarios y errores posibles",
+      "7. Cómo influyen los controles, cámara y recursos visuales",
+      "8. Resultados documentados y afirmaciones todavía no probadas",
+      "9. Consejos prácticos para el jugador y sus limitaciones",
+      "10. Conclusión sin FPS o cifras inventadas"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LA EVOLUCIÓN RESPECT?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: la evolución respecto a GTA V — pruebas reproducibles de mecánicas y rendimiento",
+      "GTA VI: la evolución respecto a GTA V, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de la evolución respecto a GTA V en GTA VI"
+    ],
+    "visuales_minimos": [
+      "captura A/B en condiciones comparables",
+      "plano cercano de mecánica",
+      "tabla de observaciones propias"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-038-1",
@@ -1026,18 +1923,41 @@
     "slot_documental": 41,
     "titulo_editorial": "GTA VI a fondo: las señales y carteles — comparación visual y diseño del mundo",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre las señales y carteles que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Por qué llama la atención las señales y carteles",
+      "2. Dónde aparece exactamente en la galería oficial",
+      "3. Análisis de planos, iluminación y composición",
+      "4. Qué imagen pertenece a un tráiler y cuál a una captura",
+      "5. Detalles de ambientación y objetos del mundo",
+      "6. Cómo se integra visualmente en una misión real",
+      "7. Comparativa equivalente con GTA V, cuando exista gameplay",
+      "8. Prueba en distintas condiciones de luz y cámara",
+      "9. Qué muestran las fuentes y qué no permiten asegurar",
+      "10. Conclusión visual y tres detalles para observar"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LAS SEÑALES Y CARTEL?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: las señales y carteles — comparación visual y diseño del mundo",
+      "GTA VI: las señales y carteles, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de las señales y carteles en GTA VI"
+    ],
+    "visuales_minimos": [
+      "galería oficial de Rockstar",
+      "detalle visual ampliado",
+      "comparación de escenas"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-008-1",
@@ -1052,18 +1972,41 @@
     "slot_documental": 42,
     "titulo_editorial": "GTA VI a fondo: Roxy — motivaciones y conexiones de personajes",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre Roxy que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Cómo se presenta Roxy en las fuentes oficiales",
+      "2. Pasado, motivaciones y conexiones confirmadas",
+      "3. La función narrativa y lo que no podemos dar por hecho",
+      "4. Comparación con los personajes equivalentes en GTA V",
+      "5. Tres escenas para estudiar su actuación y diálogo",
+      "6. Cómo cambia su papel a medida que avanza la partida",
+      "7. Decisiones, conflictos y relaciones con evidencia de gameplay",
+      "8. Análisis visual: gestos, doblaje, dirección artística",
+      "9. Qué revelan las misiones y qué seguimos sin saber",
+      "10. Conclusión: su importancia real para la historia de Leonida"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE ROXY?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: Roxy — motivaciones y conexiones de personajes",
+      "GTA VI: Roxy, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de Roxy en GTA VI"
+    ],
+    "visuales_minimos": [
+      "retrato autorizado del personaje",
+      "captura contextual de dos personajes",
+      "escena propia de misión"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-021-1",
@@ -1078,18 +2021,41 @@
     "slot_documental": 43,
     "titulo_editorial": "GTA VI a fondo: los parques naturales — mundo abierto y geografía jugable",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre los parques naturales que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. En qué lugar del mapa se encuentra los parques naturales",
+      "2. Fuentes oficiales: paisaje, identidad y contexto social",
+      "3. Tres rutas distintas para explorar el territorio",
+      "4. Transporte, accesos y contraste entre barrios",
+      "5. Actividades observables y misiones vinculadas",
+      "6. La relación entre este lugar y la historia de Jason y Lucia",
+      "7. Paralelos útiles con Los Santos y Blaine County de GTA V",
+      "8. Diseño visual: iluminación, vegetación, señales y tráfico",
+      "9. Límites de las comparaciones de tamaño o densidad",
+      "10. Veredicto: por qué merece visitar esta zona"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LOS PARQUES NATURALE?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: los parques naturales — mundo abierto y geografía jugable",
+      "GTA VI: los parques naturales, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de los parques naturales en GTA VI"
+    ],
+    "visuales_minimos": [
+      "mapa de Leonida",
+      "paisaje oficial de la región",
+      "recorrido propio con señalización"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-060-1",
@@ -1104,18 +2070,41 @@
     "slot_documental": 44,
     "titulo_editorial": "GTA VI a fondo: las animaciones de personajes — pruebas reproducibles de mecánicas y rendimiento",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre las animaciones de personajes que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Qué significa realmente analizar las animaciones de personajes",
+      "2. Diferencias entre el material promocional y el juego publicado",
+      "3. Método de prueba: plataformas y modos bien identificados",
+      "4. Prueba 1: registro de un caso reproducible",
+      "5. Prueba 2: comparación con GTA V en condiciones equivalentes",
+      "6. Prueba 3: variación de escenarios y errores posibles",
+      "7. Cómo influyen los controles, cámara y recursos visuales",
+      "8. Resultados documentados y afirmaciones todavía no probadas",
+      "9. Consejos prácticos para el jugador y sus limitaciones",
+      "10. Conclusión sin FPS o cifras inventadas"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LAS ANIMACIONES DE P?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: las animaciones de personajes — pruebas reproducibles de mecánicas y rendimiento",
+      "GTA VI: las animaciones de personajes, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de las animaciones de personajes en GTA VI"
+    ],
+    "visuales_minimos": [
+      "captura A/B en condiciones comparables",
+      "plano cercano de mecánica",
+      "tabla de observaciones propias"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-039-1",
@@ -1130,18 +2119,41 @@
     "slot_documental": 45,
     "titulo_editorial": "GTA VI a fondo: los interiores — comparación visual y diseño del mundo",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre los interiores que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Por qué llama la atención los interiores",
+      "2. Dónde aparece exactamente en la galería oficial",
+      "3. Análisis de planos, iluminación y composición",
+      "4. Qué imagen pertenece a un tráiler y cuál a una captura",
+      "5. Detalles de ambientación y objetos del mundo",
+      "6. Cómo se integra visualmente en una misión real",
+      "7. Comparativa equivalente con GTA V, cuando exista gameplay",
+      "8. Prueba en distintas condiciones de luz y cámara",
+      "9. Qué muestran las fuentes y qué no permiten asegurar",
+      "10. Conclusión visual y tres detalles para observar"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LOS INTERIORES?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: los interiores — comparación visual y diseño del mundo",
+      "GTA VI: los interiores, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de los interiores en GTA VI"
+    ],
+    "visuales_minimos": [
+      "galería oficial de Rockstar",
+      "detalle visual ampliado",
+      "comparación de escenas"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-048-1",
@@ -1156,18 +2168,41 @@
     "slot_documental": 46,
     "titulo_editorial": "GTA VI a fondo: el álbum de GTA VI — identidad sonora y fuentes oficiales",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre el álbum de GTA VI que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Cómo encaja el álbum de GTA VI en la identidad sonora de Leonida",
+      "2. La ficha oficial, emisoras y artistas relacionados",
+      "3. Qué aporta al tono del juego sin reproducir música protegida",
+      "4. Cómo se presenta dentro de las emisoras o la historia",
+      "5. La relación entre audio ambiental, música y narración",
+      "6. Qué diferencias se oyen frente a GTA V",
+      "7. Momentos de gameplay en que el sonido cambia el ambiente",
+      "8. Fuentes de bandas sonoras y derechos de uso",
+      "9. Detalles confirmados frente a interpretaciones personales",
+      "10. Conclusión: aportación real al carácter de Vice City"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE EL ÁLBUM DE GTA VI?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: el álbum de GTA VI — identidad sonora y fuentes oficiales",
+      "GTA VI: el álbum de GTA VI, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de el álbum de GTA VI en GTA VI"
+    ],
+    "visuales_minimos": [
+      "interfaz oficial de emisoras",
+      "portada del score con atribución",
+      "captura de interfaz de radio sin reproducir audio protegido"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-009-1",
@@ -1182,18 +2217,41 @@
     "slot_documental": 47,
     "titulo_editorial": "GTA VI a fondo: Real Dimez — motivaciones y conexiones de personajes",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre Real Dimez que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Cómo se presenta Real Dimez en las fuentes oficiales",
+      "2. Pasado, motivaciones y conexiones confirmadas",
+      "3. La función narrativa y lo que no podemos dar por hecho",
+      "4. Comparación con los personajes equivalentes en GTA V",
+      "5. Tres escenas para estudiar su actuación y diálogo",
+      "6. Cómo cambia su papel a medida que avanza la partida",
+      "7. Decisiones, conflictos y relaciones con evidencia de gameplay",
+      "8. Análisis visual: gestos, doblaje, dirección artística",
+      "9. Qué revelan las misiones y qué seguimos sin saber",
+      "10. Conclusión: su importancia real para la historia de Leonida"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE REAL DIMEZ?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: Real Dimez — motivaciones y conexiones de personajes",
+      "GTA VI: Real Dimez, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de Real Dimez en GTA VI"
+    ],
+    "visuales_minimos": [
+      "retrato autorizado del personaje",
+      "captura contextual de dos personajes",
+      "escena propia de misión"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-040-1",
@@ -1208,18 +2266,41 @@
     "slot_documental": 48,
     "titulo_editorial": "GTA VI a fondo: la variedad de vehículos — comparación visual y diseño del mundo",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre la variedad de vehículos que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Por qué llama la atención la variedad de vehículos",
+      "2. Dónde aparece exactamente en la galería oficial",
+      "3. Análisis de planos, iluminación y composición",
+      "4. Qué imagen pertenece a un tráiler y cuál a una captura",
+      "5. Detalles de ambientación y objetos del mundo",
+      "6. Cómo se integra visualmente en una misión real",
+      "7. Comparativa equivalente con GTA V, cuando exista gameplay",
+      "8. Prueba en distintas condiciones de luz y cámara",
+      "9. Qué muestran las fuentes y qué no permiten asegurar",
+      "10. Conclusión visual y tres detalles para observar"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LA VARIEDAD DE VEHÍC?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: la variedad de vehículos — comparación visual y diseño del mundo",
+      "GTA VI: la variedad de vehículos, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de la variedad de vehículos en GTA VI"
+    ],
+    "visuales_minimos": [
+      "galería oficial de Rockstar",
+      "detalle visual ampliado",
+      "comparación de escenas"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-022-1",
@@ -1234,18 +2315,41 @@
     "slot_documental": 49,
     "titulo_editorial": "GTA VI a fondo: los pantanos de Leonida — mundo abierto y geografía jugable",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre los pantanos de Leonida que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. En qué lugar del mapa se encuentra los pantanos de Leonida",
+      "2. Fuentes oficiales: paisaje, identidad y contexto social",
+      "3. Tres rutas distintas para explorar el territorio",
+      "4. Transporte, accesos y contraste entre barrios",
+      "5. Actividades observables y misiones vinculadas",
+      "6. La relación entre este lugar y la historia de Jason y Lucia",
+      "7. Paralelos útiles con Los Santos y Blaine County de GTA V",
+      "8. Diseño visual: iluminación, vegetación, señales y tráfico",
+      "9. Límites de las comparaciones de tamaño o densidad",
+      "10. Veredicto: por qué merece visitar esta zona"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LOS PANTANOS DE LEON?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: los pantanos de Leonida — mundo abierto y geografía jugable",
+      "GTA VI: los pantanos de Leonida, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de los pantanos de Leonida en GTA VI"
+    ],
+    "visuales_minimos": [
+      "mapa de Leonida",
+      "paisaje oficial de la región",
+      "recorrido propio con señalización"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-061-1",
@@ -1260,18 +2364,41 @@
     "slot_documental": 50,
     "titulo_editorial": "GTA VI a fondo: el diseño de personajes — pruebas reproducibles de mecánicas y rendimiento",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre el diseño de personajes que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Qué significa realmente analizar el diseño de personajes",
+      "2. Diferencias entre el material promocional y el juego publicado",
+      "3. Método de prueba: plataformas y modos bien identificados",
+      "4. Prueba 1: registro de un caso reproducible",
+      "5. Prueba 2: comparación con GTA V en condiciones equivalentes",
+      "6. Prueba 3: variación de escenarios y errores posibles",
+      "7. Cómo influyen los controles, cámara y recursos visuales",
+      "8. Resultados documentados y afirmaciones todavía no probadas",
+      "9. Consejos prácticos para el jugador y sus limitaciones",
+      "10. Conclusión sin FPS o cifras inventadas"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE EL DISEÑO DE PERSONA?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: el diseño de personajes — pruebas reproducibles de mecánicas y rendimiento",
+      "GTA VI: el diseño de personajes, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de el diseño de personajes en GTA VI"
+    ],
+    "visuales_minimos": [
+      "captura A/B en condiciones comparables",
+      "plano cercano de mecánica",
+      "tabla de observaciones propias"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   },
   {
     "id": "pf-idea-l-041-1",
@@ -1286,17 +2413,40 @@
     "slot_documental": 51,
     "titulo_editorial": "GTA VI a fondo: la dirección artística — comparación visual y diseño del mundo",
     "documental_esquema": [
-      "Abrir con una pregunta concreta sobre la dirección artística que importe al jugador",
-      "Contexto oficial y hechos fechados: qué demuestra Rockstar",
-      "Historia del elemento y conexiones con Jason o Lucia cuando existan evidencias",
-      "Análisis visual de zonas, objetos o personajes presentes en material legítimo",
-      "Comparativa metodológica con GTA V únicamente si hay grabaciones equivalentes",
-      "Comportamiento en gameplay grabado y resultados contrastables",
-      "Lo que dicen otras fuentes y qué afirmaciones no están verificadas",
-      "Conclusiones prácticas, valor narrativo y próximos temas a investigar"
+      "1. Por qué llama la atención la dirección artística",
+      "2. Dónde aparece exactamente en la galería oficial",
+      "3. Análisis de planos, iluminación y composición",
+      "4. Qué imagen pertenece a un tráiler y cuál a una captura",
+      "5. Detalles de ambientación y objetos del mundo",
+      "6. Cómo se integra visualmente en una misión real",
+      "7. Comparativa equivalente con GTA V, cuando exista gameplay",
+      "8. Prueba en distintas condiciones de luz y cámara",
+      "9. Qué muestran las fuentes y qué no permiten asegurar",
+      "10. Conclusión visual y tres detalles para observar"
     ],
     "requiere_gameplay": true,
     "produccion_automatica": false,
-    "exigir_fuentes_y_capturas": true
+    "exigir_fuentes_y_capturas": true,
+    "ideas_miniatura": [
+      "¿QUÉ ESCONDE LA DIRECCIÓN ARTÍSTI?",
+      "GTA VI A FONDO",
+      "LA PRUEBA VISUAL"
+    ],
+    "titulos_experimento": [
+      "GTA VI a fondo: la dirección artística — comparación visual y diseño del mundo",
+      "GTA VI: la dirección artística, análisis con fuentes y gameplay",
+      "Lo que no te cuentan de la dirección artística en GTA VI"
+    ],
+    "visuales_minimos": [
+      "galería oficial de Rockstar",
+      "detalle visual ampliado",
+      "comparación de escenas"
+    ],
+    "requisitos": [
+      "Hechos comprobados en fuentes oficiales o gameplay propio con derechos",
+      "Estructura original con datos o escenas no recicladas",
+      "Tres pares de título y miniatura A/B creados después de verificar",
+      "Bloquear la producción si faltan imágenes de la temática"
+    ]
   }
 ]
