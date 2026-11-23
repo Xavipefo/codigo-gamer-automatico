@@ -198,7 +198,7 @@ def elegir_imagenes(plan, escenas, base=BASE):
         ):
             raise ValueError("Categorías visuales exclusivas desconocidas")
         fotos=[x for x in fotos if x["categoria"] in exclusivas]
-        if len(fotos)<max(5,len(escenas)):
+        if len(fotos)<max(5,(len(escenas)+1)//2):
             raise RuntimeError(
                 "No hay suficientes fotografías OFICIALES del tema concreto; "
                 "se bloquea en lugar de mostrar zonas ajenas"
