@@ -1,0 +1,47 @@
+name: "PF - Secuencia privada Historia 001 luego GTA VI vs GTA V"
+
+# Petición puntual: el commit inicial de este fichero inicia la secuencia.
+# No añadir paths ajenos: los cambios en el catálogo NO repiten los vídeos.
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/iniciar_short_historia_y_comparativa_20261123.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pixel-feroz-peticion-20261123-historia-y-comparativa
+  cancel-in-progress: false
+
+jobs:
+  primero-short-historia:
+    name: "1 - Short Historia GTA VI #001 (privado)"
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: historia
+      tema: historia-gtavi-001
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
+
+  despues-documental-comparativa:
+    name: "2 - Largo GTA VI vs GTA V (privado)"
+    needs: [primero-short-historia]
+    # Se intenta el documental incluso si el Short falla; siempre DESPUÉS.
+    if: ${{ always() && needs.primero-short-historia.result != 'cancelled' }}
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: largo
+      linea_editorial: general
+      tema: gta6-vs-gtav-comparativa-profunda-20261124
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
