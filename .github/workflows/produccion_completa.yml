@@ -259,6 +259,9 @@ jobs:
             --orientacion "$orientacion" --minimo "$minimo" \
             --maximo "$maximo" --informe salida/auditoria_audiovisual.json
 
+      - name: PF-49 - Revisar regiones del manifiesto antes de YouTube
+        run: python auditoria_visual_pf49.py
+
       # Solo previews e imágenes oficiales seleccionadas; nunca MP4 privado.
       # El artefacto sirve para analizar la composición como en Dato Nebular.
       - name: Descargar revisión visual de Short o largo
