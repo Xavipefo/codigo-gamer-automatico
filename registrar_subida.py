@@ -17,7 +17,9 @@ def main():
     if not isinstance(historial,list):
         raise ValueError("Historial no válido")
     if any(x.get("video_id")==dato["video_id"] for x in historial):
-        print("El video ya figura en el historial")
+        from cola_editorial_pf import retirar
+        retirar(dato["formato"], dato["tema_id"])
+        print("El vídeo ya figura en el historial y se sincroniza su cola")
         return
     if any(
         x.get("tema_id") == dato["tema_id"]
