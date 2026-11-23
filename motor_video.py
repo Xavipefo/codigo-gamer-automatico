@@ -267,9 +267,9 @@ def montar(plan, guion):
         # Capturas oficiales, por escena, solo cuando se solicita este modo.
         # Descargar/verificar el banco ANTES de comenzar la voz para evitar
         # consumir minutos y producir únicamente tarjetas.
-        usa_rockstar = (
-            os.environ.get("PF_ROCKSTAR_MEDIA") == "1"
-            and plan["tema_id"].startswith(("gta6", "historia-gtavi-"))
+        from politica_visual_pf import modo_rockstar
+        usa_rockstar = modo_rockstar(
+            plan["tema_id"], os.environ.get("PF_ROCKSTAR_MEDIA")
         )
         fotos_rockstar = []
         revision_escenas = []
