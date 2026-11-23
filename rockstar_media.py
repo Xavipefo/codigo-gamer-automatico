@@ -187,6 +187,27 @@ def cargar_banco(base=BASE):
             raise RuntimeError("Ruta del banco oficial inválida")
     return datos
 
+REGIONES_CONCRETAS=(
+    ("leonida", r"\bleonida\s+keys\b"),
+    ("vice", r"\bvice\s+city\b"),
+    ("grassrivers", r"\bgrassrivers\b"),
+    ("port", r"\bport\s+gellhorn\b"),
+    ("ambrosia", r"\bambrosia\b"),
+    ("kalaga", r"\bmount\s+kalaga\b"),
+)
+
+def region_explicita(texto):
+    """Región única mencionada literalmente en esta escena de GTA VI.
+
+    Leonida a secas nombra al estado completo; no restringir toda la
+    imagen a las Keys. Si la escena compara varias regiones, no forzar una.
+    """
+    limpio=normalizar(texto)
+    regiones={categoria for categoria,patron in REGIONES_CONCRETAS
+              if re.search(patron,limpio)}
+    return next(iter(regiones)) if len(regiones)==1 else None
+
+
 def elegir_imagenes(plan, escenas, base=BASE):
     """Relevancia por escena + variedad real; evita 4 fotos seguidas del mismo personaje."""
     datos = cargar_banco(base)
@@ -213,8 +234,17 @@ def elegir_imagenes(plan, escenas, base=BASE):
         texto = normalizar(escena["texto"])
         tokens_escena = set(re.findall(r"[a-z0-9]+", texto))
         preferida = preferidos[i % len(preferidos)] if preferidos else None
+        region=region_explicita(escena["texto"])
+        candidatas=fotos
+        if region:
+            candidatas=[item for item in fotos if item["categoria"]==region]
+            if not candidatas:
+                raise RuntimeError(
+                    "La escena menciona "+region+
+                    " pero faltan fotografías oficiales de esa región. "
+                    "No se sustituye por otra localización.")
         puntuadas = []
-        for item in fotos:
+        for item in candidatas:
             cat = item["categoria"]
             aliases = CLAVES.get(cat, (cat,))
             puntuacion = sum(11 for a in aliases if a in tokens_escena)
