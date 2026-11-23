@@ -390,5 +390,15 @@
     "formato": "short",
     "fecha": "2026-11-23T00:10:18.344748+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "oVJhRbxRSKc",
+    "url": "https://www.youtube.com/watch?v=oVJhRbxRSKc",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-estreno-resumen-oficial-largo",
+    "formato": "largo",
+    "fecha": "2026-11-23T01:18:14.475773+00:00",
+    "miniatura_confirmada": true
   }
 ]
