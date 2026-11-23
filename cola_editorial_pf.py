@@ -11,11 +11,11 @@ from pathlib import Path
 BASE = Path(__file__).resolve().parent
 
 def ruta(formato, base=None):
-    if formato not in ("short", "largo"):
+    if formato not in ("short", "largo", "historia"):
         raise ValueError("Formato de cola desconocido")
-    return (Path(base) if base is not None else BASE) / "colas" / (
-        "shorts.json" if formato == "short" else "documentales.json"
-    )
+    archivo = {"short":"shorts.json", "largo":"documentales.json",
+               "historia":"historia_shorts.json"}[formato]
+    return (Path(base) if base is not None else BASE) / "colas" / archivo
 
 def cargar(formato, base=None):
     path = ruta(formato, base)
@@ -56,3 +56,9 @@ def verificar_cobertura(formato, catalogo, historial, base=None):
     cola = cargar(formato, base)
     lista = cola if cola is not None else list(elegibles)
     return {"formato": formato, "pendientes":len([x for x in lista if x in elegibles and x not in usados])}
+
+def retirar_por_video(formato, tema_id, base=None):
+    """La historia tiene cola propia aunque el vídeo sea un Short en YouTube."""
+    if formato == "short" and tema_id in (cargar("historia",base) or []):
+        return retirar("historia",tema_id,base)
+    return retirar(formato,tema_id,base)
