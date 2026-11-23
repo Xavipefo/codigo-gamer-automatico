@@ -269,7 +269,7 @@ def montar(plan, guion):
         # consumir minutos y producir únicamente tarjetas.
         usa_rockstar = (
             os.environ.get("PF_ROCKSTAR_MEDIA") == "1"
-            and plan["tema_id"].startswith("gta6")
+            and plan["tema_id"].startswith(("gta6", "historia-gtavi-"))
         )
         fotos_rockstar = []
         revision_escenas = []
