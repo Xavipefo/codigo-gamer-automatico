@@ -1,0 +1,20 @@
+name: "PF - Reintentar Historia GTA VI 001 con PF-41 corregido (privado)"
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/reintentar_historia_001_pf41_20261123.yml"
+permissions:
+  contents: write
+jobs:
+  reintentar-short-historia-001:
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: historia
+      tema: historia-gtavi-001
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
