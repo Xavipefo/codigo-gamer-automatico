@@ -2261,5 +2261,42 @@
     "etiqueta_editorial": "comparativa_fundamental",
     "revision_gameplay_requerida": true,
     "publicacion_automatica": false
+  },
+  {
+    "id": "historia-gtavi-001",
+    "titulo": "GTA VI Historia 001: el pasado de Jason y Lucia",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-23",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 999,
+    "gancho": "La historia de GTA VI no empieza con un golpe: Jason y Lucia llegan con un pasado que lo cambia todo.",
+    "contexto": "Primer episodio de una serie narrativa numerada. Antes de resumir misiones futuras se presentan solo antecedentes oficiales y se explica que las guías de misiones requieren comprobación por gameplay. Sin spoilers de misiones.",
+    "hechos": [
+      {
+        "texto": "Según Rockstar, Jason creció entre estafadores y delincuentes, estuvo en el ejército y terminó trabajando para traficantes locales en los Keys.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "Lucia aprendió a defenderse desde niña; terminó en la prisión de Leonida tras luchar por su familia y aspira a una vida mejor.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida"
+      },
+      {
+        "texto": "La premisa oficial de GTA VI une a Jason y Lucia cuando un golpe fallido los arrastra a una conspiración por Leonida.",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "texto_miniatura": "EL PASADO DE JASON Y LUCIA",
+    "visuales_preferidos": [
+      "duo",
+      "vice"
+    ],
+    "portada_categoria": "duo",
+    "portada_paleta": "fucsia",
+    "serie": "historia_gtavi",
+    "episodio_serie": 1,
+    "spoilers": false,
+    "publicacion_automatica": false
   }
 ]
