@@ -1,0 +1,68 @@
+name: "PF-47 - Validar Short y largo nuevos SOLO PRIVADOS"
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/pf47_validar_nuevos_20261123.yml"
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: pf47-validacion-privada-20261123
+  cancel-in-progress: false
+
+jobs:
+  pedir-dos-videos:
+    if: contains(github.event.head_commit.message, 'PF47 VALIDAR2 SOLOPRIVADO')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Descargar catalogo e historial sin credenciales persistentes
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+
+      - name: Verificar nuevos temas y prohibir publicacion publica
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path(".")
+          cfg=json.loads((root/"config.json").read_text(encoding="utf-8"))
+          assert cfg["youtube_privacidad"]=="private", "No se permite otra privacidad"
+          assert cfg["publicacion_publica_automatica"] is False
+          assert cfg["subir_privado_por_defecto"] is True
+          catalogo=json.loads((root/"temas_verificados.json").read_text(encoding="utf-8"))
+          historial=json.loads((root/"historial_publicados.json").read_text(encoding="utf-8"))
+          temas={"gta6-leonida-keys-fotos":"short",
+                 "gta6-estreno-resumen-oficial-largo":"largo"}
+          for ident,formato in temas.items():
+              datos=[t for t in catalogo if t.get("id")==ident and formato in t.get("formatos",[])]
+              if len(datos)!=1 or datos[0].get("estado")!="confirmado":
+                  raise RuntimeError("Tema no apto para produccion privada: "+ident)
+              if any(h.get("tema_id")==ident and h.get("formato")==formato
+                     and h.get("estado") in ("subido","publicado") for h in historial):
+                  raise RuntimeError("No duplicar una generacion ya subida: "+ident)
+          print("PF-47: dos temas nuevos disponibles, privacidad PRIVATE obligatoria")
+          PY
+
+      - name: Despachar dos producciones independientes PRIVADAS
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh workflow run crear_short_privado.yml --ref main -f tema=gta6-leonida-keys-fotos
+          gh workflow run crear_largo_privado.yml --ref main -f tema=gta6-estreno-resumen-oficial-largo -f exigir_material_real=false
+          {
+            echo '## PF-47: solicitadas dos generaciones reales PRIVADAS'
+            echo '- Short: gta6-leonida-keys-fotos'
+            echo '- Largo: gta6-estreno-resumen-oficial-largo'
+            echo '- La calidad visual final requiere revisión humana.'
+            echo '- Consultar Actions para ver estado y artefactos.'
+          } >> "$GITHUB_STEP_SUMMARY"
