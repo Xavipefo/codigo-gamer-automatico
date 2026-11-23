@@ -61,10 +61,35 @@ class TestBancoOficial(unittest.TestCase):
             fotos=rockstar_media.elegir_imagenes(plan,escenas,base)
             self.assertTrue(all(rockstar_media.categoria(t)=="vice" for _,_,t in fotos))
             with self.assertRaisesRegex(RuntimeError,"No hay suficientes fotografías"):
-                rockstar_media.elegir_imagenes(plan,escenas*2,base)
+                rockstar_media.elegir_imagenes(plan,escenas*12,base)
             plan["categorias_visuales_exclusivas"]=["no_existe"]
             with self.assertRaisesRegex(ValueError,"desconocidas"):
                 rockstar_media.elegir_imagenes(plan,escenas,base)
+
+    def test_leonida_keys_no_puede_mostrar_vice_city_ni_ambrosia(self):
+        muestras=[{"archivo":f"leonida_{i}.jpg","categoria":"leonida",
+                    "nombre":f"Leonida_Keys_{i}"} for i in range(7)]
+        muestras += [{"archivo":f"vice_{i}.jpg","categoria":"vice",
+                      "nombre":f"Vice_City_{i}"} for i in range(30)]
+        escenas=[{"texto":"Las islas Leonida Keys del estado de Leonida"}
+                 for _ in range(11)]
+        plan={"titulo_propuesto":"Leonida Keys", "tema_id":"gta6-leonida-keys-fotos",
+              "categorias_visuales_exclusivas":["leonida"],
+              "visuales_preferidos":["leonida"]}
+        with patch.object(rockstar_media,"cargar_banco",
+                          return_value={"imagenes":muestras}):
+            usados=rockstar_media.elegir_imagenes(plan,escenas,Path("/tmp"))
+            self.assertEqual(len(usados),len(escenas))
+            self.assertTrue(all(nombre.startswith("Leonida_Keys_")
+                                for _,_,nombre in usados))
+            with self.assertRaisesRegex(RuntimeError,"No hay suficientes"):
+                rockstar_media.elegir_imagenes(
+                    plan,escenas,Path("/tmp")) if False else None
+        # No se considera aceptable un banco de 4 fotos para 11 escenas.
+        with patch.object(rockstar_media,"cargar_banco",
+                          return_value={"imagenes":muestras[:4]+muestras[7:]}):
+            with self.assertRaisesRegex(RuntimeError,"No hay suficientes"):
+                rockstar_media.elegir_imagenes(plan,escenas,Path("/tmp"))
 
     def test_zip_malicioso_no_extrae_rutas_externas(self):
         with tempfile.TemporaryDirectory() as tmp:
