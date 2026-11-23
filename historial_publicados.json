@@ -400,5 +400,15 @@
     "formato": "largo",
     "fecha": "2026-11-23T01:18:14.475773+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "79fgNKuoT-Q",
+    "url": "https://www.youtube.com/watch?v=79fgNKuoT-Q",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-vs-gtav-comparativa-profunda-20261124",
+    "formato": "largo",
+    "fecha": "2026-11-23T23:01:47.581342+00:00",
+    "miniatura_confirmada": true
   }
 ]
