@@ -3,7 +3,7 @@
   "edicion": "2026-11-23",
   "lanzamiento_previsto": "2026-11-19T00:00:00+01:00",
   "timezone": "Europe/Madrid",
-  "nota": "PF-90: calendario regular desde 24/11/2026: Shorts 14:30, 19:00, 23:30; extra 17:00 viernes y sábado; largos lunes/miércoles/viernes/domingo 21:00. Cola por formato y revisión obligatoria; el calendario especial 19-22/11 permanece histórico. Publicación MANUAL exclusivamente después de subida privada y revisión.",
+  "nota": "PF-92: 24/11/2026 a 23/02/2027, un Short diario 14:30 Historia de GTA VI, generales a 19:00 y 23:30, extra 17:00 viernes y sábado; largos lunes/miércoles/viernes/domingo 21:00. Primera producción larga GTA VI vs GTA V. Publicación MANUAL tras generación PRIVADA y revisión. Las propuestas pendientes de gameplay no son temas confirmados.",
   "reglas": {
     "normal": {
       "shorts": [
@@ -27,7 +27,21 @@
         ]
       },
       "desde": "2026-11-24",
-      "nota": "Los horarios se refieren a publicación manual en YouTube después de generar y revisar el MP4 privado; semana regular 23 Shorts y cuatro largos."
+      "nota": "Los horarios se refieren a publicación manual en YouTube después de generar y revisar el MP4 privado; semana regular 23 Shorts y cuatro largos.",
+      "serie_historia": {
+        "formato": "short",
+        "hora": "14:30",
+        "linea_editorial": "historia",
+        "objetivo": "un episodio cronológico diario de la historia de GTA VI, con confirmación de hechos y derechos de gameplay",
+        "fuente": "series/historia_gtavi_92_dias.json",
+        "estado": "solo episodios verificados pasan al generador"
+      },
+      "shorts_generales": [
+        "19:00",
+        "23:30"
+      ],
+      "primera_produccion_larga": "gta6-vs-gtav-comparativa-profunda-20261124",
+      "politica_spoilers": "No publicar giros ni misión sin evidencia de partida; mostrar aviso y revisión previa"
     },
     "especial": {
       "desde": "2026-11-19",
