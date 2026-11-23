@@ -108,6 +108,14 @@ def seleccionado(identificador, formato):
             "No quedan temas vigentes y no usados para "
             + formato + ". Actualiza temas_verificados.json."
         )
+    # PF-90: Shorts y largos siguen colas propias sin selección aleatoria.
+    # Las referencias manuales conservan el comportamiento de siempre.
+    if not identificador:
+        from cola_editorial_pf import ordenar
+        posibles=ordenar(posibles, formato)
+        if not posibles:
+            raise RuntimeError("Cola de "+formato+" agotada o sin temas confirmados; "
+                               "no sustituir con rumores ni contenido duplicado.")
     # Una categoría muy específica puede no disponer de suficientes capturas
     # oficiales. No detener toda la cola ni mezclar escenarios ajenos.
     if not identificador:
