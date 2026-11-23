@@ -1,0 +1,2850 @@
+{
+  "version": "PF-90",
+  "canal": "pixel_feroz",
+  "inicio": "2026-11-24",
+  "fin": "2027-02-23",
+  "zona_horaria": "Europe/Madrid",
+  "descripcion": "Plan editorial objetivo. Solo IDs confirmados y validados en temas_verificados.json son elegibles para generar. Los demás requieren investigación y promoción explícita a la cola.",
+  "politica": "Subidas exclusivamente privadas; publicación manual después de revisión",
+  "cuota": {
+    "shorts": 302,
+    "largos": 52,
+    "confirmadosShort": 10,
+    "confirmadosLargos": 1,
+    "pendientesVerificacion": 343
+  },
+  "slots": [
+    {
+      "fecha": "2026-11-24",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "gta6-port-gellhorn-galeria",
+      "estado": "tema_confirmado",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-24",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "gta6-galeria-videos-oficiales",
+      "estado": "tema_confirmado",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-24",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "gta6-grassrivers-oficial",
+      "estado": "tema_confirmado",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-25",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "gta6-ambrosia-imagenes",
+      "estado": "tema_confirmado",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-25",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "gta6-real-dimez-bae-roxy",
+      "estado": "tema_confirmado",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-25",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "gta6-mount-kalaga-parque",
+      "estado": "tema_confirmado",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-25",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "gta6-vice-city-escena-musical",
+      "estado": "tema_confirmado",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-26",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "gta6-estreno-medianoche",
+      "estado": "tema_confirmado",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-26",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "gta6-mirada-extendida",
+      "estado": "tema_confirmado",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-26",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "gta6-only-raw-records",
+      "estado": "tema_confirmado",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-27",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "gta6-tecnologia-plataformas",
+      "estado": "tema_confirmado",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-27",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-000-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-27",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-000-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-27",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-000-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-27",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-000-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-28",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-000-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-28",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-000-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-28",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-000-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-28",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-000-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-29",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-000-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-29",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-001-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-29",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-001-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-29",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-000-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-30",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-001-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-30",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-001-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-30",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-001-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-11-30",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-001-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-01",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-001-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-01",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-001-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-01",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-001-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-02",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-002-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-02",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-002-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-02",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-002-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-02",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-001-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-03",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-002-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-03",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-002-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-03",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-002-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-04",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-002-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-04",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-002-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-04",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-003-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-04",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-003-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-04",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-002-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-05",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-003-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-05",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-003-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-05",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-003-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-05",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-003-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-06",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-003-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-06",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-003-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-06",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-004-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-06",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-002-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-07",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-004-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-07",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-004-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-07",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-004-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-07",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-003-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-08",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-004-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-08",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-004-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-08",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-004-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-09",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-004-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-09",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-005-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-09",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-005-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-09",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-003-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-10",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-005-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-10",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-005-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-10",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-005-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-11",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-005-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-11",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-005-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-11",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-005-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-11",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-006-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-11",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-004-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-12",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-006-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-12",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-006-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-12",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-006-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-12",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-006-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-13",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-006-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-13",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-006-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-13",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-006-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-13",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-004-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-14",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-007-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-14",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-007-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-14",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-007-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-14",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-005-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-15",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-007-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-15",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-007-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-15",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-007-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-16",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-007-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-16",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-007-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-16",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-008-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-16",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-005-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-17",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-008-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-17",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-008-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-17",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-008-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-18",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-008-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-18",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-008-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-18",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-008-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-18",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-008-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-18",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-006-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-19",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-009-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-19",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-009-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-19",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-009-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-19",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-009-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-20",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-009-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-20",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-009-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-20",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-009-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-20",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-006-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-21",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-009-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-21",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-010-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-21",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-010-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-21",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-007-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-22",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-010-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-22",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-010-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-22",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-010-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-23",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-010-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-23",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-010-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-23",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-010-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-23",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-007-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-24",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-011-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-24",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-011-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-24",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-011-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-25",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-011-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-25",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-011-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-25",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-011-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-25",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-011-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-25",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-008-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-26",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-011-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-26",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-012-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-26",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-012-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-26",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-012-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-27",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-012-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-27",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-012-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-27",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-012-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-27",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-008-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-28",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-012-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-28",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-012-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-28",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-013-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-28",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-009-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-29",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-013-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-29",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-013-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-29",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-013-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-30",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-013-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-30",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-013-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-30",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-013-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-30",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-009-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-31",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-013-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-31",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-014-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2026-12-31",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-014-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-01",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-014-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-01",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-014-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-01",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-014-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-01",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-014-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-01",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-010-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-02",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-014-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-02",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-014-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-02",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-015-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-02",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-015-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-03",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-015-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-03",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-015-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-03",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-015-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-03",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-010-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-04",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-015-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-04",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-015-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-04",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-015-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-04",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-011-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-05",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-016-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-05",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-016-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-05",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-016-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-06",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-016-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-06",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-016-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-06",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-016-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-06",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-011-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-07",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-016-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-07",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-016-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-07",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-017-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-08",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-017-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-08",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-017-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-08",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-017-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-08",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-017-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-08",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-012-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-09",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-017-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-09",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-017-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-09",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-017-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-09",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-018-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-10",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-018-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-10",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-018-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-10",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-018-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-10",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-012-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-11",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-018-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-11",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-018-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-11",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-018-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-11",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-013-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-12",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-018-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-12",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-019-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-12",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-019-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-13",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-019-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-13",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-019-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-13",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-019-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-13",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-013-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-14",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-019-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-14",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-019-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-14",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-019-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-15",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-020-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-15",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-020-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-15",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-020-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-15",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-020-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-15",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-014-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-16",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-020-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-16",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-020-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-16",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-020-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-16",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-020-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-17",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-021-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-17",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-021-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-17",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-021-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-17",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-014-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-18",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-021-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-18",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-021-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-18",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-021-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-18",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-015-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-19",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-021-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-19",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-021-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-19",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-022-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-20",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-022-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-20",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-022-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-20",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-022-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-20",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-015-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-21",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-022-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-21",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-022-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-21",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-022-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-22",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-022-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-22",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-023-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-22",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-023-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-22",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-023-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-22",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-016-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-23",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-023-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-23",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-023-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-23",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-023-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-23",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-023-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-24",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-023-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-24",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-024-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-24",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-024-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-24",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-016-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-25",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-024-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-25",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-024-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-25",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-024-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-25",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-017-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-26",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-024-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-26",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-024-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-26",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-024-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-27",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-025-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-27",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-025-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-27",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-025-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-27",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-017-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-28",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-025-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-28",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-025-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-28",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-025-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-29",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-025-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-29",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-025-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-29",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-026-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-29",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-026-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-29",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-018-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-30",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-026-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-30",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-026-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-30",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-026-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-30",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-026-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-31",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-026-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-31",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-026-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-31",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-027-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-01-31",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-018-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-01",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-027-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-01",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-027-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-01",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-027-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-01",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-019-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-02",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-027-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-02",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-027-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-02",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-027-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-03",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-027-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-03",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-028-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-03",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-028-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-03",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-019-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-04",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-028-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-04",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-028-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-04",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-028-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-05",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-028-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-05",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-028-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-05",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-028-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-05",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-029-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-05",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-020-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-06",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-029-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-06",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-029-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-06",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-029-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-06",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-029-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-07",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-029-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-07",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-029-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-07",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-029-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-07",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-020-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-08",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-030-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-08",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-030-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-08",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-030-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-08",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-021-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-09",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-030-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-09",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-030-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-09",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-030-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-10",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-030-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-10",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-030-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-10",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-031-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-10",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-021-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-11",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-031-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-11",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-031-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-11",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-031-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-12",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-031-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-12",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-031-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-12",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-031-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-12",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-031-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-12",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-022-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-13",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-032-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-13",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-032-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-13",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-032-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-13",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-032-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-14",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-032-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-14",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-032-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-14",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-032-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-14",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-022-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-15",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-032-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-15",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-033-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-15",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-033-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-15",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-023-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-16",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-033-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-16",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-033-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-16",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-033-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-17",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-033-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-17",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-033-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-17",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-033-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-17",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-023-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-18",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-034-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-18",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-034-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-18",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-034-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-19",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-034-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-19",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-034-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-19",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-034-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-19",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-034-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-19",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-024-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-20",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-034-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-20",
+      "hora": "17:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-035-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-20",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-035-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-20",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-035-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-21",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-035-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-21",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-035-05",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-21",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-035-06",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-21",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-024-2",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-22",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-035-07",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-22",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-035-08",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-22",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-036-01",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-22",
+      "hora": "21:00",
+      "formato": "largo",
+      "tema_id": "pf-idea-l-025-1",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-23",
+      "hora": "14:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-036-02",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-23",
+      "hora": "19:00",
+      "formato": "short",
+      "tema_id": "pf-idea-s-036-03",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    },
+    {
+      "fecha": "2027-02-23",
+      "hora": "23:30",
+      "formato": "short",
+      "tema_id": "pf-idea-s-036-04",
+      "estado": "idea_pendiente_verificacion",
+      "publicacion_automatica": false
+    }
+  ]
+}
