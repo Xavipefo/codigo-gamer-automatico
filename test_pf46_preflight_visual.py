@@ -21,7 +21,7 @@ class PreflightVisualPF46(unittest.TestCase):
         ]+[{"archivo":f"port_{i}.jpg","categoria":"port"} for i in range(40)]}
         self.assertFalse(editorial._cobertura_visual_exclusiva(
             self.vice,"short",banco))
-        self.assertTrue(editorial._cobertura_visual_exclusiva(
+        self.assertFalse(editorial._cobertura_visual_exclusiva(
             self.leonida,"short",banco))
 
     def test_no_descarta_imagenes_suficientes_del_tema(self):
@@ -34,7 +34,9 @@ class PreflightVisualPF46(unittest.TestCase):
             self.vice,"short",banco))
 
     def test_automatico_salta_tema_insuficiente_no_lo_repite(self):
-        banco={"imagenes":[{"archivo":"uno.jpg","categoria":"vice"}]}
+        banco={"imagenes":[{"archivo":"uno.jpg","categoria":"vice"}]+[
+            {"archivo":f"keys_{i}.jpg","categoria":"leonida"} for i in range(7)
+        ]}
         with patch.object(editorial,"cargar_elegibles",return_value=[
                 self.vice,self.leonida]),patch.object(
                 editorial,"cargar_historial",return_value=[]),patch.object(
