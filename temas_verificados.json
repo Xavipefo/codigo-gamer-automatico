@@ -63,12 +63,13 @@
     "texto_miniatura": "LEONIDA KEYS",
     "descripcion_personalizada": "Análisis editorial de fuentes oficiales de Rockstar. Las fotografías son promocionales; no se afirma gameplay propio ni detalles de misiones no comprobados.",
     "visuales_preferidos": [
-      "leonida",
-      "vice",
-      "brian"
+      "leonida"
     ],
     "portada_paleta": "fucsia",
-    "portada_categoria": "leonida"
+    "portada_categoria": "leonida",
+    "categorias_visuales_exclusivas": [
+      "leonida"
+    ]
   },
   {
     "id": "gta6-grassrivers-oficial",
@@ -98,12 +99,13 @@
     "texto_miniatura": "GRASSRIVERS",
     "descripcion_personalizada": "Análisis editorial de fuentes oficiales de Rockstar. Las fotografías son promocionales; no se afirma gameplay propio ni detalles de misiones no comprobados.",
     "visuales_preferidos": [
-      "grassrivers",
-      "leonida",
-      "artwork"
+      "grassrivers"
     ],
     "portada_paleta": "verde",
-    "portada_categoria": "grassrivers"
+    "portada_categoria": "grassrivers",
+    "categorias_visuales_exclusivas": [
+      "grassrivers"
+    ]
   },
   {
     "id": "gta6-port-gellhorn-galeria",
@@ -133,12 +135,13 @@
     "texto_miniatura": "PORT GELLHORN",
     "descripcion_personalizada": "Análisis editorial de fuentes oficiales de Rockstar. Las fotografías son promocionales; no se afirma gameplay propio ni detalles de misiones no comprobados.",
     "visuales_preferidos": [
-      "port",
-      "leonida",
-      "vice"
+      "port"
     ],
     "portada_paleta": "violeta",
-    "portada_categoria": "port"
+    "portada_categoria": "port",
+    "categorias_visuales_exclusivas": [
+      "port"
+    ]
   },
   {
     "id": "gta6-ambrosia-imagenes",
@@ -168,12 +171,13 @@
     "texto_miniatura": "AMBROSIA",
     "descripcion_personalizada": "Análisis editorial de fuentes oficiales de Rockstar. Las fotografías son promocionales; no se afirma gameplay propio ni detalles de misiones no comprobados.",
     "visuales_preferidos": [
-      "ambrosia",
-      "vice",
-      "leonida"
+      "ambrosia"
     ],
     "portada_paleta": "amarillo",
-    "portada_categoria": "ambrosia"
+    "portada_categoria": "ambrosia",
+    "categorias_visuales_exclusivas": [
+      "ambrosia"
+    ]
   },
   {
     "id": "gta6-mount-kalaga-parque",
@@ -203,12 +207,13 @@
     "texto_miniatura": "MOUNT KALAGA",
     "descripcion_personalizada": "Análisis editorial de fuentes oficiales de Rockstar. Las fotografías son promocionales; no se afirma gameplay propio ni detalles de misiones no comprobados.",
     "visuales_preferidos": [
-      "kalaga",
-      "leonida",
-      "artwork"
+      "kalaga"
     ],
     "portada_paleta": "cian",
-    "portada_categoria": "kalaga"
+    "portada_categoria": "kalaga",
+    "categorias_visuales_exclusivas": [
+      "kalaga"
+    ]
   },
   {
     "id": "gta6-real-dimez-bae-roxy",
