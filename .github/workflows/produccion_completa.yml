@@ -12,6 +12,11 @@ on:
         type: string
         required: false
         default: ""
+      linea_editorial:
+        description: "Para Shorts: general o historia"
+        type: string
+        required: false
+        default: general
       subir_privado:
         type: boolean
         required: true
@@ -158,6 +163,7 @@ jobs:
           PF_TTS_PROVIDER: ${{ inputs.motor_tts == 'qwen' && 'qwen' || 'gemini' }}
           TEMA: ${{ inputs.tema }}
           FORMATO: ${{ inputs.formato }}
+          PF_LINEA_EDITORIAL: ${{ inputs.linea_editorial }}
         shell: bash
         run: |
           if [ -n "$TEMA" ]; then
@@ -326,7 +332,7 @@ jobs:
             git fetch origin main
             git checkout -B registro-subida-privada FETCH_HEAD
             python registrar_subida.py
-            git add historial_publicados.json colas/shorts.json colas/documentales.json
+            git add historial_publicados.json colas/shorts.json colas/documentales.json colas/historia_shorts.json
             if git diff --cached --quiet; then
               echo "El vídeo ya está registrado; no se sube otra vez."
               exit 0
