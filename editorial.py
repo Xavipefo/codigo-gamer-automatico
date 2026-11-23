@@ -112,7 +112,14 @@ def seleccionado(identificador, formato):
     # Las referencias manuales conservan el comportamiento de siempre.
     if not identificador:
         from cola_editorial_pf import ordenar
-        posibles=ordenar(posibles, formato)
+        import os
+        linea=os.environ.get("PF_LINEA_EDITORIAL","general").strip().lower()
+        if linea not in ("general","historia"):
+            raise ValueError("Línea editorial desconocida")
+        if linea=="historia" and formato!="short":
+            raise ValueError("La serie Historia GTA VI solo admite Shorts")
+        cola="historia" if linea=="historia" else formato
+        posibles=ordenar(posibles, cola)
         if not posibles:
             raise RuntimeError("Cola de "+formato+" agotada o sin temas confirmados; "
                                "no sustituir con rumores ni contenido duplicado.")
