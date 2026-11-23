@@ -82,9 +82,6 @@ class TestBancoOficial(unittest.TestCase):
             self.assertEqual(len(usados),len(escenas))
             self.assertTrue(all(nombre.startswith("Leonida_Keys_")
                                 for _,_,nombre in usados))
-            with self.assertRaisesRegex(RuntimeError,"No hay suficientes"):
-                rockstar_media.elegir_imagenes(
-                    plan,escenas,Path("/tmp")) if False else None
         # No se considera aceptable un banco de 4 fotos para 11 escenas.
         with patch.object(rockstar_media,"cargar_banco",
                           return_value={"imagenes":muestras[:4]+muestras[7:]}):
