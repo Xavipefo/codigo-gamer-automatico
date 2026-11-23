@@ -40,7 +40,9 @@ class PreflightVisualPF46(unittest.TestCase):
         with patch.object(editorial,"cargar_elegibles",return_value=[
                 self.vice,self.leonida]),patch.object(
                 editorial,"cargar_historial",return_value=[]),patch.object(
-                editorial,"_banco_para_preflight",return_value=banco):
+                editorial,"_banco_para_preflight",return_value=banco),patch(
+                "cola_editorial_pf.ordenar",
+                side_effect=lambda candidatos, formato: candidatos):
             elegido=editorial.seleccionado("","short")
             self.assertEqual(elegido["id"],self.leonida["id"])
             # Si el usuario pide explícitamente el tema, su auditoría
