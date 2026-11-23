@@ -140,9 +140,9 @@ def comprobar(formato):
         )
 
     ritmo_pf41 = None
-    if (formato == "short"
-            and plan.get("estilo_retencion") == "PF-41-ganchos-directos-planos-3s"
-            and os.environ.get("PF_ROCKSTAR_MEDIA") == "1"):
+    from politica_visual_pf import requiere_informe_pf41
+    if requiere_informe_pf41(plan, formato,
+                            os.environ.get("PF_ROCKSTAR_MEDIA")):
         informe = OUT / "informe_ritmo_pf41.json"
         if not informe.is_file():
             raise ValueError(
