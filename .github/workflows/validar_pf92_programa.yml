@@ -1,0 +1,41 @@
+name: "PF-92 - Validar historia diaria y calendario sin subir"
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "test_programacion_pf92.py"
+      - "cola_editorial_pf.py"
+      - "editorial.py"
+      - "registrar_subida.py"
+      - "colas/calendario_3meses.json"
+      - "colas/documentales.json"
+      - "colas/historia_shorts.json"
+      - "series/historia_gtavi_92_dias.json"
+      - ".github/workflows/validar_pf92_programa.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validar-pf92-programa
+  cancel-in-progress: true
+
+jobs:
+  validar-programa:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Instalar dependencias ligeras (sin audio ni FFmpeg)
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Compilar selectores y archivos de producción
+        run: python -m py_compile editorial.py preparar_contenido.py cola_editorial_pf.py registrar_subida.py generar_guion_ia.py motor_video.py control_calidad.py
+      - name: Verificar los 92 días, los 3 carriles y el próximo documental
+        run: |
+          python -m unittest -v test_programacion_pf92 test_colas_pf90 test_editorial
+          echo "Pruebas editoriales correctas. No se generó ningún MP4."
