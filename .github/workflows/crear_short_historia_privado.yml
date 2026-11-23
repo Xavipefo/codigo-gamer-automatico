@@ -1,0 +1,30 @@
+name: "Píxel Feroz - Short diario HISTORIA GTA VI (privado)"
+
+on:
+  workflow_dispatch:
+    inputs:
+      tema:
+        description: "ID del episodio; vacío = siguiente capítulo confirmado de historia"
+        type: string
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pixel-feroz-produccion
+  cancel-in-progress: false
+
+jobs:
+  generar-episodio:
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: historia
+      tema: ${{ inputs.tema }}
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
