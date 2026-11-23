@@ -60,15 +60,19 @@ class ColaPF43(unittest.TestCase):
             with patch.object(editorial,"HISTORIAL",hist):
                 next_short=editorial.seleccionado("","short")
                 next_long=editorial.seleccionado("","largo")
-                self.assertEqual(next_short["id"],IDS[0])
-                self.assertEqual(next_long["id"],IDS[-2])
+                from cola_editorial_pf import cargar
+                cola_short = cargar("short")
+                cola_largo = cargar("largo")
+                self.assertEqual(next_short["id"],cola_short[0])
+                self.assertEqual(next_long["id"],cola_largo[0])
 
-                # Una subida real se salta y se utiliza el siguiente tema.
+                # Una subida real salta el primer tema de SOLO este formato.
                 hist.write_text(json.dumps([
-                    {"tema_id": IDS[0], "formato": "short", "estado": "subido"}
+                    {"tema_id": cola_short[0], "formato": "short", "estado": "subido"}
                 ]), encoding="utf-8")
                 siguiente=editorial.seleccionado("","short")
-                self.assertEqual(siguiente["id"],IDS[1])
+                self.assertEqual(siguiente["id"],cola_short[1])
+                self.assertEqual(editorial.seleccionado("","largo")["id"],cola_largo[0])
 
     def test_plan_y_descripcion_primer_short(self):
         tema=self.nuevos[IDS[0]]
