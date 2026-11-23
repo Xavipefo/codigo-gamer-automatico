@@ -30,7 +30,9 @@ def main():
         raise ValueError("El tema ya tiene una subida en este formato")
     historial.append(dato)
     HISTORIAL.write_text(json.dumps(historial,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    print("Historial actualizado:",dato["video_id"])
+    from cola_editorial_pf import retirar
+    retirar(dato["formato"], dato["tema_id"])
+    print("Historial y cola actualizados:",dato["video_id"])
 
 
 if __name__=="__main__":
