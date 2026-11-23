@@ -380,5 +380,15 @@
     "formato": "largo",
     "fecha": "2026-11-22T19:56:29.555844+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "vj7_nQ8_XHk",
+    "url": "https://www.youtube.com/watch?v=vj7_nQ8_XHk",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-leonida-keys-fotos",
+    "formato": "short",
+    "fecha": "2026-11-23T00:10:18.344748+00:00",
+    "miniatura_confirmada": true
   }
 ]
