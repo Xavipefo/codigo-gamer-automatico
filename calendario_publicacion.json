@@ -1,14 +1,15 @@
 {
   "canal": "Píxel Feroz",
-  "edicion": "2026-11-22",
+  "edicion": "2026-11-23",
   "lanzamiento_previsto": "2026-11-19T00:00:00+01:00",
   "timezone": "Europe/Madrid",
-  "nota": "Especial GTA VI (hora de Madrid): 22/11 tres Shorts inéditos (festival, álbum oficial, extras temporales ya caducados) y un largo de siete claves oficiales del primer fin de semana. Fuentes verificadas y sin afirmar gameplay propio. Se genera/sube solo PRIVADO y la publicación es MANUAL después de revisión. Agenda histórica conservada.",
+  "nota": "PF-90: calendario regular desde 24/11/2026: Shorts 14:30, 19:00, 23:30; extra 17:00 viernes y sábado; largos lunes/miércoles/viernes/domingo 21:00. Cola por formato y revisión obligatoria; el calendario especial 19-22/11 permanece histórico.",
   "reglas": {
     "normal": {
       "shorts": [
-        "13:00",
-        "18:00"
+        "14:30",
+        "19:00",
+        "23:30"
       ],
       "largos": [
         "lunes",
@@ -16,7 +17,17 @@
         "viernes",
         "domingo"
       ],
-      "hora_largo": "21:00"
+      "hora_largo": "21:00",
+      "extra_shorts": {
+        "viernes": [
+          "17:00"
+        ],
+        "sabado": [
+          "17:00"
+        ]
+      },
+      "desde": "2026-11-24",
+      "nota": "Los horarios se refieren a publicación manual en YouTube después de generar y revisar el MP4 privado; semana regular 23 Shorts y cuatro largos."
     },
     "especial": {
       "desde": "2026-11-19",
