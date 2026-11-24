@@ -1,0 +1,30 @@
+name: "PF - Historia GTA VI capitulo 002 privado"
+
+# Lanzamiento puntual tras la preparacion y verificacion editorial.
+# Sin programacion recurrente ni publicacion publica automatica.
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/pf_historia_002_20261124.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pf-historia-002-20261124
+  cancel-in-progress: false
+
+jobs:
+  producir-historia-002:
+    name: "Historia GTA VI 002 - Prologo de Lucia (privado)"
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: historia
+      tema: historia-gtavi-002
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
