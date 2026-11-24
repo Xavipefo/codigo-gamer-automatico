@@ -344,6 +344,20 @@ def main():
                     )
                     return
                 raise
+        except (RuntimeError, TimeoutError, ConnectionError, OSError) as exc:
+            if args.formato != "short":
+                raise
+            # Un corte de red/cuota no debe bloquear un Short con guion
+            # editorial determinista y hechos oficialmente contrastados.
+            # Este guion ya fue escrito por editorial.py; el QC posterior
+            # sigue comprobando duración, imágenes y narración reales.
+            print(
+                "::warning::Servicio de guiones temporalmente indisponible: "
+                + str(exc)[:180]
+                + ". Se conserva el guion original verificado sin IA.",
+                flush=True,
+            )
+            return
     plan["escenas"] = escenas
     plan["huella_guion"] = hashlib.sha256(texto.encode("utf-8")).hexdigest()
     plan["requiere_guion_ia"] = False
