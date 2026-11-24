@@ -68,10 +68,12 @@
       "hora": "19:00",
       "formato": "short",
       "linea_editorial": "general",
-      "tema_id": "gta6-grassrivers-oficial",
-      "titulo_editorial": "Grassrivers: lo que sí se ve en la galería de GTA VI",
+      "tema_id": "pf92-gta5vs6-protagonistas",
+      "titulo_editorial": "GTA VI vs GTA V: tres protagonistas contra dos",
       "estado": "tema_confirmado",
-      "publicacion_automatica": false
+      "publicacion_automatica": false,
+      "fecha_produccion_objetivo": "2026-11-24",
+      "revision_manual_requerida": true
     },
     {
       "fecha": "2026-11-25",
@@ -89,10 +91,12 @@
       "hora": "23:30",
       "formato": "short",
       "linea_editorial": "general",
-      "tema_id": "pf92-gta5vs6-protagonistas",
-      "titulo_editorial": "GTA VI vs GTA V: dos protagonistas frente a tres",
+      "tema_id": "pf92-radio-cocoteo",
+      "titulo_editorial": "Cocoteo FM: la radio latina de GTA VI",
       "estado": "tema_confirmado",
-      "publicacion_automatica": false
+      "publicacion_automatica": false,
+      "fecha_produccion_objetivo": "2026-11-24",
+      "revision_manual_requerida": true
     },
     {
       "fecha": "2026-11-26",
