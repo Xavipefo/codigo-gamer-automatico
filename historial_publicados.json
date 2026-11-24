@@ -430,5 +430,15 @@
     "formato": "short",
     "fecha": "2026-11-24T12:20:51.021659+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "dQJt7wxFzA4",
+    "url": "https://www.youtube.com/watch?v=dQJt7wxFzA4",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-only-raw-records",
+    "formato": "short",
+    "fecha": "2026-11-24T12:32:13.780279+00:00",
+    "miniatura_confirmada": true
   }
 ]
