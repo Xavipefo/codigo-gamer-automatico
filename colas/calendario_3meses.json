@@ -11,9 +11,9 @@
     "largos": 52,
     "shortsHistoria": 92,
     "shortsGenerales": 210,
-    "confirmadosShort": 29,
+    "confirmadosShort": 30,
     "confirmadosLargos": 2,
-    "pendientesVerificacion": 323
+    "pendientesVerificacion": 322
   },
   "slots": [
     {
@@ -55,12 +55,13 @@
       "formato": "short",
       "linea_editorial": "historia",
       "tema_id": "historia-gtavi-002",
-      "titulo_editorial": "GTA VI Historia #002: Prologue",
-      "estado": "idea_pendiente_verificacion",
+      "titulo_editorial": "GTA VI HISTORIA #002 — El prólogo de Lucia",
+      "estado": "tema_confirmado",
       "serie": "historia_gtavi",
       "episodio": 2,
       "spoilers": true,
-      "publicacion_automatica": false
+      "publicacion_automatica": false,
+      "visuales": "Imágenes oficiales ilustrativas, no gameplay"
     },
     {
       "fecha": "2026-11-25",
