@@ -2397,35 +2397,37 @@
   },
   {
     "id": "pf92-radio-cocoteo",
-    "titulo": "Cocoteo: la radio latina de GTA VI que puedes descubrir",
+    "titulo": "Cocoteo FM: la radio latina de GTA VI",
     "estado": "confirmado",
-    "fecha_verificacion": "2026-11-23",
+    "fecha_verificacion": "2026-11-24",
     "formatos": [
       "short"
     ],
     "prioridad": 497,
-    "gancho": "Cocoteo: la radio latina de GTA VI que puedes descubrir — un detalle confirmado que merece la pena ver.",
-    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "gancho": "¿Has escuchado hablar de Cocoteo FM? Es una de las radios de GTA VI.",
+    "contexto": "Rockstar la presenta con bachata, merengue, dembow y reguetón: sonidos asociados al ambiente de Leonida.",
     "hechos": [
       {
-        "texto": "Rockstar presenta Cocoteo como una emisora de música latina moderna en GTA VI.",
-        "fuente": "https://www.rockstargames.com/VI/music"
+        "texto": "Cocoteo FM es una de las emisoras de GTA VI dedicada a música latina moderna.",
+        "fuente": "https://www.rockstargames.com/es/newswire/article/o3982oa93a23k4/the-music-of-grand-theft-auto-vi-in-game-radio-stations?pubDate=20261030"
       },
       {
-        "texto": "Sus presentadores oficiales son El Martillo y La Gata, según la sección musical del juego.",
+        "texto": "Sus presentadores son El Martillo y La Gata, según la presentación oficial de Rockstar.",
         "fuente": "https://www.rockstargames.com/VI/music"
       }
     ],
-    "texto_miniatura": "Cocoteo: la radio latina de GTA VI que puedes",
+    "texto_miniatura": "COCOTEO FM: RADIO LATINA",
     "visuales_preferidos": [
       "vice",
+      "leonida",
       "artwork"
     ],
     "portada_categoria": "vice",
-    "portada_paleta": "violeta",
+    "portada_paleta": "fucsia",
     "publicacion_automatica": false,
     "tema_especial": "gta6_2026",
-    "titulo_no_enganoso": true
+    "titulo_no_enganoso": true,
+    "descripcion_personalizada": "La emisora latina de GTA VI confirmada por Rockstar. Imágenes oficiales ilustrativas de Leonida; no se reproduce ninguna canción protegida ni se simula la interfaz de la emisora."
   },
   {
     "id": "pf92-radio-back-country",
@@ -2749,35 +2751,37 @@
   },
   {
     "id": "pf92-gta5vs6-protagonistas",
-    "titulo": "GTA VI vs GTA V: dos protagonistas frente a tres",
+    "titulo": "GTA VI vs GTA V: tres protagonistas contra dos",
     "estado": "confirmado",
-    "fecha_verificacion": "2026-11-23",
+    "fecha_verificacion": "2026-11-24",
     "formatos": [
       "short"
     ],
     "prioridad": 486,
-    "gancho": "GTA VI vs GTA V: dos protagonistas frente a tres — un detalle confirmado que merece la pena ver.",
-    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "gancho": "GTA V tenía tres protagonistas. GTA VI tiene dos. ¿Qué cambia en la historia?",
+    "contexto": "En Los Santos seguíamos tres vidas distintas; en Leonida, Rockstar concentra su historia en una pareja.",
     "hechos": [
       {
-        "texto": "GTA V cuenta las vidas entrelazadas de Michael, Franklin y Trevor.",
+        "texto": "GTA V entrelaza las vidas de Michael, Franklin y Trevor, tres perspectivas de Los Santos.",
         "fuente": "https://www.rockstargames.com/newswire/article/o349k552525a57/Grand-Theft-Auto-V-Coming-this-Fall-to-PlayStation-4-Xbox"
       },
       {
-        "texto": "La sinopsis oficial de GTA VI coloca a Jason y Lucia en el centro de su conspiración criminal.",
+        "texto": "GTA VI sitúa a Jason y Lucia ante una conspiración criminal que los obliga a depender el uno del otro.",
         "fuente": "https://www.rockstargames.com/VI"
       }
     ],
-    "texto_miniatura": "GTA VI vs GTA V: dos protagonistas frente a t",
+    "texto_miniatura": "3 PROTAGONISTAS VS 2",
     "visuales_preferidos": [
       "duo",
-      "artwork"
+      "jason",
+      "lucia"
     ],
     "portada_categoria": "duo",
     "portada_paleta": "cian",
     "publicacion_automatica": false,
     "tema_especial": "gta6_2026",
-    "titulo_no_enganoso": true
+    "titulo_no_enganoso": true,
+    "descripcion_personalizada": "Comparativa editorial de personajes confirmados en GTA V y GTA VI. Las imágenes de GTA VI son ilustrativas; no mostramos escenas de GTA V como si fueran de la nueva entrega. Análisis sin spoilers de misiones."
   },
   {
     "id": "pf92-gta5vs6-mapa",
