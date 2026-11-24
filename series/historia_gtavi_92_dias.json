@@ -41,23 +41,26 @@
       "mision_reportada": "Prologue",
       "linea_editorial": "historia",
       "formato": "short",
-      "estado": "pendiente_verificacion_gameplay",
+      "estado": "confirmado_fuentes_oficiales_y_guias",
       "spoilers": true,
       "publicacion_automatica": false,
       "fuentes": [
-        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
-        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+        "https://www.rockstargames.com/VI/only-in-leonida/lucia",
+        "https://www.powerpyx.com/gta-6-prologue-walkthrough/",
+        "https://www.gtabase.com/missions/gta-6/prologue"
       ],
       "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
       "pruebas_requeridas": [
-        "Nombre y ubicación en la partida",
-        "grabación propia/autorizada de la misión",
-        "dos acontecimientos documentados",
-        "consecuencia narrativa sin inventar",
-        "verificación de orden; las guías no coinciden siempre"
+        "Dos hechos respaldados por ficha oficial Rockstar",
+        "Prologue y entrevista contrastados con guías independientes",
+        "Aviso expreso narrado de imágenes ilustrativas",
+        "No simular capturas de escenas de la misión",
+        "Revisión visual y derechos antes de la publicación pública"
       ],
-      "licencia_video_requerida": true,
-      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+      "licencia_video_requerida": false,
+      "advertencia": "Se genera con fotografías oficiales ilustrativas y voz original. No contiene escenas exactas del prólogo. Revisión y publicación manual obligatorias.",
+      "titulo_aprobado": "GTA VI HISTORIA #002 — El prólogo de Lucia",
+      "visual": "Fotografías oficiales de Lucia y Jason con aviso narrado: ilustrativas, no gameplay de la misión"
     },
     {
       "id": "historia-gtavi-003",
