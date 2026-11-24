@@ -1,0 +1,29 @@
+name: "PF - Short general 24 noviembre (capturas GTA VI, privado)"
+# Activación puntual mediante la creación de este workflow.
+# No se repite automáticamente ni publica el vídeo.
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/pf_short_general_20261124.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pixel-feroz-peticion-20261124-general
+  cancel-in-progress: false
+
+jobs:
+  generar-short-general:
+    name: "Short GTA VI - galería y vídeos oficiales (privado)"
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: general
+      tema: gta6-galeria-videos-oficiales
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
