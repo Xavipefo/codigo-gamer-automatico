@@ -57,7 +57,12 @@ class ProgramaPF92(unittest.TestCase):
             self.assertFalse(ep["publicacion_automatica"])
             if i:
                 self.assertTrue(ep["spoilers"])
-                self.assertEqual(ep["estado"],"pendiente_verificacion_gameplay")
+                if ep["id"]=="historia-gtavi-002":
+                    self.assertEqual(ep["estado"],"confirmado_fuentes_oficiales_y_guias")
+                    self.assertFalse(ep["licencia_video_requerida"])
+                    self.assertIn("ilustrativas",ep["visual"])
+                else:
+                    self.assertEqual(ep["estado"],"pendiente_verificacion_gameplay")
         # La cola se consume realmente después de subir cada episodio.
         restantes=ce.cargar("historia")
         usados={x.get("tema_id") for x in leer("historial_publicados.json")
