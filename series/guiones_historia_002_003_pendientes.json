@@ -1,0 +1,76 @@
+{
+  "version": "PF-HISTORIA-RESEARCH-01",
+  "fecha_investigacion": "2026-11-24",
+  "tipo": "guiones_originales_de_investigacion",
+  "estado_global": "no_generar_hasta_acreditar_gameplay_y_derechos",
+  "aviso": "Son borradores basados en dos o más guías independientes. No se ha certificado ni incorporado material de juego autorizado, de modo que no entran en temas_verificados.json ni en la cola operativa.",
+  "guiones": [
+    {
+      "id": "historia-gtavi-002",
+      "episodio": 2,
+      "mision": "Prologue",
+      "titulo_propuesto": "GTA VI HISTORIA #002 — El prólogo de Lucia en prisión",
+      "gancho": "Así empieza realmente la historia de Lucia en GTA VI.",
+      "fuentes_secundarias": [
+        "https://www.powerpyx.com/gta-6-prologue-walkthrough/",
+        "https://www.videogameschronicle.com/guide/gta-6-prologue-mission-walkthrough/",
+        "https://www.gtabase.com/missions/gta-6/prologue"
+      ],
+      "hechos_investigados": [
+        "El prólogo comienza con Lucia en un centro penitenciario, antes del primer tramo jugable de Jason.",
+        "Una funcionaria acompaña a Lucia a una entrevista con una orientadora penitenciaria sobre su detención y una posible salida.",
+        "La historia remite al episodio del robo que condujo a su arresto; el prólogo da paso a Gone Fishing, ya con Jason."
+      ],
+      "guion_original": "¡La historia de GTA VI comienza con Lucia entre rejas! En el prólogo la vemos en prisión, donde una funcionaria la conduce a una entrevista sobre su detención y la posibilidad de recuperar la libertad. La conversación nos lleva a recordar el robo que acabó con Lucia arrestada. No es simplemente un tutorial: esta introducción explica qué está en juego para ella antes de reunirse con Jason. Y cuando termina, el juego cambia de protagonista: empieza la misión Gone Fishing. En el próximo capítulo veremos qué estaba haciendo Jason mientras Lucia seguía encerrada.",
+      "escenas_visuales_necesarias": [
+        "Lucia en el interior de la prisión; captura propia/autorizada",
+        "Lucia caminando junto a la funcionaria; grabación propia/autorizada",
+        "Encuentro con la orientadora; captura propia/autorizada",
+        "Secuencia contextual del robo recordado, con aviso de spoiler; gameplay propio/autorizado",
+        "Pantalla final del prólogo o transición a Jason; grabación propia/autorizada"
+      ],
+      "estado": "investigado_pendiente_gameplay_y_derechos",
+      "spoilers": true,
+      "restricciones": [
+        "No usar capturas de walkthroughs ajenos sin autorización",
+        "No presentar imágenes promocionales de Lucia como si fueran escenas del prólogo",
+        "Comprobar el orden y el contenido contra gameplay real antes de publicar",
+        "Narración original; no copiar textos de las guías"
+      ]
+    },
+    {
+      "id": "historia-gtavi-003",
+      "episodio": 3,
+      "mision": "Gone Fishing",
+      "titulo_propuesto": "GTA VI HISTORIA #003 — La misión que mete a Jason en problemas",
+      "gancho": "El primer trabajo jugable de Jason termina mucho peor de lo esperado.",
+      "fuentes_secundarias": [
+        "https://www.videogameschronicle.com/guide/gta-6-gone-fishing-mission-walkthrough/",
+        "https://www.powerpyx.com/gta-6-gone-fishing-walkthrough/",
+        "https://www.gtafinder.com/gta-6/guides/gone-fishing"
+      ],
+      "hechos_investigados": [
+        "Gone Fishing es la primera misión jugable de Jason después del prólogo de Lucia.",
+        "Jason y Cal recogen desde una embarcación paquetes que Donnie deja caer desde una avioneta.",
+        "El trabajo se complica cerca de un campamento de los Kingfishers; Jason busca y libera a Donnie.",
+        "Tras escapar en una avioneta y regresar a la marina de Brian, la historia vuelve al problema de la futura salida de Lucia."
+      ],
+      "guion_original": "Después del prólogo de Lucia llega el turno de Jason. En Gone Fishing, él y Cal navegan por los Keys recogiendo paquetes que Donnie deja caer desde una avioneta. Parece un trabajo sencillo, hasta que Donnie acaba en problemas con una banda llamada los Kingfishers. Jason entra en el campamento para buscarlo y ayudarlo a salir. Consiguen escapar en avión y regresar a la marina de Brian, pero la tranquilidad dura poco: la próxima salida de Lucia de prisión vuelve a convertirse en una preocupación. Así comienza la otra mitad de esta historia.",
+      "escenas_visuales_necesarias": [
+        "Jason y Cal navegando en la embarcación; gameplay propio/autorizado",
+        "Avioneta de Donnie soltando paquetes; gameplay propio/autorizado",
+        "Costa o muelles de los Keys; captura propia/autorizada",
+        "Campamento de los Kingfishers y rescate de Donnie; gameplay propio/autorizado",
+        "Avión y llegada a la marina de Brian; gameplay propio/autorizado"
+      ],
+      "estado": "investigado_pendiente_gameplay_y_derechos",
+      "spoilers": true,
+      "restricciones": [
+        "No descargar gameplay de YouTube para reutilizarlo sin autorización",
+        "Verificar que el plano corresponde a la misión narrada",
+        "Respetar un orden cronológico explicativo: ciertas misiones admiten orden variable",
+        "Narración original y spoiler identificado"
+      ]
+    }
+  ]
+}
