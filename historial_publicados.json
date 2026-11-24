@@ -440,5 +440,15 @@
     "formato": "short",
     "fecha": "2026-11-24T12:32:13.780279+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "AmAQn4VN4k8",
+    "url": "https://www.youtube.com/watch?v=AmAQn4VN4k8",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "historia-gtavi-002",
+    "formato": "short",
+    "fecha": "2026-11-24T12:37:29.719443+00:00",
+    "miniatura_confirmada": true
   }
 ]
