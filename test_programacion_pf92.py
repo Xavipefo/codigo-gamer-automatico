@@ -25,7 +25,11 @@ def leer(relative):
 class ProgramaPF92(unittest.TestCase):
     def test_proximo_largo_es_comparativa_profunda(self):
         docs=ce.cargar("largo")
-        self.assertEqual(docs[0],COMPARATIVA)
+        historial=leer("historial_publicados.json")
+        ya_subido=any(x.get("tema_id")==COMPARATIVA and x.get("formato")=="largo"
+                      and x.get("estado") in ("subido","publicado") for x in historial)
+        self.assertTrue(ya_subido or (docs and docs[0]==COMPARATIVA),
+                        "La comparativa debe estar en primer lugar o subida en privado")
         temas={x["id"]:x for x in leer("temas_verificados.json")}
         t=temas[COMPARATIVA]
         self.assertEqual(len(t["escenas_largas"]),24)
@@ -54,7 +58,13 @@ class ProgramaPF92(unittest.TestCase):
             if i:
                 self.assertTrue(ep["spoilers"])
                 self.assertEqual(ep["estado"],"pendiente_verificacion_gameplay")
-        self.assertEqual(ce.cargar("historia"),["historia-gtavi-001"])
+        # La cola se consume realmente después de subir cada episodio.
+        restantes=ce.cargar("historia")
+        usados={x.get("tema_id") for x in leer("historial_publicados.json")
+                if x.get("formato")=="short"
+                and x.get("estado") in ("subido","publicado")}
+        self.assertTrue(all(x not in usados for x in restantes))
+        self.assertTrue(all(x in {e["id"] for e in epis} for x in restantes))
 
     def test_354_slots_y_distribucion_formato(self):
         cal=leer("colas/calendario_3meses.json")
@@ -98,8 +108,13 @@ class ProgramaPF92(unittest.TestCase):
             with patch.object(editorial,"HISTORIAL",path),patch.object(
                     editorial,"_banco_para_preflight",return_value=None):
                 with patch.dict(os.environ,{"PF_LINEA_EDITORIAL":"historia"}):
-                    seleccionado=editorial.seleccionado("","short")
-                    self.assertEqual(seleccionado["id"],"historia-gtavi-001")
+                    historias=ce.cargar("historia")
+                    if historias:
+                        seleccionado=editorial.seleccionado("","short")
+                        self.assertEqual(seleccionado["id"],historias[0])
+                    else:
+                        with self.assertRaises(RuntimeError):
+                            editorial.seleccionado("","short")
                 with patch.dict(os.environ,{"PF_LINEA_EDITORIAL":"general"}):
                     seleccionado=editorial.seleccionado("","short")
                     self.assertEqual(seleccionado["id"],ce.cargar("short")[0])
