@@ -1,0 +1,59 @@
+name: "PF - 3 Shorts GTA VI privados (24-11-2026)"
+# Solicitud puntual: recuperar dos Shorts bloqueados por PF-49 y producir uno nuevo.
+# Siempre subir PRIVADO, revisar derechos e imagenes antes de publicarlos.
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/solicitar_tres_shorts_pf_20261124.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pf-lote-tres-20261124
+  cancel-in-progress: false
+
+jobs:
+  comparativa:
+    name: "1/3 - GTA VI vs GTA V: protagonistas (privado)"
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: general
+      tema: pf92-gta5vs6-protagonistas
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
+
+  radio-cocoteo:
+    name: "2/3 - Radio Cocoteo FM GTA VI (privado)"
+    needs: comparativa
+    if: ${{ always() && needs.comparativa.result != 'cancelled' }}
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: general
+      tema: pf92-radio-cocoteo
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
+
+  real-dimez:
+    name: "3/3 - Real Dimez: Bae-Luxe y Roxy (privado)"
+    needs: radio-cocoteo
+    if: ${{ always() && needs.radio-cocoteo.result != 'cancelled' }}
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: general
+      tema: gta6-real-dimez-bae-roxy
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
