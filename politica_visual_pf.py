@@ -7,7 +7,7 @@ def modo_rockstar(tema_id, bandera):
     if not isinstance(tema_id, str):
         return False
     return str(bandera).strip() == "1" and tema_id.startswith(
-        ("gta6", "historia-gtavi-")
+        ("gta6", "historia-gtavi-", "pf92-")
     )
 
 def requiere_informe_pf41(plan, formato, bandera):
