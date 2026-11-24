@@ -1,0 +1,45 @@
+name: "PF - Dos Shorts generales para el 25 noviembre (privados)"
+
+# Produccion puntual para el calendario del 25/11. Se inicia al crear el archivo.
+# No tiene cron, y las publicaciones publicas siguen siendo manuales.
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/pf_dos_shorts_20261125_privados.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pf-dos-shorts-20261125
+  cancel-in-progress: false
+
+jobs:
+  primero-comparativa:
+    name: "1/2 - GTA VI vs GTA V: personajes (privado)"
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: general
+      tema: pf92-gta5vs6-protagonistas
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
+
+  segundo-cocoteo-fm:
+    name: "2/2 - Cocoteo FM: radio latina (privado)"
+    needs: [primero-comparativa]
+    if: ${{ always() && needs.primero-comparativa.result != 'cancelled' }}
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: general
+      tema: pf92-radio-cocoteo
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
