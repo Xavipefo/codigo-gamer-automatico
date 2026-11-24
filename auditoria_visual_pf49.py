@@ -6,8 +6,10 @@ Las escenas sobre una región concreta no pueden contener imágenes de otra.
 No certifica visualmente el contenido por píxeles: revisión humana pendiente.
 """
 import json
+import os
 from pathlib import Path
 from rockstar_media import categoria, region_explicita
+from politica_visual_pf import modo_rockstar
 
 BASE=Path(__file__).resolve().parent
 
@@ -51,6 +53,13 @@ def evaluar(plan,manifiesto):
 
 def main():
     plan=json.loads((BASE/"salida/plan.json").read_text(encoding="utf-8"))
+    # PF-49 audita exclusivamente material oficial Rockstar. Si el montaje
+    # usa recursos editoriales originales, su auditoria es PF-43 y el QC
+    # general; no exigir un manifiesto que ese motor no produce.
+    if not modo_rockstar(plan.get("tema_id"), os.environ.get("PF_ROCKSTAR_MEDIA","1")):
+        print("PF-49: no aplica; montaje sin banco Rockstar. "
+              "La validacion PF-43 y revision humana siguen siendo obligatorias.")
+        return
     manifiesto=json.loads((BASE/"salida/revision_visual/manifiesto_escenas.json").read_text(encoding="utf-8"))
     informe=evaluar(plan,manifiesto)
     destino=BASE/"salida/informe_qa_pf49.json"
