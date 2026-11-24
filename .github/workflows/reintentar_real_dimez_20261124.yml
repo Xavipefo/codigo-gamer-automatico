@@ -1,0 +1,24 @@
+name: "PF - Recuperar Short Real Dimez privado 24-11"
+# Intento puntual del Short fallido; la consulta editorial tiene respaldo sin Gemini.
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/reintentar_real_dimez_20261124.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  real-dimez:
+    name: "Real Dimez: Bae-Luxe y Roxy (solo privado)"
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      tema: gta6-real-dimez-bae-roxy
+      linea_editorial: general
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
