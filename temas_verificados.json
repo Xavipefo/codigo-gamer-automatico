@@ -2874,5 +2874,51 @@
     "publicacion_automatica": false,
     "tema_especial": "gta6_2026",
     "titulo_no_enganoso": true
+  },
+  {
+    "id": "historia-gtavi-002",
+    "titulo": "GTA VI HISTORIA #002 — El prólogo de Lucia",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-24",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 998,
+    "gancho": "GTA VI historia dos: el prólogo empieza con Lucia en prisión. Estas imágenes oficiales son ilustrativas, no escenas de la misión.",
+    "contexto": "Según las guías del prólogo, una entrevista la hace recordar el robo que provocó su detención.",
+    "hechos": [
+      {
+        "texto": "Rockstar confirma que Lucia estuvo encarcelada en Leonida tras luchar por su familia.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida/lucia"
+      },
+      {
+        "texto": "Rockstar relata que Lucia sale de prisión decidida a cambiar su vida, y que Jason podría ayudarla.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida/lucia"
+      },
+      {
+        "texto": "La presentación oficial de GTA VI sitúa a Jason y Lucia en el centro de la historia.",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "texto_miniatura": "EL PRÓLOGO DE LUCIA",
+    "visuales_preferidos": [
+      "lucia",
+      "duo",
+      "artwork"
+    ],
+    "portada_categoria": "lucia",
+    "portada_paleta": "fucsia",
+    "descripcion_personalizada": "SPOILERS: el prólogo de GTA VI. Se usan imágenes oficiales de Rockstar como APOYO ILUSTRATIVO, no grabaciones de esta misión. Biografía oficial: https://www.rockstargames.com/VI/only-in-leonida/lucia . Guías independientes sobre la escena de la entrevista: https://www.powerpyx.com/gta-6-prologue-walkthrough/ y https://www.gtabase.com/missions/gta-6/prologue . No se reutiliza gameplay de terceros.",
+    "serie": "historia_gtavi",
+    "episodio_serie": 2,
+    "spoilers": true,
+    "publicacion_automatica": false,
+    "visuales_ilustrativos": true,
+    "investigacion_secundaria": [
+      "https://www.powerpyx.com/gta-6-prologue-walkthrough/",
+      "https://www.gtabase.com/missions/gta-6/prologue",
+      "https://www.gamesradar.com/games/grand-theft-auto/gta-6-chapter-1-walkthrough/2/"
+    ],
+    "nota_derechos": "Fotografías de Rockstar solo como ilustración; materiales públicos no garantizan licencia comercial general. Revisar antes de hacer público."
   }
 ]
