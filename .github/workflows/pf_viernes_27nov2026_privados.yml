@@ -1,0 +1,93 @@
+name: "PF - Viernes 27 noviembre 2026: 4 Shorts + 1 largo (privados)"
+# Produccion puntual, sólo subidas privadas y publicación posterior manual.
+# La historia #004 'Gear Up' permanece pendiente de verificar gameplay/derechos:
+# se sustituye el slot de las 14:30 por un Short general confirmado.
+# El Short sobre Real Dimez ya se subió en privado el 24/11:
+# se sustituye el slot de las 23:30 para impedir duplicación.
+# Los horarios son objetivos editoriales, NO programaciones en YouTube.
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/pf_viernes_27nov2026_privados.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pf-pedido-viernes-20261127
+  cancel-in-progress: false
+
+jobs:
+  short-1430:
+    name: "1/5 - 14:30 Short Grassrivers (sustituto historia no verificada)"
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: general
+      tema: gta6-grassrivers-oficial
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
+
+  short-1700:
+    name: "2/5 - 17:00 Short GTA VI vs GTA V: historias"
+    needs: [short-1430]
+    if: ${{ always() && needs.short-1430.result != 'cancelled' }}
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: general
+      tema: pf92-gta5vs6-historia
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
+
+  short-1900:
+    name: "3/5 - 19:00 Short Ambrosia"
+    needs: [short-1700]
+    if: ${{ always() && needs.short-1700.result != 'cancelled' }}
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: general
+      tema: gta6-ambrosia-imagenes
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
+
+  largo-2100:
+    name: "4/5 - 21:00 Largo escena musical de Vice City"
+    needs: [short-1900]
+    if: ${{ always() && needs.short-1900.result != 'cancelled' }}
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: largo
+      linea_editorial: general
+      tema: gta6-vice-city-escena-musical
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
+
+  short-2330:
+    name: "5/5 - 23:30 Short tecnologia GTA VI (reemplazo Real Dimez)"
+    needs: [largo-2100]
+    if: ${{ always() && needs.largo-2100.result != 'cancelled' }}
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: general
+      tema: gta6-tecnologia-plataformas
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
