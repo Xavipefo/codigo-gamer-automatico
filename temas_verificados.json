@@ -2785,67 +2785,71 @@
   },
   {
     "id": "pf92-gta5vs6-mapa",
-    "titulo": "Los Santos vs Leonida: el cambio de escenario entre los GTA",
+    "titulo": "GTA V vs GTA VI: de Los Santos a Leonida",
     "estado": "confirmado",
     "fecha_verificacion": "2026-11-23",
     "formatos": [
       "short"
     ],
     "prioridad": 485,
-    "gancho": "Los Santos vs Leonida: el cambio de escenario entre los GTA — un detalle confirmado que merece la pena ver.",
-    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "gancho": "GTA V nos llevaba a Los Santos. GTA VI cambia de costa y de ambiente.",
+    "contexto": "GTA V transcurre en el entorno californiano de Los Santos y Blaine County. GTA VI sitúa a Jason y Lucia en Leonida, donde Vice City es uno de los escenarios protagonistas.",
     "hechos": [
       {
-        "texto": "Rockstar sitúa GTA V en Los Santos y Blaine County, dentro de su representación del sur de California.",
+        "texto": "Rockstar ambientó GTA V en Los Santos y Blaine County, inspirados en el sur de California.",
         "fuente": "https://www.rockstargames.com/newswire/article/o349k552525a57/Grand-Theft-Auto-V-Coming-this-Fall-to-PlayStation-4-Xbox"
       },
       {
-        "texto": "GTA VI transcurre en Leonida, donde Vice City es una de las localizaciones principales.",
+        "texto": "El escenario principal de GTA VI es Leonida, con Vice City y otras regiones presentadas por Rockstar.",
         "fuente": "https://www.rockstargames.com/VI"
       }
     ],
-    "texto_miniatura": "Los Santos vs Leonida: el cambio de escenario",
+    "texto_miniatura": "LOS SANTOS VS LEONIDA",
     "visuales_preferidos": [
       "vice",
-      "artwork"
+      "leonida",
+      "duo"
     ],
     "portada_categoria": "vice",
     "portada_paleta": "violeta",
     "publicacion_automatica": false,
     "tema_especial": "gta6_2026",
-    "titulo_no_enganoso": true
+    "titulo_no_enganoso": true,
+    "descripcion_personalizada": "Comparativa de escenarios oficiales, sin atribuir a GTA VI imágenes que no corresponden. Los Santos y Blaine County pertenecen a GTA V; Vice City está en Leonida, GTA VI. Las fotografías oficiales de Rockstar son apoyo ilustrativo. Revisión de derechos y publicación manual."
   },
   {
     "id": "pf92-gta5vs6-mejoras",
-    "titulo": "GTA V también tiene ray tracing: ojo con esta comparativa",
+    "titulo": "GTA V también tiene ray tracing: no compares la versión equivocada",
     "estado": "confirmado",
     "fecha_verificacion": "2026-11-23",
     "formatos": [
       "short"
     ],
     "prioridad": 484,
-    "gancho": "GTA V también tiene ray tracing: ojo con esta comparativa — un detalle confirmado que merece la pena ver.",
-    "contexto": "Información procedente de las fichas oficiales de Rockstar; comentario editorial propio. No reproducir canciones con copyright ni deducir gameplay o características no documentadas.",
+    "gancho": "¿Crees que GTA V no tiene ray tracing? Sus versiones modernas sí incorporaron mejoras gráficas.",
+    "contexto": "Antes de comparar GTA VI con GTA V, recuerda que este último recibió mejoras visuales en PlayStation 5 y Xbox Series X y S. No es justo juzgarlo solo por la versión de 2013.",
     "hechos": [
       {
-        "texto": "Rockstar confirma mejoras de ray tracing y texturas para GTA V en las versiones de consolas modernas.",
+        "texto": "Rockstar añadió mejoras gráficas, incluidos efectos de trazado de rayos, en versiones modernas de GTA V.",
         "fuente": "https://www.rockstargames.com/newswire/article/4ka18ao8a4o227/grand-theft-auto-v-and-gta-online-out-now-on-playstation-5-and-xbox-se"
       },
       {
-        "texto": "GTA VI se lanzó posteriormente para PlayStation 5 y Xbox Series X|S; los dos juegos no deben compararse como si GTA V solo existiera en su edición original.",
-        "fuente": "https://www.rockstargames.com/newswire/article/39akk424a9oo53/grand-theft-auto-vi-now-available"
+        "texto": "GTA VI está disponible para PlayStation 5 y Xbox Series X y S, según Rockstar.",
+        "fuente": "https://www.rockstargames.com/VI"
       }
     ],
-    "texto_miniatura": "GTA V también tiene ray tracing: ojo con esta",
+    "texto_miniatura": "GTA V TAMBIÉN TIENE RT",
     "visuales_preferidos": [
       "artwork",
-      "artwork"
+      "vice",
+      "duo"
     ],
     "portada_categoria": "artwork",
     "portada_paleta": "amarillo",
     "publicacion_automatica": false,
     "tema_especial": "gta6_2026",
-    "titulo_no_enganoso": true
+    "titulo_no_enganoso": true,
+    "descripcion_personalizada": "Comparativa editorial: ray tracing presente en ediciones modernas de GTA V. No inferimos características técnicas adicionales de GTA VI ni prometemos mejoras no contrastadas. Fotografías oficiales ilustrativas; publicación pública manual tras revisión."
   },
   {
     "id": "pf92-gta5vs6-historia",
