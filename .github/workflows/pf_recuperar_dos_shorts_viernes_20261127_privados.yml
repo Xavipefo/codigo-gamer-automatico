@@ -1,0 +1,45 @@
+name: "PF - Recuperar 2 Shorts fallidos viernes 27 (privados)"
+# Sustituciones editoriales: Grassrivers/Ambrosia requieren fotografias oficiales
+# que no superan PF-49. No bajar controles ni volver a subir los tres correctos.
+# Dos temas previamente verificados en catalogo, solo subida PRIVADA.
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/pf_recuperar_dos_shorts_viernes_20261127_privados.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pf-recuperacion-viernes-27-noviembre
+  cancel-in-progress: false
+
+jobs:
+  reemplazo-grassrivers:
+    name: "1/2 - Reemplazo de Grassrivers: mirada extendida GTA VI"
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: general
+      tema: gta6-mirada-extendida
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
+
+  reemplazo-ambrosia:
+    name: "2/2 - Reemplazo de Ambrosia: Justice y musica GTA VI"
+    needs: [reemplazo-grassrivers]
+    if: ${{ always() && needs.reemplazo-grassrivers.result != 'cancelled' }}
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: general
+      tema: pf92-justice-compositor
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
