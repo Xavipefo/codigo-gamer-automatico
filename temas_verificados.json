@@ -2924,5 +2924,47 @@
       "https://www.gamesradar.com/games/grand-theft-auto/gta-6-chapter-1-walkthrough/2/"
     ],
     "nota_derechos": "Fotografías de Rockstar solo como ilustración; materiales públicos no garantizan licencia comercial general. Revisar antes de hacer público."
+  },
+  {
+    "id": "historia-gtavi-003",
+    "titulo": "GTA VI HISTORIA #003 — Gone Fishing: el rescate de Donnie",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-25",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 997,
+    "gancho": "El primer trabajo de Jason acaba en problemas: Donnie desaparece y hay que rescatarlo.",
+    "contexto": "En Gone Fishing, según las guías contrastadas, Jason y Cal recogen paquetes lanzados desde una avioneta. Los Kingfishers capturan a Donnie, y Jason entra en su campamento para liberarlo.",
+    "hechos": [
+      {
+        "texto": "Rockstar presenta a Jason como un antiguo militar que acabó trabajando para traficantes de los Leonida Keys.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida/jason"
+      },
+      {
+        "texto": "La ficha oficial identifica a Cal Hampton como amigo de Jason y asociado de Brian.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida/jason"
+      }
+    ],
+    "texto_miniatura": "RESCATE EN LOS KEYS",
+    "descripcion_personalizada": "SPOILERS de GTA VI: episodio 003, Gone Fishing. Se narran hechos documentados por las guías de la misión de PowerPyx (https://www.powerpyx.com/gta-6-gone-fishing-walkthrough/) y VGC (https://www.videogameschronicle.com/guide/gta-6-gone-fishing-mission-walkthrough/). La biografía de Jason y Cal procede de Rockstar. FOTOGRAFÍAS OFICIALES ILUSTRATIVAS: no son escenas de esta misión ni gameplay de terceros. Revisión manual y comprobación de derechos antes de hacer público.",
+    "visuales_preferidos": [
+      "jason",
+      "keys",
+      "duo"
+    ],
+    "portada_categoria": "jason",
+    "portada_paleta": "fucsia",
+    "serie": "historia_gtavi",
+    "episodio_serie": 3,
+    "spoilers": true,
+    "publicacion_automatica": false,
+    "visuales_ilustrativos": true,
+    "investigacion_secundaria": [
+      "https://www.powerpyx.com/gta-6-gone-fishing-walkthrough/",
+      "https://www.videogameschronicle.com/guide/gta-6-gone-fishing-mission-walkthrough/",
+      "https://www.gtabase.com/gta-6/missions/gone-fishing"
+    ],
+    "nota_derechos": "No se ha integrado gameplay propio/autorizado; solo capturas promocionales Rockstar como apoyo con revisión de derechos pendiente."
   }
 ]
