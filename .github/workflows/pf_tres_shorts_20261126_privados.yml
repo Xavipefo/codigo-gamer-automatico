@@ -1,0 +1,59 @@
+name: "PF - Tres Shorts para jueves 26 noviembre 2026 (privados)"
+# Lote puntual: producir primero historia 003 y despues dos Shorts generales.
+# Publicación PÚBLICA siempre manual, tras validaciones y revisión de derechos.
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/pf_tres_shorts_20261126_privados.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pf-pedido-20261126-tres-shorts
+  cancel-in-progress: false
+
+jobs:
+  historia-gone-fishing:
+    name: "1/3 - Historia GTA VI #003 Gone Fishing - 14:30"
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: historia
+      tema: historia-gtavi-003
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
+
+  comparativa-mapas:
+    name: "2/3 - Los Santos vs Leonida - 19:00"
+    needs: [historia-gone-fishing]
+    if: ${{ always() && needs.historia-gone-fishing.result != 'cancelled' }}
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: general
+      tema: pf92-gta5vs6-mapa
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
+
+  comparativa-ray-tracing:
+    name: "3/3 - GTA V ray tracing version moderna - 23:30"
+    needs: [comparativa-mapas]
+    if: ${{ always() && needs.comparativa-mapas.result != 'cancelled' }}
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: general
+      tema: pf92-gta5vs6-mejoras
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
