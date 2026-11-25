@@ -510,5 +510,15 @@
     "formato": "short",
     "fecha": "2026-11-25T20:03:09.326960+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "zaHL_iqFOcU",
+    "url": "https://www.youtube.com/watch?v=zaHL_iqFOcU",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "pf92-gta5vs6-historia",
+    "formato": "short",
+    "fecha": "2026-11-25T21:46:48.828353+00:00",
+    "miniatura_confirmada": true
   }
 ]
