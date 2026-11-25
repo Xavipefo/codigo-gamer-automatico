@@ -520,5 +520,15 @@
     "formato": "short",
     "fecha": "2026-11-25T21:46:48.828353+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "JXZQUv_oAnU",
+    "url": "https://www.youtube.com/watch?v=JXZQUv_oAnU",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-vice-city-escena-musical",
+    "formato": "largo",
+    "fecha": "2026-11-25T22:31:36.071192+00:00",
+    "miniatura_confirmada": true
   }
 ]
