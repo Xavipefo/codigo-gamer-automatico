@@ -72,23 +72,26 @@
       "mision_reportada": "Gone Fishing",
       "linea_editorial": "historia",
       "formato": "short",
-      "estado": "pendiente_verificacion_gameplay",
+      "estado": "confirmado_fuentes_oficiales_y_guias",
       "spoilers": true,
       "publicacion_automatica": false,
       "fuentes": [
-        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
-        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+        "https://www.rockstargames.com/VI/only-in-leonida/jason",
+        "https://www.powerpyx.com/gta-6-gone-fishing-walkthrough/",
+        "https://www.videogameschronicle.com/guide/gta-6-gone-fishing-mission-walkthrough/"
       ],
       "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
       "pruebas_requeridas": [
-        "Nombre y ubicación en la partida",
-        "grabación propia/autorizada de la misión",
-        "dos acontecimientos documentados",
-        "consecuencia narrativa sin inventar",
-        "verificación de orden; las guías no coinciden siempre"
+        "Confirmar hechos narrados con al menos dos guias independientes",
+        "Fotografias oficiales solamente ilustrativas, no escenas de la mision",
+        "Verificar que las fotografias corresponden a Jason, Cal o Keys cuando el guion lo pida",
+        "No reutilizar gameplay de terceros sin permiso",
+        "Revision humana de fuentes, ritmo, material y derechos antes de publicar"
       ],
-      "licencia_video_requerida": true,
-      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+      "licencia_video_requerida": false,
+      "advertencia": "No se incorpora gameplay de la mision. Fotografias oficiales usadas como ilustracion, con revision de derechos y publicacion manual.",
+      "visual": "Fotografías oficiales ilustrativas de Jason, Cal y Leonida Keys; no gameplay de Gone Fishing",
+      "titulo_aprobado": "GTA VI HISTORIA #003 — Gone Fishing: el rescate de Donnie"
     },
     {
       "id": "historia-gtavi-004",
