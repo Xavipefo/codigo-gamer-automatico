@@ -104,12 +104,15 @@
       "formato": "short",
       "linea_editorial": "historia",
       "tema_id": "historia-gtavi-003",
-      "titulo_editorial": "GTA VI Historia #003: Gone Fishing",
-      "estado": "idea_pendiente_verificacion",
+      "titulo_editorial": "GTA VI HISTORIA #003 — Gone Fishing: el rescate de Donnie",
+      "estado": "tema_confirmado",
       "serie": "historia_gtavi",
       "episodio": 3,
       "spoilers": true,
-      "publicacion_automatica": false
+      "publicacion_automatica": false,
+      "visuales": "Fotografías oficiales ilustrativas, no gameplay de Gone Fishing",
+      "revision_manual_requerida": true,
+      "fecha_produccion_objetivo": "2026-11-25"
     },
     {
       "fecha": "2026-11-26",
@@ -119,7 +122,9 @@
       "tema_id": "pf92-gta5vs6-mapa",
       "titulo_editorial": "Los Santos vs Leonida: el cambio de escenario entre los GTA",
       "estado": "tema_confirmado",
-      "publicacion_automatica": false
+      "publicacion_automatica": false,
+      "revision_manual_requerida": true,
+      "fecha_produccion_objetivo": "2026-11-25"
     },
     {
       "fecha": "2026-11-26",
@@ -129,7 +134,9 @@
       "tema_id": "pf92-gta5vs6-mejoras",
       "titulo_editorial": "GTA V también tiene ray tracing: ojo con esta comparativa",
       "estado": "tema_confirmado",
-      "publicacion_automatica": false
+      "publicacion_automatica": false,
+      "revision_manual_requerida": true,
+      "fecha_produccion_objetivo": "2026-11-25"
     },
     {
       "fecha": "2026-11-27",
