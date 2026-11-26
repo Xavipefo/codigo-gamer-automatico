@@ -2970,5 +2970,51 @@
       "https://www.gtabase.com/gta-6/missions/gone-fishing"
     ],
     "nota_derechos": "No se ha integrado gameplay propio/autorizado; solo capturas promocionales Rockstar como apoyo con revisión de derechos pendiente."
+  },
+  {
+    "id": "historia-gtavi-004",
+    "titulo": "GTA VI HISTORIA #004 — Gear Up: la emboscada a Jason",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-26",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 996,
+    "gancho": "Historia de GTA VI, episodio cuatro: Jason va a por un arma en Gear Up, pero al salir le espera una emboscada. Aviso: imágenes oficiales ilustrativas, no gameplay de esta misión.",
+    "contexto": "Las guías independientes de PowerPyx y VGC describen que Jason recoge dinero de su buzón, visita una armería para comprar un arma larga y, a la salida, miembros de los Kingfishers abren fuego. El orden de misiones secundarias puede variar.",
+    "hechos": [
+      {
+        "texto": "Rockstar presenta a Jason como un antiguo militar que terminó trabajando para traficantes locales en Leonida.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida/jason"
+      },
+      {
+        "texto": "La biografía oficial describe a Jason como alguien que busca una vida mejor aunque su entorno criminal se lo complica.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida/jason"
+      },
+      {
+        "texto": "Rockstar sitúa a Jason y Lucia en el centro de una historia criminal ambientada en Leonida.",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "texto_miniatura": "EMBOSCADA A JASON",
+    "descripcion_personalizada": "SPOILERS de la historia de GTA VI, capítulo 004: Gear Up. Los sucesos de la armería y la emboscada están documentados por las guías de PowerPyx (https://www.powerpyx.com/gta-6-gear-up-pick-up-another-gun-walkthrough/) y VGC (https://www.videogameschronicle.com/guide/gta-6-gear-up-mission-walkthrough/). IMÁGENES OFICIALES ILUSTRATIVAS; no corresponden necesariamente a esta misión. Sin gameplay ajeno. Publicación solo tras revisión humana.",
+    "visuales_preferidos": [
+      "jason",
+      "artwork",
+      "duo"
+    ],
+    "portada_categoria": "jason",
+    "portada_paleta": "fucsia",
+    "serie": "historia_gtavi",
+    "episodio_serie": 4,
+    "spoilers": true,
+    "publicacion_automatica": false,
+    "visuales_ilustrativos": true,
+    "investigacion_secundaria": [
+      "https://www.powerpyx.com/gta-6-gear-up-pick-up-another-gun-walkthrough/",
+      "https://www.videogameschronicle.com/guide/gta-6-gear-up-mission-walkthrough/",
+      "https://www.gtabase.com/gta-6/missions/gear-up"
+    ],
+    "nota_derechos": "No se ha incorporado gameplay propio/autorizado. Solo material promocional oficial como ilustración; revisar licencias y coherencia de imágenes antes de publicar."
   }
 ]
