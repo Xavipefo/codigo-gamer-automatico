@@ -53,19 +53,29 @@ class TestEditorial(unittest.TestCase):
         from cola_editorial_pf import cargar
         cola_shorts = cargar("short")
         cola_largos = cargar("largo")
+        self.assertGreaterEqual(len(cola_shorts), 2)
         primero_short, segundo_short = cola_shorts[:2]
-        primero_largo = cola_largos[0]
         with tempfile.TemporaryDirectory() as tmp:
             hist = Path(tmp) / "hist.json"
             with patch.object(editorial, "HISTORIAL", hist):
                 hist.write_text("[]", encoding="utf-8")
                 self.assertEqual(editorial.seleccionado("", "short")["id"], primero_short)
-                self.assertEqual(editorial.seleccionado("", "largo")["id"], primero_largo)
+                if cola_largos:
+                    self.assertEqual(editorial.seleccionado("", "largo")["id"], cola_largos[0])
+                else:
+                    # La cola vacía es un caso válido tras producir los largos.
+                    # Debe rechazar el pedido, nunca inventar un documental.
+                    with self.assertRaises((RuntimeError, ValueError)):
+                        editorial.seleccionado("", "largo")
                 hist.write_text(json.dumps([
                     {"tema_id": primero_short, "estado": "subido", "formato": "short"}
                 ]), encoding="utf-8")
                 self.assertEqual(editorial.seleccionado("", "short")["id"], segundo_short)
-                self.assertEqual(editorial.seleccionado("", "largo")["id"], primero_largo)
+                if cola_largos:
+                    self.assertEqual(editorial.seleccionado("", "largo")["id"], cola_largos[0])
+                else:
+                    with self.assertRaises((RuntimeError, ValueError)):
+                        editorial.seleccionado("", "largo")
 
     def test_cola_manual_shorts_sabado_21_y_miniaturas(self):
         # Los temas del 21 son históricos: verificar sus portadas sin
