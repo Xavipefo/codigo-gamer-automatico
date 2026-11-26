@@ -1,0 +1,122 @@
+name: "PF - Historia 004 y 005 + cinco Shorts generales (privados)"
+# Ejecución puntual tras corregir tests PF-43/PF-92.
+# El capítulo 004 había fallado antes de renderizar; recuperar ANTES del 005.
+# Los 5 Shorts generales no aparecen en historial de subidas.
+# Solo YouTube PRIVATE, nunca programar publicación pública.
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/pf_historia_004_005_cinco_shorts_20261126_privados.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pf-historia-004-005-mas-5-generales-20261126
+  cancel-in-progress: false
+
+jobs:
+  historia-004:
+    name: "1/7 Recuperar capítulo 004 Gear Up"
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: historia
+      tema: historia-gtavi-004
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
+
+  historia-005:
+    name: "2/7 Siguiente capítulo 005 Lab Fees"
+    needs: [historia-004]
+    if: ${{ always() && needs.historia-004.result != 'cancelled' }}
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: historia
+      tema: historia-gtavi-005
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
+
+  short-01:
+    name: "3/7 GTA VI mirada extendida"
+    needs: [historia-005]
+    if: ${{ always() && needs.historia-005.result != 'cancelled' }}
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: general
+      tema: gta6-mirada-extendida
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
+
+  short-02:
+    name: "4/7 Justice: banda sonora original"
+    needs: [short-01]
+    if: ${{ always() && needs.short-01.result != 'cancelled' }}
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: general
+      tema: pf92-justice-compositor
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
+
+  short-03:
+    name: "5/7 Back Country radio de Leonida"
+    needs: [short-02]
+    if: ${{ always() && needs.short-02.result != 'cancelled' }}
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: general
+      tema: pf92-radio-back-country
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
+
+  short-04:
+    name: "6/7 Flash FM vuelve"
+    needs: [short-03]
+    if: ${{ always() && needs.short-03.result != 'cancelled' }}
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: general
+      tema: pf92-radio-flash-fm
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
+
+  short-05:
+    name: "7/7 Album oficial 34 canciones"
+    needs: [short-04]
+    if: ${{ always() && needs.short-04.result != 'cancelled' }}
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: general
+      tema: pf92-gta6-album-34
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
+
