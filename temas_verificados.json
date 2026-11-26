@@ -3016,5 +3016,51 @@
       "https://www.gtabase.com/gta-6/missions/gear-up"
     ],
     "nota_derechos": "No se ha incorporado gameplay propio/autorizado. Solo material promocional oficial como ilustración; revisar licencias y coherencia de imágenes antes de publicar."
+  },
+  {
+    "id": "historia-gtavi-005",
+    "titulo": "GTA VI HISTORIA #005 — Lab Fees: el secreto del alquiler de Brian",
+    "estado": "confirmado",
+    "fecha_verificacion": "2026-11-26",
+    "formatos": [
+      "short"
+    ],
+    "prioridad": 995,
+    "gancho": "Historia de GTA VI, capítulo cinco: Jason va a cobrar el alquiler de Brian y descubre que la tienda esconde algo mucho más peligroso. SPOILERS; imágenes oficiales ilustrativas.",
+    "contexto": "En Lab Fees, las guías de PowerPyx y Video Games Chronicle sitúan a Jason en una tienda de regalos utilizada como tapadera de un laboratorio ilegal. El encargado no puede pagarle y Jason termina llevándose mercancía; la misión le presenta el sistema de venta de bienes ilegales. La numeración exacta puede variar entre guías.",
+    "hechos": [
+      {
+        "texto": "Rockstar presenta a Jason como un antiguo militar que terminó trabajando para traficantes locales en Leonida.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida/jason"
+      },
+      {
+        "texto": "Rockstar describe a Brian Heder como la persona para la que Jason trabaja, dueño de un negocio relacionado con el tráfico.",
+        "fuente": "https://www.rockstargames.com/VI/only-in-leonida/brian"
+      },
+      {
+        "texto": "La premisa oficial de GTA VI sitúa a Jason y Lucia en una historia de crimen y supervivencia en Leonida.",
+        "fuente": "https://www.rockstargames.com/VI"
+      }
+    ],
+    "texto_miniatura": "EL LABORATORIO OCULTO",
+    "visuales_preferidos": [
+      "jason",
+      "brian",
+      "artwork"
+    ],
+    "portada_categoria": "jason",
+    "portada_paleta": "fucsia",
+    "descripcion_personalizada": "SPOILERS: historia de GTA VI #005, Lab Fees (Collect Brian's Rent). Guías independientes: PowerPyx (https://www.powerpyx.com/gta-6-lab-fees-collect-brians-rent-walkthrough/) y VGC (https://www.videogameschronicle.com/guide/gta-6-lab-fees-mission-walkthrough/). IMÁGENES OFICIALES ILUSTRATIVAS: no gameplay de Lab Fees. Revisión humana y de derechos obligatoria antes de publicar.",
+    "serie": "historia_gtavi",
+    "episodio_serie": 5,
+    "spoilers": true,
+    "publicacion_automatica": false,
+    "visuales_ilustrativos": true,
+    "investigacion_secundaria": [
+      "https://www.powerpyx.com/gta-6-lab-fees-collect-brians-rent-walkthrough/",
+      "https://www.videogameschronicle.com/guide/gta-6-lab-fees-mission-walkthrough/",
+      "https://www.gtabase.com/gta-6/missions/lab-fees"
+    ],
+    "nota_derechos": "Solo fotografías oficiales promocionales con carácter ilustrativo; sin gameplay de terceros, sin licencia comercial garantizada, revisión humana obligatoria."
   }
 ]
