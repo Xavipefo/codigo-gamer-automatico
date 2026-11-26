@@ -57,7 +57,7 @@ class ProgramaPF92(unittest.TestCase):
             self.assertFalse(ep["publicacion_automatica"])
             if i:
                 self.assertTrue(ep["spoilers"])
-                if ep["id"] in ("historia-gtavi-002", "historia-gtavi-003", "historia-gtavi-004"):
+                if ep["id"] in ("historia-gtavi-002", "historia-gtavi-003", "historia-gtavi-004", "historia-gtavi-005"):
                     self.assertEqual(ep["estado"],"confirmado_fuentes_oficiales_y_guias")
                     self.assertFalse(ep["licencia_video_requerida"])
                     self.assertIn("ilustrativas",ep["visual"])
