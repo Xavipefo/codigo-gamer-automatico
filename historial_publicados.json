@@ -560,5 +560,15 @@
     "formato": "short",
     "fecha": "2026-11-26T16:27:07.240446+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "aAIkTfzQlKo",
+    "url": "https://www.youtube.com/watch?v=aAIkTfzQlKo",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "gta6-mirada-extendida",
+    "formato": "short",
+    "fecha": "2026-11-26T16:33:22.945953+00:00",
+    "miniatura_confirmada": true
   }
 ]
