@@ -600,5 +600,15 @@
     "formato": "short",
     "fecha": "2026-11-26T16:52:47.136559+00:00",
     "miniatura_confirmada": true
+  },
+  {
+    "video_id": "HHzz7IgXuCU",
+    "url": "https://www.youtube.com/watch?v=HHzz7IgXuCU",
+    "estado": "subido",
+    "privacidad_verificada": "private",
+    "tema_id": "pf92-gta6-album-34",
+    "formato": "short",
+    "fecha": "2026-11-26T16:57:48.207309+00:00",
+    "miniatura_confirmada": true
   }
 ]
