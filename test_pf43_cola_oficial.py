@@ -59,12 +59,18 @@ class ColaPF43(unittest.TestCase):
             hist.write_text("[]", encoding="utf-8")
             with patch.object(editorial,"HISTORIAL",hist):
                 next_short=editorial.seleccionado("","short")
-                next_long=editorial.seleccionado("","largo")
                 from cola_editorial_pf import cargar
                 cola_short = cargar("short")
                 cola_largo = cargar("largo")
+                self.assertGreaterEqual(len(cola_short), 2)
                 self.assertEqual(next_short["id"],cola_short[0])
-                self.assertEqual(next_long["id"],cola_largo[0])
+                if cola_largo:
+                    self.assertEqual(editorial.seleccionado("","largo")["id"],cola_largo[0])
+                else:
+                    # Es correcto agotar la cola de documentales: no crear
+                    # contenidos no verificados solo para que pase el test.
+                    with self.assertRaises((RuntimeError, ValueError)):
+                        editorial.seleccionado("","largo")
 
                 # Una subida real salta el primer tema de SOLO este formato.
                 hist.write_text(json.dumps([
@@ -72,7 +78,11 @@ class ColaPF43(unittest.TestCase):
                 ]), encoding="utf-8")
                 siguiente=editorial.seleccionado("","short")
                 self.assertEqual(siguiente["id"],cola_short[1])
-                self.assertEqual(editorial.seleccionado("","largo")["id"],cola_largo[0])
+                if cola_largo:
+                    self.assertEqual(editorial.seleccionado("","largo")["id"],cola_largo[0])
+                else:
+                    with self.assertRaises((RuntimeError, ValueError)):
+                        editorial.seleccionado("","largo")
 
     def test_plan_y_descripcion_primer_short(self):
         tema=self.nuevos[IDS[0]]
