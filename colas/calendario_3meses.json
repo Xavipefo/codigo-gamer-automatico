@@ -11,9 +11,9 @@
     "largos": 52,
     "shortsHistoria": 92,
     "shortsGenerales": 210,
-    "confirmadosShort": 30,
+    "confirmadosShort": 31,
     "confirmadosLargos": 2,
-    "pendientesVerificacion": 322
+    "pendientesVerificacion": 321
   },
   "slots": [
     {
@@ -145,11 +145,13 @@
       "linea_editorial": "historia",
       "tema_id": "historia-gtavi-004",
       "titulo_editorial": "GTA VI Historia #004: Gear Up",
-      "estado": "idea_pendiente_verificacion",
+      "estado": "tema_confirmado",
       "serie": "historia_gtavi",
       "episodio": 4,
       "spoilers": true,
-      "publicacion_automatica": false
+      "publicacion_automatica": false,
+      "visuales": "Fotografías oficiales ilustrativas, no gameplay Gear Up",
+      "revision_manual_requerida": true
     },
     {
       "fecha": "2026-11-27",
