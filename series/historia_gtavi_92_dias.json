@@ -134,23 +134,26 @@
       "mision_reportada": "Lab Fees",
       "linea_editorial": "historia",
       "formato": "short",
-      "estado": "pendiente_verificacion_gameplay",
+      "estado": "confirmado_fuentes_oficiales_y_guias",
       "spoilers": true,
       "publicacion_automatica": false,
       "fuentes": [
-        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
-        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+        "https://www.rockstargames.com/VI/only-in-leonida/jason",
+        "https://www.rockstargames.com/VI/only-in-leonida/brian",
+        "https://www.powerpyx.com/gta-6-lab-fees-collect-brians-rent-walkthrough/",
+        "https://www.videogameschronicle.com/guide/gta-6-lab-fees-mission-walkthrough/"
       ],
       "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
       "pruebas_requeridas": [
-        "Nombre y ubicación en la partida",
-        "grabación propia/autorizada de la misión",
-        "dos acontecimientos documentados",
-        "consecuencia narrativa sin inventar",
-        "verificación de orden; las guías no coinciden siempre"
+        "Contrastar trama y acontecimientos de Lab Fees con dos guías independientes",
+        "Avisar de spoilers y orden discutido en guías",
+        "Imágenes promocionales ilustrativas; no usar material de gameplay de terceros",
+        "Revisión manual de datos, coincidencia visual, derechos y voz antes de publicar"
       ],
-      "licencia_video_requerida": true,
-      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+      "licencia_video_requerida": false,
+      "advertencia": "Guion basado en varias guías, sin capturas verificadas de gameplay. No presentar imágenes promocionales como escenas de Lab Fees; publicación manual.",
+      "visual": "Fotografías oficiales promocionales ilustrativas; no metraje de la misión Lab Fees",
+      "titulo_aprobado": "GTA VI HISTORIA #005 — Lab Fees: el secreto del alquiler de Brian"
     },
     {
       "id": "historia-gtavi-006",
