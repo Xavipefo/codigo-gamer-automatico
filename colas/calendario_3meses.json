@@ -11,9 +11,9 @@
     "largos": 52,
     "shortsHistoria": 92,
     "shortsGenerales": 210,
-    "confirmadosShort": 31,
-    "confirmadosLargos": 2,
-    "pendientesVerificacion": 321
+    "confirmadosShort": 32,
+    "confirmadosLargos": 3,
+    "pendientesVerificacion": 319
   },
   "slots": [
     {
@@ -244,11 +244,13 @@
       "linea_editorial": "historia",
       "tema_id": "historia-gtavi-006",
       "titulo_editorial": "GTA VI Historia #006: Just a Scratch",
-      "estado": "idea_pendiente_verificacion",
+      "estado": "tema_confirmado",
       "serie": "historia_gtavi",
       "episodio": 6,
       "spoilers": true,
-      "publicacion_automatica": false
+      "publicacion_automatica": false,
+      "visuales": "Fotografías oficiales ilustrativas de Jason y los Keys, no gameplay de Just a Scratch",
+      "revision_manual_requerida": true
     },
     {
       "fecha": "2026-11-29",
@@ -265,11 +267,13 @@
       "hora": "21:00",
       "formato": "largo",
       "linea_editorial": "documental",
-      "tema_id": "pf-idea-l-000-1",
-      "titulo_editorial": "GTA VI a fondo: Jason Duval — motivaciones y conexiones de personajes",
-      "estado": "idea_pendiente_verificacion",
+      "tema_id": "pf92-jason-vinculos-20261127",
+      "titulo_editorial": "GTA VI: el pasado de Jason y sus conexiones con Brian, Cal y Lucia",
+      "estado": "tema_confirmado",
       "publicacion_automatica": false,
-      "documental_profundo": false
+      "documental_profundo": false,
+      "revision_manual_requerida": true,
+      "referencias": "Biografías oficiales Rockstar GTA VI, Jason, Brian, Cal, Lucia"
     },
     {
       "fecha": "2026-11-29",
