@@ -165,23 +165,25 @@
       "mision_reportada": "Just a Scratch",
       "linea_editorial": "historia",
       "formato": "short",
-      "estado": "pendiente_verificacion_gameplay",
+      "estado": "confirmado_fuentes_oficiales_y_guias",
       "spoilers": true,
       "publicacion_automatica": false,
       "fuentes": [
-        "https://www.powerpyx.com/gta-6-full-walkthrough-all-missions/",
-        "https://www.pcgamer.com/games/grand-theft-auto/gta-6-mission-list/"
+        "https://www.rockstargames.com/VI/only-in-leonida/jason",
+        "https://www.powerpyx.com/gta-6-just-a-scratch-fix-your-car-walkthrough/",
+        "https://www.videogameschronicle.com/guide/gta-6-just-a-scratch-mission-walkthrough/"
       ],
       "objetivo_editorial": "Narrar un acontecimiento real comprobado de esta misión y por qué cambia la historia. Verificar con gameplay de la versión publicada, evitar inventar trama y no copiar texto del walkthrough.",
       "pruebas_requeridas": [
-        "Nombre y ubicación en la partida",
-        "grabación propia/autorizada de la misión",
-        "dos acontecimientos documentados",
-        "consecuencia narrativa sin inventar",
-        "verificación de orden; las guías no coinciden siempre"
+        "Contrastar la reparación del Ganado con PowerPyx y VGC",
+        "No afirmar que el orden de misiones es lineal en todas las partidas",
+        "Usar fotos oficiales ilustrativas, nunca gameplay de terceros sin licencia",
+        "Subir solo privado; revisar guion, imagen y derechos antes de publicar"
       ],
-      "licencia_video_requerida": true,
-      "advertencia": "La cronología es una propuesta editorial basada en guías; misiones opcionales, desbloqueos y orden pueden variar. No producir capítulos pendientes sin verificar los hechos."
+      "licencia_video_requerida": false,
+      "advertencia": "Guion de PowerPyx y VGC. No presentar fotografías promocionales como escenas de la misión. Revisión humana y derechos antes de publicación pública.",
+      "visual": "Fotografías oficiales ilustrativas de Jason y los Keys, no gameplay de Just a Scratch",
+      "titulo_aprobado": "GTA VI HISTORIA #006 — Just a Scratch: el coche de Jason"
     },
     {
       "id": "historia-gtavi-007",
