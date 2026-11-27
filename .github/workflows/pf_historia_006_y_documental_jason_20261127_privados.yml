@@ -1,0 +1,46 @@
+name: "PF - Historia 006 y documental Jason (privados)"
+# Solicitud puntual 27-11: capítulo #006 Just a Scratch + documental Jason.
+# Temas confirmados y contrastados, no repetir los capítulos 004 ni 005.
+# Fotos Rockstar son ILUSTRATIVAS, no metraje de la misión.
+# La publicación será exclusivamente PRIVADA; revisión humana posterior.
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/pf_historia_006_y_documental_jason_20261127_privados.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pf-historia-006-documental-jason-20261127
+  cancel-in-progress: false
+
+jobs:
+  historia-006:
+    name: "1/2 - Historia GTA VI #006 Just a Scratch"
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: short
+      linea_editorial: historia
+      tema: historia-gtavi-006
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
+
+  documental-jason:
+    name: "2/2 - Largo: Jason, Brian, Cal y Lucia"
+    needs: [historia-006]
+    if: ${{ always() && needs.historia-006.result != 'cancelled' }}
+    uses: ./.github/workflows/produccion_completa.yml
+    with:
+      formato: largo
+      linea_editorial: general
+      tema: pf92-jason-vinculos-20261127
+      subir_privado: true
+      confirmacion: SUBIR_PRIVADO
+      motor_tts: qwen
+      exigir_multimedia: false
+    secrets: inherit
